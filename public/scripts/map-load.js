@@ -18,7 +18,6 @@ var draw = new MapboxDraw({
 });
 map.addControl(draw);
 
-<<<<<<< HEAD
 
 // Загруза меток
 let marks = fetch("/getMarks") // Здесь указывается URL маршрута на сервере
@@ -57,66 +56,6 @@ let marks = fetch("/getMarks") // Здесь указывается URL марш
 });
 
 
-=======
-function createGeojson([...coords], title, description) {
-  let geojson = {
-    type: "Feature",
-    properties: {
-      title: title,
-      description: description,
-    },
-    geometry: {
-      type: "Polygon",
-      coordinates: [...coords],
-    },
-  };
-
-  return geojson;
-}
-
-map.on("draw.create", function (event) {
-  document.querySelector("#add-mark").classList.remove("hidden")
-  var data = draw.getAll();
-  let title = document.querySelector("#title");
-  let description = document.querySelector("#description");
-  document.querySelector("#add-mark__btn").addEventListener("click", (e) => {
-    e.preventDefault()
-    console.log(data.features.length)
-
-    if (
-      data.features.length > 0 &&
-      title.value !== "" &&
-      description.value !== ""
-    ) {
-      var coords = event.features[0].geometry.coordinates;
-
-      fetch("/map-editor", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(
-          createGeojson(coords, title.value, description.value)
-        ),
-      })
-        .then((response) => {
-          if (response.ok) {
-            // Успешно отправлено
-            console.log("Координаты отправлены на сервер");
-          } else {
-            // Обработка ошибки при отправке
-            console.error("Ошибка при отправке координат на сервер");
-          }
-        })
-        .catch((error) => {
-          console.error("Ошибка при выполнении запроса:", error);
-        });
-        location.reload();
-    }
-  });
-});
-
->>>>>>> b891c964cb15e21742087c96d50c9f31a04884d1
 // Добавление интерактивности
 map.on("load", function () {
   // Добавление возможности выбора территории (полигонов)
@@ -135,24 +74,16 @@ map.on("load", function () {
     },
   });
 
-<<<<<<< HEAD
   function returnMarkHtml(title, description,link) {
-=======
-  function returnMarkHtml(title, description) {
->>>>>>> b891c964cb15e21742087c96d50c9f31a04884d1
     let markUp =
       '<article class="mark"> <img src="./public/images/service.jpg" alt=""/> <div class="mark__text"> <h3>' +
       title +
       "</h3> <p>" +
       description +
-<<<<<<< HEAD
       "</p> <a>" +
       link
       "</a>"
       "</div> </article>";
-=======
-      "</p> </div> </article>";
->>>>>>> b891c964cb15e21742087c96d50c9f31a04884d1
     return markUp;
   }
 
@@ -163,11 +94,7 @@ map.on("load", function () {
     var popup = new mapboxgl.Popup()
       .setLngLat(coordinates)
       .setHTML(
-<<<<<<< HEAD
         returnMarkHtml(feature.properties.title, feature.properties.description,feature.properties.link)
-=======
-        returnMarkHtml(feature.properties.title, feature.properties.description)
->>>>>>> b891c964cb15e21742087c96d50c9f31a04884d1
       )
       .addTo(map);
   });
@@ -180,7 +107,4 @@ map.on("mouseenter", "territories-fill", function () {
 map.on("mouseleave", "territories-fill", function () {
   map.getCanvas().style.cursor = "";
 });
-<<<<<<< HEAD
 
-=======
->>>>>>> b891c964cb15e21742087c96d50c9f31a04884d1

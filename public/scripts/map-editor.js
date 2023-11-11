@@ -12,7 +12,6 @@ let addMarkBtn = document.querySelector("#add-mark__btn");
 let editMarkBtn = document.querySelector("#edit-mark__btn");
 let searchInput = document.querySelector(".edit-mark__search");
 
-<<<<<<< HEAD
 // Добавление меток
 function createGeojson([...coords], title, description, link) {
   let geojson = {
@@ -71,43 +70,6 @@ map.on("draw.create", function (event) {
     }
   });
 });
-=======
-// Загруза меток
-let marks = fetch("/getMarks") // Здесь указывается URL маршрута на сервере
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(`Ошибка: ${response.status}`);
-    }
-
-    return response.json();
-  })
-  .then((data) => {
-    if (data.features.length !== 0) {
-      searchInput.classList.remove("hidden");
-    }
-    data.features.forEach((element) => {
-      let listItem = document.createElement("li");
-      let title = document.createElement("strong");
-      let description = document.createElement("p");
-      let deleteButton = document.createElement("button");
-      let editButton = document.createElement("button");
-
-      listItem.className = "list-item";
-      title.innerHTML = element.properties.title;
-      description.innerHTML = element.properties.description;
-      deleteButton.innerHTML = "Удалить";
-      deleteButton.className = "delete-button";
-      editButton.innerHTML = "Изменить";
-      editButton.className = "edit-button";
-      listItem.id = element.properties.id;
-      listItem.append(title, description, deleteButton, editButton);
-      marksList.append(listItem);
-    });
-  })
-  .catch((error) => {
-    console.error("Произошла ошибка:", error);
-  });
->>>>>>> b891c964cb15e21742087c96d50c9f31a04884d1
 
 // Поиск меток
 document.getElementById("search").addEventListener("input", function () {
@@ -154,13 +116,8 @@ document.addEventListener("click", (e) => {
 
   if (e.target.className == "edit-button") {
     editMarkPopup.classList.remove("hidden");
-<<<<<<< HEAD
     newTitle.value = e.target.parentNode.children[0].innerText;
     newDescription.value = e.target.parentNode.children[1].innerText;
-=======
-     newTitle.value = e.target.parentNode.children[0].innerText
-     newDescription.value = e.target.parentNode.children[1].innerText
->>>>>>> b891c964cb15e21742087c96d50c9f31a04884d1
     editMarkBtn.addEventListener("click", () => {
       let id = e.target.parentNode.id;
       let title = newTitle.value;
@@ -170,11 +127,7 @@ document.addEventListener("click", (e) => {
         headers: {
           "Content-Type": "application/json",
         },
-<<<<<<< HEAD
         body: JSON.stringify({ id, title, description }),
-=======
-        body: JSON.stringify({ id,  title, description }),
->>>>>>> b891c964cb15e21742087c96d50c9f31a04884d1
       })
         .then((response) => {
           if (response.ok) {

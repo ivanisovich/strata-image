@@ -57,7 +57,6 @@ document
       .querySelector(".publications__list")
       .classList.toggle("hide-items");
   });
-<<<<<<< HEAD
 
 map.on("mouseenter", "territories-fill", function () {
   map.getCanvas().style.cursor = "pointer";
@@ -66,5 +65,3 @@ map.on("mouseenter", "territories-fill", function () {
 map.on("mouseleave", "territories-fill", function () {
   map.getCanvas().style.cursor = "";
 });
-=======
->>>>>>> b891c964cb15e21742087c96d50c9f31a04884d1

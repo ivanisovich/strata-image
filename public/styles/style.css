@@ -38,7 +38,6 @@ h2 {
   line-height: 64px;
 }
 
-<<<<<<< HEAD
 .header{
   z-index: 10;
   background: white;
@@ -46,8 +45,6 @@ h2 {
   position: fixed;
 }
 
-=======
->>>>>>> b891c964cb15e21742087c96d50c9f31a04884d1
 .footer__inner,
 .header {
   display: flex;
