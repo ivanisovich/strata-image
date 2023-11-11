@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
+    <title>Редактирование карты</title>
+=======
+    <title>Document</title>
+>>>>>>> b891c964cb15e21742087c96d50c9f31a04884d1
+    <link rel="stylesheet" href="/public/styles/map-editor.css" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.0/mapbox-gl-draw.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <form id="add-mark" class="mark-form hidden">
+      <h1>Добавить метку</h1>
+      <input
+        placeholder="Заголовок:"
+        type="text"
+        name="title"
+        id="title"
+        required
+      />
+      <input
+        placeholder="Описание"
+        type="text"
+        name="description"
+        id="description"
+        required
+      />
+<<<<<<< HEAD
+      <input
+        placeholder="Ссылка на документ"
+        type="text"
+        name="documentLink"
+        id="document-link"
+        required
+      />
+=======
+>>>>>>> b891c964cb15e21742087c96d50c9f31a04884d1
+      <div class="form-divider"></div>
+      <button id="add-mark__btn" type="submit">Добавить</button>
+      <button class="close-form">X</button>
+    </form>
+
+    <form id="edit-mark" class="mark-form hidden">
+      <h1>Изменить метку</h1>
+      <input
+        placeholder="Заголовок:"
+        type="text"
+        name="title"
+        id="new-title"
+        required
+      />
+      <input
+        placeholder="Описание"
+        type="text"
+        name="description"
+        id="new-description"
+        required
+      />
+      <div class="form-divider"></div>
+      <button id="edit-mark__btn" type="submit">Изменить</button>
+      <button type="button" class="close-form">X</button>
+    </form>
+
+    <ul class="marks-list">
+      <input
+        placeholder="Поиск меток"
+        type="text"
+        class="edit-mark__search hidden"
+        id="search"
+      />
+    </ul>
+
+    <div id="map"></div>
+    <link rel="stylesheet" href="../public/styles/map.css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.0/mapbox-gl-draw.js"></script>
+    <script src="/public/scripts/map-load.js"></script>
+    <script src="/public/scripts/map-editor.js"></script>
+  </body>
+</html>

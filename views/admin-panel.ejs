@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Админ-панель</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.0/mapbox-gl-draw.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/public/styles/admin-panel.css" />
+  </head>
+  <body>
+    <a href="/map-editor">Добавить метку</a>
+    <h1>Изменение заголовка</h1>
+    <form method="post">
+      <label for="newTitle">Новый заголовок:</label>
+      <input type="text" name="newTitle" id="newTitle" required />
+      <button type="submit">Изменить заголовок</button>
+    </form>
+
+    <script src="/public/scripts/admin-panel.js">
+    </script>
+  </body>
+</html>
