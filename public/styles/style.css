@@ -7,6 +7,10 @@ body {
   font-family: "Public Sans", sans-serif;
 }
 
+button:hover{
+  opacity: 0.8;
+}
+
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -38,19 +42,25 @@ h2 {
   line-height: 64px;
 }
 
+.hidden{
+  display: none;
+}
+
+
 .header{
   z-index: 10;
   background: white;
   width: 100%;
   position: fixed;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 60px 40px -7px;
 }
 
 .footer__inner,
-.header {
+.header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 60px 40px -7px;
+
 
   padding-top: 23px;
   padding-bottom: 23px;
@@ -78,6 +88,7 @@ h2 {
   line-height: 22px;
   text-decoration: none;
   text-transform: capitalize;
+  white-space: nowrap;
 }
 
 .hero {
@@ -216,7 +227,8 @@ h2 {
   position: absolute;
   margin-top: -20px;
   z-index: 2;
-}
+  height: 100% !important;
+} 
 .about-us__inner {
   display: flex;
   position: relative;
@@ -322,7 +334,7 @@ h2 {
   justify-content: center;
 }
 .footer{
-  margin-top: 100px;
+  margin-top: 200px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px -60px 40px -7px;
 
 }

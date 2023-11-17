@@ -1,7 +1,4 @@
-const marksList = document.querySelector(".marks-list");
-const marksItem = document
-  .querySelector(".marks-list")
-  .getElementsByTagName("li");
+
 const addMarkPopup = document.querySelector("#add-mark");
 const editMarkPopup = document.querySelector("#edit-mark");
 let title = document.querySelector("#title");
@@ -10,7 +7,17 @@ let newTitle = document.querySelector("#new-title");
 let newDescription = document.querySelector("#new-description");
 let addMarkBtn = document.querySelector("#add-mark__btn");
 let editMarkBtn = document.querySelector("#edit-mark__btn");
-let searchInput = document.querySelector(".edit-mark__search");
+
+
+var draw = new MapboxDraw({
+  displayControlsDefault: false,
+  controls: {
+    polygon: true,
+    trash: true,
+  },
+});
+
+map.addControl(draw);
 
 // Добавление меток
 function createGeojson([...coords], title, description, link) {
@@ -69,6 +76,10 @@ map.on("draw.create", function (event) {
       location.reload();
     }
   });
+});
+
+map.on("draw.delete", function (e) {
+  addMarkPopup.classList.add("hidden");
 });
 
 // Поиск меток
@@ -147,5 +158,40 @@ document.addEventListener("click", (e) => {
 
   if (e.target.className == "close-form") {
     e.target.parentNode.classList.add("hidden");
+
+    if (e.target.parentNode.id == "add-mark") {
+      var selectedFeatures = draw.getSelected();
+
+      // Проверяем, что есть выбранные объекты
+      if (selectedFeatures.features.length > 0) {
+        // Получаем идентификатор выбранного объекта
+        var selectedId = selectedFeatures.features[0].id;
+
+        // Удаляем объект с указанным идентификатором
+        draw.delete(selectedId);
+      } else {
+        // Код для обработки ситуации, когда ничего не выбрано
+        console.log("Не выбраны области для удаления");
+      }
+    }
   }
+});
+
+document.querySelector(".kml-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  var formData = new FormData(this);
+  fetch("/uploadKMZ", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("message").innerText = data;
+      location.reload();
+      // Вы можете здесь обновить другие части вашей страницы при необходимости
+    })
+    .catch((error) => {
+      document.getElementById("message").innerText = "Ошибка: " + error;
+    });
 });
