@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Редактирование карты</title>
+  <link rel="stylesheet" href="../public/styles/map.css">
   <link rel="stylesheet" href="/public/styles/map-editor.css" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet" />
@@ -38,19 +39,17 @@
     <div id="message"></div>
   </form>
 
- 
-
   <div id="map">
     <ul class="marks-list hidden">
+      <a href="./admin-panel">edit landing page</a>
       <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
       <input placeholder="Поиск меток" type="text" class="edit-mark__search hidden" id="search" />
     </ul>
   </div>
-  <link rel="stylesheet" href="../public/styles/map.css">
+  
   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.0/mapbox-gl-draw.js"></script>
   <script src="/public/scripts/map-load.js"></script>
   <script src="/public/scripts/map-editor.js"></script>
- 
 </body>
 
 </html>

@@ -3,27 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <title>Админ-панель</title>
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.0/mapbox-gl-draw.css"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="/public/styles/admin-panel.css" />
+    <link rel="stylesheet" href="/public/styles/map-editor.css">
   </head>
-  <body>
-    <a href="/map-editor">Добавить метку</a>
-    <h1>Изменение заголовка</h1>
-    <form method="post">
-      <label for="newTitle">Новый заголовок:</label>
-      <input type="text" name="newTitle" id="newTitle" required />
-      <button type="submit">Изменить заголовок</button>
-    </form>
+  <body class="container">
+    <nav>
+      <a href="./map-editor">Map editor</a>
+    </nav>
+    <div class="services ">
+      <h2>Services</h2>
+      <div class="services__inner"></div>
+      <form id="edit-service-form" class="mark-form hidden">
+        <h3>Изменить сервис</h3>
+        <input placeholder="Заголовок:" type="text" name="title" id="new-title" required />
+        <input placeholder="Описание" type="text" name="description" id="new-description" required />
+        <div class="form-divider"></div>
+        <button id="button--edit-article" type="submit">Изменить</button>
+        <button type="button" class="close-form">X</button>
+      </form>
+      <form id="add-service-form" class="mark-form hidden">
+        <h3>Добавить сервис</h3>
+        <input type="text" placeholder="Ссылка на изображение" type="text" name="link" id="link" required>
+        <input placeholder="Заголовок:" type="text" name="title" id="title" required />
+        <input placeholder="Описание" type="text" name="description" id="description" required />
+        <div class="form-divider"></div>
+        <button id="button--add-article" type="submit">Добавить</button>
+        <button type="button" class="close-form">X</button>
+      </form>
+      <button class="button--new-service">+ Добавить</button>
+    </div>
 
-    <script src="/public/scripts/admin-panel.js">
-    </script>
+    <div class="publications">
+      <h2>Publications</h2>
+      <ul class="publications__list">
+
+      </ul>
+      <button class="button--new-publication">+ Добавить</button>
+      <form id="add-publication-form" class="mark-form hidden">
+        <h3>Добавить публикацию</h3>
+        <input type="text" placeholder="Новое описание" type="text" name="publication" id="publication" required>
+        <div class="form-divider"></div>
+        <button id="button--add-publication" type="submit">Добавить</button>
+        <button type="button" class="close-form">X</button>
+      </form>
+    </div>
+
+    <div class="team">
+      <h2>Our team</h2>
+      <div class="our-team__members"></div>
+      <button class="button--add-member">+ Добавить</button>
+      <form id="edit-member-form" class="mark-form hidden">
+        <h3>Изменить работника</h3>
+        <input type="text" placeholder="Имя" type="text" name="publication" id="new-name" required>
+        <input type="text" placeholder="Позиция" type="text" name="publication" id="new-position" required>
+        <input type="text" placeholder="Ссылка на фото" type="text" name="photo-link" id="new-photo-link">
+        <div class="form-divider"></div>
+        <button id="button--edit-member" type="submit">Изменить</button>
+        <button type="button" class="close-form">X</button>
+      </form>
+      <form id="add-member-form" class="mark-form hidden">
+        <h3>Изменить работника</h3>
+        <input type="text" placeholder="Имя" type="text" name="publication" id="name" required>
+        <input type="text" placeholder="Позиция" type="text" name="publication" id="position" required>
+        <input type="text" placeholder="Ссылка на фото" type="text" name="photo-link" id="photo-link" required>
+        <div class="form-divider"></div>
+        <button id="button--add-member" type="submit">Изменить</button>
+        <button type="button" class="close-form">X</button>
+      </form>
+    </div>
+
+    <script src="/public/scripts/admin-panel.js"></script>
   </body>
 </html>

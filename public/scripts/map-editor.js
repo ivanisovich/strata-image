@@ -1,4 +1,3 @@
-
 const addMarkPopup = document.querySelector("#add-mark");
 const editMarkPopup = document.querySelector("#edit-mark");
 let title = document.querySelector("#title");
@@ -7,7 +6,6 @@ let newTitle = document.querySelector("#new-title");
 let newDescription = document.querySelector("#new-description");
 let addMarkBtn = document.querySelector("#add-mark__btn");
 let editMarkBtn = document.querySelector("#edit-mark__btn");
-
 
 var draw = new MapboxDraw({
   displayControlsDefault: false,
@@ -18,24 +16,6 @@ var draw = new MapboxDraw({
 });
 
 map.addControl(draw);
-
-// Добавление меток
-function createGeojson([...coords], title, description, link) {
-  let geojson = {
-    type: "Feature",
-    properties: {
-      title: title,
-      description: description,
-      link: link,
-    },
-    geometry: {
-      type: "Polygon",
-      coordinates: [...coords],
-    },
-  };
-
-  return geojson;
-}
 
 map.on("draw.create", function (event) {
   document.querySelector("#add-mark").classList.remove("hidden");
@@ -82,25 +62,9 @@ map.on("draw.delete", function (e) {
   addMarkPopup.classList.add("hidden");
 });
 
-// Поиск меток
-document.getElementById("search").addEventListener("input", function () {
-  let filter = this.value.toLowerCase(); // берем значение из инпута и приводим его к нижнему регистру
-  let li = marksItem; // берем все элементы li из списка ul
-
-  for (let i = 0; i < li.length; i++) {
-    if (li[i].innerText.toLowerCase().indexOf(filter) > -1) {
-      // если текст элемента li содержит значение из инпута
-      li[i].style.display = ""; // показываем элемент
-    } else {
-      li[i].style.display = "none"; // скрываем элемент
-    }
-  }
-});
-
 // Редактирование меток
 document.addEventListener("click", (e) => {
   if (e.target.className == "delete-button") {
-    console.log(e.target.parentNode.id);
     let id = e.target.parentNode.id;
     fetch("/deleteMark", {
       method: "POST",
