@@ -29,7 +29,7 @@ let delayCounter = 0; // Глобальный счётчик для управл
 
 // Создание экземпляра IntersectionObserver
 let observer = new IntersectionObserver(revealOnScroll, {
-  threshold: 0.3 // Можно настроить порог видимости
+  threshold: 0.2 // Можно настроить порог видимости
 });
 
 // Применение наблюдателя 
@@ -75,4 +75,24 @@ document.querySelectorAll('.ellipses').forEach((item, index) => {
 
     observer.observe(item);
   }
+});
+
+// Исчезающий хедер
+
+let lastScrollTop = 0;
+let header = document.querySelector(".header");
+
+window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // Scrolling down, hide the header
+        header.classList.add("hide")
+  
+    } else {
+        // Scrolling up, show the header
+        header.classList.remove("hide")
+    }
+
+    lastScrollTop = scrollTop;
 });

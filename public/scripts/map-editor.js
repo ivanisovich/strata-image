@@ -159,3 +159,7 @@ document.querySelector(".kml-form").addEventListener("submit", function (e) {
       document.getElementById("message").innerText = "Ошибка: " + error;
     });
 });
+
+document.querySelector(".edit-mark__burger").addEventListener("click",()=>{
+  marksList.classList.toggle("hidden")
+})

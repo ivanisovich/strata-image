@@ -329,7 +329,7 @@ app.post("/landing/edit", async (req, res) => {
       const element = document.getElementById(req.body.id);
       if (element) {
         element.querySelector("h3").innerHTML = req.body.name;
-        element.querySelector("span").innerHTML = req.body.position;
+        element.querySelector("p").innerHTML = req.body.position;
         if (req.body.photoLink){
           element.querySelector("img").src = req.body.photoLink
         }

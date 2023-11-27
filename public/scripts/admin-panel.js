@@ -87,8 +87,8 @@ function processArticles(doc) {
   const articles = doc.querySelectorAll(".service");
   articles.forEach((article) => {
     const articleText = article.querySelector(".service__text");
-    const deleteButton = createButton("удалить", "button--delete-article");
-    const editButton = createButton("изменить", "button--edit-article");
+    const deleteButton = createButton("delete", "button--delete-article");
+    const editButton = createButton("edit", "button--edit-article");
 
     if (articleText) {
       articleText.append(editButton, deleteButton);
@@ -101,7 +101,7 @@ function processPublications(doc) {
   const publications = doc.querySelectorAll(".publications__item");
   publications.forEach((publication) => {
     if (!publication.classList.contains("publications__list-header") && !publication.classList.contains("ellipses")) {
-      const deleteButton = createButton("удалить", "button--delete-publication");
+      const deleteButton = createButton("delete", "button--delete-publication");
       publication.append(deleteButton);
       publicationsContainer.appendChild(publication);
     }
@@ -111,8 +111,8 @@ function processPublications(doc) {
 function processTeamMembers(doc) {
   const teamMembers = doc.querySelectorAll(".our-team__member");
   teamMembers.forEach((member) => {
-    const deleteButton = createButton("удалить", "button--delete-member");
-    const editButton = createButton("изменить", "button--edit-member");
+    const deleteButton = createButton("delete", "button--delete-member");
+    const editButton = createButton("edit", "button--edit-member");
 
     member.append(editButton, deleteButton);
     teamContainer.appendChild(member);

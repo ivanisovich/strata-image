@@ -55,6 +55,7 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 60px 40px -7px;
   background: white;
   width: 100%;
+  transition: transform 0.3s ease-out;
 }
 
 .footer__inner,
@@ -270,9 +271,15 @@ h2 {
   border-bottom-left-radius: 16px;
 }
 
+.list-item{
+  min-width: 275px;
+
+}
 
 .marks-list.hidden {
   opacity: 0;
+  height: 0px;
+  padding: 0px;
 }
 
 .edit-mark__search-wrapper {
@@ -361,53 +368,6 @@ h2 {
   border-radius: 16px;
 }
 
-.news {
-  margin-top: 100px;
-}
-
-.news__list {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-}
-
-.news__item {
-  max-width: 360px;
-}
-
-.news__item-text {
-  position: relative;
-  margin-top: -180px;
-  border-radius: 14px;
-  background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 100%);
-  padding: 24px;
-}
-
-.news__item-text h3 {
-  color: white;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 36px;
-  font-family: "Public Sans", sans-serif;
-}
-
-.news__item-text a {
-  opacity: 0.8;
-  background-image: url("../images/link-arrow.svg");
-  background-position: right;
-  background-repeat: no-repeat;
-  padding-right: 20px;
-  color: white;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: 1.1px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
 .our-team {
   margin-top: 100px;
 }
@@ -415,6 +375,7 @@ h2 {
 .our-team__members {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
@@ -425,10 +386,14 @@ h2 {
   padding: 32px;
   width: fit-content;
   text-align: center;
+  max-width: 350px;
+  box-sizing: border-box;
 }
 
 .our-team__member img{
   max-width: 256px;
+  border-radius: 100%;
+  width: 100%;
 }
 
 .our-team__member span {
@@ -468,6 +433,7 @@ h2 {
 .socials-wrapper {
   display: flex;
   width: 100%;
+  margin-right: 20px;
 }
 
 .footer .socials {
