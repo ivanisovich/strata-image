@@ -42,11 +42,11 @@
 
    .our-team__member {
       box-sizing: border-box;
-      max-width: 270px;
+
    }
 
    .our-team__members {
-      flex-wrap: wrap;
+ 
    }
 
    #google_translate_element span {
@@ -169,6 +169,17 @@
    .about-us__text p {
       min-width: unset;
       font-size: 13px;
+   }
+
+   .our-team__member{
+      width: 100%;
+      max-width: unset;
+      text-align: center;
+   }
+
+   .our-team__member img{
+      margin-left: auto;
+      margin-right: auto;
    }
 
    .footer__inner{
