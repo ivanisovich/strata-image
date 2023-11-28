@@ -11,7 +11,7 @@ document.querySelector(".edit-mark__search").addEventListener("focus", () => {
 });
 
 document.querySelector(".edit-mark__burger").addEventListener("click", () => {
-  document.querySelector(".marks-list").classList.toggle("hidden");
+ 
 });
 
 // Анимации
@@ -131,44 +131,8 @@ function googleTranslateElementInit() {
   );
 }
 
-// Свайпер
-
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 10,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    "@0.00": {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-    "@0.50": {
-      slidesPerView: 1,
-      spaceBetween: 12,
-    },
-    "@0.75": {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    "@1.00": {
-      slidesPerView: 2,
-      spaceBetween: 40,
-    },
-    "@1.50": {
-      slidesPerView: 5,
-      spaceBetween: 50,
-    },
-  },
-});
-
-document.querySelector(".our-team__member-button").addEventListener("click",(e)=>{
-e.target.closest(".our-team__member").classList.toggle("hidden")
-
+document.addEventListener("click",(e)=>{
+  if (e.target.closest(".edit-mark__burger")){
+    document.querySelector(".marks-list").classList.toggle("hidden");
+  }
 })

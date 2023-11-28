@@ -110,6 +110,7 @@ function processPublications(doc) {
 
 function processTeamMembers(doc) {
   const teamMembers = doc.querySelectorAll(".our-team__member");
+  console.log(teamMembers)
   teamMembers.forEach((member) => {
     const deleteButton = createButton("delete", "button--delete-member");
     const editButton = createButton("edit", "button--edit-member");
