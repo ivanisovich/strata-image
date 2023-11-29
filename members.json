@@ -1,0 +1,80 @@
+{   "members": [
+    {
+      "id": "42738338-c4a9-4a03-9de1-1cb5ade37a77",
+      "photo": "/public/images/team-member.jpg",
+      "name": "Patricia Pastana de Lugão",
+      "position": "Owner and Managing Partner of Strataimage",
+      "description": "Patricia de Lugão brought to Brazil new technologies such as the marine electromagnetic method with controlled source (Marine CSEM) and the elastic seismic inversion. Patricia has experience in processing, developing software for modeling and inversion and interpretation of seismic and electromagnetic data, acquired during her work at Western Geophysical/Schlumberger and Landmark. She holds a PhD in geophysics from the University of Utah, a master's degree in geophysics from the National Observatory of Rio de Janeiro and a BA in Environmental and Water Resources Engineering from the University of South Carolina. Patricia led recent MT projects in Brazil. Patricia was the SEG Honorary Speaker for South America in the second half of 2020."
+    },
+    {
+      "id": "8047b89d-32d8-46d1-aa6e-1e46efd4d9ae",
+      "photo": "/public/images/team-member.jpg",
+      "name": "Berthold Kriegshauser",
+      "position": "Owner and Managing Partner of Strataimage",
+      "description": "Berthold has over 30 years of experience in the oil and gas sector, having worked for Baker Hughes in Houston and Rio de Janeiro, and for CETCO do Brasil. Berthold received an M.Sc. in Geophysics in 1992 from Universität Köln, Germany, and a Ph.D. in Geophysics from the University of Utah, USA, in 1997, working on electromagnetic (EM) methods research. He is the author and co-author of 22 patents and over 60 articles related to EM methods."
+    },
+    {
+      "id": "1f488a69-3850-4736-bb66-753dd7fb2c7a",
+      "photo": "/public/images/team-member.jpg",
+      "name": "Ludwig Kriegshauser",
+      "position": "Administrator of Strataimage Energy Services",
+      "description": "Inc. based in Charlotte, Ludwig has an Abitur from Gymnasium Geschwister Scholl in Stuttgart, Germany, and is currently studying Mathematics for Business B.S. and Geology at the University of North Carolina, Charlotte, USA."
+    },
+    {
+      "id": "7c195192-ce5b-4d2f-8b1d-07de0bff3114",
+      "photo": "/public/images/team-member.jpg",
+      "name": "Eric Correa",
+      "position": "Senior Geologist and Operations Manager in Brazil",
+      "description": "Eric Corrêa has a geology degree from the State University of Rio de Janeiro (UERJ), 2013, and a master's degree in the area of Basin Analysis and Mobile Belts, also at UERJ, 2019. Since 2014, Eric has participated in all Strataimage projects, both in the acquisition, interpretation and integration of AMT/MT/TDEM/GRAV/MAG data with other geological and geophysical data."
+    },
+    {
+      "id": "055bb02f-b5c5-4392-bbe3-144fa36c682f",
+      "photo": "/public/images/team-member.jpg",
+      "name": "Theodor Kriegshauser",
+      "position": "Leader of our UAV-based methods",
+      "description": "Theodor Kriegshäuser holds an M.Sc. In Biomass Technology from the Technical University of Munich – TUM, Germany (2023) and a B.SC. from the University of Hohenheim, Germany, in Biobased Products and Bioenergy (2020)."
+    },
+    {
+      "id": "f3adbdb3-fafb-4f15-89f9-dc911803c512",
+      "photo": "/public/images/team-member.jpg",
+      "name": "Katharina Kriegshäuser",
+      "position": "Agricultural Engineer",
+      "description": "Katharina Kriegshäuser has a Bachelor's degree (2020) in Agronomy and is studying for a Master's degree in Agricultural Engineering from the University of Hohenheim, Germany, with a specialization in precision agriculture. Her thesis deals with the use of electromagnetic methods in agriculture. Katharina has experience using drones to control weeds."
+    },
+    {
+      "id": "2382ed36-701c-479d-8192-55ef2ff8346c",
+      "photo": "/public/images/team-member.jpg",
+      "name": "Aline Menezes",
+      "position": "Geophysicist",
+      "description": "Aline Menezes has a degree in Geophysics from UNIPAMPA (2010), a master's degree in geology from UNISINOS (2021) and is also a doctoral student at UNISINOS. Since 2011 Aline has participated in all AMT/MT/TDEM/GRAV/MAG projects at Strataimage."
+    },
+    {
+      "id": "994e5a3a-a475-47c2-b413-832bc6896bba",
+      "photo": "/public/images/team-member.jpg",
+      "name": "Isaac de Oliveira Santos",
+      "position": "Geophysicist",
+      "description": "Isaac de Oliveira Santos has a degree in Geophysics from the Federal University of Bahia, Salvador, Brazil in 2011 and a master's degree in geology from UFBA in 2018. Isaac has participated in all projects since 2018 including the UAV-Mag in California and MT project in the Permian Basin."
+    },
+    {
+      "id": "cfdb66df-71cb-4ddd-9002-cabab4d7bd31",
+      "photo": "/public/images/team-member.jpg",
+      "name": "Kivia do Carmo Palheta Gomes",
+      "position": "Geophysicist",
+      "description": "Kivia do Carmo Palheta Gomes is a geophysicist from UFPA/Pará, Brazil (2009) with a master's degree in Well Geophysics also from UFPA (2014), Brazil. Since 2010, she has participated in all AMT / MT / TDEM projects in Brazil and California."
+    },
+    {
+      "id": "7d1dfdbb-2174-4b33-a126-8ddb3fc005cd",
+      "photo": "/public/images/team-member.jpg",
+      "name": "Luciano Areas",
+      "position": "Geophysicist",
+      "description": "Luciano Areas is a mathematician graduated from UERJ, the State University of Rio de Janeiro, Brazil (1999) and with a master’s in Geophysics from the National Observatory/MCT, Rio de Janeiro (2003). Luciano worked for Strataimage and Schlumberger from 2005 2015 in the implementation of seismic inversion at Petrobras. Luciano is currently working on his PhD in Geophysics at the University of Campinas/São Paulo, Brazil. Luciano has participated in all AMT/MT/TDEM projects in Brazil and California."
+    },
+    {
+      "id": "b2eb5274-f886-4e55-88e6-0230eb8e7a51",
+      "photo": "/public/images/team-member.jpg",
+      "name": "Erick Garcia Suarez",
+      "position": "Geophysicist",
+      "description": "Erick García-Suárez received his B.Sc. in geophysical engineering at National Autonomous University of Mexico (UNAM) and his M.Sc. in Earth Sciences from CICESE. He has worked on multidisciplinary projects as leader of field crews for acquisition of MT data for geothermal and groundwater exploration."
+    }
+  ]
+}

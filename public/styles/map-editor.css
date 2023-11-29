@@ -37,6 +37,7 @@ a{
 .lds-ellipsis{
   position: absolute ;
   margin-left: 0px;
+  left: 40%;
 }
 
 .marks-list {
@@ -123,6 +124,18 @@ button {
   display: block;
 }
 
+.marks-list.hidden .list-item{
+  display: none;
+}
+
+.marks-list.hidden{
+  height: fit-content;
+}
+
+.marks-list.hidden  .kml-form{
+  display: none;
+}
+
 .edit-mark__search {
   margin-bottom: 20px;
   margin-top: 20px;
@@ -143,6 +156,53 @@ button {
   box-sizing: border-box;
   background: white;
   padding: 20px;
-  width: 380px;
-  height: 240px;
+  width: 329px;
+
+}
+
+.kml-form__wrapper{
+  display: flex;
+}
+
+.kml-form input{
+  width: 100%;
+}
+
+.kml-form input{
+  box-sizing: border-box;
+
+}
+
+.edit-mark__burger {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 100px;
+  border: 1px solid rgba(145, 158, 171, 0.32);
+  border-radius: 4px;
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: fit-content;
+}
+
+.edit-mark__burger:hover {
+  opacity: 0.7;
+  transition: 0.3s ease-in-out;
+}
+
+.edit-mark__burger:active {
+  opacity: 1;
+}
+
+.edit-mark__burger div {
+  opacity: 0.35;
+  border-radius: 4px;
+  background: #212b36;
+  width: 35px;
+  height: 4px;
 }

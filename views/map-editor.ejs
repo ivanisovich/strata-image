@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Редактирование карты</title>
+  <title>Map edit</title>
   <link rel="stylesheet" href="../public/styles/map.css">
   <link rel="stylesheet" href="/public/styles/map-editor.css" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
@@ -14,36 +14,45 @@
 
 <body>
   <form id="add-mark" class="mark-form hidden">
-    <h1>Добавить метку</h1>
-    <input placeholder="Заголовок:" type="text" name="title" id="title" required />
-    <input placeholder="Описание" type="text" name="description" id="description" required />
-    <input placeholder="Ссылка на документ" type="text" name="documentLink" id="document-link" required />
+    <h1>Add geomark</h1>
+    <input placeholder="title" type="text" name="title" id="title" required />
+    <input placeholder="description" type="text" name="description" id="description" required />
+    <input placeholder="download link" type="text" name="documentLink" id="document-link" required />
     <div class="form-divider"></div>
-    <button id="add-mark__btn" type="submit">Добавить</button>
+    <button id="add-mark__btn" type="submit">Add</button>
     <button class="close-form">X</button>
   </form>
 
   <form id="edit-mark" class="mark-form hidden">
-    <h1>Изменить метку</h1>
-    <input placeholder="Заголовок:" type="text" name="title" id="new-title" required />
-    <input placeholder="Описание" type="text" name="description" id="new-description" required />
+    <h1>Edit geomark</h1>
+    <input placeholder="title" type="text" name="title" id="new-title" required />
+    <input placeholder="description" type="text" name="description" id="new-description" required />
     <div class="form-divider"></div>
-    <button id="edit-mark__btn" type="submit">Изменить</button>
+    <button id="edit-mark__btn" type="submit">Edit</button>
     <button type="button" class="close-form">X</button>
   </form>
 
   <form class="kml-form"  method="post" enctype="multipart/form-data">
-    <h1>Загрузите KMZ файл для добавления меток:</h1>
+    <div class="kml-form__wrapper">
+      <h1>Upload the KMZ file to add the geomark:</h1> 
+      <button type="submit">Upload</button>
+    </div>
+    
     <input type="file" name="kmlFile" accept=".kmz" required>
-    <button type="submit">Загрузить</button>
+ 
     <div id="message"></div>
   </form>
 
   <div id="map">
     <ul class="marks-list hidden">
-      <a href="./admin-panel">edit landing page</a>
+      <a href="./admin-panel">Edit landing page</a>
+      <div class="edit-mark__burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-      <input placeholder="Поиск меток" type="text" class="edit-mark__search hidden" id="search" />
+      <input placeholder="Geomarks search" type="text" class="edit-mark__search hidden" id="search" />
     </ul>
   </div>
   

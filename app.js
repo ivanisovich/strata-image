@@ -237,6 +237,17 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
   }
 });
 
+app.get('/landing/get-members', async (req, res) => {
+  try {
+    const data = await fs.readFile('members.json', 'utf8');
+    const jsonData = JSON.parse(data);
+    res.json(jsonData.members);
+  } catch (error) {
+    
+    res.status(500).json({ error: 'Не удалось загрузить данные' });
+  }
+});
+
 app.get("/landing/get-elements", async (req, res) => {
   try {
     const html = await fs.readFile("public/index.html", "utf8");
@@ -309,6 +320,29 @@ app.post("/landing/delete", async (req, res) => {
   }
 });
 
+app.delete('/delete/:id', async (req, res) => {
+  try {
+    console.log("Запрос на удаление с ID:", req.params.id);
+    const id = req.params.id;
+
+    const data = await fs.readFile("members.json", 'utf8');
+    let myArray = JSON.parse(data);
+
+    const index = myArray.members.findIndex(obj => obj.id === id);
+
+    if (index > -1) {
+      myArray.members.splice(index, 1);
+      await fs.writeFile("members.json", JSON.stringify(myArray, null, 2));
+
+      res.send(`Объект с ID ${id} удален.`);
+    } else {
+      res.status(404).send('Объект не найден.');
+    }
+  } catch (err) {
+    res.status(500).send('Ошибка сервера: ' + err.message);
+  }
+});
+
 app.post("/landing/edit", async (req, res) => {
   console.log(req.body);
 
@@ -329,7 +363,7 @@ app.post("/landing/edit", async (req, res) => {
       const element = document.getElementById(req.body.id);
       if (element) {
         element.querySelector("h3").innerHTML = req.body.name;
-        element.querySelector("span").innerHTML = req.body.position;
+        element.querySelector("p").innerHTML = req.body.position;
         if (req.body.photoLink){
           element.querySelector("img").src = req.body.photoLink
         }

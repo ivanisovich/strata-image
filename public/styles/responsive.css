@@ -1,0 +1,207 @@
+@media (max-width: 1250px) {
+   .hero h1 {
+      font-size: 40px;
+   }
+
+   .about-us__inner {
+      flex-direction: column;
+   }
+
+   .services__inner {
+      row-gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+   }
+
+   .socials-wrapper {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 20px;
+   }
+
+   .socials-inner {
+      margin-right: 0;
+      margin-left: 0;
+   }
+
+   .mapboxgl-popup{
+      right: 20px;
+   }
+}
+
+@media (max-width: 950px) {
+   .container {
+      padding-right: 20px;
+      padding-left: 20px;
+   }
+
+   .header a {
+      font-size: 14px;
+   }
+
+
+   .our-team__member {
+      box-sizing: border-box;
+
+   }
+
+   .our-team__members {
+ 
+   }
+
+   #google_translate_element span {
+      font-size: 14px !important;
+   }
+}
+
+@media (max-width: 768px) {
+   .container{
+      padding-left: 10px;
+      padding-right: 10px;
+   }
+
+   .header__inner {
+      flex-direction: column;
+      box-sizing: border-box;
+   }
+
+   .header__navigation {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+   }
+
+   .hide{
+      transform: translateY(-100%);
+   }
+
+   .hero img{
+      margin-top: 140px;
+      height: 400px;
+      object-fit: cover;
+   }
+
+   .hero h1{
+      max-width: 300px;
+      white-space: wrap;
+      text-align: center;
+      top: unset;
+      bottom: 0px;
+   }
+   .mapboxgl-popup{
+      top: 90px !important;
+   }
+   
+}
+
+
+@media (max-width: 550px) {
+   h2{
+      font-size: 30px;
+   }
+
+   .header__navigation {
+    max-width: 275px;
+    row-gap: 10px;
+    margin-top: -20px;
+    padding-top: 10px;
+    background: white;
+   }
+
+   .header__inner{
+      padding-top: 10px;
+      padding-bottom: 0px;
+   }
+
+   .hero img{
+      margin-top:115px;
+   }
+   
+   .hero h1{
+      font-size: 25px;
+      bottom: 40px;
+   }
+
+   .service{
+      min-width: 275px;
+   }
+
+   .service p{
+      font-size: 14px;
+   }
+
+   .publications__inner{
+      padding: 10px;
+   }
+
+   .publications__list{
+      margin-top: 0px;
+   }
+
+   .button--show-publications{
+      right: 5px;
+      width: 40px;
+      background-size: 40px;
+   }
+
+   .publications__item {
+      font-size: 14px;
+   }
+
+   .publications__list-header{
+      font-size: 20px;
+      padding-right: 30px;
+   }
+
+   .marks-list{
+      width: calc(100% - 20px);
+      max-width: 292px;
+   }
+
+   .list-item{
+      min-width: unset;
+      box-sizing:border-box;
+   }
+
+   .edit-mark__search{
+      width: 100% !important;
+   }
+   .mapboxgl-popup{
+      left: 10% !important;
+      right: 20px !important;
+   }
+
+   .about-us__text p {
+      min-width: unset;
+      font-size: 13px;
+   }
+
+   .our-team__member img{
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+   .footer__inner{
+      text-align: center;
+      flex-direction: column;
+   
+   }
+
+   .socials-inner{
+      margin: 0 auto
+   }
+
+   .footer__contacts{
+      width: 100%;
+   }
+
+   .socials-wrapper p{
+      margin: 0 auto;
+   }
+
+   .footer__contacts p{
+   max-width: unset;
+   }
+
+  
+}

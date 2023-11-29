@@ -1,180 +1,220 @@
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .button--delete-member,
 .button--delete-publication,
 .button--delete-article {
-    margin-left: 50px;
-    box-shadow: 0px 8px 16px 0px rgba(255, 72, 66, 0.24);
-    background: #ff4842;
-
+  margin-left: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(255, 72, 66, 0.24);
+  background: #ff4842;
 }
 
 button:hover {
-    opacity: 0.8;
-    transition: 0.3s ease-in-out;
+  opacity: 0.8;
+  transition: 0.3s ease-in-out;
 }
 
 button:active {
-    opacity: 1;
+  opacity: 1;
 }
 
-a{
-    color: var(--text-color);
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    text-transform: capitalize;
-    white-space: nowrap;
+a {
+  color: var(--text-color);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: capitalize;
+  white-space: nowrap;
 }
 
 h2 {
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 64px;
-    text-align: center;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 64px;
+  text-align: center;
 }
 
 .container {
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 70px;
-    padding-left: 70px;
-    max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 70px;
+  padding-left: 70px;
+  max-width: 1300px;
 }
 
-nav{
-    margin-top: 20px;
+nav {
+  margin-top: 20px;
 }
 
 .services {
-    margin-top: 0px;
-
+  margin-top: 0px;
 }
 
 .services__inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .service {
-    box-shadow: 0px 24px 48px 0px rgba(145, 158, 171, 0.24),
-        0px 0px 4px 0px rgba(145, 158, 171, 0.24);
-    ;
-    border-radius: 24px;
-    min-width: 320px;
-    max-width: 480px;
+  box-shadow: 0px 24px 48px 0px rgba(145, 158, 171, 0.24),
+    0px 0px 4px 0px rgba(145, 158, 171, 0.24);
+  border-radius: 24px;
+  min-width: 320px;
+  max-width: 380px;
 }
 
 .service img {
-    border-top-right-radius: 24px;
-    border-top-left-radius: 24px;
-    width: 100%;
-
+  border-top-right-radius: 24px;
+  border-top-left-radius: 24px;
+  width: 100%;
 }
 
 .service__text {
-    padding: 24px;
+  padding: 24px;
 }
 
 .mark-form {
-    position: absolute !important;
+  position: absolute !important;
 
-    margin-top: -400px;
-
+  margin-top: -400px;
 }
 
 input {
-    display: flex;
+  display: flex;
 
-    align-items: center;
-    box-sizing: border-box;
-    border: 1px solid var(--button-input, rgba(145, 158, 171, 0.32));
-    border-radius: 8px;
-    padding: 16px 16px 16px 14px;
-    width: 100%;
-    height: 56px;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid var(--button-input, rgba(145, 158, 171, 0.32));
+  border-radius: 8px;
+  padding: 16px 16px 16px 14px;
+  width: 100%;
+  height: 56px;
 }
 
 input::placeholder {
-    color: var(--10-text-color-a-light-mode-03-text-disabled, #919eab);
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+  color: var(--10-text-color-a-light-mode-03-text-disabled, #919eab);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .button--new-service {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
-
 .publications__list {
-    border-radius: 8px;
-    background: white;
-    padding-left: 0px;
-    list-style: none;
+  border-radius: 8px;
+  background: white;
+  padding-left: 0px;
+  list-style: none;
 }
 
 .publications__item {
-    box-shadow: 0px -1px 0px 0px rgba(145, 158, 171, 0.24) inset;
-    padding: 16px;
+  box-shadow: 0px -1px 0px 0px rgba(145, 158, 171, 0.24) inset;
+  padding: 16px;
 }
 
-.publications__item button{
-    margin-top: 20px;
+.publications__item button {
+  margin-top: 20px;
 }
 
 .publications__item .button--edit-publication {
-    margin-left: 50px;
+  margin-left: 50px;
 }
 
 .team {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .our-team__members {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.our-team__member.hidden {
+  display: block;
+}
+.our-team__member-button {
+  background: none;
+  color: black;
+  box-shadow: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .our-team__member {
-    box-shadow: 0px 16px 32px -4px rgba(145, 158, 171, 0.24),
-        0px 0px 2px 0px rgba(145, 158, 171, 0.24);
-    border-radius: 16px;
-    padding: 32px;
-    width: fit-content;
-    text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(145, 158, 171, 0.32);
+}
+
+.our-team__member-text {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  max-width: 640px;
+  border: 1px solid rgba(145, 158, 171, 0.32);
+  border-radius: 8px;
+  padding: 30px;
 }
 
 .our-team__member img {
-    border-radius: 100%;
-    max-width: 256px;
+  max-height: 400px;
+  object-fit: scale-down;
 }
 
-.our-team__member span {
-    display: block;
-    margin-bottom: 20px;
-    color: var(--text-color-secondary);
-    font-size: 14px;
-    line-height: 22px;
+.our-team__member h3 {
+  color: var(--text-color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.our-team__member-position {
+  color: #637381;
+  font-size: 14px;
+}
+
+.our-team__member-bio {
+  font-size: 14px;
+  text-align: left;
 }
 
 .socials {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .button--add-member {
-    margin-top: 30px;
+  margin-top: 30px;
+}
+
+@media (max-width: 550px) {
+  button {
+    margin-left: 0px;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .our-team__member .button--delete-member {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

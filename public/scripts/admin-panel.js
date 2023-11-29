@@ -45,6 +45,16 @@ function fetchDelete(objectId) {
     .catch((error) => console.error("Ошибка:", error));
 }
 
+function fetchDeleteMember(objectId) {
+  fetchApi("/delete/"+objectId, "DELETE", { id: objectId })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Ошибка удаления");
+      }
+    })
+    .catch((error) => console.error("Ошибка:", error));
+}
+
 function fetchEdit(params) {
   fetchApi("/landing/edit", "POST", params)
     .then((response) => {
@@ -79,16 +89,23 @@ fetch("/landing/get-elements")
 
     processArticles(doc);
     processPublications(doc);
-    processTeamMembers(doc);
+
   })
   .catch((error) => console.error("Ошибка:", error));
+
+fetch("/landing/get-members")
+  .then((response) => response.json())
+  .then((members) => {
+    processTeamMembers(members);
+  })
+  .catch((error) => console.error(error));
 
 function processArticles(doc) {
   const articles = doc.querySelectorAll(".service");
   articles.forEach((article) => {
     const articleText = article.querySelector(".service__text");
-    const deleteButton = createButton("удалить", "button--delete-article");
-    const editButton = createButton("изменить", "button--edit-article");
+    const deleteButton = createButton("delete", "button--delete-article");
+    const editButton = createButton("edit", "button--edit-article");
 
     if (articleText) {
       articleText.append(editButton, deleteButton);
@@ -100,22 +117,41 @@ function processArticles(doc) {
 function processPublications(doc) {
   const publications = doc.querySelectorAll(".publications__item");
   publications.forEach((publication) => {
-    if (!publication.classList.contains("publications__list-header") && !publication.classList.contains("ellipses")) {
-      const deleteButton = createButton("удалить", "button--delete-publication");
+    if (
+      !publication.classList.contains("publications__list-header") &&
+      !publication.classList.contains("ellipses")
+    ) {
+      const deleteButton = createButton("delete", "button--delete-publication");
       publication.append(deleteButton);
       publicationsContainer.appendChild(publication);
     }
   });
 }
 
-function processTeamMembers(doc) {
-  const teamMembers = doc.querySelectorAll(".our-team__member");
-  teamMembers.forEach((member) => {
-    const deleteButton = createButton("удалить", "button--delete-member");
-    const editButton = createButton("изменить", "button--edit-member");
+function processTeamMembers(members) {
+  members.forEach((member) => {
+    const memberArticle = document.createElement("article")
+    const image = document.createElement("img")
+    const name = document.createElement("h3")
+    const position = document.createElement("p")
+    const description = document.createElement("p")
 
-    member.append(editButton, deleteButton);
-    teamContainer.appendChild(member);
+    memberArticle.className = "our-team__member"
+    position.className = "our-team__member-position"
+    description.className = "our-team__member-bio"
+
+    image.src = member.photo
+    name.innerHTML = member.name
+    position.innerHTML = member.position
+    description.innerHTML = member.description
+    memberArticle.id = member.id
+
+    const deleteButton = createButton("delete", "button--delete-member");
+    const editButton = createButton("edit", "button--edit-member");
+
+    memberArticle.append(image,name,position,description,editButton,deleteButton)
+    // member.append(editButton, deleteButton);
+    teamContainer.appendChild(memberArticle);
   });
 }
 
@@ -143,7 +179,12 @@ document.addEventListener("click", (e) => {
     let id = e.target.closest(".service").id;
 
     buttonEditArticle.addEventListener("click", () => {
-      let params = { id: id, newTitle: newTitle.value, newDescription: newDescription.value, type: "services" };
+      let params = {
+        id: id,
+        newTitle: newTitle.value,
+        newDescription: newDescription.value,
+        type: "services",
+      };
       fetchEdit(params);
     });
   }
@@ -152,7 +193,12 @@ document.addEventListener("click", (e) => {
     addServiceForm.classList.remove("hidden");
 
     buttonAddArticle.addEventListener("click", () => {
-      let params = { title: titleInput.value, description: descriptionInput.value, imageUrl: linkInput.value, type: "services" };
+      let params = {
+        title: titleInput.value,
+        description: descriptionInput.value,
+        imageUrl: linkInput.value,
+        type: "services",
+      };
       fetchAdd(params);
     });
   }
@@ -177,8 +223,8 @@ document.addEventListener("click", (e) => {
 
   if (e.target.className == "button--delete-member") {
     let id = e.target.closest(".our-team__member").id;
-    fetchDelete(id);
-    location.reload();
+    fetchDeleteMember(id);
+    console.log(id)
   }
 
   if (e.target.className == "button--edit-member") {
@@ -190,7 +236,13 @@ document.addEventListener("click", (e) => {
     let id = memberElement.id;
 
     buttonEditMember.addEventListener("click", () => {
-      let params = { id: id, name: newName.value, position: newPosition.value, photoLink: newPhotoLink.value !== "" ? newPhotoLink.value : null, type: "members" };
+      let params = {
+        id: id,
+        name: newName.value,
+        position: newPosition.value,
+        photoLink: newPhotoLink.value !== "" ? newPhotoLink.value : null,
+        type: "members",
+      };
       fetchEdit(params);
       location.reload();
     });
@@ -199,9 +251,14 @@ document.addEventListener("click", (e) => {
   if (e.target.className == "button--add-member") {
     addMemberForm.classList.remove("hidden");
     buttonAddMember.addEventListener("click", () => {
-      let params = { name: nameInput.value, position: positionInput.value, photoLink: photoLinkInput.value, type: "members" };
+      let params = {
+        name: nameInput.value,
+        position: positionInput.value,
+        photoLink: photoLinkInput.value,
+        type: "members",
+      };
 
-       fetchAdd(params);
+      fetchAdd(params);
     });
   }
 });
