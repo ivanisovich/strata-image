@@ -289,7 +289,6 @@ h2 {
   opacity: 0;
   height: 0px;
   margin-top: -20px;
- 
 }
 
 .edit-mark__search-wrapper {
@@ -441,6 +440,8 @@ h2 {
 }
 
 .our-team__member-button {
+  display: block;
+  box-sizing: border-box;
   transition: 0.3s ease-in-out;
   background: none;
   border: none;

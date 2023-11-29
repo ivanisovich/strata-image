@@ -79,9 +79,16 @@ fetch("/landing/get-elements")
 
     processArticles(doc);
     processPublications(doc);
-    processTeamMembers(doc);
+
   })
   .catch((error) => console.error("Ошибка:", error));
+
+fetch("/landing/get-members")
+  .then((response) => response.json())
+  .then((members) => {
+    processTeamMembers(members);
+  })
+  .catch((error) => console.error(error));
 
 function processArticles(doc) {
   const articles = doc.querySelectorAll(".service");
@@ -100,7 +107,10 @@ function processArticles(doc) {
 function processPublications(doc) {
   const publications = doc.querySelectorAll(".publications__item");
   publications.forEach((publication) => {
-    if (!publication.classList.contains("publications__list-header") && !publication.classList.contains("ellipses")) {
+    if (
+      !publication.classList.contains("publications__list-header") &&
+      !publication.classList.contains("ellipses")
+    ) {
       const deleteButton = createButton("delete", "button--delete-publication");
       publication.append(deleteButton);
       publicationsContainer.appendChild(publication);
@@ -108,15 +118,30 @@ function processPublications(doc) {
   });
 }
 
-function processTeamMembers(doc) {
-  const teamMembers = doc.querySelectorAll(".our-team__member");
-  console.log(teamMembers)
-  teamMembers.forEach((member) => {
+function processTeamMembers(members) {
+  members.forEach((member) => {
+    console.log(member);
+    const memberArticle = document.createElement("article")
+    const image = document.createElement("img")
+    const name = document.createElement("h3")
+    const position = document.createElement("p")
+    const description = document.createElement("p")
+
+    memberArticle.className = "our-team__member"
+    position.className = "our-team__member-position"
+    description.className = "our-team__member-bio"
+
+    image.src = member.photo
+    name.innerHTML = member.name
+    position.innerHTML = member.position
+    description.innerHTML = member.description
+
     const deleteButton = createButton("delete", "button--delete-member");
     const editButton = createButton("edit", "button--edit-member");
 
-    member.append(editButton, deleteButton);
-    teamContainer.appendChild(member);
+    memberArticle.append(image,name,position,description,editButton,deleteButton)
+    // member.append(editButton, deleteButton);
+    teamContainer.appendChild(memberArticle);
   });
 }
 
@@ -144,7 +169,12 @@ document.addEventListener("click", (e) => {
     let id = e.target.closest(".service").id;
 
     buttonEditArticle.addEventListener("click", () => {
-      let params = { id: id, newTitle: newTitle.value, newDescription: newDescription.value, type: "services" };
+      let params = {
+        id: id,
+        newTitle: newTitle.value,
+        newDescription: newDescription.value,
+        type: "services",
+      };
       fetchEdit(params);
     });
   }
@@ -153,7 +183,12 @@ document.addEventListener("click", (e) => {
     addServiceForm.classList.remove("hidden");
 
     buttonAddArticle.addEventListener("click", () => {
-      let params = { title: titleInput.value, description: descriptionInput.value, imageUrl: linkInput.value, type: "services" };
+      let params = {
+        title: titleInput.value,
+        description: descriptionInput.value,
+        imageUrl: linkInput.value,
+        type: "services",
+      };
       fetchAdd(params);
     });
   }
@@ -191,7 +226,13 @@ document.addEventListener("click", (e) => {
     let id = memberElement.id;
 
     buttonEditMember.addEventListener("click", () => {
-      let params = { id: id, name: newName.value, position: newPosition.value, photoLink: newPhotoLink.value !== "" ? newPhotoLink.value : null, type: "members" };
+      let params = {
+        id: id,
+        name: newName.value,
+        position: newPosition.value,
+        photoLink: newPhotoLink.value !== "" ? newPhotoLink.value : null,
+        type: "members",
+      };
       fetchEdit(params);
       location.reload();
     });
@@ -200,9 +241,14 @@ document.addEventListener("click", (e) => {
   if (e.target.className == "button--add-member") {
     addMemberForm.classList.remove("hidden");
     buttonAddMember.addEventListener("click", () => {
-      let params = { name: nameInput.value, position: positionInput.value, photoLink: photoLinkInput.value, type: "members" };
+      let params = {
+        name: nameInput.value,
+        position: positionInput.value,
+        photoLink: photoLinkInput.value,
+        type: "members",
+      };
 
-       fetchAdd(params);
+      fetchAdd(params);
     });
   }
 });

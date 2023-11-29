@@ -1,3 +1,5 @@
+const teamContainer = document.querySelector(".our-team__members");
+
 document
   .querySelector(".button--show-publications")
   .addEventListener("click", () => {
@@ -136,3 +138,43 @@ document.addEventListener("click",(e)=>{
     document.querySelector(".marks-list").classList.toggle("hidden");
   }
 })
+
+// Загрузка работников
+fetch("http://localhost:3000/landing/get-members")
+  .then((response) => response.json())
+  .then((members) => {
+    processTeamMembers(members);
+  })
+  .catch((error) => console.error(error));
+
+function processTeamMembers(members) {
+  members.forEach((member) => {
+    console.log(member);
+    const href = "/public/pages/members.html#" + member.id
+    const link = document.createElement("a") 
+    const memberArticle = document.createElement("article")
+    const image = document.createElement("img")
+    const name = document.createElement("h3")
+    const position = document.createElement("p")
+    const button = document.createElement("a")
+    
+
+    memberArticle.className = "our-team__member"
+    memberArticle.id = member.id
+    position.className = "our-team__member-position"
+    button.className = "our-team__member-button"
+
+    image.src = member.photo
+    name.innerHTML = member.name
+    position.innerHTML = member.position
+    button.innerHTML = "Learn more"
+    button.href
+    link.href = href
+    
+
+    memberArticle.append(image,name,position,button)
+    link.appendChild(memberArticle)
+    // member.append(editButton, deleteButton);
+    teamContainer.appendChild(link);
+  });
+}

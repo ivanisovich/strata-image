@@ -237,6 +237,17 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
   }
 });
 
+app.get('/landing/get-members', async (req, res) => {
+  try {
+    const data = await fs.readFile('members.json', 'utf8');
+    const jsonData = JSON.parse(data);
+    res.json(jsonData.members);
+  } catch (error) {
+    
+    res.status(500).json({ error: 'Не удалось загрузить данные' });
+  }
+});
+
 app.get("/landing/get-elements", async (req, res) => {
   try {
     const html = await fs.readFile("public/index.html", "utf8");
