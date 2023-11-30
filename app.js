@@ -239,9 +239,9 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
 
 app.get("/landing/get-members", async (req, res) => {
   try {
-    const data = await fs.readFile("members.json", "utf8");
+    const data = await fs.readFile("page-elements.json", "utf8");
     const jsonData = JSON.parse(data);
-    res.json(jsonData.members);
+    res.json(jsonData);
   } catch (error) {
     res.status(500).json({ error: "Не удалось загрузить данные" });
   }
@@ -324,14 +324,14 @@ app.delete("/delete/:id", async (req, res) => {
     console.log("Запрос на удаление с ID:", req.params.id);
     const id = req.params.id;
 
-    const data = await fs.readFile("members.json", "utf8");
+    const data = await fs.readFile("page-elements.json", "utf8");
     let myArray = JSON.parse(data);
 
     const index = myArray.members.findIndex((obj) => obj.id === id);
 
     if (index > -1) {
       myArray.members.splice(index, 1);
-      await fs.writeFile("members.json", JSON.stringify(myArray, null, 2));
+      await fs.writeFile("page-elements.json", JSON.stringify(myArray, null, 2));
 
       res.send(`Объект с ID ${id} удален.`);
     } else {
@@ -346,7 +346,7 @@ app.post("/landing/edit", async (req, res) => {
   try {
     // Читаем файл index.html
     const data = await fs.readFile("public/index.html", "utf8");
-    const membersJson = await fs.readFile("members.json", "utf8");
+    const membersJson = await fs.readFile("page-elements.json", "utf8");
     let members = JSON.parse(membersJson);
 
     const dom = new JSDOM(data);
@@ -367,7 +367,7 @@ app.post("/landing/edit", async (req, res) => {
 
         // Запись обновленных данных обратно в JSON-файл
         await fs.writeFile(
-          "members.json",
+          "page-elements.json",
           JSON.stringify(members, null, 2),
           "utf8"
         );
@@ -391,11 +391,13 @@ app.post("/landing/add", async (req, res) => {
     const html = await fs.readFile("public/index.html", "utf8");
     const dom = new JSDOM(html);
     const document = dom.window.document;
+    const membersJson = await fs.readFile("page-elements.json", "utf8");
+    let members = JSON.parse(membersJson);
 
     if (req.body.type == "services") {
       // Создание нового элемента article
       const article = document.createElement("article");
-      article.className = "service changeable";
+      article.className = "service";
       article.id = uuidv4(); // Генерация уникального ID
 
       // Добавление изображения
@@ -434,26 +436,14 @@ app.post("/landing/add", async (req, res) => {
         container.appendChild(publication);
       }
     } else if (req.body.type == "members") {
-      const article = document.createElement("article");
-      article.className = "our-team__member";
-      article.id = uuidv4();
-
-      const img = document.createElement("img");
-      img.src = req.body.photoLink;
-
-      const name = document.createElement("h3");
-      name.innerHTML = req.body.name;
-
-      const position = document.createElement("span");
-      position.innerHTML = req.body.position;
-
-      article.append(img, name, position);
-
-      const container = document.querySelector(".our-team__members");
-
-      if (container) {
-        container.appendChild(article);
-      }
+      const newMember = req.body
+      newMember.id = uuidv4();
+      members.members.push(newMember)
+      await fs.writeFile(
+        "page-elements.json",
+        JSON.stringify(members, null, 2),
+        "utf8"
+      );
     } else {
       // Если контейнер не найден, отправить сообщение об ошибке
       return res.status(500).send("Контейнер для статей не найден.");

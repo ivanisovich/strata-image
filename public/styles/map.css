@@ -39,7 +39,6 @@ button:active {
 .mapboxgl-popup-close-button {
   margin-right: 10px;
   outline: none;
-  color: white;
   font-size: 40px;
 }
 
@@ -47,12 +46,14 @@ button:active {
   border-radius: 16px;
   width: 100%;
   max-width: 480px;
+
+
 }
 
 .mark img {
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
-  width: 100%;
+
 }
 
 .mark__text {

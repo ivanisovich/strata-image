@@ -104,7 +104,7 @@ map.on("load", function () {
 
   function returnMarkHtml(title, description, link) {
     let markUp =
-      '<article class="mark"> <img src="../public/images/service.jpg" alt=""/> <div class="mark__text"> <h3>' +
+      '<article class="mark"> <img src="/public/images/mark.png" alt=""/> <div class="mark__text"> <h3>' +
       title +
       "</h3> <p>" +
       description +

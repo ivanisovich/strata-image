@@ -97,8 +97,8 @@ fetch("/landing/get-elements")
 
 fetch("/landing/get-members")
   .then((response) => response.json())
-  .then((members) => {
-    processTeamMembers(members);
+  .then((data) => {
+    processTeamMembers(data.members);
   })
   .catch((error) => console.error(error));
 
@@ -226,7 +226,7 @@ document.addEventListener("click", (e) => {
   if (e.target.className == "button--delete-member") {
     let id = e.target.closest(".our-team__member").id;
     fetchDeleteMember(id);
-    console.log(id)
+    location.reload()
   }
 
   if (e.target.className == "button--edit-member") {
@@ -248,7 +248,6 @@ document.addEventListener("click", (e) => {
         type: "members",
       };
       fetchEdit(params);
-      
       location.reload();
     });
   }
