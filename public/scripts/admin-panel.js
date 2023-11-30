@@ -16,12 +16,14 @@ const publicationInput = document.querySelector("#publication");
 const editMemberForm = document.querySelector("#edit-member-form");
 const newName = document.querySelector("#new-name");
 const newPosition = document.querySelector("#new-position");
+const newBio = document.querySelector("#new-bio");
 const newPhotoLink = document.querySelector("#new-photo-link");
 const buttonEditMember = document.querySelector("#button--edit-member");
 const addMemberForm = document.querySelector("#add-member-form");
 const buttonAddMember = document.querySelector("#button--add-member");
 const nameInput = document.querySelector("#name");
 const positionInput = document.querySelector("#position");
+const bioInput = document.querySelector("#bio")
 const photoLinkInput = document.querySelector("#photo-link");
 
 // Функции для работы с API
@@ -231,8 +233,9 @@ document.addEventListener("click", (e) => {
     editMemberForm.classList.remove("hidden");
     let memberElement = e.target.closest(".our-team__member");
     newName.value = memberElement.querySelector("h3").innerHTML;
-    newPosition.value = memberElement.querySelector("span").innerHTML;
-
+    newPosition.value = memberElement.querySelector(".our-team__member-position").innerHTML;
+    newBio.value = memberElement.querySelector(".our-team__member-bio").innerHTML
+    newPhotoLink.value = memberElement.querySelector("img").src
     let id = memberElement.id;
 
     buttonEditMember.addEventListener("click", () => {
@@ -240,10 +243,12 @@ document.addEventListener("click", (e) => {
         id: id,
         name: newName.value,
         position: newPosition.value,
-        photoLink: newPhotoLink.value !== "" ? newPhotoLink.value : null,
+        description: newBio.value,
+        photo: newPhotoLink.value,
         type: "members",
       };
       fetchEdit(params);
+      
       location.reload();
     });
   }
@@ -254,6 +259,7 @@ document.addEventListener("click", (e) => {
       let params = {
         name: nameInput.value,
         position: positionInput.value,
+        description: bioInput.value,
         photoLink: photoLinkInput.value,
         type: "members",
       };

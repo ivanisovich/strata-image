@@ -201,7 +201,7 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
       feature.geometry.type = "Polygon";
       // Оборачиваем координаты LineString в дополнительный массив для Polygon
       feature.geometry.coordinates = [feature.geometry.coordinates];
-      feature.properties.id = commonUUID
+      feature.properties.id = commonUUID;
     }
   });
 
@@ -237,14 +237,13 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
   }
 });
 
-app.get('/landing/get-members', async (req, res) => {
+app.get("/landing/get-members", async (req, res) => {
   try {
-    const data = await fs.readFile('members.json', 'utf8');
+    const data = await fs.readFile("members.json", "utf8");
     const jsonData = JSON.parse(data);
     res.json(jsonData.members);
   } catch (error) {
-    
-    res.status(500).json({ error: 'Не удалось загрузить данные' });
+    res.status(500).json({ error: "Не удалось загрузить данные" });
   }
 });
 
@@ -320,15 +319,15 @@ app.post("/landing/delete", async (req, res) => {
   }
 });
 
-app.delete('/delete/:id', async (req, res) => {
+app.delete("/delete/:id", async (req, res) => {
   try {
     console.log("Запрос на удаление с ID:", req.params.id);
     const id = req.params.id;
 
-    const data = await fs.readFile("members.json", 'utf8');
+    const data = await fs.readFile("members.json", "utf8");
     let myArray = JSON.parse(data);
 
-    const index = myArray.members.findIndex(obj => obj.id === id);
+    const index = myArray.members.findIndex((obj) => obj.id === id);
 
     if (index > -1) {
       myArray.members.splice(index, 1);
@@ -336,19 +335,19 @@ app.delete('/delete/:id', async (req, res) => {
 
       res.send(`Объект с ID ${id} удален.`);
     } else {
-      res.status(404).send('Объект не найден.');
+      res.status(404).send("Объект не найден.");
     }
   } catch (err) {
-    res.status(500).send('Ошибка сервера: ' + err.message);
+    res.status(500).send("Ошибка сервера: " + err.message);
   }
 });
 
 app.post("/landing/edit", async (req, res) => {
-  console.log(req.body);
-
   try {
     // Читаем файл index.html
     const data = await fs.readFile("public/index.html", "utf8");
+    const membersJson = await fs.readFile("members.json", "utf8");
+    let members = JSON.parse(membersJson);
 
     const dom = new JSDOM(data);
     const document = dom.window.document;
@@ -360,17 +359,20 @@ app.post("/landing/edit", async (req, res) => {
         element.querySelector("p").innerHTML = req.body.newDescription;
       }
     } else if (req.body.type == "members") {
-      const element = document.getElementById(req.body.id);
-      if (element) {
-        element.querySelector("h3").innerHTML = req.body.name;
-        element.querySelector("p").innerHTML = req.body.position;
-        if (req.body.photoLink){
-          element.querySelector("img").src = req.body.photoLink
-        }
+      const index = members.members.findIndex(
+        (member) => member.id === req.body.id
+      );
+      if (index !== -1) {
+        members.members[index] = { ...members.members[index], ...req.body };
+
+        // Запись обновленных данных обратно в JSON-файл
+        await fs.writeFile(
+          "members.json",
+          JSON.stringify(members, null, 2),
+          "utf8"
+        );
       }
-    }
-    
-    else {
+    } else {
       return res.status(404).send(`Элемент с ID ${req.body.id} не найден`);
     }
 
@@ -431,7 +433,7 @@ app.post("/landing/add", async (req, res) => {
       if (container) {
         container.appendChild(publication);
       }
-    } else if (req.body.type == "members"){
+    } else if (req.body.type == "members") {
       const article = document.createElement("article");
       article.className = "our-team__member";
       article.id = uuidv4();
@@ -439,22 +441,20 @@ app.post("/landing/add", async (req, res) => {
       const img = document.createElement("img");
       img.src = req.body.photoLink;
 
-      const name = document.createElement("h3")
-      name.innerHTML = req.body.name ;
+      const name = document.createElement("h3");
+      name.innerHTML = req.body.name;
 
-      const position = document.createElement("span")
-      position.innerHTML = req.body.position ;
+      const position = document.createElement("span");
+      position.innerHTML = req.body.position;
 
-      article.append(img,name,position)
+      article.append(img, name, position);
 
       const container = document.querySelector(".our-team__members");
 
       if (container) {
         container.appendChild(article);
       }
-    }
-    
-    else {
+    } else {
       // Если контейнер не найден, отправить сообщение об ошибке
       return res.status(500).send("Контейнер для статей не найден.");
     }

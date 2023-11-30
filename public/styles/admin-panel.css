@@ -37,6 +37,8 @@ h2 {
   text-align: center;
 }
 
+
+
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -76,12 +78,6 @@ nav {
 
 .service__text {
   padding: 24px;
-}
-
-.mark-form {
-  position: absolute !important;
-
-  margin-top: -400px;
 }
 
 input {
@@ -202,6 +198,11 @@ input::placeholder {
 
 .button--add-member {
   margin-top: 30px;
+}
+
+form{
+  position: fixed !important;
+  top: 0px;
 }
 
 @media (max-width: 550px) {
