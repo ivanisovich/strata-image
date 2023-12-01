@@ -237,106 +237,38 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
   }
 });
 
-app.get("/landing/get-members", async (req, res) => {
+app.get("/landing/get", async (req, res) => {
   try {
-    const data = await fs.readFile("page-elements.json", "utf8");
-    const jsonData = JSON.parse(data);
-    res.json(jsonData);
+    const jsonData = await fs.readFile("page-elements.json", "utf8");
+    const data = JSON.parse(jsonData);
+
+    res.json(data);
   } catch (error) {
     res.status(500).json({ error: "Не удалось загрузить данные" });
   }
 });
 
-app.get("/landing/get-elements", async (req, res) => {
-  try {
-    const html = await fs.readFile("public/index.html", "utf8");
-    const $ = cheerio.load(html);
-
-    const serviceElements = $(".services__inner")
-      .map((i, el) => {
-        // Минификация HTML каждого элемента
-        return minify($(el).html(), {
-          collapseWhitespace: true,
-          removeComments: true,
-        });
-      })
-      .get();
-
-    const publicationElements = $(".publications__list")
-      .map((i, el) => {
-        return minify($(el).html(), {
-          collapseWhitespace: true,
-          removeComments: true,
-        });
-      })
-      .get();
-
-    const membersElements = $(".our-team__members")
-      .map((i, el) => {
-        return minify($(el).html(), {
-          collapseWhitespace: true,
-          removeComments: true,
-        });
-      })
-      .get();
-
-    const elements = [
-      ...serviceElements,
-      ...publicationElements,
-      ...membersElements,
-    ];
-    res.json(elements);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Ошибка при извлечении элементов.");
-  }
-});
-
-app.post("/landing/delete", async (req, res) => {
-  const { id } = req.body;
-
-  try {
-    // Читаем файл index.html
-    const data = await fs.readFile("public/index.html", "utf8");
-
-    const dom = new JSDOM(data);
-    const document = dom.window.document;
-
-    // Находим и удаляем элемент по id
-    const element = document.getElementById(id);
-    if (element) {
-      element.remove();
-    } else {
-      return res.status(404).send(`Элемент с ID ${id} не найден`);
-    }
-
-    // Сохраняем обновлённый файл
-    await fs.writeFile("public/index.html", dom.serialize());
-    res.status(200).send(`Элемент с ID ${id} удалён`);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Ошибка на сервере");
-  }
-});
-
 app.delete("/delete/:id", async (req, res) => {
   try {
-    console.log("Запрос на удаление с ID:", req.params.id);
+    const jsonData = await fs.readFile("page-elements.json", "utf8");
+    let data = JSON.parse(jsonData);
     const id = req.params.id;
+    let found = false;
 
-    const data = await fs.readFile("page-elements.json", "utf8");
-    let myArray = JSON.parse(data);
+    for (key in data) {
+      const index = data[key].findIndex((obj) => obj.id === id);
 
-    const index = myArray.members.findIndex((obj) => obj.id === id);
+      if (index > -1) {
+        data[key].splice(index, 1);
+        found = true;
+      }
+    }
 
-    if (index > -1) {
-      myArray.members.splice(index, 1);
-      await fs.writeFile("page-elements.json", JSON.stringify(myArray, null, 2));
-
-      res.send(`Объект с ID ${id} удален.`);
-    } else {
+    await fs.writeFile("page-elements.json", JSON.stringify(data, null, 2));
+    if (!found) {
       res.status(404).send("Объект не найден.");
     }
+    res.send(`Объект с ID ${id} удален.`);
   } catch (err) {
     res.status(500).send("Ошибка сервера: " + err.message);
   }
@@ -344,41 +276,29 @@ app.delete("/delete/:id", async (req, res) => {
 
 app.post("/landing/edit", async (req, res) => {
   try {
-    // Читаем файл index.html
-    const data = await fs.readFile("public/index.html", "utf8");
-    const membersJson = await fs.readFile("page-elements.json", "utf8");
-    let members = JSON.parse(membersJson);
+    const jsonData = await fs.readFile("page-elements.json", "utf8");
+    let data = JSON.parse(jsonData);
+    let found = false;
 
-    const dom = new JSDOM(data);
-    const document = dom.window.document;
-    if (req.body.type == "services") {
-      // Находим и меняем элемент по id
-      const element = document.getElementById(req.body.id);
-      if (element) {
-        element.querySelector("h3").innerHTML = req.body.newTitle;
-        element.querySelector("p").innerHTML = req.body.newDescription;
-      }
-    } else if (req.body.type == "members") {
-      const index = members.members.findIndex(
-        (member) => member.id === req.body.id
-      );
+    for (key in data) {
+      const index = data[key].findIndex((obj) => obj.id === req.body.id);
       if (index !== -1) {
-        members.members[index] = { ...members.members[index], ...req.body };
-
+        data[key][index] = { ...data[key][index], ...req.body };
+        found = true;
         // Запись обновленных данных обратно в JSON-файл
         await fs.writeFile(
           "page-elements.json",
-          JSON.stringify(members, null, 2),
+          JSON.stringify(data, null, 2),
           "utf8"
         );
       }
-    } else {
+    }
+
+    if (!found) {
       return res.status(404).send(`Элемент с ID ${req.body.id} не найден`);
     }
 
-    // Сохраняем обновлённый файл
-    await fs.writeFile("public/index.html", dom.serialize());
-    res.status(200).send(`Элемент с ID ${req.body.id} удалён`);
+    res.status(200).send(`Элемент с ID ${req.body.id} изменен`);
   } catch (err) {
     console.error(err);
     res.status(500).send("Ошибка на сервере");
@@ -387,71 +307,20 @@ app.post("/landing/edit", async (req, res) => {
 
 app.post("/landing/add", async (req, res) => {
   try {
-    // Чтение и парсинг файла index.html
-    const html = await fs.readFile("public/index.html", "utf8");
-    const dom = new JSDOM(html);
-    const document = dom.window.document;
-    const membersJson = await fs.readFile("page-elements.json", "utf8");
-    let members = JSON.parse(membersJson);
-
-    if (req.body.type == "services") {
-      // Создание нового элемента article
-      const article = document.createElement("article");
-      article.className = "service";
-      article.id = uuidv4(); // Генерация уникального ID
-
-      // Добавление изображения
-      const img = document.createElement("img");
-      img.src = req.body.imageUrl;
-      img.alt = "";
-      article.appendChild(img);
-
-      // Добавление текста
-      const textDiv = document.createElement("div");
-      textDiv.className = "service__text";
-      const h3 = document.createElement("h3");
-      h3.textContent = req.body.title;
-      const p = document.createElement("p");
-      p.textContent = req.body.description;
-      textDiv.appendChild(h3);
-      textDiv.appendChild(p);
-
-      article.appendChild(textDiv);
-
-      // Добавление нового элемента в HTML
-
-      const container = document.querySelector(".services__inner");
-      if (container) {
-        container.appendChild(article);
+    const jsonData = await fs.readFile("page-elements.json", "utf8");
+    let data = JSON.parse(jsonData);
+    let newObj = req.body
+    for (key in data) {
+      if (newObj.type === key) {
+        newObj.id = uuidv4()
+        data[key].push(newObj);
+        await fs.writeFile(
+          "page-elements.json",
+          JSON.stringify(data, null, 2),
+          "utf8"
+        );
       }
-    } else if (req.body.type == "publications") {
-      const publication = document.createElement("li");
-      publication.className = "publications__item";
-      publication.id = uuidv4();
-      publication.innerHTML = req.body.text;
-
-      const container = document.querySelector(".publications__list");
-
-      if (container) {
-        container.appendChild(publication);
-      }
-    } else if (req.body.type == "members") {
-      const newMember = req.body
-      newMember.id = uuidv4();
-      members.members.push(newMember)
-      await fs.writeFile(
-        "page-elements.json",
-        JSON.stringify(members, null, 2),
-        "utf8"
-      );
-    } else {
-      // Если контейнер не найден, отправить сообщение об ошибке
-      return res.status(500).send("Контейнер для статей не найден.");
     }
-
-    // Сохранение изменений в файле index.html
-    await fs.writeFile("public/index.html", dom.serialize());
-    res.status(200).send("Статья успешно добавлена");
   } catch (error) {
     console.error(error);
     res.status(500).send("Ошибка при добавлении статьи.");

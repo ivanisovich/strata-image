@@ -25,6 +25,7 @@ const nameInput = document.querySelector("#name");
 const positionInput = document.querySelector("#position");
 const bioInput = document.querySelector("#bio")
 const photoLinkInput = document.querySelector("#photo-link");
+const newImg = document.querySelector("#new-image")
 
 // Функции для работы с API
 function fetchApi(url, method, params) {
@@ -38,16 +39,6 @@ function fetchApi(url, method, params) {
 }
 
 function fetchDelete(objectId) {
-  fetchApi("/landing/delete", "POST", { id: objectId })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Ошибка удаления");
-      }
-    })
-    .catch((error) => console.error("Ошибка:", error));
-}
-
-function fetchDeleteMember(objectId) {
   fetchApi("/delete/"+objectId, "DELETE", { id: objectId })
     .then((response) => {
       if (!response.ok) {
@@ -77,57 +68,51 @@ function fetchAdd(params) {
     .catch((error) => console.error("Ошибка:", error));
 }
 
-// Основная логика обработки данных с сервера
-fetch("/landing/get-elements")
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then((html) => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, "text/html");
-
-    processArticles(doc);
-    processPublications(doc);
-
-  })
-  .catch((error) => console.error("Ошибка:", error));
-
-fetch("/landing/get-members")
+fetch("/landing/get")
   .then((response) => response.json())
   .then((data) => {
+    processServices(data.services);
+    processPublications(data.publications)
     processTeamMembers(data.members);
+
   })
   .catch((error) => console.error(error));
 
-function processArticles(doc) {
-  const articles = doc.querySelectorAll(".service");
-  articles.forEach((article) => {
-    const articleText = article.querySelector(".service__text");
+function processServices(services) {
+  services.forEach((item) => {
+    const article = document.createElement("article")
+    const img = document.createElement("img")
+    const textWrapper = document.createElement("div")
+    const title = document.createElement("h3")
+    const description = document.createElement("p")
     const deleteButton = createButton("delete", "button--delete-article");
     const editButton = createButton("edit", "button--edit-article");
 
-    if (articleText) {
-      articleText.append(editButton, deleteButton);
-    }
-    servicesContainer.appendChild(article);
-  });
+    article.className = "service"
+    textWrapper.className = "service__text"
+
+    article.id = item.id
+    img.src = item.img
+    title.innerHTML = item.title
+    description.innerHTML = item.description
+    
+    textWrapper.append(title,description,editButton,deleteButton)
+    article.append(img,textWrapper)
+    servicesContainer.append(article)
+  })
 }
 
-function processPublications(doc) {
-  const publications = doc.querySelectorAll(".publications__item");
-  publications.forEach((publication) => {
-    if (
-      !publication.classList.contains("publications__list-header") &&
-      !publication.classList.contains("ellipses")
-    ) {
-      const deleteButton = createButton("delete", "button--delete-publication");
-      publication.append(deleteButton);
-      publicationsContainer.appendChild(publication);
-    }
-  });
+function processPublications(publications) {
+  publications.forEach((item) => {
+    let publication = document.createElement("li")
+    const deleteButton = createButton("delete", "button--delete-publication");
+    publication.className = "publications__item"
+    publication.innerHTML = item.description
+    publication.id = item.id
+
+    publication.append(deleteButton)
+    publicationsContainer.append(publication)
+  })
 }
 
 function processTeamMembers(members) {
@@ -137,6 +122,8 @@ function processTeamMembers(members) {
     const name = document.createElement("h3")
     const position = document.createElement("p")
     const description = document.createElement("p")
+    const deleteButton = createButton("delete", "button--delete-member");
+    const editButton = createButton("edit", "button--edit-member");
 
     memberArticle.className = "our-team__member"
     position.className = "our-team__member-position"
@@ -147,12 +134,8 @@ function processTeamMembers(members) {
     position.innerHTML = member.position
     description.innerHTML = member.description
     memberArticle.id = member.id
-
-    const deleteButton = createButton("delete", "button--delete-member");
-    const editButton = createButton("edit", "button--edit-member");
-
+  
     memberArticle.append(image,name,position,description,editButton,deleteButton)
-    // member.append(editButton, deleteButton);
     teamContainer.appendChild(memberArticle);
   });
 }
@@ -174,17 +157,19 @@ document.addEventListener("click", (e) => {
 
   if (e.target.className == "button--edit-article") {
     editServiceForm.classList.remove("hidden");
-    let articleElement = e.target.closest(".service__text");
+    let articleElement = e.target.closest(".service");
     newTitle.value = articleElement.querySelector("h3").innerHTML;
     newDescription.value = articleElement.querySelector("p").innerHTML;
+    newImg.value = articleElement.querySelector("img").src
 
     let id = e.target.closest(".service").id;
 
     buttonEditArticle.addEventListener("click", () => {
       let params = {
         id: id,
-        newTitle: newTitle.value,
-        newDescription: newDescription.value,
+        title: newTitle.value,
+        description: newDescription.value,
+        img: newImg.value,
         type: "services",
       };
       fetchEdit(params);
@@ -198,7 +183,7 @@ document.addEventListener("click", (e) => {
       let params = {
         title: titleInput.value,
         description: descriptionInput.value,
-        imageUrl: linkInput.value,
+        img: linkInput.value,
         type: "services",
       };
       fetchAdd(params);
@@ -225,7 +210,7 @@ document.addEventListener("click", (e) => {
 
   if (e.target.className == "button--delete-member") {
     let id = e.target.closest(".our-team__member").id;
-    fetchDeleteMember(id);
+    fetchDelete(id);
     location.reload()
   }
 

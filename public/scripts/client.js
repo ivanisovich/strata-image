@@ -1,5 +1,18 @@
 const teamContainer = document.querySelector(".our-team__members");
 const servicesContainer = document.querySelector(".services__inner")
+const publicationsContainer = document.querySelector(".publications__list")
+
+fetch("http://localhost:3000/landing/get")
+  .then((response) => response.json())
+  .then((data) => {
+    processTeamMembers(data.members);
+    processArticles(data.services)
+    processPublications(data.publications)
+
+    
+    animateItems()
+  })
+  .catch((error) => console.error(error));
 
 document
   .querySelector(".button--show-publications")
@@ -13,12 +26,7 @@ document.querySelector(".edit-mark__search").addEventListener("focus", () => {
   document.querySelector(".marks-list").classList.remove("hidden");
 });
 
-document.querySelector(".edit-mark__burger").addEventListener("click", () => {
-
-});
-
 // Анимации
-
 // Функция, которая добавляет класс 'visible' к элементу при его появлении в поле зрения
 function revealOnScroll(entries, observer) {
   entries.forEach((entry) => {
@@ -39,31 +47,37 @@ let observer = new IntersectionObserver(revealOnScroll, {
 // Применение наблюдателя
 observer.observe(document.querySelector(".hero__title"));
 
-document.querySelectorAll(".service").forEach((card) => {
-  observer.observe(card);
-});
+function animateItems(){
+  document.querySelectorAll(".service").forEach((card) => {
+    observer.observe(card);
+  });
 
-document.querySelectorAll(".publications__item").forEach((item, index) => {
-  // Проверка, что элемент не скрыт
-  if (window.getComputedStyle(item)) {
-    let observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add("visible");
-            }, index * 150); // Здесь 200 мс - базовая задержка
+  document.querySelectorAll(".our-team__member").forEach((card) => {
+    observer.observe(card);
+  });
 
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(item);
-  }
-});
+  document.querySelectorAll(".publications__item").forEach((item, index) => {
+    // Проверка, что элемент не скрыт
+    if (window.getComputedStyle(item)) {
+      let observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.classList.add("visible");
+              }, index * 150); // Здесь 150 мс - базовая задержка
+  
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+  
+      observer.observe(item);
+    }
+  });
+}
 
 document.querySelectorAll(".ellipses").forEach((item, index) => {
   // Проверка, что элемент не скрыт
@@ -140,48 +154,7 @@ document.addEventListener("click", (e) => {
   }
 })
 
-// Загрузка работников
-fetch("http://localhost:3000/landing/get-members")
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data)
-    processTeamMembers(data.members);
-
-  })
-  .catch((error) => console.error(error));
-
-function processTeamMembers(members) {
-  members.forEach((member) => {
-    const href = "/public/pages/members.html#" + member.id
-    const link = document.createElement("a")
-    const memberArticle = document.createElement("article")
-    const image = document.createElement("img")
-    const name = document.createElement("h3")
-    const position = document.createElement("p")
-    const button = document.createElement("a")
-
-
-    memberArticle.className = "our-team__member"
-    memberArticle.id = member.id
-    position.className = "our-team__member-position"
-    button.className = "our-team__member-button"
-
-    console.log(member)
-    image.src = member.photo
-    name.innerHTML = member.name
-    position.innerHTML = member.position
-    button.innerHTML = "Learn more"
-    button.href
-    link.href = href
-
-
-    memberArticle.append(image, name, position, button)
-    link.appendChild(memberArticle)
-    // member.append(editButton, deleteButton);
-    teamContainer.appendChild(link);
-  });
-}
-
+// Загрузка элементов страницы
 function processArticles(articles) {
   articles.forEach((item) => {
     const article = document.createElement("article")
@@ -201,5 +174,43 @@ function processArticles(articles) {
     textWrapper.append(title,description)
     article.append(img,textWrapper)
     servicesContainer.append(article)
+  })
+}
+
+function processTeamMembers(members) {
+  members.forEach((member) => {
+    const href = "/public/pages/members.html#" + member.id
+    const link = document.createElement("a")
+    const memberArticle = document.createElement("article")
+    const image = document.createElement("img")
+    const name = document.createElement("h3")
+    const position = document.createElement("p")
+    const button = document.createElement("a")
+
+    memberArticle.className = "our-team__member"
+    memberArticle.id = member.id
+    position.className = "our-team__member-position"
+    button.className = "our-team__member-button"
+
+    image.src = member.photo
+    name.innerHTML = member.name
+    position.innerHTML = member.position
+    button.innerHTML = "Learn more"
+    button.href
+    link.href = href
+
+    memberArticle.append(image, name, position, button)
+    link.appendChild(memberArticle)
+    teamContainer.appendChild(link);
+  });
+}
+
+function processPublications(publications) {
+  publications.forEach((item) => {
+    let publication = document.createElement("li")
+    publication.className = "publications__item"
+    publication.innerHTML = item.description
+    publication.id = item.id
+    publicationsContainer.append(publication)
   })
 }

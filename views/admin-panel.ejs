@@ -16,7 +16,10 @@
       <form id="edit-service-form" class="mark-form hidden">
         <h3>Edit service</h3>
         <input placeholder="title" type="text" name="title" id="new-title" required />
-        <input placeholder="description" type="text" name="description" id="new-description" required />
+        <textarea placeholder="description" type="text" name="description" id="new-description" required>
+
+        </textarea>
+        <input placeholder="image" type="text" name="new-image" id="new-image" required />
         <div class="form-divider"></div>
         <button id="button--edit-article" type="submit">Edit</button>
         <button type="button" class="close-form">X</button>
@@ -25,7 +28,8 @@
         <h3>Add service</h3>
         <input type="text" placeholder="image link" type="text" name="link" id="link" required>
         <input placeholder="title" type="text" name="title" id="title" required />
-        <input placeholder="description" type="text" name="description" id="description" required />
+        <textarea placeholder="description" type="text" name="description" id="description" required >
+        </textarea>
         <div class="form-divider"></div>
         <button id="button--add-article" type="submit">Add</button>
         <button type="button" class="close-form">X</button>
@@ -41,7 +45,9 @@
       <button class="button--new-publication">+ Add</button>
       <form id="add-publication-form" class="mark-form hidden">
         <h3>Add publication</h3>
-        <input type="text" placeholder="description" type="text" name="publication" id="publication" required>
+        <textarea type="text" placeholder="description" type="text" name="publication" id="publication" required>
+
+        </textarea>
         <div class="form-divider"></div>
         <button id="button--add-publication" type="submit">Add</button>
         <button type="button" class="close-form">X</button>
@@ -56,7 +62,8 @@
         <h3>Edit member</h3>
         <input type="text" placeholder="Name" type="text" name="name" id="new-name" required>
         <input type="text" placeholder="Position" type="text" name="position" id="new-position" required>
-        <input type="text" placeholder="Description" type="text" name="bio" id="new-bio" required>
+        <textarea type="text" placeholder="Description" type="text" name="bio" id="new-bio" required>
+        </textarea>
         <input type="text" placeholder="Photo link" type="text" name="photo-link" id="new-photo-link">
         <div class="form-divider"></div>
         <button id="button--edit-member" type="submit">Edit</button>
@@ -66,7 +73,8 @@
         <h3>Add member</h3>
         <input type="text" placeholder="Name" type="text" name="name" id="name" required>
         <input type="text" placeholder="Position" type="text" name="position" id="position" required>
-        <input type="text" placeholder="Biography" type="text" name="bio" id="bio" required>
+        <textarea type="text" placeholder="Biography" type="text" name="bio" id="bio" required>
+        </textarea>
         <input type="text" placeholder="photo link" type="text" name="photo-link" id="photo-link" required>
         <div class="form-divider"></div>
         <button id="button--add-member" type="submit">Add</button>

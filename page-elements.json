@@ -1,4 +1,42 @@
 {
+  "services": [
+    {
+      "id": "d4b938b6-6d6a-4a0d-b647-ea250b19bd8d",
+      "img": "/public/images/service1.png",
+      "title": "Onshore Electromagnetic (EM)",
+      "description": "This method involves generating electromagnetic fields on the Earth's surface or near-surface and measuring the response. It's useful for mapping subsurface geological features and detecting variations in soil composition, water content, and the presence of minerals."
+    },
+    {
+      "id": "05c6ddb8-c3d2-436c-a1a1-0f69d1fcf3d5",
+      "img": "/public/images/service2.png",
+      "title": "Magnetotelluric (AMT/MT)",
+      "description": "MT and AMT techniques measure natural electromagnetic fields at the Earth's surface to study the Earth's subsurface electrical conductivity. These methods are effective in exploring geothermal resources, hydrocarbons, and mineral deposits, especially at great depths."
+    },
+    {
+      "id": "d6d1914a-d1cc-4f31-97e5-0e0e1d667e23",
+      "img": "/public/images/service3.png",
+      "title": "Time Domain Electromagnetic (TDEM)",
+      "description": "TDEM involves transmitting a brief, powerful electromagnetic pulse into the ground and measuring the response. It's particularly useful for detecting conductive materials, such as water and minerals, at various depths."
+    },
+    {
+      "id": "7363df9e-0af0-446b-82b5-1d853f5bdae9",
+      "img": "/public/images/service4.png",
+      "title": "Gravimetry",
+      "description": "This technique measures variations in the Earth's gravitational field caused by the density differences in underlying rocks and minerals. Gravimetry can reveal geological structures like caverns, faults, or mineral deposits."
+    },
+    {
+      "id": "a9f093d2-ecaa-4bc2-9e62-9722282d2a33",
+      "img": "/public/images/service5.png",
+      "title": "Magnetometry",
+      "description": "Magnetometry is used to measure variations in the Earth's magnetic field, which can be influenced by ferromagnetic minerals in the subsurface. It includes both ground-based and UAV-based (Unmanned Aerial Vehicle) surveys, the latter providing a broader area coverage and access to challenging terrains."
+    },
+    {
+      "id": "1916a7b7-c273-4c32-80fc-344f70e4ceed",
+      "img": "/public/images/service6.png",
+      "title": "Gamma Spectrometry",
+      "description": "This method detects and measures gamma radiation naturally emitted by radioactive elements like uranium, thorium, and potassium in the ground. It's useful in mineral exploration, particularly for uranium and rare earth elements, and for geological mapping."
+    }
+  ],
   "members": [
     {
       "id": "42738338-c4a9-4a03-9de1-1cb5ade37a77",
@@ -79,42 +117,34 @@
       "description": "Erick García-Suárez received his B.Sc. in geophysical engineering at National Autonomous University of Mexico (UNAM) and his M.Sc. in Earth Sciences from CICESE. He has worked on multidisciplinary projects as leader of field crews for acquisition of MT data for geothermal and groundwater exploration."
     }
   ],
-  "services":[
+  "publications": [
     {
-      "id": "d4b938b6-6d6a-4a0d-b647-ea250b19bd8d",
-      "img": "/public/images/service1.png",
-      "title": "Onshore Electromagnetic (EM)",
-      "description": "This method involves generating electromagnetic fields on the Earth's surface or near-surface and measuring the response. It's useful for mapping subsurface geological features and detecting variations in soil composition, water content, and the presence of minerals."
+      "id": "8c67560e-fa83-41c5-9c81-8ea4ef8ff538",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem hic repellat veritatis accusantium vel."
     },
     {
-      "id": "05c6ddb8-c3d2-436c-a1a1-0f69d1fcf3d5",
-      "img": "/public/images/service2.png",
-      "title": "Magnetotelluric (AMT/MT)",
-      "description": "MT and AMT techniques measure natural electromagnetic fields at the Earth's surface to study the Earth's subsurface electrical conductivity. These methods are effective in exploring geothermal resources, hydrocarbons, and mineral deposits, especially at great depths."
+      "id": "91a3da5e-b1f0-431f-aa79-052065c0747c",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem hic repellat veritatis accusantium vel."
     },
     {
-      "id": "d6d1914a-d1cc-4f31-97e5-0e0e1d667e23",
-      "img": "/public/images/service3.png",
-      "title": "Time Domain Electromagnetic (TDEM)",
-      "description": "TDEM involves transmitting a brief, powerful electromagnetic pulse into the ground and measuring the response. It's particularly useful for detecting conductive materials, such as water and minerals, at various depths."
+      "id": "9f9f1aab-cf9a-4ea9-9399-08edb105baeb",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem hic repellat veritatis accusantium vel."
     },
     {
-      "id": "7363df9e-0af0-446b-82b5-1d853f5bdae9",
-      "img": "/public/images/service4.png",
-      "title": "Gravimetry",
-      "description": "This technique measures variations in the Earth's gravitational field caused by the density differences in underlying rocks and minerals. Gravimetry can reveal geological structures like caverns, faults, or mineral deposits."
+      "id": "2b371ada-7351-436f-b329-5809aa37cdf9",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem hic repellat veritatis accusantium vel."
     },
     {
-      "id": "a9f093d2-ecaa-4bc2-9e62-9722282d2a33",
-      "img": "/public/images/service5.png",
-      "title": "Magnetometry",
-      "description": "Magnetometry is used to measure variations in the Earth's magnetic field, which can be influenced by ferromagnetic minerals in the subsurface. It includes both ground-based and UAV-based (Unmanned Aerial Vehicle) surveys, the latter providing a broader area coverage and access to challenging terrains."
+      "id": "9e604d76-f468-46ca-af27-a08b24199e39",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem hic repellat veritatis accusantium vel."
     },
     {
-      "id": "1916a7b7-c273-4c32-80fc-344f70e4ceed",
-      "img": "/public/images/service6.png",
-      "title": "Gamma Spectrometry",
-      "description": "This method detects and measures gamma radiation naturally emitted by radioactive elements like uranium, thorium, and potassium in the ground. It's useful in mineral exploration, particularly for uranium and rare earth elements, and for geological mapping."
+      "id": "2691df43-5710-450f-963d-0b26687ca1d2",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem hic repellat veritatis accusantium vel."
+    },
+    {
+      "id": "51294e39-7b67-467b-8c0a-806c9a50be2e",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem hic repellat veritatis accusantium vel."
     }
   ]
 }

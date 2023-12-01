@@ -483,6 +483,30 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.1) 0px -60px 40px -7px;
   height: 100px;
 }
+.footer__contacts{
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.contacts-section__mail{
+  color: var(--text-color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.contacts-section__phone{
+  font-weight: 600;
+}
+
+.contacts-section__position{
+  color: #637381;
+  font-size: 14px;
+  text-decoration: none;
+}
 
 .footer__contacts span {
   display: block;
@@ -494,14 +518,13 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-right: auto;
-  margin-left: auto;
+
 }
 
 .socials-wrapper {
   display: flex;
-  width: 100%;
-  margin-right: 20px;
+ 
+
 }
 
 .footer .socials {
@@ -548,11 +571,20 @@ h2 {
 
 .goog-te-gadget-simple {
   border: none !important;
-  padding: 10px !important;
+  padding: 8px !important;
+  padding-left: 16px !important;
+
 }
 
+.goog-te-gadget-simple span{
+  
+  padding-right: 0px !important;
+}
+
+
+
 iframe {
-  z-index: 2 !important;
+  z-index: 22 !important;
 }
 
 .skiptranslate img {
@@ -567,6 +599,7 @@ body {
   display: none !important;
 }
 
+.our-team__member,
 .hero__title,
 .service {
   opacity: 0;
@@ -574,6 +607,7 @@ body {
   transition: filter 0.5s ease-out, opacity 0.5s ease-out;
 }
 
+.our-team__member.visible,
 .hero__title.visible,
 .service.visible {
   opacity: 1;

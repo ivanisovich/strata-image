@@ -45,16 +45,15 @@ for (let smoothLink of smoothLinks) {
 }
 
 // Загрузка работников
-fetch("http://localhost:3000/landing/get-members")
+fetch("http://localhost:3000/landing/get")
   .then((response) => response.json())
-  .then((members) => {
-    processTeamMembers(members);
+  .then((data) => {
+    processTeamMembers(data.members);
   })
   .catch((error) => console.error(error));
 
 function processTeamMembers(members) {
   members.forEach((member) => {
-    console.log(member);
     const memberArticle = document.createElement("article")
     const image = document.createElement("img")
     const textWrapper = document.createElement("div")

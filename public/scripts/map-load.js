@@ -12,6 +12,7 @@ var map = new mapboxgl.Map({
   style: "mapbox://styles/mapbox/streets-v11",
   center: [-112.4924, 31.8902], // Начальные координаты
   zoom: 4, // Уровень масштабирования
+  scrollZoom:true
 });
 
 var markers = {};
@@ -20,6 +21,12 @@ let isClientView = true;
 
 if (window.location.href.includes("/map-editor")) {
   isClientView = false;
+}
+
+function hideAllPopups() {
+  Object.values(markers).forEach(m => {
+    if (m.getPopup()) m.getPopup().remove();
+  });
 }
 
 function focusCamera(center, area) {
@@ -160,6 +167,7 @@ map.on("load", function () {
           )
         );
 
+        hideAllPopups()
         // Привязка попапа к маркеру
         marker.setPopup(popup);
         // Добавление обработчика события для булавки
@@ -209,9 +217,9 @@ map.on("load", function () {
           listItem.className = "list-item";
           title.innerHTML = element.properties.title;
           description.innerHTML = element.properties.description;
-          deleteButton.innerHTML = "Удалить";
+          deleteButton.innerHTML = "delete";
           deleteButton.className = "delete-button";
-          editButton.innerHTML = "Изменить";
+          editButton.innerHTML = "edit";
           editButton.className = "edit-button";
           listItem.id = element.properties.id;
           if (!isClientView) {
@@ -239,22 +247,23 @@ map.on("load", function () {
   });
 
   map.on("click", "territories-fill", function (e) {
-    var feature = e.features[0];
-    let foundObject = geojsonData.features.find(obj => obj.properties.id === feature.properties.id);
-    var coordinates = e.lngLat;
-    let area = polygonArea(foundObject.geometry.coordinates[0])
-    var popup = new mapboxgl.Popup()
-      .setLngLat(coordinates)
-      .setHTML(
-        returnMarkHtml(
-          feature.properties.title,
-          feature.properties.description,
-          feature.properties.link
+    if (e.originalEvent.target.classList.contains("mapboxgl-canvas")) {
+      var feature = e.features[0];
+      let foundObject = geojsonData.features.find(obj => obj.properties.id === feature.properties.id);
+      var coordinates = e.lngLat;
+      let area = polygonArea(foundObject.geometry.coordinates[0])
+      var popup = new mapboxgl.Popup()
+        .setLngLat(coordinates)
+        .setHTML(
+          returnMarkHtml(
+            feature.properties.title,
+            feature.properties.description,
+            feature.properties.link
+          )
         )
-      )
-      .addTo(map);
-    focusCamera(calculateCentroid(foundObject.geometry.coordinates[0]), area)
-
+        .addTo(map);
+      focusCamera(calculateCentroid(foundObject.geometry.coordinates[0]), area)
+    }
   });
 
   document.addEventListener("click", (e) => {
@@ -263,11 +272,7 @@ map.on("load", function () {
       let marker = markers[id]
       let foundObject = geojsonData.features.find(obj => obj.properties.id === id);
       let area = polygonArea(foundObject.geometry.coordinates[0])
-      function hideAllPopups() {
-        Object.values(markers).forEach(m => {
-          if (m.getPopup()) m.getPopup().remove();
-        });
-      }
+      
 
       // Скрываем все всплывающие окна
       hideAllPopups();

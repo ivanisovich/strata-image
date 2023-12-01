@@ -92,6 +92,18 @@
       top: 90px !important;
    }
    
+   .footer__inner{
+      flex-direction: column;
+   }
+   
+   .footer__contacts{
+      flex-wrap: wrap;
+      text-align: left;
+   }
+
+   .footer__contacts h3{
+      text-align: center;
+   }
 }
 
 
