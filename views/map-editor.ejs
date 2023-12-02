@@ -34,18 +34,15 @@
   </form>
 
   <form class="kml-form"  method="post" enctype="multipart/form-data">
-    <div class="kml-form__wrapper">
       <h1>Upload the KMZ file to add the geomark:</h1> 
-      <button type="submit">Upload</button>
-    </div>
     
-    <input type="file" name="kmlFile" accept=".kmz" required>
-    <div id="message"></div>
-  </form>
-
-  <form id="pdf-form" class="mark-form">
-    <input type="file" id="fileInput" accept=".pdf" />
-    <button onclick="uploadFile()">upload</button>
+      <input placeholder="title" type="text" name="kmz-title" id="kmz-title" required>
+      <textarea placeholder="description" type="text" name="kmz-description" id="kmz-description" required></textarea>
+      <input placeholder="donwload link" type="text" name="kmz-link" id="kmz-link" required>
+    
+      <input type="file" name="kmlFile" accept=".kmz" required>
+      <div id="message"></div>
+      <button type="submit">Upload</button>
   </form>
 
   <div id="map">

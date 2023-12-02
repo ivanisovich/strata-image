@@ -94,27 +94,23 @@ app.post("/deleteMark", async (req, res) => {
     // Асинхронное чтение geojson данных из файла
     let data = JSON.parse(await fs.readFile("marks.geojson", "utf8"));
 
-    // Поиск индекса объекта с заданным id
-    const index = data.features.findIndex(
-      (feature) => feature.properties.id === id
+    // Фильтрация объектов, удаляя те, что имеют заданный id
+    const initialLength = data.features.length;
+    data.features = data.features.filter(
+      (feature) => feature.properties.id !== id
     );
 
-    if (index !== -1) {
-      // Удаление объекта из массива
-      data.features.splice(index, 1);
-
+    // Проверка, изменился ли массив
+    if (data.features.length !== initialLength) {
       // Асинхронное сохранение обновленных данных обратно в файл
       await fs.writeFile("marks.geojson", JSON.stringify(data, null, 4));
-
-      res.status(200).send({ message: "Object deleted successfully." });
+      res.status(200).send({ message: "Objects deleted successfully." });
     } else {
       res.status(404).send({ message: "Object not found." });
     }
   } catch (error) {
     // Отправка ошибки, если что-то пошло не так
-    res
-      .status(500)
-      .send({ message: "Internal Server Error", error: error.message });
+    res.status(500).send({ message: "Internal Server Error", error: error.message });
   }
 });
 
@@ -183,6 +179,7 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
   const kmlFile = zipContents.file(/\.kml$/i)[0];
   const kmlText = await kmlFile.async("string");
 
+
   // Создание DOM из KML текста
   const dom = new DOMParser().parseFromString(kmlText);
   const kml = dom.documentElement;
@@ -194,9 +191,9 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
   // Добавление уникального ID к каждому feature
   geoJSON.features.forEach((feature) => {
     feature.properties.id = uuidv4();
-    feature.properties.title = "title";
-    feature.properties.description = "description";
-    feature.properties.link = "link";
+    feature.properties.title = req.body["kmz-title"];
+    feature.properties.description = req.body["kmz-description"];
+    feature.properties.link = req.body["kmz-link"];
 
     if (feature.geometry && feature.geometry.type === "LineString") {
       // Преобразование LineString в Polygon

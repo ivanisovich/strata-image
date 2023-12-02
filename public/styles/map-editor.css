@@ -42,7 +42,7 @@ a{
 
 .marks-list {
   margin-left: 0px;
-  height: calc(100% - 359px)
+  height: calc(100% - 438px)
 }
 
 .mark-form {
@@ -149,11 +149,13 @@ button {
 
 .kml-form {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
   position: absolute;
   bottom: 0;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+
   z-index: 4;
   box-sizing: border-box;
   background: white;
@@ -163,7 +165,7 @@ button {
 }
 
 .kml-form__wrapper{
-  display: flex;
+ 
 }
 
 .mark-form input,
@@ -228,6 +230,17 @@ img {
 textarea{
   width: 100%;
   height: 200px;
+  box-sizing: border-box;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid var(--button-input, rgba(145, 158, 171, 0.32));
+  border-radius: 8px;
+  padding: 16px 16px 16px 14px;
+
+}
+
+.kml-form textarea{
+  height: 100px;
 }
 
 .list-item__link{

@@ -7,6 +7,9 @@ let newTitle = document.querySelector("#new-title");
 let newDescription = document.querySelector("#new-description");
 let addMarkBtn = document.querySelector("#add-mark__btn");
 let editMarkBtn = document.querySelector("#edit-mark__btn");
+let kmzTitle = document.querySelector("#kmz-title")
+let kmzDescription = document.querySelector("#kmz-description")
+let kmzLink = document.querySelector("#kmz-link")
 
 var draw = new MapboxDraw({
   displayControlsDefault: false,
@@ -148,14 +151,15 @@ document.querySelector(".kml-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
   var formData = new FormData(this);
+
   fetch("/uploadKMZ", {
     method: "POST",
-    body: formData,
+    body:formData ,
   })
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("message").innerText = data;
-      location.reload();
+      location.reload()
       // Вы можете здесь обновить другие части вашей страницы при необходимости
     })
     .catch((error) => {
