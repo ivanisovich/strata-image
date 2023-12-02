@@ -40,7 +40,7 @@
   "members": [
     {
       "id": "42738338-c4a9-4a03-9de1-1cb5ade37a77",
-      "photo": "/public/images/team-member.jpg",
+      "photo": "http://localhost:3000/public/images/team-member.jpg",
       "name": "Patricia Pastana de Lugão",
       "position": "Owner and Managing Partner of Strataimage",
       "description": "Patricia de Lugão brought to Brazil new technologies such as the marine electromagnetic method with controlled source (Marine CSEM) and the elastic seismic inversion. Patricia has experience in processing, developing software for modeling and inversion and interpretation of seismic and electromagnetic data, acquired during her work at Western Geophysical/Schlumberger and Landmark. She holds a PhD in geophysics from the University of Utah, a master's degree in geophysics from the National Observatory of Rio de Janeiro and a BA in Environmental and Water Resources Engineering from the University of South Carolina. Patricia led recent MT projects in Brazil. Patricia was the SEG Honorary Speaker for South America in the second half of 2020.",

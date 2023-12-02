@@ -130,7 +130,7 @@ h2 {
 #client-data:target,
 #publications:target,
 #services:target {
-  scroll-margin-top: -220px !important;
+  scroll-margin-top: 220px !important;
 }
 
 .services {
@@ -244,11 +244,21 @@ h2 {
   height: 0px;
 }
 
+
 .ellipses {
-  display: block !important;
+  display: block;
   font-size: 40px;
   font-family: "Courier New", Courier, monospace;
   letter-spacing: -10px;
+}
+
+
+.ellipses{
+  display: none;
+}
+
+.hide-items .ellipses{
+  display: block;
 }
 
 .map {
@@ -546,6 +556,7 @@ h2 {
   position: absolute;
   right: 0px;
   bottom: -50px;
+
 }
 
 #google_translate_element span {
@@ -560,7 +571,10 @@ h2 {
   text-transform: capitalize !important;
   white-space: nowrap !important;
 }
-
+.VIpgJd-ZVi9od-xl07Ob-lTBxed span{
+ 
+  padding-right: 10px !important;
+}
 .text {
   display: none !important;
 }
@@ -576,15 +590,12 @@ h2 {
 
 }
 
-.goog-te-gadget-simple span{
-  
-  padding-right: 0px !important;
+iframe {
+  z-index: 2 !important;
 }
 
-
-
-iframe {
-  z-index: 22 !important;
+.VIpgJd-ZVi9od-xl07Ob-OEVmcd{
+  z-index: 12 !important;
 }
 
 .skiptranslate img {

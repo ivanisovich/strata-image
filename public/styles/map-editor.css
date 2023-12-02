@@ -42,7 +42,7 @@ a{
 
 .marks-list {
   margin-left: 0px;
-  height: calc(100% - 240px)
+  height: calc(100% - 359px)
 }
 
 .mark-form {
@@ -121,7 +121,9 @@ button {
 }
 
 .marks-list {
-  display: block;
+  display: flex;
+  width: 329px;
+  padding-bottom: 30px;
 }
 
 .marks-list.hidden .list-item{
@@ -164,24 +166,32 @@ button {
   display: flex;
 }
 
+.mark-form input,
 .kml-form input{
   width: 100%;
+  box-sizing: border-box ;
 }
 
-.kml-form input{
-  box-sizing: border-box;
+img {
+  max-width: 100%;
+}
 
+.mapboxgl-popup-close-button{
+  box-shadow: none;
+  color: black;
 }
 
 .edit-mark__burger {
-  display: inline-flex;
+  display: flex;
+  right: 15px;
+  position: absolute;
   flex-direction: column;
   align-items: center;
   gap: 6px;
   cursor: pointer;
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: 100px;
+
   border: 1px solid rgba(145, 158, 171, 0.32);
   border-radius: 4px;
   padding: 5px;
@@ -205,4 +215,24 @@ button {
   background: #212b36;
   width: 35px;
   height: 4px;
+}
+
+
+#pdf-form{
+  bottom:184px;
+  z-index: 10;
+  width: 281px;
+  border-radius: 0px;
+}
+
+textarea{
+  width: 100%;
+  height: 200px;
+}
+
+.list-item__link{
+  display: block;
+  color: navy;
+  text-decoration: underline;
+  padding-bottom: 20px;
 }

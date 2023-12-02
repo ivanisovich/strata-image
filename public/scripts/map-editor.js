@@ -2,6 +2,7 @@ const addMarkPopup = document.querySelector("#add-mark");
 const editMarkPopup = document.querySelector("#edit-mark");
 let title = document.querySelector("#title");
 let description = document.querySelector("#description");
+let newLink = document.querySelector("#new-link")
 let newTitle = document.querySelector("#new-title");
 let newDescription = document.querySelector("#new-description");
 let addMarkBtn = document.querySelector("#add-mark__btn");
@@ -93,16 +94,18 @@ document.addEventListener("click", (e) => {
     editMarkPopup.classList.remove("hidden");
     newTitle.value = e.target.parentNode.children[0].innerText;
     newDescription.value = e.target.parentNode.children[1].innerText;
+    newLink.value =  e.target.parentNode.children[2].innerText
     editMarkBtn.addEventListener("click", () => {
       let id = e.target.parentNode.id;
       let title = newTitle.value;
       let description = newDescription.value;
+      let link = newLink.value
       fetch("/editMark", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ id, title, description }),
+        body: JSON.stringify({ id, title, description, link }),
       })
         .then((response) => {
           if (response.ok) {

@@ -213,17 +213,22 @@ map.on("load", function () {
           let description = document.createElement("p");
           let deleteButton = document.createElement("button");
           let editButton = document.createElement("button");
+          let link = document.createElement("a")
 
+          link.target = "_blank"
           listItem.className = "list-item";
+          link.className = "list-item__link"
           title.innerHTML = element.properties.title;
           description.innerHTML = element.properties.description;
+          link.innerHTML = "download"
+          link.href = element.properties.link
           deleteButton.innerHTML = "delete";
           deleteButton.className = "delete-button";
           editButton.innerHTML = "edit";
           editButton.className = "edit-button";
           listItem.id = element.properties.id;
           if (!isClientView) {
-            listItem.append(title, description, deleteButton, editButton);
+            listItem.append(title, description,link, deleteButton, editButton);
           } else if (isClientView) {
             listItem.append(title, description);
 
@@ -267,7 +272,7 @@ map.on("load", function () {
   });
 
   document.addEventListener("click", (e) => {
-    if (e.target.closest(".list-item")) {
+    if (e.target.closest(".list-item") && e.target.className !== "edit-button") {
       let id = e.target.closest(".list-item").id;
       let marker = markers[id]
       let foundObject = geojsonData.features.find(obj => obj.properties.id === id);

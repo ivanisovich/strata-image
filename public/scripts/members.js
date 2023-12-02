@@ -1,4 +1,45 @@
 const teamContainer = document.querySelector(".our-team__inner");
+
+// Загрузка работников
+fetch("http://localhost:3000/landing/get")
+  .then((response) => response.json())
+  .then((data) => {
+    processTeamMembers(data.members);
+    if(window.location.href){
+      window.location.replace(window.location.href)
+    }
+   
+  })
+  .catch((error) => console.error(error));
+
+function processTeamMembers(members) {
+  members.forEach((member) => {
+    const memberArticle = document.createElement("article")
+    const image = document.createElement("img")
+    const textWrapper = document.createElement("div")
+    const name = document.createElement("h3")
+    const position = document.createElement("p")
+    const bio = document.createElement("p")
+
+    memberArticle.className = "our-team__member"
+    memberArticle.id = member.id
+    textWrapper.className = "our-team__member-text"
+    position.className = "our-team__member-position"
+    bio.className = "our-team__member-bio"
+  
+    image.src = member.photo
+    name.innerHTML = member.name
+    position.innerHTML = member.position
+    bio.innerHTML = member.description
+
+    textWrapper.append(name,position,bio)
+    memberArticle.append(image,textWrapper)
+
+    // member.append(editButton, deleteButton);
+    teamContainer.appendChild(memberArticle);
+  });
+}
+
 // Перевод
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
@@ -44,38 +85,3 @@ for (let smoothLink of smoothLinks) {
   });
 }
 
-// Загрузка работников
-fetch("http://localhost:3000/landing/get")
-  .then((response) => response.json())
-  .then((data) => {
-    processTeamMembers(data.members);
-  })
-  .catch((error) => console.error(error));
-
-function processTeamMembers(members) {
-  members.forEach((member) => {
-    const memberArticle = document.createElement("article")
-    const image = document.createElement("img")
-    const textWrapper = document.createElement("div")
-    const name = document.createElement("h3")
-    const position = document.createElement("p")
-    const bio = document.createElement("p")
-
-    memberArticle.className = "our-team__member"
-    memberArticle.id = member.id
-    textWrapper.className = "our-team__member-text"
-    position.className = "our-team__member-position"
-    bio.className = "our-team__member-bio"
-  
-    image.src = member.photo
-    name.innerHTML = member.name
-    position.innerHTML = member.position
-    bio.innerHTML = member.description
-
-    textWrapper.append(name,position,bio)
-    memberArticle.append(image,textWrapper)
-
-    // member.append(editButton, deleteButton);
-    teamContainer.appendChild(memberArticle);
-  });
-}

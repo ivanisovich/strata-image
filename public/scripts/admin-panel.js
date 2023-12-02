@@ -109,7 +109,7 @@ function processPublications(publications) {
     publication.className = "publications__item"
     publication.innerHTML = item.description
     publication.id = item.id
-
+    console.log(item)
     publication.append(deleteButton)
     publicationsContainer.append(publication)
   })
@@ -203,7 +203,7 @@ document.addEventListener("click", (e) => {
   if (e.target.className == "button--new-publication") {
     addPublicationForm.classList.remove("hidden");
     buttonAddPublication.addEventListener("click", () => {
-      let params = { text: publicationInput.value, type: "publications" };
+      let params = { description: publicationInput.value, type: "publications" };
       fetchAdd(params);
     });
   }

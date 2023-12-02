@@ -123,6 +123,7 @@ app.post("/editMark", async (req, res) => {
   const id = req.body.id;
   const title = req.body.title;
   const description = req.body.description;
+  const link = req.body.link
   try {
     // Чтение содержимого GeoJSON файла
     const geojsonContent = await fs.readFile("marks.geojson", "utf8");
@@ -137,6 +138,7 @@ app.post("/editMark", async (req, res) => {
       // Обновление title и description объекта
       objectToEdit.properties.title = title;
       objectToEdit.properties.description = description;
+      objectToEdit.properties.link = link
 
       // Сохранение обновленного содержимого обратно в файл
       await fs.writeFile("marks.geojson", JSON.stringify(geojsonData, null, 4));
@@ -307,6 +309,7 @@ app.post("/landing/edit", async (req, res) => {
 
 app.post("/landing/add", async (req, res) => {
   try {
+    console.log(req.body)
     const jsonData = await fs.readFile("page-elements.json", "utf8");
     let data = JSON.parse(jsonData);
     let newObj = req.body

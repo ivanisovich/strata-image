@@ -14,12 +14,8 @@ fetch("http://localhost:3000/landing/get")
   })
   .catch((error) => console.error(error));
 
-document
-  .querySelector(".button--show-publications")
-  .addEventListener("click", () => {
-    document
-      .querySelector(".publications__list")
-      .classList.toggle("hide-items");
+document.querySelector(".button--show-publications").addEventListener("click", () => {
+    document.querySelector(".publications__inner").classList.toggle("hide-items");
   });
 
 document.querySelector(".edit-mark__search").addEventListener("focus", () => {

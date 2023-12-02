@@ -26,7 +26,8 @@
   <form id="edit-mark" class="mark-form hidden">
     <h1>Edit geomark</h1>
     <input placeholder="title" type="text" name="title" id="new-title" required />
-    <input placeholder="description" type="text" name="description" id="new-description" required />
+    <textarea placeholder="description" type="text" name="description" id="new-description" required></textarea>
+    <input type="link" type="text" name="link" id="new-link" required>
     <div class="form-divider"></div>
     <button id="edit-mark__btn" type="submit">Edit</button>
     <button type="button" class="close-form">X</button>
@@ -39,8 +40,12 @@
     </div>
     
     <input type="file" name="kmlFile" accept=".kmz" required>
- 
     <div id="message"></div>
+  </form>
+
+  <form id="pdf-form" class="mark-form">
+    <input type="file" id="fileInput" accept=".pdf" />
+    <button onclick="uploadFile()">upload</button>
   </form>
 
   <div id="map">
