@@ -110,7 +110,9 @@ app.post("/deleteMark", async (req, res) => {
     }
   } catch (error) {
     // Отправка ошибки, если что-то пошло не так
-    res.status(500).send({ message: "Internal Server Error", error: error.message });
+    res
+      .status(500)
+      .send({ message: "Internal Server Error", error: error.message });
   }
 });
 
@@ -119,7 +121,7 @@ app.post("/editMark", async (req, res) => {
   const id = req.body.id;
   const title = req.body.title;
   const description = req.body.description;
-  const link = req.body.link
+  const link = req.body.link;
   try {
     // Чтение содержимого GeoJSON файла
     const geojsonContent = await fs.readFile("marks.geojson", "utf8");
@@ -134,7 +136,7 @@ app.post("/editMark", async (req, res) => {
       // Обновление title и description объекта
       objectToEdit.properties.title = title;
       objectToEdit.properties.description = description;
-      objectToEdit.properties.link = link
+      objectToEdit.properties.link = link;
 
       // Сохранение обновленного содержимого обратно в файл
       await fs.writeFile("marks.geojson", JSON.stringify(geojsonData, null, 4));
@@ -178,7 +180,6 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
   const zipContents = await zip.loadAsync(req.file.buffer);
   const kmlFile = zipContents.file(/\.kml$/i)[0];
   const kmlText = await kmlFile.async("string");
-
 
   // Создание DOM из KML текста
   const dom = new DOMParser().parseFromString(kmlText);
@@ -306,13 +307,13 @@ app.post("/landing/edit", async (req, res) => {
 
 app.post("/landing/add", async (req, res) => {
   try {
-    console.log(req.body)
+    console.log(req.body);
     const jsonData = await fs.readFile("page-elements.json", "utf8");
     let data = JSON.parse(jsonData);
-    let newObj = req.body
+    let newObj = req.body;
     for (key in data) {
       if (newObj.type === key) {
-        newObj.id = uuidv4()
+        newObj.id = uuidv4();
         data[key].push(newObj);
         await fs.writeFile(
           "page-elements.json",
@@ -324,6 +325,32 @@ app.post("/landing/add", async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).send("Ошибка при добавлении статьи.");
+  }
+});
+
+app.post("/landing/drag", async (req, res) => {
+  try {
+    const jsonData = await fs.readFile("page-elements.json", "utf8");
+    let data = JSON.parse(jsonData);
+    let startIndex = req.body.start
+    let indexToMoveTo  = req.body.end // Индекс, на который нужно переместить элемент
+    console.log(req.body)
+    const publications = data.publications;
+    const elementToMove = data.publications[startIndex]; // Элемент, который вы хотите переместить
+   
+    data.publications.splice(data.publications.indexOf(elementToMove), 1); // Удаляем элемент из текущей позиции
+    data.publications.splice(indexToMoveTo, 0, elementToMove);
+
+    await fs.writeFile(
+      "page-elements.json",
+      JSON.stringify(data, null, 2),
+      "utf8"
+    );
+   
+    res.status(200).send(`Элемент с ID ${req.body.id} изменен`);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Ошибка на сервере");
   }
 });
 

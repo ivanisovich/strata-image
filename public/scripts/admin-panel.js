@@ -23,9 +23,14 @@ const addMemberForm = document.querySelector("#add-member-form");
 const buttonAddMember = document.querySelector("#button--add-member");
 const nameInput = document.querySelector("#name");
 const positionInput = document.querySelector("#position");
-const bioInput = document.querySelector("#bio")
+const bioInput = document.querySelector("#bio");
 const photoLinkInput = document.querySelector("#photo-link");
-const newImg = document.querySelector("#new-image")
+const newImg = document.querySelector("#new-image");
+const newPublication = document.querySelector("#new-publication");
+const editPublicationForm = document.querySelector("#edit-publication-form");
+const buttonEditPublication = document.querySelector(
+  "#button--edit-publication"
+);
 
 // Функции для работы с API
 function fetchApi(url, method, params) {
@@ -39,7 +44,7 @@ function fetchApi(url, method, params) {
 }
 
 function fetchDelete(objectId) {
-  fetchApi("/delete/"+objectId, "DELETE", { id: objectId })
+  fetchApi("/delete/" + objectId, "DELETE", { id: objectId })
     .then((response) => {
       if (!response.ok) {
         throw new Error("Ошибка удаления");
@@ -68,74 +73,95 @@ function fetchAdd(params) {
     .catch((error) => console.error("Ошибка:", error));
 }
 
+function fetchDrag(params) {
+  fetchApi("/landing/drag", "POST", params)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Ошибка добавления");
+      }
+    })
+    .catch((error) => console.error("Ошибка:", error));
+}
+
 fetch("/landing/get")
   .then((response) => response.json())
   .then((data) => {
     processServices(data.services);
-    processPublications(data.publications)
+    processPublications(data.publications);
     processTeamMembers(data.members);
-
   })
   .catch((error) => console.error(error));
 
 function processServices(services) {
   services.forEach((item) => {
-    const article = document.createElement("article")
-    const img = document.createElement("img")
-    const textWrapper = document.createElement("div")
-    const title = document.createElement("h3")
-    const description = document.createElement("p")
+    const article = document.createElement("article");
+    const img = document.createElement("img");
+    const textWrapper = document.createElement("div");
+    const title = document.createElement("h3");
+    const description = document.createElement("p");
     const deleteButton = createButton("delete", "button--delete-article");
     const editButton = createButton("edit", "button--edit-article");
 
-    article.className = "service"
-    textWrapper.className = "service__text"
+    article.className = "service";
+    textWrapper.className = "service__text";
 
-    article.id = item.id
-    img.src = item.img
-    title.innerHTML = item.title
-    description.innerHTML = item.description
-    
-    textWrapper.append(title,description,editButton,deleteButton)
-    article.append(img,textWrapper)
-    servicesContainer.append(article)
-  })
+    article.id = item.id;
+    img.src = item.img;
+    title.innerHTML = item.title;
+    description.innerHTML = item.description;
+
+    textWrapper.append(title, description, editButton, deleteButton);
+    article.append(img, textWrapper);
+    servicesContainer.append(article);
+  });
 }
 
 function processPublications(publications) {
   publications.forEach((item) => {
-    let publication = document.createElement("li")
+    let publication = document.createElement("li");
+    let text = document.createElement("p");
+
     const deleteButton = createButton("delete", "button--delete-publication");
-    publication.className = "publications__item"
-    publication.innerHTML = item.description
-    publication.id = item.id
-    console.log(item)
-    publication.append(deleteButton)
-    publicationsContainer.append(publication)
-  })
+    const editButton = createButton("edit", "button--edit-publication");
+
+    text.innerHTML = item.description;
+    publication.className = "publications__item";
+    publication.id = item.id;
+    publication.draggable = "true";
+
+    publication.append(text, editButton, deleteButton);
+    publicationsContainer.append(publication);
+  });
 }
 
 function processTeamMembers(members) {
   members.forEach((member) => {
-    const memberArticle = document.createElement("article")
-    const image = document.createElement("img")
-    const name = document.createElement("h3")
-    const position = document.createElement("p")
-    const description = document.createElement("p")
+    const memberArticle = document.createElement("article");
+    const image = document.createElement("img");
+    const name = document.createElement("h3");
+    const position = document.createElement("p");
+    const description = document.createElement("p");
     const deleteButton = createButton("delete", "button--delete-member");
     const editButton = createButton("edit", "button--edit-member");
 
-    memberArticle.className = "our-team__member"
-    position.className = "our-team__member-position"
-    description.className = "our-team__member-bio"
+    memberArticle.className = "our-team__member";
+    position.className = "our-team__member-position";
+    description.className = "our-team__member-bio";
 
-    image.src = member.photo
-    name.innerHTML = member.name
-    position.innerHTML = member.position
-    description.innerHTML = member.description
-    memberArticle.id = member.id
-  
-    memberArticle.append(image,name,position,description,editButton,deleteButton)
+    image.src = member.photo;
+    name.innerHTML = member.name;
+    position.innerHTML = member.position;
+    description.innerHTML = member.description;
+    memberArticle.id = member.id;
+
+    memberArticle.append(
+      image,
+      name,
+      position,
+      description,
+      editButton,
+      deleteButton
+    );
     teamContainer.appendChild(memberArticle);
   });
 }
@@ -160,7 +186,7 @@ document.addEventListener("click", (e) => {
     let articleElement = e.target.closest(".service");
     newTitle.value = articleElement.querySelector("h3").innerHTML;
     newDescription.value = articleElement.querySelector("p").innerHTML;
-    newImg.value = articleElement.querySelector("img").src
+    newImg.value = articleElement.querySelector("img").src;
 
     let id = e.target.closest(".service").id;
 
@@ -203,24 +229,47 @@ document.addEventListener("click", (e) => {
   if (e.target.className == "button--new-publication") {
     addPublicationForm.classList.remove("hidden");
     buttonAddPublication.addEventListener("click", () => {
-      let params = { description: publicationInput.value, type: "publications" };
+      let params = {
+        description: publicationInput.value,
+        type: "publications",
+      };
       fetchAdd(params);
+    });
+  }
+
+  if (e.target.className == "button--edit-publication") {
+    editPublicationForm.classList.remove("hidden");
+    let publication = e.target.closest(".publications__item");
+    let id = publication.id;
+    newPublication.value = publication.querySelector("p").innerHTML;
+
+    buttonEditPublication.addEventListener("click", () => {
+      let params = {
+        id: id,
+        description: newPublication.value,
+      };
+      fetchEdit(params);
+      console.log(params);
     });
   }
 
   if (e.target.className == "button--delete-member") {
     let id = e.target.closest(".our-team__member").id;
     fetchDelete(id);
-    location.reload()
+    location.reload();
   }
 
   if (e.target.className == "button--edit-member") {
     editMemberForm.classList.remove("hidden");
     let memberElement = e.target.closest(".our-team__member");
     newName.value = memberElement.querySelector("h3").innerHTML;
-    newPosition.value = memberElement.querySelector(".our-team__member-position").innerHTML;
-    newBio.value = memberElement.querySelector(".our-team__member-bio").innerHTML
-    newPhotoLink.value = memberElement.querySelector("img").src
+    newPosition.value = memberElement.querySelector(
+      ".our-team__member-position"
+    ).innerHTML;
+    newBio.value = memberElement.querySelector(
+      ".our-team__member-bio"
+    ).innerHTML;
+    newPhotoLink.value = memberElement.querySelector("img").src;
     let id = memberElement.id;
 
     buttonEditMember.addEventListener("click", () => {
@@ -252,3 +301,69 @@ document.addEventListener("click", (e) => {
     });
   }
 });
+
+// drag and drop
+const sortableList = document.querySelector(".publications__list");
+let draggedItem = null;
+let startIndex = 0;
+
+function getDragIndex(id) {
+  const itemIds = Array.from(
+    document.querySelectorAll(".publications__item")
+  ).map((item) => item.id);
+
+  const itemIndex = itemIds.indexOf(id);
+  return itemIndex;
+}
+
+sortableList.addEventListener("dragstart", (e) => {
+  draggedItem = e.target;
+  e.dataTransfer.setData("text/plain", e.target.innerHTML);
+  setTimeout(() => {
+    e.target.classList.add("dragging");
+  }, 0);
+
+  startIndex = getDragIndex(e.target.id);
+});
+
+sortableList.addEventListener("dragend", (e) => {
+  e.preventDefault();
+  draggedItem.classList.remove("dragging");
+  draggedItem = null;
+  console.log(getDragIndex(e.target.id));
+  console.log(startIndex);
+  fetchDrag({
+    start: startIndex,
+    end: getDragIndex(e.target.id),
+  });
+});
+
+sortableList.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  const afterElement = getDragAfterElement(sortableList, e.clientY);
+  const draggable = document.querySelector(".dragging");
+
+  if (afterElement == null) {
+    sortableList.appendChild(draggable);
+  } else {
+    sortableList.insertBefore(draggable, afterElement);
+  }
+});
+
+function getDragAfterElement(container, y) {
+  const draggableElements = [
+    ...container.querySelectorAll(".publications__item:not(.dragging)"),
+  ];
+  return draggableElements.reduce(
+    (closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = y - box.top - box.height / 2;
+      if (offset < 0 && offset > closest.offset) {
+        return { offset, element: child };
+      } else {
+        return closest;
+      }
+    },
+    { offset: Number.NEGATIVE_INFINITY }
+  ).element;
+}
