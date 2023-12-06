@@ -175,29 +175,28 @@ function processArticles(articles) {
 
 function processTeamMembers(members) {
   members.forEach((member) => {
-    const href = "/public/pages/members.html#" + member.id
-    const link = document.createElement("a")
     const memberArticle = document.createElement("article")
     const image = document.createElement("img")
     const name = document.createElement("h3")
     const position = document.createElement("p")
-    const button = document.createElement("a")
+    const description = document.createElement("p")
+    const articleWrapper = document.createElement("div")
 
     memberArticle.className = "our-team__member"
     memberArticle.id = member.id
     position.className = "our-team__member-position"
-    button.className = "our-team__member-button"
-
+    description.className = "our-team__member-bio"
+    articleWrapper.className = "our-team__member-wrapper"
+   
     image.src = member.photo
     name.innerHTML = member.name
     position.innerHTML = member.position
-    button.innerHTML = "Learn more"
-    button.href
-    link.href = href
+    description.innerHTML = member.description
 
-    memberArticle.append(image, name, position, button)
-    link.appendChild(memberArticle)
-    teamContainer.appendChild(link);
+    articleWrapper.append(name, position,description)
+
+    memberArticle.append(image,articleWrapper)
+    teamContainer.appendChild(memberArticle);
   });
 }
 
