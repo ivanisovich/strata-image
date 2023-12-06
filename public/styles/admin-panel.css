@@ -114,6 +114,7 @@ input::placeholder {
 .publications__item {
   box-shadow: 0px -1px 0px 0px rgba(145, 158, 171, 0.24) inset;
   padding: 16px;
+  
 }
 
 .publications__item button {
@@ -150,8 +151,9 @@ input::placeholder {
 .our-team__member {
   padding-top: 100px;
   padding-bottom: 100px;
-
+  max-width: 500px;
   align-items: center;
+ 
   justify-content: space-around;
   border-bottom: 1px solid rgba(145, 158, 171, 0.32);
 }
@@ -165,7 +167,8 @@ input::placeholder {
 }
 
 .our-team__member img {
-  max-height: 400px;
+  max-height: 300px;
+  
   object-fit: scale-down;
 }
 
@@ -214,6 +217,22 @@ textarea {
   border: 1px solid var(--button-input, rgba(145, 158, 171, 0.32));
   border-radius: 8px;
   padding: 16px 16px 16px 14px;
+}
+
+
+.publications__item {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.publications__item.dragging {
+  opacity: 0.5;
+  transform: scale(1.05); /* Пример анимации с увеличением размера */
+}
+
+.publications__item.placeholder {
+  border: 1px dashed #ccc;
+  background-color: transparent;
 }
 
 @media (max-width: 550px) {
