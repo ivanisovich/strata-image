@@ -15,6 +15,10 @@ const { DOMParser } = require("xmldom");
 const JSZip = require("jszip");
 const cheerio = require("cheerio");
 const { minify } = require("html-minifier");
+require('dotenv').config();
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
 
 // Настройка EJS шаблонизатора
 app.set("view engine", "ejs");
@@ -24,31 +28,50 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 app.use(bodyParser.json());
 app.use(cors());
+app.use(cookieParser());
+app.use(session({
+    secret: 'your_secret_key', // Замените на ваш секретный ключ
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } // Для HTTPS установите secure: true
+}));
+
+// Использование учетных данных из файла .env
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+
 
 // Маршрут для админ-панели
-app.get("/admin-panel", (req, res) => {
-  res.render("admin-panel");
-});
-
-app.get("/map-editor", (req, res) => {
-  res.render("map-editor");
-});
-
-// Маршрут для обработки отправки формы
-app.post("/admin-panel", async (req, res) => {
-  const newTitle = req.body.newTitle;
-
-  try {
-    // Чтение и изменение заголовка в HTML файле
-    let html = await fs.readFile("public/index.html", "utf-8");
-    html = html.replace(/<title>(.*?)<\/title>/, `<title>${newTitle}</title>`);
-    await fs.writeFile("public/index.html", html);
-
-    res.redirect("/admin-panel");
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Ошибка при изменении заголовка.");
+app.post('/admin/login', (req, res) => {
+  const { username, password } = req.body;
+  if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+      req.session.authenticated = true;
+      res.redirect('/admin-panel');
+  } else {
+      res.send('Доступ запрещен');
   }
+});
+
+// Middleware для проверки аутентификации
+function isAuthenticated(req, res, next) {
+  if (req.session.authenticated) {
+      next();
+  } else {
+      res.send('Необходима авторизация');
+  }
+}
+
+app.get('/login',  (req, res) => {
+  res.render('login');
+});
+// Защищенный маршрут
+app.get('/admin-panel', isAuthenticated, (req, res) => {
+  res.render('admin-panel');
+});
+
+// Еще один защищенный маршрут
+app.get('/map-editor', isAuthenticated, (req, res) => {
+  res.render('map-editor');
 });
 
 // Добавление меток
