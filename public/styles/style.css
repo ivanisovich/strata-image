@@ -56,6 +56,15 @@ h2 {
   width: 100%;
 }
 
+.header__logo-wrapper{
+  position: relative;
+}
+
+.header__logo{
+  position: relative;
+  top: -14px;
+}
+
 .footer__inner,
 .header__inner {
   display: flex;
@@ -473,9 +482,9 @@ h2 {
 }
 .footer__contacts{
   display: flex;
-  justify-content: space-around;
+
   align-items: flex-end;
-  gap: 40px;
+  gap: 50px;
   width: 100%;
 }
 
@@ -530,14 +539,16 @@ h2 {
 
 #google_translate_element {
   position: absolute;
-  right: 0px;
-  bottom: -50px;
-
+  left: 10px;
+  border: 1px solid #919eab52;
+  border-radius: 8px;
+  
+  bottom:-20px;
 }
 
 #google_translate_element span {
-  padding-right: 10px !important;
-  color: var(--text-color) !important;
+  padding-right: 5px !important;
+  color:#637381 !important;
   font-style: normal !important;
   font-weight: 400 !important;
   font-size: 16px !important;
@@ -546,11 +557,18 @@ h2 {
   text-decoration: none !important;
   text-transform: capitalize !important;
   white-space: nowrap !important;
+  border-left: none !important;
+  width: 0px !important;
 }
 .VIpgJd-ZVi9od-xl07Ob-lTBxed span{
  
   padding-right: 10px !important;
 }
+
+#google_translate_element span[aria-hidden="true"] {
+ display: none !important;
+}
+
 .text {
   display: none !important;
 }
@@ -561,9 +579,11 @@ h2 {
 
 .goog-te-gadget-simple {
   border: none !important;
-  padding: 8px !important;
-  padding-left: 16px !important;
+  padding: 5px !important;
 
+  height: 24px !important;
+  border: 1px solid;
+  border-radius: 8px;
 }
 
 iframe {
@@ -576,6 +596,9 @@ iframe {
 
 .skiptranslate img {
   display: none !important;
+}
+.VIpgJd-ZVi9od-vH1Gmf .indicator{
+  color :red !important
 }
 
 body {
