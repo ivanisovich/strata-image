@@ -8,13 +8,10 @@ const port = 3000;
 const { v4: uuidv4 } = require("uuid");
 const cors = require("cors");
 const toGeoJSON = require("togeojson");
-const { JSDOM } = require("jsdom");
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 const { DOMParser } = require("xmldom");
 const JSZip = require("jszip");
-const cheerio = require("cheerio");
-const { minify } = require("html-minifier");
 require('dotenv').config();
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
@@ -331,25 +328,40 @@ app.post("/landing/edit", async (req, res) => {
 app.post("/landing/add", async (req, res) => {
   try {
     console.log(req.body);
+
+    // Чтение данных из файла
     const jsonData = await fs.readFile("page-elements.json", "utf8");
-    let data = JSON.parse(jsonData);
-    let newObj = req.body;
-    for (key in data) {
-      if (newObj.type === key) {
-        newObj.id = uuidv4();
-        data[key].push(newObj);
-        await fs.writeFile(
-          "page-elements.json",
-          JSON.stringify(data, null, 2),
-          "utf8"
-        );
-      }
+    const data = JSON.parse(jsonData);
+
+    // Создание нового элемента
+    const newObj = req.body;
+    newObj.id = uuidv4();
+
+    // Обработка случаев "patents" и "publications"
+    if (newObj.type === "patents" || newObj.type === "publications") {
+      const listItems = newObj.description.split("\n");
+      const newItemList = listItems.map((item) => ({
+        description: item,
+        id: uuidv4(),
+      }));
+      data[newObj.type].push(...newItemList);
+    } else {
+      data[newObj.type].push(newObj);
     }
+
+    await fs.writeFile(
+      "page-elements.json",
+      JSON.stringify(data, null, 2),
+      "utf8"
+    );
+
+    res.status(200).send("Элемент успешно добавлен.");
   } catch (error) {
     console.error(error);
-    res.status(500).send("Ошибка при добавлении статьи.");
+    res.status(500).send("Ошибка при добавлении элемента.");
   }
 });
+
 
 app.post("/landing/drag", async (req, res) => {
   try {

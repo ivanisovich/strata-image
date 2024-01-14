@@ -1,5 +1,6 @@
 const servicesContainer = document.querySelector(".services__inner");
 const publicationsContainer = document.querySelector(".publications__list");
+const patentsContainer = document.querySelector(".patents__list")
 const teamContainer = document.querySelector(".our-team__members");
 const editServiceForm = document.querySelector("#edit-service-form");
 const newTitle = document.querySelector("#new-title");
@@ -31,6 +32,7 @@ const editPublicationForm = document.querySelector("#edit-publication-form");
 const buttonEditPublication = document.querySelector(
   "#button--edit-publication"
 );
+
 
 // Функции для работы с API
 function fetchApi(url, method, params) {
@@ -89,6 +91,7 @@ fetch("/landing/get")
     processServices(data.services);
     processPublications(data.publications);
     processTeamMembers(data.members);
+    processPatents(data.patents)
   })
   .catch((error) => console.error(error));
 
@@ -131,6 +134,24 @@ function processPublications(publications) {
 
     publication.append(text, editButton, deleteButton);
     publicationsContainer.append(publication);
+  });
+}
+
+function processPatents(patents) {
+  patents.forEach((item) => {
+    let publication = document.createElement("li");
+    let text = document.createElement("p");
+
+    const deleteButton = createButton("delete", "button--delete-publication");
+    const editButton = createButton("edit", "button--edit-publication");
+
+    text.innerHTML = item.description;
+    publication.className = "publications__item";
+    publication.id = item.id;
+    publication.draggable = "true";
+
+    publication.append(text, editButton, deleteButton);
+    patentsContainer.append(publication);
   });
 }
 
@@ -250,6 +271,19 @@ document.addEventListener("click", (e) => {
       };
       fetchEdit(params);
       console.log(params);
+      location.reload()
+    });
+ 
+  }
+
+  if (e.target.className == "button--new-patent") {
+    addPublicationForm.classList.remove("hidden");
+    buttonAddPublication.addEventListener("click", () => {
+      let params = {
+        description: publicationInput.value,
+        type: "patents",
+      };
+      fetchAdd(params);
     });
   }
 
@@ -367,3 +401,4 @@ function getDragAfterElement(container, y) {
     { offset: Number.NEGATIVE_INFINITY }
   ).element;
 }
+

@@ -12,8 +12,10 @@ var map = new mapboxgl.Map({
   style: "mapbox://styles/mapbox/streets-v11",
   center: [-112.4924, 31.8902], // Начальные координаты
   zoom: 4, // Уровень масштабирования
-  scrollZoom:true
+  scrollZoom: true,
 });
+
+map.addControl(new mapboxgl.NavigationControl());
 
 var markers = {};
 
@@ -24,7 +26,7 @@ if (window.location.href.includes("/map-editor")) {
 }
 
 function hideAllPopups() {
-  Object.values(markers).forEach(m => {
+  Object.values(markers).forEach((m) => {
     if (m.getPopup()) m.getPopup().remove();
   });
 }
@@ -50,8 +52,9 @@ function focusCamera(center, area) {
 }
 
 function calculateCentroid(coords) {
-  let lngSum = 0, latSum = 0;
-  coords.forEach(coord => {
+  let lngSum = 0,
+    latSum = 0;
+  coords.forEach((coord) => {
     lngSum += coord[0];
     latSum += coord[1];
   });
@@ -111,13 +114,14 @@ map.on("load", function () {
 
   function returnMarkHtml(title, description, link) {
     let markUp =
-      '<article class="mark"> <img src="/public/images/mark.png" alt=""/> <div class="mark__text"> <h3>' +
+      '<article class="mark"> <img src="/public/images/mark.jpg" alt=""/> <div class="mark__text"> <h3>' +
       title +
       "</h3> <p>" +
       description +
-      "</p> <a target='_blank' href=" + link +"> download"
-      +
-    ("</a>");
+      "</p> <a target='_blank' href=" +
+      link +
+      "> download" +
+      "</a>";
     ("</div> </article>");
     return markUp;
   }
@@ -167,7 +171,7 @@ map.on("load", function () {
           )
         );
 
-        hideAllPopups()
+        hideAllPopups();
         // Привязка попапа к маркеру
         marker.setPopup(popup);
         // Добавление обработчика события для булавки
@@ -179,9 +183,9 @@ map.on("load", function () {
 
           // Смещаем центр карты чуть левее
           var newCenter = [bounds.getCenter().lng, bounds.getCenter().lat];
-          let area = polygonArea(coordinates)
+          let area = polygonArea(coordinates);
           // Чтобы камера двигалась левее, используем panTo с небольшой задержкой после fitBounds
-          focusCamera(newCenter, area)
+          focusCamera(newCenter, area);
         });
 
         // Сохраняем маркер в объекте для последующей проверки
@@ -213,30 +217,29 @@ map.on("load", function () {
           let description = document.createElement("p");
           let deleteButton = document.createElement("button");
           let editButton = document.createElement("button");
-          let link = document.createElement("a")
+          let link = document.createElement("a");
 
-          link.target = "_blank"
+          link.target = "_blank";
           listItem.className = "list-item";
-          link.className = "list-item__link"
+          link.className = "list-item__link";
           title.innerHTML = element.properties.title;
           description.innerHTML = element.properties.description;
-          link.innerHTML = "download"
-          link.href = element.properties.link
+          link.innerHTML = "download";
+          link.href = element.properties.link;
           deleteButton.innerHTML = "delete";
           deleteButton.className = "delete-button";
           editButton.innerHTML = "edit";
           editButton.className = "edit-button";
           listItem.id = element.properties.id;
           if (!isClientView) {
-            listItem.append(title, description,link, deleteButton, editButton);
+            listItem.append(title, description, link, deleteButton, editButton);
           } else if (isClientView) {
             listItem.append(title, description);
-
           }
           marksList.append(listItem);
         }
       });
-      document.querySelector(".lds-ellipsis").classList.add("spinner-hidden")
+      document.querySelector(".lds-ellipsis").classList.add("spinner-hidden");
     });
 
   map.on("sourcedata", function (e) {
@@ -254,9 +257,11 @@ map.on("load", function () {
   map.on("click", "territories-fill", function (e) {
     if (e.originalEvent.target.classList.contains("mapboxgl-canvas")) {
       var feature = e.features[0];
-      let foundObject = geojsonData.features.find(obj => obj.properties.id === feature.properties.id);
+      let foundObject = geojsonData.features.find(
+        (obj) => obj.properties.id === feature.properties.id
+      );
       var coordinates = e.lngLat;
-      let area = polygonArea(foundObject.geometry.coordinates[0])
+      let area = polygonArea(foundObject.geometry.coordinates[0]);
       var popup = new mapboxgl.Popup()
         .setLngLat(coordinates)
         .setHTML(
@@ -267,24 +272,28 @@ map.on("load", function () {
           )
         )
         .addTo(map);
-      focusCamera(calculateCentroid(foundObject.geometry.coordinates[0]), area)
+      focusCamera(calculateCentroid(foundObject.geometry.coordinates[0]), area);
     }
   });
 
   document.addEventListener("click", (e) => {
-    if (e.target.closest(".list-item") && e.target.className !== "edit-button") {
+    if (
+      e.target.closest(".list-item") &&
+      e.target.className !== "edit-button"
+    ) {
       let id = e.target.closest(".list-item").id;
-      let marker = markers[id]
-      let foundObject = geojsonData.features.find(obj => obj.properties.id === id);
-      let area = polygonArea(foundObject.geometry.coordinates[0])
-      
+      let marker = markers[id];
+      let foundObject = geojsonData.features.find(
+        (obj) => obj.properties.id === id
+      );
+      let area = polygonArea(foundObject.geometry.coordinates[0]);
 
       // Скрываем все всплывающие окна
       hideAllPopups();
 
-      marker.togglePopup()
-      let center = [markers[id]._lngLat.lng, markers[id]._lngLat.lat]
-      focusCamera(center, area)
+      marker.togglePopup();
+      let center = [markers[id]._lngLat.lng, markers[id]._lngLat.lat];
+      focusCamera(center, area);
     }
   });
 });
@@ -304,7 +313,6 @@ document.getElementById("search").addEventListener("input", function () {
   }
 });
 
-
 map.on("mouseenter", "territories-fill", function () {
   map.getCanvas().style.cursor = "pointer";
 });
@@ -313,4 +321,20 @@ map.on("mouseleave", "territories-fill", function () {
   map.getCanvas().style.cursor = "";
 });
 
+var scrollMessage = document.querySelector(".scroll-message");
 
+if (isClientView) {
+
+
+  map.on("wheel", function (event) {
+    if (event.originalEvent.ctrlKey || event.originalEvent.metaKey || event.originalEvent.altKey) {
+      scrollMessage.classList.add("hidden");
+    } else {
+      event.preventDefault();
+    }
+  });
+}
+
+map.on('zoom', () => {
+  scrollMessage.classList.add("hidden");
+});

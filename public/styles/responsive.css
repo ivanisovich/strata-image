@@ -1,4 +1,19 @@
 @media (max-width: 1250px) {
+   .container {
+      padding-right: 20px;
+      padding-left: 20px;
+   }
+
+   .header a {
+      font-size: 14px;
+   }
+
+   #google_translate_element span {
+      font-size: 14px !important;
+   }
+
+
+
    .hero h1 {
       font-size: 40px;
    }
@@ -19,183 +34,212 @@
       gap: 20px;
    }
 
-   .socials-inner {
-      margin-right: 0;
-      margin-left: 0;
+   .publications__inner {
+      max-height: 500px;
    }
 
-   .mapboxgl-popup{
+   .publications__item {
+      font-size: 12px;
+   }
+
+   .mapboxgl-popup {
       right: 20px;
    }
 }
 
-@media (max-width: 950px) {
-   .container {
-      padding-right: 20px;
-      padding-left: 20px;
-   }
-
-   .header a {
-      font-size: 14px;
-   }
-
-
-   .our-team__member {
-      box-sizing: border-box;
-
-   }
-
-   .our-team__members {
- 
-   }
-
-   #google_translate_element span {
-      font-size: 14px !important;
-   }
-}
-
-@media (max-width: 768px) {
-   .container{
-      padding-left: 10px;
-      padding-right: 10px;
-   }
+@media(max-width: 1050px) {
 
    .header__inner {
       flex-direction: column;
       box-sizing: border-box;
-      padding-bottom: 0px;
-   }
-
-   .header__logo-wrapper{
-      display: flex;
-      flex-direction: row-reverse;
-      align-items: center;
-   }
-
-   .header__logo{
-     top: 0px;
-   }
-
-   #google_translate_element {
-      position: static;
+      padding-bottom: 15px;
+      padding-top: 0px;
    }
 
    .header__navigation {
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
+      row-gap: 15px;
+      position: static;
    }
 
-   .hide{
-      transform: translateY(-100%);
+   .hero {
+      margin-top: 132px;
    }
 
-   .hero img{
-      margin-top: 120px;
-      height: 400px;
-      object-fit: cover;
+   #google_translate_element,
+   .lang-icon {
+      position: absolute;
+      top: 30px;
+      right: 15px;
    }
 
-   .hero h1{
-      max-width: 300px;
-      white-space: wrap;
-      text-align: center;
-      top: unset;
-      bottom: 0px;
+   #google_translate_element {
+      top: 10px;
    }
-   .mapboxgl-popup{
-      top: 90px !important;
+}
+
+@media (max-width: 950px) {
+
+   .our-team__member {
+      box-sizing: border-box;
+
+   }
+
+   .footer__contacts {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-left: auto;
+      width: fit-content;
+      display: block;
+      margin-right: auto;
    }
 
    
-   .footer__inner{
+   .contacts-section__phone{
+      display: block;
+      margin-bottom: 30px !important;
+   }
+
+   .footer__logo{
+      max-width: 220px;
+   }
+}
+
+@media (max-width: 768px) {
+   .container {
+      padding-left: 10px;
+      padding-right: 10px;
+   }
+
+   .hide {
+      transform: translateY(-100%);
+   }
+
+   .hero img {
+      object-fit: cover;
+      object-position: center;
+   }
+
+   .hero p {
+      font-size: 14px;
+      line-height: 150%;
+      padding: 20px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      transform: translate(0% 50%);
+   }
+
+   .mapboxgl-popup {
+      top: 90px !important;
+   }
+
+   .our-team__member {
+      flex-direction: column;
+      max-width: 500px;
+   }
+
+
+   .our-team__member:nth-child(2n) {
+      flex-direction: column;
+   }
+
+   .our-team__subtitle {
+      backdrop-filter: blur(12px);
+      margin-top: 60px;
+      margin-right: auto;
+      margin-bottom: 60px;
+      margin-left: auto;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 0px;
+      min-width: unset;
+      max-width: 400px;
+      font-size: 15px;
+      color: black;
+      text-align: center;
+   }
+
+   .footer__inner {
       flex-direction: column;
       gap: 50px;
     
    }
-   
-   .footer__contacts{
-      flex-wrap: wrap;
-
-      justify-content: center;
-   }
-
 
 }
 
 
 @media (max-width: 550px) {
-   h2{
+   h2 {
       font-size: 30px;
    }
 
    .header__navigation {
-    max-width: 295px;
-    row-gap: 10px;
-
-    padding-top: 0px;
-    background: white;
+      max-width: 325px;
+      row-gap: 10px;
+      padding-top: 0px;
+      background: white;
    }
 
-   .header__inner{
-      padding-top: 10px;
-      padding-bottom: 0px;
+   .header__logo {
+      max-width: 200px;
+      margin-right: auto;
    }
 
-   .hero img{
-      margin-top:115px;
-   }
-   
-   .hero h1{
-      font-size: 25px;
-      bottom: 40px;
+   .hero {
+      margin-top: 147px;
    }
 
-   .service{
+   .hero p{
+      font-size: 12px;
+      padding: 15px;
+   }
+
+   .service {
       min-width: 275px;
    }
 
-   .service p{
+   .service p {
       font-size: 14px;
    }
 
-   .publications__inner{
+   .publications__inner {
       padding: 10px;
    }
 
-   .publications__list{
+   .publications__list {
       margin-top: 0px;
    }
 
-   .button--show-publications{
+   .button--show-publications {
       right: 5px;
       width: 40px;
       background-size: 40px;
    }
 
-   .publications__item {
-      font-size: 14px;
-   }
-
-   .publications__list-header{
+   .publications__list-header {
       font-size: 20px;
       padding-right: 30px;
    }
 
-   .marks-list{
+   .marks-list {
       width: calc(100% - 20px);
       max-width: 292px;
    }
 
-   .list-item{
+   .list-item {
       min-width: unset;
-      box-sizing:border-box;
+      box-sizing: border-box;
    }
 
-   .edit-mark__search{
+   .edit-mark__search {
       width: 100% !important;
    }
-   .mapboxgl-popup{
+
+   .mapboxgl-popup {
       left: 10% !important;
       right: 20px !important;
    }
@@ -205,30 +249,28 @@
       font-size: 13px;
    }
 
-   .our-team__member img{
+   .our-team__member img {
       margin-left: auto;
       margin-right: auto;
+      width: 100%;
+      max-width: unset;
    }
 
-   .footer__inner{
+   .footer__inner {
       flex-direction: column;
    }
 
-   .socials-inner{
+   .socials-inner {
       margin: 0 auto
    }
 
-   .footer__contacts{
-      width: 100%;
-   }
-
-   .socials-wrapper p{
+   .socials-wrapper p {
       margin: 0 auto;
    }
 
-   .footer__contacts p{
-   max-width: unset;
+   .footer__contacts p {
+      max-width: unset;
    }
 
-  
+
 }

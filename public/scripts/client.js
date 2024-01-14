@@ -1,6 +1,7 @@
 const teamContainer = document.querySelector(".our-team__members");
 const servicesContainer = document.querySelector(".services__inner")
-const publicationsContainer = document.querySelector(".publications__list")
+const publicationsContainer = document.querySelector("#publications__list")
+const patentsContainer = document.querySelector("#patents__list")
 
 fetch("http://localhost:3000/landing/get")
   .then((response) => response.json())
@@ -8,15 +9,19 @@ fetch("http://localhost:3000/landing/get")
     processTeamMembers(data.members);
     processArticles(data.services)
     processPublications(data.publications)
-
+    processPatents(data.patents)
     
     animateItems()
   })
   .catch((error) => console.error(error));
 
 document.querySelector(".button--show-publications").addEventListener("click", () => {
-    document.querySelector(".publications__inner").classList.toggle("hide-items");
-  });
+    document.querySelector(".publications").classList.toggle("hide-items");
+});
+
+document.querySelector(".button--show-patents").addEventListener("click", () => {
+  document.querySelector("#patents").classList.toggle("hide-items");
+});
 
 document.querySelector(".edit-mark__search").addEventListener("focus", () => {
   document.querySelector(".marks-list").classList.remove("hidden");
@@ -61,13 +66,13 @@ function animateItems(){
             if (entry.isIntersecting) {
               setTimeout(() => {
                 entry.target.classList.add("visible");
-              }, index * 150); // Здесь 150 мс - базовая задержка
+              }, index * 1); // Здесь 150 мс - базовая задержка
   
               observer.unobserve(entry.target);
             }
           });
         },
-        { threshold: 0.5 }
+        { threshold: 0.3 }
       );
   
       observer.observe(item);
@@ -90,7 +95,7 @@ document.querySelectorAll(".ellipses").forEach((item, index) => {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     observer.observe(item);
@@ -155,12 +160,14 @@ function processArticles(articles) {
   articles.forEach((item) => {
     const article = document.createElement("article")
     const img = document.createElement("img")
+    const imgWrapper = document.createElement("div")
     const textWrapper = document.createElement("div")
     const title = document.createElement("h3")
     const description = document.createElement("p")
 
     article.className = "service"
     textWrapper.className = "service__text"
+    imgWrapper.className = "service__image-wrapper"
 
     article.id = item.id
     img.src = item.img
@@ -168,7 +175,8 @@ function processArticles(articles) {
     description.innerHTML = item.description
     
     textWrapper.append(title,description)
-    article.append(img,textWrapper)
+    imgWrapper.append(img)
+    article.append(imgWrapper,textWrapper)
     servicesContainer.append(article)
   })
 }
@@ -177,6 +185,7 @@ function processTeamMembers(members) {
   members.forEach((member) => {
     const memberArticle = document.createElement("article")
     const image = document.createElement("img")
+    const imageWrapper = document.createElement("picture")
     const name = document.createElement("h3")
     const position = document.createElement("p")
     const description = document.createElement("p")
@@ -192,10 +201,18 @@ function processTeamMembers(members) {
     name.innerHTML = member.name
     position.innerHTML = member.position
     description.innerHTML = member.description
+    if(member.srcset){
+      let source = document.createElement("source")
+      source.media = "(max-width: 768px)"
+      source.srcset = member.srcset
 
+      imageWrapper.append(source)
+    }
+
+    imageWrapper.append(image)
     articleWrapper.append(name, position,description)
 
-    memberArticle.append(image,articleWrapper)
+    memberArticle.append(imageWrapper,articleWrapper)
     teamContainer.appendChild(memberArticle);
   });
 }
@@ -207,5 +224,15 @@ function processPublications(publications) {
     publication.innerHTML = item.description
     publication.id = item.id
     publicationsContainer.append(publication)
+  })
+}
+
+function processPatents(patents) {
+  patents.forEach((item) => {
+    let publication = document.createElement("li")
+    publication.className = "publications__item"
+    publication.innerHTML = item.description
+    publication.id = item.id
+    patentsContainer.append(publication)
   })
 }

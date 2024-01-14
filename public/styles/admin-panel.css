@@ -3,6 +3,7 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.button--delete-patent,
 .button--delete-member,
 .button--delete-publication,
 .button--delete-article {
@@ -104,11 +105,14 @@ input::placeholder {
   margin-top: 30px;
 }
 
+.patents__list,
 .publications__list {
   border-radius: 8px;
   background: white;
   padding-left: 0px;
   list-style: none;
+  max-height: 700px;
+  overflow-y: scroll;
 }
 
 .publications__item {
