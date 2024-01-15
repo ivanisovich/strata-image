@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <title>Strataimage Energy Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../public/styles/style.css">
-  <link rel="stylesheet" href="./styles/normalize.css">
-  <link rel="stylesheet" href="./styles/map.css">
-  <link rel="stylesheet" href="./styles/responsive.css">
+  <link rel="stylesheet" href="/public/styles/style.css">
+  <link rel="stylesheet" href="/public/styles/normalize.css">
+  <link rel="stylesheet" href="/public/styles/map.css">
+  <link rel="stylesheet" href="/public/styles/responsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700;800&amp;display=swap"
@@ -24,7 +24,7 @@
 
   <header class="header">
     <div class="header__inner container">
-      <img class="header__logo" src="./images/logo.jpg" alt="Strataimage Geophysics">
+      <img class="header__logo" src="/public/images/logo.jpg" alt="Strataimage Geophysics">
       <nav>
         <ul class="header__navigation">
           <li>
@@ -45,8 +45,8 @@
           <li>
             <div id="google_translate_element"></div>
             <div class="lang-icon">
-              <img src="./images/brazil-icon.jpg" alt="">
-              <img src="./images/american-icon.png" alt="">
+              <img src="/public/images/brazil-icon.jpg" alt="">
+              <img src="/public/images/american-icon.png" alt="">
             </div>
           </li>
         </ul>
@@ -56,7 +56,7 @@
 
   <main>
     <section class="hero">
-      <img src="./images/main-bg.JPG" alt="">
+      <img src="/public/images/main-bg.JPG" alt="">
       <div class="container">
         <p class="hero__title">Strataimage Consultoria Ltda was founded in 2003 in Rio de Janeiro, Brazil,
           and is managed by Patricia de Lugão and Berthold Kriegshäuser. In 2021, we
@@ -148,17 +148,6 @@
       <div class="our-team__members">
       </div>
     </section>
-
-    <section class="contact-us">
-      <h2 class="section-title">Feel free to contact us</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        
-        <textarea placeholder="Enter your message here" name="textarea" id="textarea" cols="30" rows="10"></textarea>
-        <button class="contact-form__button" type="submit">Submit</button>
-      </form>
-    </section>
   </main>
 
   <footer class="footer">
@@ -187,8 +176,10 @@
       </div>
       <div class="socials-wrapper" id="footer">
         <div class="socials-inner">
-          <img class="footer__logo" src="./images/logo.jpg" alt="Strataimage Geophysics">
-
+          <img class="footer__logo" src="/public/images/logo.jpg" alt="Strataimage Geophysics">
+          <span class="contacts-section__mail">
+            contato@strataimage.com
+          </span>
         </div>
       </div>
 
@@ -196,8 +187,8 @@
   </footer>
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.0/mapbox-gl-draw.js"></script>
-  <script src="./scripts/map-load.js"></script>
-  <script src="./scripts/client.js"></script>
+  <script src="/public/scripts/map-load.js"></script>
+  <script src="/public/scripts/client.js"></script>
 
 </body>
 

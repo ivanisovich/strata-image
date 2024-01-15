@@ -3,7 +3,18 @@ const servicesContainer = document.querySelector(".services__inner")
 const publicationsContainer = document.querySelector("#publications__list")
 const patentsContainer = document.querySelector("#patents__list")
 
-fetch("http://localhost:3000/landing/get")
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: "en",
+      includedLanguages: "pt",
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    },
+    "google_translate_element"
+  );
+}
+
+fetch("/page-elements.json")
   .then((response) => response.json())
   .then((data) => {
     processTeamMembers(data.members);
@@ -138,16 +149,7 @@ for (let smoothLink of smoothLinks) {
 
 // Перевод
 
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {
-      pageLanguage: "en",
-      includedLanguages: "en,pt",
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    },
-    "google_translate_element"
-  );
-}
+
 
 document.addEventListener("click", (e) => {
   if (e.target.closest(".edit-mark__burger")) {

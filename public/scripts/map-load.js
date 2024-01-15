@@ -99,7 +99,7 @@ map.on("load", function () {
   // Добавление возможности выбора территории (полигонов)
   map.addSource("territories", {
     type: "geojson",
-    data: "../../marks.geojson", // Замените на свои геоданные
+    data: "/marks.json", // Замените на свои геоданные
   });
 
   map.addLayer({
@@ -196,7 +196,7 @@ map.on("load", function () {
     isMarkersAdded = true;
   }
 
-  fetch("../../marks.geojson")
+  fetch("/marks.json")
     .then((response) => response.json())
     .then((data) => {
       geojsonData = data;

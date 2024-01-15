@@ -2,7 +2,7 @@
   "services": [
     {
       "id": "d4b938b6-6d6a-4a0d-b647-ea250b19bd8d",
-      "img": "/public/images/services/service1.avif",
+      "img": "/public/images/services/service1.jpg",
       "title": "UAV-based services – UAV-MAGNETICS",
       "description": "This method involves generating electromagnetic fields on the Earth's surface or near-surface and measuring the response. It's useful for mapping subsurface geological features and detecting variations in soil composition, water content, and the presence of minerals."
     },
@@ -14,13 +14,13 @@
     },
     {
       "id": "d6d1914a-d1cc-4f31-97e5-0e0e1d667e23",
-      "img": "/public/images/services/service3.avif",
+      "img": "/public/images/services/service3.jpg",
       "title": "Ground Magnetics",
       "description": "TDEM involves transmitting a brief, powerful electromagnetic pulse into the ground and measuring the response. It's particularly useful for detecting conductive materials, such as water and minerals, at various depths."
     },
     {
       "id": "7363df9e-0af0-446b-82b5-1d853f5bdae9",
-      "img": "/public/images/services/service4.avif",
+      "img": "/public/images/services/service4.jpg",
       "title": "Ground Gravimetry",
       "description": "This technique measures variations in the Earth's gravitational field caused by the density differences in underlying rocks and minerals. Gravimetry can reveal geological structures like caverns, faults, or mineral deposits."
     },
