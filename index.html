@@ -7,16 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/public/styles/style.css">
   <link rel="stylesheet" href="/public/styles/normalize.css">
-  <link rel="stylesheet" href="/public/styles/map.css">
   <link rel="stylesheet" href="/public/styles/responsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700;800&amp;display=swap"
     rel="stylesheet">
-  <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
-  <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.0/mapbox-gl-draw.css" rel="stylesheet">
-  <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
   <link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
 </head>
 
@@ -28,25 +24,24 @@
       <nav>
         <ul class="header__navigation">
           <li>
-            <a href="#services">Services</a>
+            <a class="nav-item" href="#services">Services</a>
           </li>
           <li>
-            <a href="#client-data">Multi-Client data</a>
+            <a class="nav-item" href="#client-data">Multi-Client data</a>
           </li>
           <li>
-            <a href="#publications">Publications</a>
+            <a class="nav-item" href="#publications">Publications</a>
           </li>
           <li>
-            <a href="#our-team">Our team</a>
+            <a class="nav-item" href="#our-team">Our team</a>
           </li>
           <li>
-            <a href="#footer">Contact</a>
+            <a class="nav-item" href="#footer">Contact</a>
           </li>
           <li>
-            <div id="google_translate_element"></div>
             <div class="lang-icon">
-              <img src="/public/images/brazil-icon.jpg" alt="">
-              <img src="/public/images/american-icon.png" alt="">
+              <img class="portuguese-lang" src="/public/images/brazil-icon.jpg" alt="">
+              <img class="english-lang" src="/public/images/american-icon.png" alt="">
             </div>
           </li>
         </ul>
@@ -66,7 +61,7 @@
       </div>
     </section>
     <section id="services" class="services container">
-      <h2>Our services</h2>
+      <h2 class="services__title">Our services</h2>
       <p class="services__subtitle">Strataimage is a geophysical acquisition company specialized in onshore
         electromagnetic, magnetotelluric
         (AMT/MT) and time domain electromagnetic (TDEM) methods.
@@ -85,10 +80,10 @@
     </section>
 
     <section id="publications" class="publications container  hide-items">
-      <h2>Our publications and patents</h2>
+      <h2 class="publications__title">Our publications and patents</h2>
 
-      <h3 class="publications__item publications__list-header">
-        Publications
+      <h3 class="publications__list-header">
+        <span id="publications__list-header">Publications</span>
         <button class="button--show-publications"></button>
       </h3>
       <div class="publications__inner">
@@ -100,8 +95,8 @@
     </section>
 
     <section id="patents" class="publications container hide-items">
-      <h3 class="publications__item publications__list-header">
-        Patents
+      <h3 class=" publications__list-header">
+        <span id="patents__list-header">Patents</span>
         <button class="button--show-patents"></button>
       </h3>
       <div  class="publications__inner">
@@ -114,7 +109,7 @@
 
     <section id="client-data" class="map">
       <div class="map__inner container">
-        <h2>Multi-client data</h2>
+        <h2 class="map__title">Multi-client data</h2>
       </div>
 
       <div id="map">
@@ -141,7 +136,7 @@
     </section>
 
     <section id="our-team" class="our-team container">
-      <h2>Our team</h2>
+      <h2 class="our-team__title">Our team</h2>
       <p class="our-team__subtitle">Our team is made up of highly qualified and experienced personnel trained at Strataimage. We also have
         supervised several master's and doctoral theses from students in Brazil and from our team.
       </p>
@@ -154,7 +149,7 @@
     <div class="footer__inner container">
       <div class="footer__contacts">
         <div class="contacts-section">
-          <h3>Contact Us</h3>
+          <h3 class="contacts-section__title">Contact Us</h3>
           <span class="contacts-section__name">Strataimage Consultoria Ltda.</span>
           <span class="contacts-section__position">Av das Américas 700</span>
           <span class="contacts-section__mail">CItta America, Bl 1, sl. 312</span>
@@ -185,6 +180,9 @@
 
     </div>
   </footer>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+  <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.0/mapbox-gl-draw.css" rel="stylesheet">
+  <link rel="stylesheet" href="/public/styles/map.css">
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.0/mapbox-gl-draw.js"></script>
   <script src="/public/scripts/map-load.js"></script>

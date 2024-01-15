@@ -17,6 +17,8 @@
     <h1>Add geomark</h1>
     <input placeholder="title" type="text" name="title" id="title" required />
     <input placeholder="description" type="text" name="description" id="description" required />
+    <input placeholder="title portuguese" type="text" name="title-pt" id="title-pt" required />
+    <input placeholder="description portuguese" type="text" name="description-pt" id="description-pt" required />
     <input placeholder="download link" type="text" name="documentLink" id="document-link" required />
     <div class="form-divider"></div>
     <button id="add-mark__btn" type="submit">Add</button>
@@ -27,23 +29,30 @@
     <h1>Edit geomark</h1>
     <input placeholder="title" type="text" name="title" id="new-title" required />
     <textarea placeholder="description" type="text" name="description" id="new-description" required></textarea>
-    <input type="link" type="text" name="link" id="new-link" required>
+    <input placeholder="title portuguese" type="text" name="title-pt" id="new-title-pt" required />
+    <textarea placeholder="description portuguese" type="text" name="description-pt" id="new-description-pt" required></textarea>
+    <input type="text" type="text" name="link" id="new-link" required>
     <div class="form-divider"></div>
     <button id="edit-mark__btn" type="submit">Edit</button>
     <button type="button" class="close-form">X</button>
   </form>
 
-  <form class="kml-form"  method="post" enctype="multipart/form-data">
+  <form class="kml-form hidden"  method="post" enctype="multipart/form-data">
       <h1>Upload the KMZ file to add the geomark:</h1> 
     
       <input placeholder="title" type="text" name="kmz-title" id="kmz-title" required>
       <textarea placeholder="description" type="text" name="kmz-description" id="kmz-description" required></textarea>
+      <input placeholder="title portuguese" type="text" name="kmz-title-pt" id="kmz-title-pt" required>
+      <textarea placeholder="description portuguese" type="text" name="kmz-description-pt" id="kmz-description-pt" required></textarea>
       <input placeholder="donwload link" type="text" name="kmz-link" id="kmz-link" required>
     
       <input type="file" name="kmlFile" accept=".kmz" required>
       <div id="message"></div>
       <button type="submit">Upload</button>
+      <button type="button" class="close-form">X</button>
   </form>
+
+  <button class="show-kml">Show KMZ form +</button>
 
   <div id="map">
     <ul class="marks-list hidden">

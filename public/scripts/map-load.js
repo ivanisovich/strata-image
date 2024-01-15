@@ -76,24 +76,6 @@ function polygonArea(coords) {
   return Math.abs(area / 2);
 }
 
-// Добавление меток
-function createGeojson([...coords], title, description, link) {
-  let geojson = {
-    type: "Feature",
-    properties: {
-      title: title,
-      description: description,
-      link: link,
-    },
-    geometry: {
-      type: "Polygon",
-      coordinates: [...coords],
-    },
-  };
-
-  return geojson;
-}
-
 // Добавление интерактивности
 map.on("load", function () {
   // Добавление возможности выбора территории (полигонов)
@@ -131,7 +113,7 @@ map.on("load", function () {
   var geojsonData = null;
 
   function addMarkers() {
-    if (isMarkersAdded || !geojsonData) return;
+    if (isMarkersAdded || !geojsonData ) return;
     var features = map.querySourceFeatures("territories");
 
     geojsonData.features.forEach(function (feature) {
@@ -170,6 +152,7 @@ map.on("load", function () {
             feature.properties.link
           )
         );
+        console.log(document.querySelector("html").lang)
 
         hideAllPopups();
         // Привязка попапа к маркеру
@@ -196,7 +179,8 @@ map.on("load", function () {
     isMarkersAdded = true;
   }
 
-  fetch("/marks.json")
+  function fetchList (lang) {
+    fetch("marks.json")
     .then((response) => response.json())
     .then((data) => {
       geojsonData = data;
@@ -215,6 +199,8 @@ map.on("load", function () {
           let listItem = document.createElement("li");
           let title = document.createElement("strong");
           let description = document.createElement("p");
+          let titlePt = document.createElement("strong")
+          let descriptionPt = document.createElement("p")
           let deleteButton = document.createElement("button");
           let editButton = document.createElement("button");
           let link = document.createElement("a");
@@ -222,8 +208,18 @@ map.on("load", function () {
           link.target = "_blank";
           listItem.className = "list-item";
           link.className = "list-item__link";
-          title.innerHTML = element.properties.title;
-          description.innerHTML = element.properties.description;
+
+          if (lang === "pt"){
+            title.innerHTML = element.properties.titlePt;
+            description.innerHTML = element.properties.descriptionPt;
+          } else {
+            title.innerHTML = element.properties.title;
+            description.innerHTML = element.properties.description;
+          }
+
+          titlePt.innerHTML =  element.properties.titlePt
+          descriptionPt.innerHTML = element.properties.descriptionPt
+         
           link.innerHTML = "download";
           link.href = element.properties.link;
           deleteButton.innerHTML = "delete";
@@ -232,15 +228,21 @@ map.on("load", function () {
           editButton.className = "edit-button";
           listItem.id = element.properties.id;
           if (!isClientView) {
-            listItem.append(title, description, link, deleteButton, editButton);
+            listItem.append(title, description,titlePt,descriptionPt, link, deleteButton, editButton);
           } else if (isClientView) {
             listItem.append(title, description);
           }
           marksList.append(listItem);
         }
       });
-      document.querySelector(".lds-ellipsis").classList.add("spinner-hidden");
+
+      if(document.querySelector(".lds-ellipsis")){
+        document.querySelector(".lds-ellipsis").classList.add("spinner-hidden");
+      }
     });
+  }
+
+  fetchList("/marks.json")
 
   map.on("sourcedata", function (e) {
     if (e.sourceId === "territories" && e.isSourceLoaded) {
@@ -262,7 +264,19 @@ map.on("load", function () {
       );
       var coordinates = e.lngLat;
       let area = polygonArea(foundObject.geometry.coordinates[0]);
-      var popup = new mapboxgl.Popup()
+      if (document.querySelector("html").lang === "pt"){
+        var popup = new mapboxgl.Popup()
+        .setLngLat(coordinates)
+        .setHTML(
+          returnMarkHtml(
+            feature.properties.titlePt,
+            feature.properties.descriptionPt,
+            feature.properties.link
+          )
+        )
+        .addTo(map);
+      } else {
+        var popup = new mapboxgl.Popup()
         .setLngLat(coordinates)
         .setHTML(
           returnMarkHtml(
@@ -272,6 +286,7 @@ map.on("load", function () {
           )
         )
         .addTo(map);
+      }
       focusCamera(calculateCentroid(foundObject.geometry.coordinates[0]), area);
     }
   });
@@ -296,6 +311,26 @@ map.on("load", function () {
       focusCamera(center, area);
     }
   });
+
+  if(isClientView){
+    document.querySelector(".portuguese-lang").addEventListener("click",()=>{
+      marksList.innerHTML = ""
+      fetchList("pt")
+      console.log(map["_markers"][0].setPopup())
+
+      geojsonData.features.forEach(function (feature,index) {
+        var popup = new mapboxgl.Popup().setHTML(
+          returnMarkHtml(
+            feature.properties.titlePt,
+            feature.properties.descriptionPt,
+            feature.properties.link
+          )
+        );
+
+        map["_markers"][index].setPopup(popup)
+      })
+    })
+  }
 });
 
 // Поиск меток
@@ -336,5 +371,8 @@ if (isClientView) {
 }
 
 map.on('zoom', () => {
-  scrollMessage.classList.add("hidden");
+  if(isClientView){
+    scrollMessage.classList.add("hidden");
+  }
 });
+

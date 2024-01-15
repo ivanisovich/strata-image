@@ -214,6 +214,7 @@
       margin-top: 0px;
    }
 
+   .button--show-patents,
    .button--show-publications {
       right: 5px;
       width: 40px;

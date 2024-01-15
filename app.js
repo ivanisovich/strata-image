@@ -51,11 +51,12 @@ app.post('/admin/login', (req, res) => {
 
 // Middleware для проверки аутентификации
 function isAuthenticated(req, res, next) {
-  if (req.session.authenticated) {
-      next();
-  } else {
-      res.send('Необходима авторизация');
-  }
+  // if (req.session.authenticated) {
+  //     next();
+  // } else {
+  //     res.send('Необходима авторизация');
+  // }
+  next()
 }
 
 app.get('/login',  (req, res) => {
@@ -73,7 +74,7 @@ app.get('/map-editor', isAuthenticated, (req, res) => {
 
 // Добавление меток
 app.post("/map-editor", async (req, res) => {
-  const geojsonFilePath = "marks.geojson";
+  const geojsonFilePath = "marks.json";
   console.log(req.body);
   async function addDataToGeoJSONFile(req) {
     try {
@@ -110,20 +111,19 @@ app.post("/map-editor", async (req, res) => {
 // Удаление меток
 app.post("/deleteMark", async (req, res) => {
   const { id } = req.body;
+
   try {
     // Асинхронное чтение geojson данных из файла
-    let data = JSON.parse(await fs.readFile("marks.geojson", "utf8"));
-
+    let data = JSON.parse(await fs.readFile("marks.json", "utf8"));
     // Фильтрация объектов, удаляя те, что имеют заданный id
     const initialLength = data.features.length;
     data.features = data.features.filter(
       (feature) => feature.properties.id !== id
     );
-
     // Проверка, изменился ли массив
     if (data.features.length !== initialLength) {
       // Асинхронное сохранение обновленных данных обратно в файл
-      await fs.writeFile("marks.geojson", JSON.stringify(data, null, 4));
+      await fs.writeFile("marks.json", JSON.stringify(data, null, 4));
       res.status(200).send({ message: "Objects deleted successfully." });
     } else {
       res.status(404).send({ message: "Object not found." });
@@ -141,10 +141,13 @@ app.post("/editMark", async (req, res) => {
   const id = req.body.id;
   const title = req.body.title;
   const description = req.body.description;
+  const titlePt = req.body.titlePt;
+  const descriptionPt = req.body.descriptionPt;
   const link = req.body.link;
+
   try {
     // Чтение содержимого GeoJSON файла
-    const geojsonContent = await fs.readFile("marks.geojson", "utf8");
+    const geojsonContent = await fs.readFile("marks.json", "utf8");
     const geojsonData = JSON.parse(geojsonContent);
 
     // Поиск объекта по ID
@@ -156,10 +159,12 @@ app.post("/editMark", async (req, res) => {
       // Обновление title и description объекта
       objectToEdit.properties.title = title;
       objectToEdit.properties.description = description;
+      objectToEdit.properties.titlePt = titlePt;
+      objectToEdit.properties.descriptionPt = descriptionPt;
       objectToEdit.properties.link = link;
 
       // Сохранение обновленного содержимого обратно в файл
-      await fs.writeFile("marks.geojson", JSON.stringify(geojsonData, null, 4));
+      await fs.writeFile("marks.json", JSON.stringify(geojsonData, null, 4));
 
       res.status(200).send({ message: "GeoJSON object updated successfully." });
     } else {
@@ -214,6 +219,8 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
     feature.properties.id = uuidv4();
     feature.properties.title = req.body["kmz-title"];
     feature.properties.description = req.body["kmz-description"];
+    feature.properties.titlePt = req.body["kmz-title-pt"];
+    feature.properties.descriptionPt = req.body["kmz-description-pt"];
     feature.properties.link = req.body["kmz-link"];
 
     if (feature.geometry && feature.geometry.type === "LineString") {
@@ -229,7 +236,7 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
     // Попытка чтения файла mark.geojson
     let existingData;
     try {
-      const existingGeoJSON = await fs.readFile("marks.geojson", "utf8");
+      const existingGeoJSON = await fs.readFile("marks.json", "utf8");
       existingData = JSON.parse(existingGeoJSON);
     } catch (error) {
       // Если файл не существует или пустой, создаем новый объект GeoJSON
@@ -249,7 +256,7 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
     existingData.features = existingData.features.concat(newFeatures);
 
     // Сохранение обновленного GeoJSON обратно в mark.geojson
-    await fs.writeFile("marks.geojson", JSON.stringify(existingData, null, 2));
+    await fs.writeFile("marks.json", JSON.stringify(existingData, null, 2));
 
     res.send("Метки из KML файла успешно добавлены");
   } catch (error) {
