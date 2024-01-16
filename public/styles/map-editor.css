@@ -64,6 +64,8 @@ a{
 
   left: 50%;
   transform: translate(-50%, 0%);
+  max-height: 800vh;
+ 
 }
 
 #add-mark {

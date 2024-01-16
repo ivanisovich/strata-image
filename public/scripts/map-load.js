@@ -152,7 +152,6 @@ map.on("load", function () {
             feature.properties.link
           )
         );
-        console.log(document.querySelector("html").lang)
 
         hideAllPopups();
         // Привязка попапа к маркеру
@@ -316,7 +315,6 @@ map.on("load", function () {
     document.querySelector(".portuguese-lang").addEventListener("click",()=>{
       marksList.innerHTML = ""
       fetchList("pt")
-      console.log(map["_markers"][0].setPopup())
 
       geojsonData.features.forEach(function (feature,index) {
         var popup = new mapboxgl.Popup().setHTML(

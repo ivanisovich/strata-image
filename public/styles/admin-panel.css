@@ -38,8 +38,6 @@ h2 {
   text-align: center;
 }
 
-
-
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -75,6 +73,8 @@ nav {
   border-top-right-radius: 24px;
   border-top-left-radius: 24px;
   width: 100%;
+  height: 280px;
+  object-fit: cover;
 }
 
 .service__text {
@@ -107,22 +107,40 @@ input::placeholder {
 
 .patents__list,
 .publications__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   border-radius: 8px;
   background: white;
   padding-left: 0px;
-  list-style: none;
   max-height: 700px;
   overflow-y: scroll;
+  list-style: none;
 }
 
 .publications__item {
+  position: relative;
   box-shadow: 0px -1px 0px 0px rgba(145, 158, 171, 0.24) inset;
+  border: 1px solid rgba(145, 158, 171, 0.32);
+  border-radius: 8px;
   padding: 16px;
-  
+  padding-right: 100px;
 }
 
-.publications__item button {
-  margin-top: 20px;
+.publications__item p:nth-child(1) {
+  border-bottom: 1px solid rgba(145, 158, 171, 0.32);
+  padding-bottom: 20px;
+}
+
+.publications__buttons {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
 }
 
 .publications__item .button--edit-publication {
@@ -144,43 +162,42 @@ input::placeholder {
   display: block;
 }
 .our-team__member-button {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: none;
   background: none;
   color: black;
-  box-shadow: none;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .our-team__member {
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid rgba(145, 158, 171, 0.32);
   padding-top: 100px;
   padding-bottom: 100px;
   max-width: 500px;
-  align-items: center;
- 
-  justify-content: space-around;
-  border-bottom: 1px solid rgba(145, 158, 171, 0.32);
 }
 
 .our-team__member-text {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  max-width: 640px;
   border: 1px solid rgba(145, 158, 171, 0.32);
   border-radius: 8px;
   padding: 30px;
+  max-width: 640px;
 }
 
 .our-team__member img {
   max-height: 300px;
-  
+
   object-fit: scale-down;
 }
 
 .our-team__member h3 {
   color: var(--text-color);
-  font-size: 16px;
   font-style: normal;
   font-weight: 600;
+  font-size: 16px;
   white-space: nowrap;
 }
 
@@ -207,31 +224,30 @@ input::placeholder {
   margin-top: 30px;
 }
 
-form{
+form {
   position: fixed !important;
   top: 0px;
   width: 400px;
 }
 
 textarea {
-  width: 100%;
-  height: 200px;
   align-items: center;
   box-sizing: border-box;
   border: 1px solid var(--button-input, rgba(145, 158, 171, 0.32));
   border-radius: 8px;
   padding: 16px 16px 16px 14px;
+  width: 100%;
+  height: 200px;
 }
 
-
 .publications__item {
-  cursor: pointer;
   transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .publications__item.dragging {
-  opacity: 0.5;
   transform: scale(1.05); /* Пример анимации с увеличением размера */
+  opacity: 0.5;
 }
 
 .publications__item.placeholder {
@@ -239,17 +255,24 @@ textarea {
   background-color: transparent;
 }
 
+@media (max-width: 1000px) {
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
 @media (max-width: 550px) {
   button {
-    margin-left: 0px;
     display: block;
     margin-top: 20px;
-    margin-left: auto !important;
     margin-right: auto !important;
+    margin-left: 0px;
+    margin-left: auto !important;
   }
 
   .our-team__member .button--delete-member {
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
   }
 }

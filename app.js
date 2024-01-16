@@ -276,6 +276,7 @@ app.get("/landing/get", async (req, res) => {
 });
 
 app.delete("/delete/:id", async (req, res) => {
+
   try {
     const jsonData = await fs.readFile("page-elements.json", "utf8");
     let data = JSON.parse(jsonData);
@@ -284,10 +285,11 @@ app.delete("/delete/:id", async (req, res) => {
 
     for (key in data) {
       const index = data[key].findIndex((obj) => obj.id === id);
-
+      console.log(index)
       if (index > -1) {
         data[key].splice(index, 1);
         found = true;
+        
       }
     }
 
@@ -339,7 +341,7 @@ app.post("/landing/add", async (req, res) => {
     // Чтение данных из файла
     const jsonData = await fs.readFile("page-elements.json", "utf8");
     const data = JSON.parse(jsonData);
-
+   
     // Создание нового элемента
     const newObj = req.body;
     newObj.id = uuidv4();
@@ -347,11 +349,16 @@ app.post("/landing/add", async (req, res) => {
     // Обработка случаев "patents" и "publications"
     if (newObj.type === "patents" || newObj.type === "publications") {
       const listItems = newObj.description.split("\n");
-      const newItemList = listItems.map((item) => ({
-        description: item,
-        id: uuidv4(),
-      }));
-      data[newObj.type].push(...newItemList);
+      const listItemsPt = newObj.descriptionPt.split("\n");
+
+      if (listItems.length == listItemsPt.length){
+        const newItemList = listItems.map((item,index) => ({
+          description: item,
+          descriptionPt: listItemsPt[index],
+          id: uuidv4(),
+        }));
+        data[newObj.type].push(...newItemList);
+      }
     } else {
       data[newObj.type].push(newObj);
     }

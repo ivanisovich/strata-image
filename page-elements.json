@@ -4,37 +4,49 @@
       "id": "d4b938b6-6d6a-4a0d-b647-ea250b19bd8d",
       "img": "/public/images/services/service1.jpg",
       "title": "UAV-based services – UAV-MAGNETICS",
-      "description": "This method involves generating electromagnetic fields on the Earth's surface or near-surface and measuring the response. It's useful for mapping subsurface geological features and detecting variations in soil composition, water content, and the presence of minerals."
+      "description": "This method involves generating electromagnetic fields on the Earth's surface or near-surface and measuring the response. It's useful for mapping subsurface geological features and detecting variations in soil composition, water content, and the presence of minerals.",
+      "titlePt": "Serviços baseados em UAV – UAV-MAGNETICS",
+      "descriptionPt": "Este método envolve a geração de campos eletromagnéticos na superfície da Terra ou próximo à superfície e a medição da resposta. É útil para mapear características geológicas subterrâneas e detectar variações na composição do solo, conteúdo de água e presença de minerais."
     },
     {
       "id": "05c6ddb8-c3d2-436c-a1a1-0f69d1fcf3d5",
       "img": "/public/images/services/service2.jpg",
       "title": "Magnetotelluric (AMT/MT)",
-      "description": "MT and AMT techniques measure natural electromagnetic fields at the Earth's surface to study the Earth's subsurface electrical conductivity. These methods are effective in exploring geothermal resources, hydrocarbons, and mineral deposits, especially at great depths."
+      "description": "MT and AMT techniques measure natural electromagnetic fields at the Earth's surface to study the Earth's subsurface electrical conductivity. These methods are effective in exploring geothermal resources, hydrocarbons, and mineral deposits, especially at great depths.",
+      "titlePt": "Magnetotelúrico (AMT/MT)",
+      "descriptionPt": "As técnicas MT e AMT medem campos eletromagnéticos naturais na superfície da Terra para estudar a condutividade elétrica subterrânea da Terra. Esses métodos são eficazes na exploração de recursos geotérmicos, hidrocarbonetos e depósitos minerais, especialmente em grandes profundidades."
     },
     {
       "id": "d6d1914a-d1cc-4f31-97e5-0e0e1d667e23",
       "img": "/public/images/services/service3.jpg",
       "title": "Ground Magnetics",
+      "titlePt": "Magnética Terrestre",
+      "descriptionPt": "O TDEM envolve a transmissão de um pulso eletromagnético breve e poderoso para o solo e a medição da resposta. É particularmente útil para detectar materiais condutores, como água e minerais, em diversas profundidades.",
       "description": "TDEM involves transmitting a brief, powerful electromagnetic pulse into the ground and measuring the response. It's particularly useful for detecting conductive materials, such as water and minerals, at various depths."
     },
     {
       "id": "7363df9e-0af0-446b-82b5-1d853f5bdae9",
       "img": "/public/images/services/service4.jpg",
       "title": "Ground Gravimetry",
-      "description": "This technique measures variations in the Earth's gravitational field caused by the density differences in underlying rocks and minerals. Gravimetry can reveal geological structures like caverns, faults, or mineral deposits."
+      "description": "This technique measures variations in the Earth's gravitational field caused by the density differences in underlying rocks and minerals. Gravimetry can reveal geological structures like caverns, faults, or mineral deposits.",
+      "titlePt": "Gravimetria Terrestre",
+      "descriptionPt": "Esta técnica mede variações no campo gravitacional da Terra causadas pelas diferenças de densidade nas rochas e minerais subjacentes. A gravimetria pode revelar estruturas geológicas como cavernas, falhas ou depósitos minerais."
     },
     {
       "id": "a9f093d2-ecaa-4bc2-9e62-9722282d2a33",
       "img": "/public/images/services/service5.jpg",
       "title": "Time-Domain Electromagnetics (TDEM)",
-      "description": "Magnetometry is used to measure variations in the Earth's magnetic field, which can be influenced by ferromagnetic minerals in the subsurface. It includes both ground-based and UAV-based (Unmanned Aerial Vehicle) surveys, the latter providing a broader area coverage and access to challenging terrains."
+      "description": "Magnetometry is used to measure variations in the Earth's magnetic field, which can be influenced by ferromagnetic minerals in the subsurface. It includes both ground-based and UAV-based (Unmanned Aerial Vehicle) surveys, the latter providing a broader area coverage and access to challenging terrains.",
+      "titlePt": "Eletromagnética no Domínio do Tempo (TDEM)",
+      "descriptionPt": "A magnetometria é usada para medir variações no campo magnético da Terra, que podem ser influenciadas por minerais ferromagnéticos no subsolo. Inclui levantamentos terrestres e baseados em UAV (veículos aéreos não tripulados), este último proporcionando uma cobertura de área mais ampla e acesso a terrenos desafiadores."
     },
     {
       "id": "1916a7b7-c273-4c32-80fc-344f70e4ceed",
       "img": "/public/images/services/service6.jpg",
       "title": "Ground Gamma-spectometry",
-      "description": "This method detects and measures gamma radiation naturally emitted by radioactive elements like uranium, thorium, and potassium in the ground. It's useful in mineral exploration, particularly for uranium and rare earth elements, and for geological mapping."
+      "description": "This method detects and measures gamma radiation naturally emitted by radioactive elements like uranium, thorium, and potassium in the ground. It's useful in mineral exploration, particularly for uranium and rare earth elements, and for geological mapping.",
+      "titlePt": "Espectrometria gama terrestre",
+      "descriptionPt": "Este método detecta e mede a radiação gama emitida naturalmente por elementos radioativos como urânio, tório e potássio no solo. É útil na exploração mineral, especialmente para elementos de urânio e terras raras, e para mapeamento geológico."
     }
   ],
   "members": [
@@ -45,84 +57,108 @@
       "position": "Owner and Managing Partner of Strataimage",
       "description": "Patricia de Lugão brought to Brazil new technologies such as the marine electromagnetic method with controlled source (Marine CSEM) and the elastic seismic inversion. Patricia has experience in processing, developing software for modeling and inversion and interpretation of seismic and electromagnetic data, acquired during her work at Western Geophysical/Schlumberger and Landmark. She holds a PhD in geophysics from the University of Utah, a master's degree in geophysics from the National Observatory of Rio de Janeiro and a BA in Environmental and Water Resources Engineering from the University of South Carolina. Patricia led recent MT projects in Brazil. Patricia was the SEG Honorary Speaker for South America in the second half of 2020.",
       "type": "members",
-      "srcset": "/public/images/members/PATRICIA2.jpg"
+      "srcset": "/public/images/members/PATRICIA2.jpg",
+      "positionPt": "Proprietário e Sócio-Gerente da Strataimage",
+      "descriptionPt": "Patricia de Lugão trouxe para o Brasil novas tecnologias como o método eletromagnético marinho com fonte controlada (Marine CSEM) e a inversão sísmica elástica. Patrícia possui experiência em processamento, desenvolvimento de software para modelagem e inversão e interpretação de dados sísmicos e eletromagnéticos, adquirida durante seu trabalho na Western Geophysical/Schlumberger e Landmark. Ela possui doutorado em geofísica pela Universidade de Utah, mestrado em geofísica pelo Observatório Nacional do Rio de Janeiro e bacharelado em Engenharia Ambiental e de Recursos Hídricos pela Universidade da Carolina do Sul. Patricia liderou projetos recentes de MT no Brasil. Patrícia foi Palestrante Honorária da SEG para a América do Sul no segundo semestre de 2020."
     },
     {
       "id": "8047b89d-32d8-46d1-aa6e-1e46efd4d9ae",
       "photo": "/public/images/members/Berthold.png",
       "name": "Berthold Kriegshauser",
       "position": "Owner and Managing Partner of Strataimage",
-      "description": "Berthold has over 30 years of experience in the oil and gas sector, having worked for Baker Hughes in Houston and Rio de Janeiro, and for CETCO do Brasil. Berthold received an M.Sc. in Geophysics in 1992 from Universität Köln, Germany, and a Ph.D. in Geophysics from the University of Utah, USA, in 1997, working on electromagnetic (EM) methods research. He is the author and co-author of 22 patents and over 60 articles related to EM methods."
+      "description": "Berthold has over 30 years of experience in the oil and gas sector, having worked for Baker Hughes in Houston and Rio de Janeiro, and for CETCO do Brasil. Berthold received an M.Sc. in Geophysics in 1992 from Universität Köln, Germany, and a Ph.D. in Geophysics from the University of Utah, USA, in 1997, working on electromagnetic (EM) methods research. He is the author and co-author of 22 patents and over 60 articles related to EM methods.",
+      "positionPt": "Proprietário e Sócio-Gerente da Strataimage",
+      "descriptionPt": "Berthold tem mais de 30 anos de experiência no setor de petróleo e gás, tendo trabalhado na Baker Hughes em Houston e no Rio de Janeiro, e na CETCO do Brasil. Berthold recebeu um M.Sc. em Geofísica em 1992 pela Universität Köln, Alemanha, e um Ph.D. em Geofísica pela Universidade de Utah, EUA, em 1997, trabalhando em pesquisas de métodos eletromagnéticos (EM). É autor e coautor de 22 patentes e mais de 60 artigos relacionados a métodos EM."
     },
     {
       "id": "1f488a69-3850-4736-bb66-753dd7fb2c7a",
       "photo": "/public/images/members/Ludwig.jpg",
       "name": "Ludwig Kriegshauser",
       "position": "Administrator of Strataimage Energy Services",
-      "description": "Inc. based in Charlotte, Ludwig has an Abitur from Gymnasium Geschwister Scholl in Stuttgart, Germany, and is currently studying Mathematics for Business B.S. and Geology at the University of North Carolina, Charlotte, USA."
+      "description": "Inc. based in Charlotte, Ludwig has an Abitur from Gymnasium Geschwister Scholl in Stuttgart, Germany, and is currently studying Mathematics for Business B.S. and Geology at the University of North Carolina, Charlotte, USA.",
+      "positionPt": "Administrador dos Serviços de Energia Strataimage",
+      "descriptionPt": "Inc., com sede em Charlotte, Ludwig possui um Abitur do Gymnasium Geschwister Scholl em Stuttgart, Alemanha, e atualmente estuda Matemática para Negócios, bacharelado e Geologia na Universidade da Carolina do Norte, Charlotte, EUA."
     },
     {
       "id": "7c195192-ce5b-4d2f-8b1d-07de0bff3114",
       "photo": "/public/images/members/ERIC.jpg",
       "name": "Eric Correa",
       "position": "Senior Geologist and Operations Manager in Brazil",
-      "description": "Eric Corrêa has a geology degree from the State University of Rio de Janeiro (UERJ), 2013, and a master's degree in the area of Basin Analysis and Mobile Belts, also at UERJ, 2019. Since 2014, Eric has participated in all Strataimage projects, both in the acquisition, interpretation and integration of AMT/MT/TDEM/GRAV/MAG data with other geological and geophysical data."
+      "description": "Eric Corrêa has a geology degree from the State University of Rio de Janeiro (UERJ), 2013, and a master's degree in the area of Basin Analysis and Mobile Belts, also at UERJ, 2019. Since 2014, Eric has participated in all Strataimage projects, both in the acquisition, interpretation and integration of AMT/MT/TDEM/GRAV/MAG data with other geological and geophysical data.",
+      "positionPt": "Geólogo Sênior e Gerente de Operações no Brasil",
+      "descriptionPt": "Eric Corrêa é formado em geologia pela Universidade do Estado do Rio de Janeiro (UERJ), 2013, e mestre na área de Análise de Bacias e Cintos Móveis, também pela UERJ, 2019. Desde 2014, Eric participa de todos os projetos Strataimage , tanto na aquisição, interpretação e integração de dados AMT/MT/TDEM/GRAV/MAG com outros dados geológicos e geofísicos."
     },
     {
       "id": "055bb02f-b5c5-4392-bbe3-144fa36c682f",
       "photo": "/public/images/members/THEODOR.jpg",
       "name": "Theodor Kriegshauser",
       "position": "Leader of our UAV-based methods",
-      "description": "Theodor Kriegshäuser holds an M.Sc. In Biomass Technology from the Technical University of Munich – TUM, Germany (2023) and a B.SC. from the University of Hohenheim, Germany, in Biobased Products and Bioenergy (2020)."
+      "description": "Theodor Kriegshäuser holds an M.Sc. In Biomass Technology from the Technical University of Munich – TUM, Germany (2023) and a B.SC. from the University of Hohenheim, Germany, in Biobased Products and Bioenergy (2020).",
+      "positionPt": "Líder de nossos métodos baseados em UAV",
+      "descriptionPt": "Theodor Kriegshäuser possui um M.Sc. Em Tecnologia de Biomassa pela Universidade Técnica de Munique – TUM, Alemanha (2023) e B.SC. pela Universidade de Hohenheim, Alemanha, em Produtos de Base Biológica e Bioenergia (2020)."
     },
     {
       "id": "2382bd36-701c-779d-8192-55ef3ff8346c",
       "photo": "/public/images/members/Katharina2.jpg",
       "name": "Katharina Lugão Kriegshäuser",
       "position": "Agricultural Engineer",
-      "description": "Katharina Kriegshäuser has a Bachelor's degree (2020) in Agronomy and is studying for a Master's degree in Agricultural Engineering from the University of Hohenheim, Germany, with a specialization in precision agriculture. Her thesis deals with the use of electromagnetic methods in agriculture. Katharina has experience using drones to control weeds."
+      "description": "Katharina Kriegshäuser has a Bachelor's degree (2020) in Agronomy and is studying for a Master's degree in Agricultural Engineering from the University of Hohenheim, Germany, with a specialization in precision agriculture. Her thesis deals with the use of electromagnetic methods in agriculture. Katharina has experience using drones to control weeds.",
+      "positionPt": "Engenheiro agrônomo",
+      "descriptionPt": "Katharina Kriegshäuser é bacharel (2020) em Agronomia e cursa mestrado em Engenharia Agrícola pela Universidade de Hohenheim, Alemanha, com especialização em agricultura de precisão. Sua tese trata do uso de métodos eletromagnéticos na agricultura. Katharina tem experiência no uso de drones para controlar ervas daninhas."
     },
     {
       "id": "2382ed36-701c-479d-8192-55ef2ff8346c",
       "photo": "/public/images/members/ALINE.jpeg",
       "name": "Aline Menezes",
       "position": "Geophysicist",
-      "description": "Aline Menezes has a degree in Geophysics from UNIPAMPA (2010), a master's degree in geology from UNISINOS (2021) and is also a doctoral student at UNISINOS. Since 2011 Aline has participated in all AMT/MT/TDEM/GRAV/MAG projects at Strataimage."
+      "description": "Aline Menezes has a degree in Geophysics from UNIPAMPA (2010), a master's degree in geology from UNISINOS (2021) and is also a doctoral student at UNISINOS. Since 2011 Aline has participated in all AMT/MT/TDEM/GRAV/MAG projects at Strataimage.",
+      "positionPt": "Geofísico",
+      "descriptionPt": "Aline Menezes é formada em Geofísica pela UNIPAMPA (2010), mestre em geologia pela UNISINOS (2021) e também é doutoranda pela UNISINOS. Desde 2011 Aline participa de todos os projetos AMT/MT/TDEM/GRAV/MAG da Strataimage."
     },
     {
       "id": "994e5a3a-a475-47c2-b413-832bc6896bba",
       "photo": "/public/images/members/ISAAC.jpeg",
       "name": "Isaac de Oliveira Santos",
       "position": "Geophysicist",
-      "description": "Isaac de Oliveira Santos has a degree in Geophysics from the Federal University of Bahia, Salvador, Brazil in 2011 and a master's degree in geology from UFBA in 2018. Isaac has participated in all projects since 2018 including the UAV-Mag in California and MT project in the Permian Basin."
+      "description": "Isaac de Oliveira Santos has a degree in Geophysics from the Federal University of Bahia, Salvador, Brazil in 2011 and a master's degree in geology from UFBA in 2018. Isaac has participated in all projects since 2018 including the UAV-Mag in California and MT project in the Permian Basin.",
+      "positionPt": "Geofísico",
+      "descriptionPt": "Isaac de Oliveira Santos é formado em Geofísica pela Universidade Federal da Bahia, Salvador, Brasil em 2011 e mestre em geologia pela UFBA em 2018. Isaac participou de todos os projetos desde 2018, incluindo o projeto UAV-Mag na Califórnia e MT na Bacia do Permiano."
     },
     {
       "id": "cfdb66df-71cb-4ddd-9002-cabab4d7bd31",
       "photo": "/public/images/members/KIVIA.jpg",
       "name": "Kivia do Carmo Palheta Gomes",
       "position": "Geophysicist",
-      "description": "Kivia do Carmo Palheta Gomes is a geophysicist from UFPA/Pará, Brazil (2009) with a master's degree in Well Geophysics also from UFPA (2014), Brazil. Since 2010, she has participated in all AMT / MT / TDEM projects in Brazil and California."
+      "description": "Kivia do Carmo Palheta Gomes is a geophysicist from UFPA/Pará, Brazil (2009) with a master's degree in Well Geophysics also from UFPA (2014), Brazil. Since 2010, she has participated in all AMT / MT / TDEM projects in Brazil and California.",
+      "positionPt": "Geofísico",
+      "descriptionPt": "Kivia do Carmo Palheta Gomes é geofísica pela UFPA/Pará, Brasil (2009) com mestrado em Geofísica de Poços também pela UFPA (2014), Brasil. Desde 2010, participa de todos os projetos AMT/MT/TDEM no Brasil e na Califórnia."
     },
     {
       "id": "7d1dfdbb-2174-4b33-a126-8ddb3fc005cd",
       "photo": "/public/images/members/LUCIANO.jpg",
       "name": "Luciano Areas",
       "position": "Geophysicist",
-      "description": "Luciano Areas is a mathematician graduated from UERJ, the State University of Rio de Janeiro, Brazil (1999) and with a master’s in Geophysics from the National Observatory/MCT, Rio de Janeiro (2003). Luciano worked for Strataimage and Schlumberger from 2005 2015 in the implementation of seismic inversion at Petrobras. Luciano is currently working on his PhD in Geophysics at the University of Campinas/São Paulo, Brazil. Luciano has participated in all AMT/MT/TDEM projects in Brazil and California."
+      "description": "Luciano Areas is a mathematician graduated from UERJ, the State University of Rio de Janeiro, Brazil (1999) and with a master’s in Geophysics from the National Observatory/MCT, Rio de Janeiro (2003). Luciano worked for Strataimage and Schlumberger from 2005 2015 in the implementation of seismic inversion at Petrobras. Luciano is currently working on his PhD in Geophysics at the University of Campinas/São Paulo, Brazil. Luciano has participated in all AMT/MT/TDEM projects in Brazil and California.",
+      "positionPt": "Geofísico",
+      "descriptionPt": "Luciano Areas é matemático formado pela UERJ, Universidade do Estado do Rio de Janeiro, Brasil (1999) e mestre em Geofísica pelo Observatório Nacional/MCT, Rio de Janeiro (2003). Luciano trabalhou para Strataimage e Schlumberger de 2005 a 2015 na implantação de inversão sísmica na Petrobras. Luciano está atualmente fazendo doutorado em Geofísica na Universidade de Campinas/São Paulo, Brasil. Luciano participou de todos os projetos AMT/MT/TDEM no Brasil e na Califórnia."
     },
     {
       "id": "7d1cfdbb-2174-4b13-a126-8ddb3fc005cd",
       "photo": "/public/images/members/UMBERTO.jpg",
       "name": "Umberto José Travaglia Filho",
       "position": "Geophysicist",
-      "description": "Umberto holds a physics degree from the Catholic University of Brasília, Brazil (2005), a master's degree (2012)and a PhD in Applied Geosciences (2016), both from the University of Brasília (UnB). Umberto has worked in all MT/TDEM projects with Strataimage in Brazil and California."
+      "description": "Umberto holds a physics degree from the Catholic University of Brasília, Brazil (2005), a master's degree (2012)and a PhD in Applied Geosciences (2016), both from the University of Brasília (UnB). Umberto has worked in all MT/TDEM projects with Strataimage in Brazil and California.",
+      "positionPt": "Geophysicist",
+      "descriptionPt": "Umberto possui graduação em Física pela Universidade Católica de Brasília, Brasil (2005), mestrado (2012) e doutorado em Geociências Aplicadas (2016), ambos pela Universidade de Brasília (UnB). Umberto trabalhou em todos os projetos MT/TDEM da Strataimage no Brasil e na Califórnia."
     },
     {
       "id": "b2eb5274-f886-4e55-88e6-0230eb8e7a51",
       "photo": "/public/images/members/ERIC.jpg",
       "name": "Erick Garcia Suarez",
       "position": "Geophysicist",
-      "description": "Erick García-Suárez received his B.Sc. in geophysical engineering at National Autonomous University of Mexico (UNAM) and his M.Sc. in Earth Sciences from CICESE. He has worked on multidisciplinary projects as leader of field crews for acquisition of MT data for geothermal and groundwater exploration."
+      "description": "Erick García-Suárez received his B.Sc. in geophysical engineering at National Autonomous University of Mexico (UNAM) and his M.Sc. in Earth Sciences from CICESE. He has worked on multidisciplinary projects as leader of field crews for acquisition of MT data for geothermal and groundwater exploration.",
+      "positionPt": "Geofísico",
+      "descriptionPt": "Erick García-Suárez recebeu seu B.Sc. em engenharia geofísica na Universidade Nacional Autônoma do México (UNAM) e seu M.Sc. em Ciências da Terra pelo CICESE. Trabalhou em projetos multidisciplinares como líder de equipes de campo para aquisição de dados de MT para exploração geotérmica e de águas subterrâneas."
     },
     {
       "id": "b2eb2274-f886-4e55-84e6-0230eb1e7a51",
@@ -130,382 +166,477 @@
       "name": "Sebastian Monno",
       "position": "Geophysicist",
       "description": "Sebastian holds a Master's degree (M.Sc.) in Bioeconomy from the Technical University of Munich – TUM, Germany (2024) and a Bachelor of Science from the University of Hohenheim, Germany, in Biobased Products and Bioenergy (2020). Sebastian has experience using UAVs for weed control.",
-      "srcset": "/public/images/members/sebi2.jpg"
+      "srcset": "/public/images/members/sebi2.jpg",
+      "positionPt": "Geofísico",
+      "descriptionPt": "Sebastian possui mestrado (M.Sc.) em Bioeconomia pela Universidade Técnica de Munique – TUM, Alemanha (2024) e bacharelado em Ciências pela Universidade de Hohenheim, Alemanha, em Produtos de Base Biológica e Bioenergia (2020). Sebastian tem experiência no uso de UAVs para controle de ervas daninhas."
     }
   ],
   "publications": [
     {
       "description": "De Lugão, P.P. and Kriegshäuser, B., 2023, 3D AMT/MT case histories from Brazil, 7th International Symposium on Three-Dimensional Electromagnetics, Vancouver, BC, Canada.",
+      "descriptionPt": "De Lugão, P.P. e Kriegshäuser, B., 2023, Estudos de casos de AMT/MT 3D do Brasil, 7º Simpósio Internacional sobre Eletromagnéticos Tridimensionais, Vancouver, BC, Canadá.",
       "id": "844a7a4a-5e3d-4cfb-a4f2-e981bd0cfb84"
     },
     {
       "description": "De Lugão, P.P., Kriegshäuser, B., and Corea, E., 2023, Can Magnetotelluric help imaging in the Permian Basin? Examples from the Brazilian experience, IMAGE 2023.",
+      "descriptionPt": "De Lugão, P.P., Kriegshäuser, B. e Corea, E., 2023, A Magnetotelúrica pode auxiliar na imagem da Bacia do Permiano? Exemplos da experiência brasileira, IMAGE 2023.",
       "id": "0d85809b-4ab0-4f0f-8029-6e6b54af786e"
     },
     {
       "description": "De Lugão, P.P., Kriegshäuser, B., and Corea, E., 2023, Magnetotellurics: from Oil&Gas Exploration to Renewables: AAPG Brazil 2023.",
+      "descriptionPt": "De Lugão, P.P., Kriegshäuser, B. e Corea, E., 2023, Magnetotelúrica: da Exploração de Petróleo e Gás às Energias Renováveis: AAPG Brasil 2023.",
       "id": "99f5c2b9-c5e2-4945-bad6-d2466587bf89"
     },
     {
       "description": "De Lugão, P.P., Kriegshäuser, B., and Corea, E., 2023, From Onshore Mature Fields to Offshore Frontier Basins: Exploration Using Magnetotellurics: AAPG Brazil 2023.",
+      "descriptionPt": "De Lugão, P.P., Kriegshäuser, B. e Corea, E., 2023, De Campos Maduros em Terra a Bacias de Fronteira Offshore: Exploração Utilizando Magnetotelúrica: AAPG Brasil 2023.",
       "id": "91af9f1d-1f74-4433-9ee0-635ba4a5c3cf"
     },
     {
       "description": "Menezes, A., Chemale Jr., F., De Lugão, P.P., and Kriegshäuser, B., 2022, Structure and Geometry of the Pelotas Basin (onshore), Southern Brazil and Uruguay, from magnetotelluric imaging, ICE’22, AAPG International Conference & Exhibition.",
+      "descriptionPt": "Menezes, A., Chemale Jr., F., De Lugão, P.P. e Kriegshäuser, B., 2022, Estrutura e Geometria da Bacia de Pelotas (em terra), Sul do Brasil e Uruguai, a partir de imagens magnetotelúricas, ICE’22, Conferência e Exposição Internacional AAPG.",
       "id": "329ede2b-c51b-4a00-94c9-3101300d0963"
     },
     {
       "description": "Kriegshäuser, B.F., De Lugão, P.P.  and Corrêa, E., 2022, Correlação e extensão de dados de resistividade de poço usando eletromagnética de superfície em campos maduros, EBPCM.",
+      "descriptionPt": "Kriegshäuser, B.F., De Lugão, P.P. e Corrêa, E., 2022, Correlação e extensão de dados de resistividade de poço usando eletromagnética de superfície em campos maduros, EBPCM.",
       "id": "04b266cd-9fea-46e1-879e-827b4a9afdc0"
     },
     {
       "description": "Menezes, A., Chemale Jr., F., De Lugão, P.P., Teixeira, C. D. and Kriegshäuser, B., 2021, Structure and geometry of the Neoproterozoic Dom Feliciano Belt and Phanerozoic basins, southern Brazil, from magnetotelluric imaging, Journal of South American Earth Sciences.",
+      "descriptionPt": "Menezes, A., Chemale Jr., F., De Lugão, P.P., Teixeira, C. D. e Kriegshäuser, B., 2021, Estrutura e geometria do Cinturão Dom Feliciano do Neoproterozoico e bacias do Fanerozoico, sul do Brasil, a partir de imagens magnetotelúricas, Journal of South American Earth Sciences.",
       "id": "a9e2ae43-babf-472e-b844-f54d4913af84"
     },
     {
       "description": "De Lugão, P.P., Kriegshäuser, B.F. and Corrêa, E., 2021, Imaging of Aquifers in Bahia Using the Electromagnetic Geophysics Method, Audio-Magnetotelluric, IAH 2021 Brazil Congress.",
+      "descriptionPt": "De Lugão, P.P., Kriegshäuser, B.F. e Corrêa, E., 2021, Imagem dos Aquíferos na Bahia Usando o Método de Geofísica Eletromagnética, Magnetotelúrica de Áudio, Congresso IAH 2021 Brasil.",
       "id": "dccdff63-9ef2-47c9-828a-9d6d492b351c"
     },
     {
       "description": "De Lugão, P.P., Corrêa, E., Sherman, D., Constable, S. and Kriegshäuser, B.F., 2020, Imaging the Rio de La Plata Transfer System with Marine Magnetotellurics, AAPG Virtual Research Symposium Latin America & Caribbean Region.",
+      "descriptionPt": "De Lugão, P.P., Corrêa, E., Sherman, D., Constable, S. e Kriegshäuser, B.F., 2020, Imagem do Sistema de Transferência do Rio de La Plata com Magnetotelúrica Marinha, Simpósio Virtual de Pesquisa AAPG na América Latina e na Região do Caribe.",
       "id": "8951333e-dc5c-469b-b8d6-bfb607ae85ec"
     },
     {
       "description": "De Lugão, P.P., Rolim, S. and Kriegshäuser, B.F., 2020, Understanding the Tectonic Framework of Unconventional Reservoirs in the Paraná Basin Using the Magnetotelluric Method, Unconventional Resource Technology Conference, URTEC2020.",
+      "descriptionPt": "De Lugão, P.P., Rolim, S. e Kriegshäuser, B.F., 2020, Compreendendo o Enquadramento Tectônico de Reservatórios Não Convencionais na Bacia do Paraná Usando o Método Magnetotelúrico, Conferência de Tecnologia de Recursos Não Convencionais, URTEC2020.",
       "id": "0e267f3e-d321-4897-b638-27555fe214ed"
     },
     {
       "description": "De Lugão, P.P. and Kriegshäuser, B.F., 2021, Oil&gas exploration in Brazil using the magnetotelluric method: an example for East Africa, Fifth EAGE Eastern Africa Petroleum Geoscience Forum 2020.",
+      "descriptionPt": "De Lugão, P.P. e Kriegshäuser, B.F., 2021, Exploração de Petróleo e Gás no Brasil Usando o Método Magnetotelúrico: Um Exemplo para o Leste da África, Quinto Fórum de Geociências do Petróleo da EAGE na África Oriental 2020.",
       "id": "f556f885-289c-4817-8f6f-8b8955e714d7"
     },
     {
       "description": "Freire, P. E. da Fonseca, da Silva, N.R.A., de Lugão, P.P., Kriegshäuser, B.F., Minatto, J.Z. and Schweig, C., 2019, Geoelectric modeling for the design of the grounding system of the Bom Jardim da Serra windfarm, AGU 2019.",
+      "descriptionPt": "Freire, P. E. da Fonseca, da Silva, N.R.A., de Lugão, P.P., Kriegshäuser, B.F., Minatto, J.Z. e Schweig, C., 2019, Modelagem Geoelétrica para o Projeto do Sistema de Aterramento do Parque Eólico de Bom Jardim da Serra, AGU 2019.",
       "id": "fd2a9891-d1c7-4e49-ab82-1ead30d1f9b9"
     },
     {
       "description": "Arruda, C.K.C., Dart, F.C., de Lugão, P.P., Kriegshäuser, B.F., 2019, A Matrix Method for the Study of Interferences in Transformers Neutrals due to HVDC Ground Current Injection, Electric Power Systems Research, Elsevier.",
+      "descriptionPt": "Arruda, C.K.C., Dart, F.C., de Lugão, P.P., Kriegshäuser, B.F., 2019, Um Método de Matriz para o Estudo de Interferências nos Neutros de Transformadores devido à Injeção de Corrente de Terra HVDC, Pesquisa em Sistemas de Energia Elétrica, Elsevier.",
       "id": "6c2066b1-13d1-476f-8c3c-c099e44c37eb"
     },
     {
       "description": "Kriegshäuser, B., de Lugão, P.P. and Freire, P. E., 2019, Geoelectric modelling of near-surface resistivity distribution for the design of windfarm grounding grids, EAGE, Near Surface Geoscience ‘19, Den Hague.",
+      "descriptionPt": "Kriegshäuser, B., de Lugão, P.P. e Freire, P. E., 2019, Modelagem Geoelétrica da Distribuição de Resistividade em Superfície para o Projeto de Redes de Aterramento de Parques Eólicos, EAGE, Geociência de Superfície ‘19, Den Haag.",
       "id": "f7beb2ed-7e3f-4137-ab7d-4a12ec80d24c"
     },
     {
       "description": "Freire, P. E. da Fonseca, de Lugão, P.P., Kriegshäuser, B.F., 2018, Windfarm Grounding Simulation and Performance Calculation, Brazil Windpower 2018.",
+      "descriptionPt": "Freire, P. E. da Fonseca, de Lugão, P.P., Kriegshäuser, B.F., 2018, Simulação e Cálculo de Desempenho de Aterramentos de Parques Eólicos, Brasil Windpower 2018.",
       "id": "f255439c-ae17-4959-a747-5ec9a3c7fa13"
     },
     {
       "description": "Gomes, K.C.P., Corrêa, E.O., de Lugão, P.P., Kriegshäuser, B.F., Menezes, A.M.C., Nunes, D.F., de Oliveira, A.R.R., and da Rocha, L.M.S., 2018, Modelo 2D de resistividade para o Campo de Carmópolis, Bacia SEAL, utilizando o Método Magnetotelúrico, VIII Simpósio Brasileiro de Geofísica, Expanded Abstracts.",
+      "descriptionPt": "Gomes, K.C.P., Corrêa, E.O., de Lugão, P.P., Kriegshäuser, B.F., Menezes, A.M.C., Nunes, D.F., de Oliveira, A.R.R., e da Rocha, L.M.S., 2018, Modelo 2D de resistividade para o Campo de Carmópolis, Bacia SEAL, utilizando o Método Magnetotelúrico, VIII Simpósio Brasileiro de Geofísica, Resumos Expandidos.",
       "id": "4cd5f66e-688f-44f0-bd7a-ed48b1bb1249"
     },
     {
       "description": "de Lugão, P.P., Corrêa, E.O., Gomes, K.C.P., Kriegshäuser, B.F., Menezes, A.M.C., Nunes, D.F., de Oliveira, A.R.R., and da Rocha, L.M.S., 2018, Modelo de resistividade para o Campo de Carmópolis, Bacia Sergipe-Alagoas, utilizando o Método Magnetotelúrico, 49º Congresso Brasileiro de Geologia / 9º Simpósio do Cretáceo do Brasil / VII Simpósio de Vulcanismo e Ambientes Associados.",
+      "descriptionPt": "de Lugão, P.P., Corrêa, E.O., Gomes, K.C.P., Kriegshäuser, B.F., Menezes, A.M.C., Nunes, D.F., de Oliveira, A.R.R. e da Rocha, L.M.S., 2018, Modelo de resistividade para o Campo de Carmópolis, Bacia Sergipe-Alagoas, utilizando o Método Magnetotelúrico, 49º Congresso Brasileiro de Geologia / 9º Simpósio do Cretáceo do Brasil / VII Simpósio de Vulcanismo e Ambientes Associados.",
       "id": "857f6cff-85c7-4d9f-8866-4ec470f40260"
     },
     {
       "description": "De Lugão, P., Kriegshäuser, B., Menezes, A., Pastana, A., Nunes, D., Correa, E., Gomes, K., and Malta, L., 2017, Recent applications of the magnetotelluric method for onshore oil&gas exploration in Brazil, 67th Ann. Internat. Mtg., Soc. Expl. Geophys., Expanded Abstracts., p. 1199-1203.",
+      "descriptionPt": "de Lugão, P., Kriegshäuser, B., Menezes, A., Pastana, A., Nunes, D., Correa, E., Gomes, K., e Malta, L., 2017, Aplicações recentes do método Magnetotelúrico na exploração de petróleo e gás em terra no Brasil, 67ª Reunião Anual Internacional, Soc. Expl. Geofís., Resumos Expandidos, p. 1199-1203.",
       "id": "f1d8f37b-7d67-4565-85f2-25328d48c5c5"
     },
     {
       "description": "Thern, H., Hinze, I., Mohnke, O., Salazar, J., Kriegshäuser, B., 2016, Towards a Robust Estimation of Permeability by Integrating Logging Data from Nuclear Magnetic Resonance, Acoustic, and Formation Tester: SPE-181618-MS, Transactions of  ACTE 2016.",
+      "descriptionPt": "Thern, H., Hinze, I., Mohnke, O., Salazar, J., Kriegshäuser, B., 2016, Rumo a uma Estimativa Robusta de Permeabilidade Integrando Dados de Registros de Núcleo de Ressonância Magnética Nuclear, Acústicos e de Formação: SPE-181618-MS, Transações da ACTE 2016.",
       "id": "e68bd5ee-26ed-4b88-9110-abdee33cbfc4"
     },
     {
       "description": "Kriegshäuser, B., 2015, Modern LWD Formation Evaluation Services Applied to the Pre-salt Carbonate Reservoirs, Offshore Brazil: 1st Brazilian Petroleum Congress.",
+      "descriptionPt": "Kriegshäuser, B., 2015, Serviços Modernos de Avaliação de Formação LWD Aplicados a Reservatórios Carbonáticos Pré-Sal, Offshore Brasil: 1º Congresso Brasileiro de Petróleo.",
       "id": "7137d4fc-557f-4b91-a730-750799f53479"
     },
     {
       "description": "Barbosa, J. E., Klein, K. S., Morani, B., Tilsley-Baker, R., Antonov, Y., Maurer, H.-M., and Kriegshauser, B., 2014, State-of-the-art, extra-deep azimuthal resistivity and novel inversion techniques improve reservoir definition and delineation of channel sands while drilling, 2014 AAPG GTW - Stratigraphic Traps and Play Concepts in Deep Water Settings. ",
+      "descriptionPt": "Barbosa, J. E., Klein, K. S., Morani, B., Tilsley-Baker, R., Antonov, Y., Maurer, H.-M., e Kriegshauser, B., 2014, Resistividade Azimutal Extra Profunda de Ponta e Novas Técnicas de Inversão Melhoram a Definição de Reservatórios e a Delineação de Leques Aluviais Durante a Perfuração, 2014 AAPG GTW - Armadilhas Estratigráficas e Conceitos de Jogo em Ambientes de Águas Profundas.",
       "id": "3d26dfdc-6a01-4058-aaa0-f827a5529427"
     },
     {
       "description": "Kriegshäuser, B., 2013, On the value of electrical anisotropy in formation evaluation: Transactions of the13th Intern. Congress of the Brazilian Geophysical Society.",
+      "descriptionPt": "Kriegshäuser, B., 2013, Sobre o Valor da Anisotropia Elétrica na Avaliação de Formações: Transações do 13º Congresso Internacional da Sociedade Brasileira de Geofísica.",
       "id": "b8b5d276-9d71-4304-a3c4-d4ed6764740f"
     },
     {
       "description": "Kriegshäuser, B., 2012, Formation evaluation and reservoir navigation challenges offshore Brazil: 11th Annual Angola Formation Evaluation Forum, Luanda, Angola.",
+      "descriptionPt": "Kriegshäuser, B., 2012, Avaliação de Formação e Desafios de Navegação de Reservatórios Offshore no Brasil: 11º Fórum Anual de Avaliação de Formação de Angola, Luanda, Angola.",
       "id": "b1e27513-1dc3-42b3-96ba-07066e5c16d8"
     },
     {
       "description": "de Lugão, P.P.,  Kriegshäuser, B.F. and Finateu, C., 2012, Phase Roll Out of Quadrant effect in MT Data from a Gold Prospect: 21st  Workshop on Electromagnetic Induction in the Earth, Abstracts SP4-3-12.",
+      "descriptionPt": "de Lugão, P.P., Kriegshäuser, B.F. e Finateu, C., 2012, Fase de Desenvolvimento do Efeito do Quadrante em Dados MT de um Prospecto de Ouro: 21º Workshop sobre Indução Eletromagnética na Terra, Resumos SP4-3-12.",
       "id": "2e8633a9-fe2d-450e-ad84-cc0026b44aa0"
     },
     {
       "description": "De Lugão, P., La Terra, E. and Kriegshäuser, B., 2011, The renaissance of the magnetotelluric method: focus on land exploration in Brazil: Transactions of the12th Intern. Congress of the Brazilian Geophysical Society.",
+      "descriptionPt": "De Lugão, P., La Terra, E. e Kriegshäuser, B., 2011, O renascimento do método Magnetotelúrico: foco na exploração em terra no Brasil: Transações do 12º Congresso Internacional da Sociedade Brasileira de Geofísica.",
       "id": "dba70b11-509d-4eee-a2b6-bc9ac38508c5"
     },
     {
       "description": "La Terra, E.F., de Lugão, P.P., Kriegshäuser, B.F., Lopes, P.R., and Rocha, L.F., 2010, Onshore hydrocarbon exploration in Brazil by integration of HRGM, gamma-spectrometry and CSAMT/TDEM data: EGM 2010 International Workshop Capri – Italy.",
+      "descriptionPt": "La Terra, E.F., de Lugão, P.P., Kriegshäuser, B.F., Lopes, P.R., e Rocha, L.F., 2010, Exploração de hidrocarbonetos em terra no Brasil pela integração de dados HRGM, gama-espectrometria e CSAMT/TDEM: EGM 2010 International Workshop Capri – Itália.",
       "id": "89b618e1-1c5d-4dfe-acc2-dcdf0143600f"
     },
     {
       "description": "Kriegshäuser, B., Fabian, S., 2008, First successful field tests of a water treatment system in the offshore Brasil environment: Rio Oil & Gas Expo and Conference.",
+      "descriptionPt": "Kriegshäuser, B., Fabian, S., 2008, Primeiros testes de campo bem-sucedidos de um sistema de tratamento de água no ambiente offshore do Brasil: Expo e Conferência Rio Oil & Gas.",
       "id": "af3c0a27-af32-4893-9f80-071132c98d4e"
     },
     {
       "description": "Wang, T., Tang, X., Yu, L., Kriegshäuser, B., Fanini, O., and Ugueto, G., 2005 Characterizing Fractures with Multicomponent Induction Measurements: Petrophysics Vol. 46, No. 1.",
+      "descriptionPt": "Wang, T., Tang, X., Yu, L., Kriegshäuser, B., Fanini, O., e Ugueto, G., 2005 Caracterização de Fraturas com Medidas de Indução Multicomponente: Petrofísica, Vol. 46, No. 1.",
       "id": "cd9ae705-feeb-4700-afdb-c9ff9621d94c"
     },
     {
       "description": "Kriegshäuser, B., Corley, B, Rabinovich, M., Tabarovsky, L., 2005, Computing resistivity anisotropy and structural dip using multi-component induction data: Transactions of the 9th Intern. Congress of the Brazilian Geophysical Society.",
+      "descriptionPt": "Kriegshäuser, B., Corley, B, Rabinovich, M., Tabarovsky, L., 2005, Computação de Anisotropia de Resistividade e Dip Estrutural Usando Dados de Indução Multicomponente: Transações do 13º Congresso Internacional da Sociedade Brasileira de Geofísica.",
       "id": "bab48059-6c9f-472a-9b99-cd2c2225faa5"
     },
     {
       "description": "Yu,  L., Kriegshäuser, B., Wang, T., and Driskill, B., 2004, Real time processing of multicomponent induction tool data in highly deviated and horizontal wells: Transactions of the SPWLA 45th Annual Logging Symposium, paper ZZ.",
+      "descriptionPt": "Yu, L., Kriegshäuser, B., Wang, T., e Driskill, B., 2004, Processamento em Tempo Real de Dados de Ferramenta de Indução Multicomponente em Poços Altamente Desviados e Horizontais: Transações do 45º Simpósio Anual de Registros da SPWLA, paper ZZ.",
       "id": "06de638c-21fa-45f9-9a42-f3411b05c488"
     },
     {
       "description": "Kriegshäuser, B., Santos, A., and Yu, L., 2003, Enhancing the operating range of the multicomponent induction log tool: Transactions of the 8th Intern. Congress of the Brazilian Geophysical Society.",
+      "descriptionPt": "Kriegshäuser, B., Santos, A., e Yu, L., 2003, Aumentando o Alcance Operacional da Ferramenta de Indução Multicomponente: Transações do 8º Congresso Internacional da Sociedade Brasileira de Geofísica.",
       "id": "7068c49b-b534-481f-bea1-97c78fd4e93a"
     },
     {
       "description": "Santos, A., Kriegshäuser, B., Mollison, R., and Yu, L., 2003, Innovative petrophysical momdel to interpret multicomponent induction log data: Transactions of the 8th Intern. Congress of the Brazilian Geophysical Society.",
+      "descriptionPt": "Santos, A., Kriegshäuser, B., Mollison, R., e Yu, L., 2003, Modelo Petrofísico Inovador para Interpretar Dados de Registros de Indução Multicomponente: Transações do 8º Congresso Internacional da Sociedade Brasileira de Geofísica.",
       "id": "eb7343c2-fa67-46d1-9324-5607c92df093"
     },
     {
       "description": "Wang, T., Tang, X., Ugueto, G.,  Kriegshäuser, B., and Fanini, O., 2003, Characterizing drilling-induced fractures with multicomponent induction and acoustic data: Transactions of the 8th Intern. Congress of the Brazilian Geophysical Society.",
+      "descriptionPt": "Wang, T., Tang, X., Kriegshäuser, B., Ugueto, G., 2003, Caracterização de Fraturas Induzidas pela Perfuração com Dados de Indução Multicomponente e Acústica: Transações do 8º Congresso Internacional da Sociedade Brasileira de Geofísica.",
       "id": "77fe22a9-a71e-47e1-8d2f-2c478f65a56a"
     },
     {
       "description": "Gomes, R.M., Denicol, P.S., da Cunha, A.M.V., de Souza, M.S., Kriegshäuser, B., Payne, C.J., and Santos, A., 2002, Using multicomponent induction log data to enhance formation evaluation in deepwater reservoirs from Campos Basin, Offshore Brasil: Transactions of the SPWLA 43rd Annual Logging Symposium, paper N.",
+      "descriptionPt": "Gomes, R.M., Denicol, P.S., da Cunha, A.M.V., de Souza, M.S., Kriegshäuser, B., Payne, C.J., e Santos, A., 2002, Utilização de dados de registro de indução multicomponente para aprimorar a avaliação de formação em reservatórios de águas profundas da Bacia de Campos, Offshore Brasil: Transações do 43º Simpósio Anual de Registros da SPWLA, paper N.",
       "id": "b77e9f55-7817-4a07-a478-e17846b0772d"
     },
     {
       "description": "Wang, T., Tang, X., Kriegshäuser, B., Ugueto, G., and Yu, L., 2002, Using multicomponent induction and cross-dipole acoustic logs to jointly characterize drilling-induced fractures: Transactions of the SPWLA 43rd Annual Logging Symposium, paper L.",
+      "descriptionPt": "Wang, T., Tang, X., Kriegshäuser, B., Ugueto, G., e Yu, L., 2002, Utilização de Registros de Indução Multicomponente e Registros de Acústica de Dipolo Cruzado para Caracterizar Conjuntamente Fraturas Induzidas pela Perfuração: Transações do 43º Simpósio Anual de Registros da SPWLA, paper L.",
       "id": "857a3d7b-fa4a-4df8-9a85-76544244b6e6"
     },
     {
       "description": "Yu, L., Fanini, O., Kriegshauser, B., Koelman, J. M. V., and van Popta, J., 2001, Enhanced Evaluation of Low-Resistivity Reservoirs Using Multi-Component Induction Log Data: Petrophysics, Vol. 42, No. 6. ",
+      "descriptionPt": "Yu, L., Fanini, O., Kriegshauser, B., Koelman, J. M. V., e van Popta, J., 2001, Avaliação aprimorada de reservatórios de baixa resistividade usando dados de registro de indução multicomponentes: Petrofísica, Vol. 42, nº 6.",
       "id": "a91306f4-1d8b-48e1-8bea-089d91708de4"
     },
     {
       "description": "Kriegshäuser, B., Fanini, O., Yu, L., van Popta, J., and van der Horst, J., 2001, Improved shaly sand interpretation in highly deviated and horizontal wells using multicomponent induction log data: Transactions of the SPWLA 42nd Annual Logging Symposium, paper S.",
+      "descriptionPt": "Kriegshäuser, B., Fanini, O., Yu, L., van Popta, J., e van der Horst, J., 2001, Melhor interpretação de areia argilosa em poços altamente desviados e horizontais usando dados de registro de indução multicomponentes: Transações do SPWLA 42º Simpósio Anual de Logging, artigo S.",
       "id": "326fbaed-d929-4554-af93-7c9d228ad56b"
     },
     {
       "description": "Mollison, R., Fanini, O., Kriegshäuser, B., Yu, L., Ugueto, U., and van Popta, J., 2001, Impact of multicomponent induction technology on a deepwater field turbidite sand hydrocarbon saturation evaluation: Transactions of the SPWLA 42nd Annual Logging Symposium, paper T.",
+      "descriptionPt": "Mollison, R., Fanini, O., Kriegshäuser, B., Yu, L., Ugueto, U., e van Popta, J., 2001, Impacto da tecnologia de indução multicomponente em um campo de águas profundas avaliação de saturação de hidrocarbonetos de areia turbidítica: Transações do 42º Simpósio Anual de Extração de Madeira da SPWLA, artigo T.",
       "id": "1ede3958-b874-4a9f-9d20-a51cbf219a23"
     },
     {
       "description": "Zhang, Z. Yu, L., Kriegshäuser, B., and Chunduru, R., 2001, Simultaneous determination of relative angles and anisotropic resistivity using multicomponent induction logging data: Transactions of the SPWLA 42nd Annual Logging Symposium, paper Q.",
+      "descriptionPt": "Zhang, Z. Yu, L., Kriegshäuser, B., e Chunduru, R., 2001, Determinação simultânea de ângulos relativos e resistividade anisotrópica usando dados de perfilagem de indução multicomponente: Transações do 42º Simpósio Anual de Logging da SPWLA, artigo Q.",
       "id": "682770d7-1a0e-47ff-9598-9246f4565dcf"
     },
     {
       "description": "Wang, T., Yu, L., Fanini, O., Kriegshäuser, B., and Merchant, A., 2001, Understanding multicomponent induction logs in a 3-D borehole environment: Transactions of the SPWLA 42nd Annual Logging Symposium, paper GG.",
+      "descriptionPt": "Wang, T., Yu, L., Fanini, O., Kriegshäuser, B., e Merchant, A., 2001, Compreendendo perfis de indução multicomponentes em um ambiente de poço 3-D: Transações do 42º Simpósio Anual de Logging da SPWLA, artigo GG.",
       "id": "296f2999-083e-4b43-8559-d42a4b8bea26"
     },
     {
       "description": "Kriegshäuser, B., McWilliams, S., Fanini, O., and Yu, L., 2001, An efficient and accurate pseudo 2-D inversion scheme for multicomponent induction log data: 71st Ann. Internat. Mtg., Soc. Expl. Geophys., Expanded Abstracts.",
+      "descriptionPt": "Kriegshäuser, B., McWilliams, S., Fanini, O., e Yu, L., 2001, Um esquema de inversão pseudo 2-D eficiente e preciso para dados de registro de indução multicomponente: 71st Ann. Internacional. Reunião, Soc. Exp. Geophys., Resumos Expandidos.",
       "id": "011b841f-968d-4938-9364-3cfb2f5e7fba"
     },
     {
       "description": "Yu, L., Kriegshäuser, B., Fanini, O., and Xiao, J., 2001, A fast inversion method for multicomponent induction log data: 71st Ann. Internat. Mtg., Soc. Expl. Geophys., Expanded Abstracts.",
+      "descriptionPt": "Yu, L., Kriegshäuser, B., Fanini, O., e Xiao, J., 2001, Um método de inversão rápida para dados de registro de indução multicomponente: 71st Ann. Internacional. Reunião, Soc. Exp. Geophys., Resumos Expandidos.",
       "id": "0b9ce2ac-aec5-4ab8-bfe9-597293087e46"
     },
     {
       "description": "Page, G., Fanini, O., Kriegshäuser, B., Mollison, R., Yu, L., and Colley, N., 2001, Field example demonstrating a significant increase in calculated gas-in-place: An enhanced shaly sand reservoir characterisation model utilizing 3DEX multicomponent induction data: SPE 71724. Transactions of ACME 2001.",
+      "descriptionPt": "Page, G., Fanini, O., Kriegshäuser, B., Mollison, R., Yu, L., e Colley, N., 2001, Exemplo de campo demonstrando um aumento significativo no cálculo de gás no local: Um xisto aprimorado modelo de caracterização de reservatório de areia utilizando dados de indução multicomponente 3DEX: SPE 71724. Transações da ACME 2001.",
       "id": "a6e3fc54-dc2c-4a91-a914-3ca0548ec45c"
     },
     {
       "description": "Fanini, O., Kriegshäuser, B., Mollison, R., Schön, J., and Yu, L., 2001, Enhanced, low-resistivity pay, reservoir exploration, and delineation with the latest multicomponent induction technology integrated with NMR, Nuclear, and borehole image measurements: Transactions of LACPEC 2001.",
+      "descriptionPt": "Fanini, O., Kriegshäuser, B., Mollison, R., Schön, J., e Yu, L., 2001, Pagamento aprimorado de baixa resistividade, exploração de reservatório e delineamento com a mais recente tecnologia de indução multicomponente integrada com NMR, Medições nucleares e de imagens de poços: Transações do LACPEC 2001.",
       "id": "0a833588-99d3-4d1e-856a-08bf404691d7"
     },
     {
       "description": "Fanini, O., Kriegshäuser, B., Mollison, R., Schön, J., and Yu, L., 2001, Enhanced, low-resistivity pay, reservoir exploration, and delineation with the latest multicomponent induction technology integrated with NMR, Nuclear, and borehole image measurements: SPE 69447, Transactions of OTC 2001.",
+      "descriptionPt": "Fanini, O., Kriegshäuser, B., Mollison, R., Schön, J., e Yu, L., 2001, Pagamento aprimorado de baixa resistividade, exploração de reservatório e delineamento com a mais recente tecnologia de indução multicomponente integrada com NMR, Medições nucleares e de imagens de poços: SPE 69447, Transactions of OTC 2001.",
       "id": "b3609bd8-c58c-49c8-ae1a-c8511b8d6b61"
     },
     {
       "description": "Yu, L., Fanini, O., Kriegshäuser, B., Mollison, R., Koelman, J.M.V., and van Popta, J., 2000, A new multicomponent induction logging tool for evaluating electrically anisotropic reservoirs: First Break, 18, no. 12, p. 511 – 519.",
+      "descriptionPt": "Yu, L., Fanini, O., Kriegshäuser, B., Mollison, R., Koelman, J.M.V. e van Popta, J., 2000, Uma nova ferramenta de registro de indução multicomponente para avaliar reservatórios eletricamente anisotrópicos: First Break, 18, nº 12, p. 511 – 519.",
       "id": "e570ce3d-5f34-4225-9049-8da520cfc483"
     },
     {
       "description": "Fanini, O., Kriegshäuser, B., Mollison, R., Yu, L., and van Popta, J., 2000, Multi-component induction technology helps resolve enhanced, low-resistivity reservoirs: Oil & Gas Journal, July 2000.",
+      "descriptionPt": "Fanini, O., Kriegshäuser, B., Mollison, R., Yu, L. e van Popta, J., 2000, A tecnologia de indução multicomponente auxilia na resolução de reservatórios de baixa resistividade aprimorada: Oil & Gas Journal, julho de 2000.",
       "id": "3508aa3e-7f4d-42f5-8be9-8a5fb583baf6"
     },
     {
       "description": "Kriegshäuser, B., Fanini, O., Gupta, P., and, Yu, L., 2000, Advanced inversion techniques for multicomponent induction log data: 70th Ann. Internat. Mtg., Soc. Expl. Geophys., Expanded Abstracts, 1810-1813.",
+      "descriptionPt": "Kriegshäuser, B., Fanini, O., Gupta, P. e Yu, L., 2000, Técnicas avançadas de inversão para dados de registro de indução multicomponente: 70ª Reunião Anual Internacional da Sociedade de Exploração Geofísica, Resumos Expandidos, 1810-1813.",
       "id": "b7366be9-5b94-48b1-94be-ab79aabe447b"
     },
     {
       "description": "Kriegshäuser, B., Fanini, O., Gupta, P., Yu, L., and van der Horst, J., 2000, Wellsite interpretation of multicomponent induction log data: SPE 62906, Transactions of  ACTE 2000.",
+      "descriptionPt": "Kriegshäuser, B., Fanini, O., Gupta, P., Yu, L. e van der Horst, J., 2000, Interpretação de campo de poço de dados de registro de indução multicomponente: SPE 62906, Transações do ACTE 2000.",
       "id": "220eaf6b-ebe2-4e21-af7f-1e11a0ed5cda"
     },
     {
       "description": "Kriegshäuser, B., Fanini, O., Forgang, S., Mollison, R., Yu, L., Gupta, P., Koelman, J.M.V., and van Popta, J., 2000, Increased Oil-In-Place in low resistivity reservoirs from multicomponent induction log data: Transactions of the SPWLA 41st Annual Logging Symposium, paper A (voted 2nd Best Paper presented at SPWLA Annual Logging Symposium).",
+      "descriptionPt": "Kriegshäuser, B., Fanini, O., Forgang, S., Mollison, R., Yu, L., Gupta, P., Koelman, J.M.V. e van Popta, J., 2000, Aumento do óleo in situ em reservatórios de baixa resistividade finamente laminados usando dados de registro de indução multicomponente: Transações do 41º Simpósio Anual de Registro da SPWLA, paper A (eleito o 2º Melhor Paper apresentado no Simpósio Anual de Registro da SPWLA).",
       "id": "07c5c228-b1ec-4494-9452-4fdabb8487ee"
     },
     {
       "description": "Kriegshäuser, B., Fanini, O., Forgang, S., Itskovich, G., Rabinovich, M., Tabarovsky, L., Yu, L., Epov, M., and v. d. Horst, J., 2000, A new multicomponent induction logging tool to resolve anisotropic formations: Transactions of the SPWLA 41st Annual Logging Symposium, paper D (voted Best Poster presented at SPWLA Annual Logging Symposium).",
-      "id": "c903afc5-cc3e-486f-bfab-a1a9934a1907"
+      "id": "c903afc5-cc3e-486f-bfab-a1a9934a1907",
+      "descriptionPt": "Kriegshäuser, B., Fanini, O., Forgang, S., Itskovich, G., Rabinovich, M., Tabarovsky, L., Yu, L., Epov, M. e v. d. Horst, J., 2000, Uma nova ferramenta de registro de indução multicomponente para resolver formações anisotrópicas: Transações do 41º Simpósio Anual de Registro da SPWLA, paper D (eleito o Melhor Poster apresentado no Simpósio Anual de Registro da SPWLA)."
     },
     {
       "description": "Fanini, O., Kriegshäuser, B., Mollison, R., Yu, L., and van Popta, J., 2000, New multi-component induction resistivity tool finds thin-bed pay: World Oil June 2000.",
+      "descriptionPt": "Fanini, O., Kriegshäuser, B., Mollison, R., Yu, L. e van Popta, J., 2000, Nova ferramenta de resistividade multicomponente encontra camadas finas de pay: World Oil, junho de 2000.",
       "id": "3db4d489-dd4b-46ec-8aa7-cc55ea66d4be"
     },
     {
       "description": "Fanini, O., Koelman, J.M.V., Kriegshäuser, B., Mollison, R., van Popta, J., and Yu, L., 2000, Is it shaly pay or water?: Hart’s E&P June 2000.",
-      "id": "0e019424-dd3a-406d-903f-a963015cc36b"
+      "id": "0e019424-dd3a-406d-903f-a963015cc36b",
+      "descriptionPt": "Fanini, O., Koelman, J.M.V., Kriegshäuser, B., Mollison, R., van Popta, J. e Yu, L., 2000, É pay xisto ou água?: Hart's E&P, junho de 2000."
     },
     {
       "description": "Kriegshäuser, B., Fanini, O., Forgang, S., Gupta, P., Mollison, R., van Popta, J., and Yu, L., 2000, Increased net pay in finely laminated low-resistivity reservoirs using multi-component induction logging data: Abstracts, AAPG2000 Annual Convention and Exhibition, paper 3385.",
+      "descriptionPt": "Kriegshäuser, B., Fanini, O., Forgang, S., Gupta, P., Mollison, R., van Popta, J. e Yu, L., 2000, Aumento do pay líquido em reservatórios de baixa resistividade finamente laminados usando dados de registro de indução multicomponente: Resumos da Convenção e Exposição Anual da AAPG 2000, paper 3385.",
       "id": "d764b87c-564b-4601-a5e3-bcb7cdeb8ce7"
     },
     {
       "description": "de Lugão, P.P., La Terra, E.F., Kriegshäuser, B.F., and Fontes, S.L, 2000, Magnetotelluric studies of the Caldas Novas geothermal area, Brazil: Journal of Applied Geophysics, in press.",
+      "descriptionPt": "de Lugão, P.P., La Terra, E.F., Kriegshäuser, B.F. e Fontes, S.L., 2000, Estudos magnetotelúricos da área geotérmica de Caldas Novas, Brasil: Journal of Applied Geophysics, em revisão.",
       "id": "c557c7aa-3aba-4b54-b26b-18e74d49f64b"
     },
     {
       "description": "de Lugão, P.P., La Terra, E.F., Fontes, S.L., and Kriegshäuser, B.F., 1999, Magnetotelluric studies of the Caldas Novas geothermal area: Brazil: IUGG XXII General Assembly, Birmingham, UK, Abstracts - Week A.",
+      "descriptionPt": "de Lugão, P.P., La Terra, E.F., Fontes, S.L. e Kriegshäuser, B.F., 1999, Estudos magnetotelúricos da área geotérmica de Caldas Novas: Brasil: Assembleia Geral da IUGG XXII, Birmingham, Reino Unido, Resumos - Semana A.",
       "id": "a6a23e30-bae9-4645-aa99-612ef48ba8f1"
     },
     {
       "description": "Mollison, R., Schön, J., Fanini, O., Kriegshäuser, B., Meyer, H., and Gupta, P., 1999, A model for hydrocarbon saturation estimation from an orthogonal tensor relationship in thinly laminated anisotropic reservoirs: Transactions of the SPWLA 40th Annual Logging Symposium, paper OO.",
+      "descriptionPt": "Mollison, R., Schön, J., Fanini, O., Kriegshäuser, B. e Gupta, P., 1999, Um modelo para estimativa de saturação de hidrocarbonetos a partir de uma relação de tensor ortogonal em reservatórios anisotrópicos finamente laminados: Transações do 40º Simpósio Anual de Registro da SPWLA, paper OO.",
       "id": "290d562f-ba96-4b21-9443-3b29fd51a328"
     },
     {
       "description": "Kriegshäuser, B., and de Lugao, P. P., 1998, Comparison of global and local optimization techniques in electromagnetic applications: 60th EAGE Conference and Technical Exhibition, Extended Abstracts, paper 10-17.",
+      "descriptionPt": "Kriegshäuser, B. e de Lugao, P. P., 1998, Comparação de técnicas de otimização global e local em aplicações eletromagnéticas: 60ª Conferência e Exposição Técnica da EAGE, Resumos Expandidos, paper 10-17.",
       "id": "bb02b754-fe96-42df-ba9e-5806b7f449e1"
     },
     {
       "description": "Kriegshäuser, B., Tripp, A. C., and Tabarovsky, L. A., 1997, Experimental design for surface-to-borehole hydrocarbon applications: J. Geomag. Geoelectr., 49, 1659-1676.",
+      "descriptionPt": "Kriegshäuser, B., Tripp, A. C. e Tabarovsky, L. A., 1997, Design experimental para aplicações hidrocarbonetos de superfície a poço: J. Geomag. Geoelectr., 49, 1659-1676.",
       "id": "93907c64-7463-4643-9d49-06b5203b6108"
     },
     {
       "description": "Kriegshäuser, B., and Tripp, A. C., 1997, Probing strata of anisotropic complex conductivity using surface-to-borehole methods: 67th Ann. Internat. Mtg., Soc. Expl. Geophys., Expanded Abstracts, 1953-1956.",
+      "descriptionPt": "Kriegshäuser, B. e Tripp, A. C., 1997, Investigação de estratos de condutividade complexa anisotrópica usando métodos de superfície a poço: 67ª Reunião Anual Internacional da Sociedade de Exploração Geofísica, Resumos Expandidos, 1953-1956.",
       "id": "77cc7739-4d0c-4fb3-896c-0e5d5e548e95"
     },
     {
       "description": "de Lugao, P. P., and Kriegshäuser, B., 1997, 2-D inversion of magnetotelluric data over 3-D structures: 67th Ann. Internat. Mtg., Soc. Expl. Geophys., Expanded Abstracts, 382-385, (voted among top 5% of papers presented at SEG meeting in Dallas).",
+      "descriptionPt": "de Lugao, P. P. e Kriegshäuser, B., 1997, Inversão 2-D de dados magnetotelúricos sobre estruturas 3-D: 67ª Reunião Anual Internacional da Sociedade de Exploração Geofísica, Resumos Expandidos, 382-385 (eleito entre os 5% melhores trabalhos apresentados na reunião da SEG em Dallas).",
       "id": "532bb217-3280-478e-be3c-f13fe85f9c0f"
     },
     {
       "description": "Kriegshäuser, B., and Tripp, A. C., 1997, Electric current distribution in the vicinity of an extended conductivity contrast: 59th EAGE Conference and Technical Exhibition, Extended Abstracts, paper F018.",
+      "descriptionPt": "Kriegshäuser, B. e Tripp, A. C., 1997, Distribuição de corrente elétrica nas proximidades de uma contrastante extensão de condutividade: 59ª Conferência e Exposição Técnica da EAGE, Resumos Expandidos, paper F018.",
       "id": "c11887ab-fc3f-410a-8374-4e4371594068"
     },
     {
       "description": "de Lugao, P. P., and Kriegshäuser, B., 1997, 2-D inversion of magnetotelluric data over 3-D structures: 59th EAGE Conference and Technical Exhibition, Extended Abstracts, paper F006.",
+      "descriptionPt": "de Lugao, P. P. e Kriegshäuser, B., 1997, Inversão 2-D de dados magnetotelúricos sobre estruturas 3-D: 59ª Conferência e Exposição Técnica da EAGE, Resumos Expandidos, paper F006.",
       "id": "ad6a5631-7408-445f-bcce-685177d8ab04"
     },
     {
       "description": "Kriegshäuser, B., Tripp, A. C., and Tabarovsky, L. A., 1996, Experimental Design for Surface-to-Borehole Hydrocarbon Applications: 66th Ann. Internat. Mtg., Soc. Expl. Geophys., Expanded Abstracts, 234-237, (Honorable Mention for Best Student Paper presented at SEG meeting in Denver).",
+      "descriptionPt": "Kriegshäuser, B., Tripp, A. C. e Tabarovsky, L. A., 1996, Design experimental para aplicações hidrocarbonetos de superfície a poço: 66ª Reunião Anual Internacional da Sociedade de Exploração Geofísica, Resumos Expandidos, 234-237 (Menção Honrosa para o Melhor Paper Estudantil apresentado na reunião da SEG em Denver).",
       "id": "4931bf78-d251-42f2-ade2-f9031f31a427"
     },
     {
       "description": "Kriegshäuser, B., Tripp, A. C., and Tabarovsky, L. A., 1996, Visualization of electromagnetic field propagation through space and time: 66th Ann. Internat. Mtg., Soc. Expl. Geophys., Expanded Abstracts, p. 1926.",
+      "descriptionPt": "Kriegshäuser, B., Tripp, A. C. e Tabarovsky, L. A., 1996, Visualização da propagação do campo eletromagnético no espaço e no tempo: 66ª Reunião Anual Internacional da Sociedade de Exploração Geofísica, Resumos Expandidos, p. 1926.",
       "id": "aab1455c-9e93-461c-94fb-613a1be028a3"
     },
     {
       "description": "Kriegshäuser, B., Tripp, A. C., and Tabarovsky, L. A., 1996, Experimental Design for Surface-to-Borehole Hydrocarbon Applications: 13th Workshop on Electromagnetic Induction in the Earth, Abstracts, paper 4.15p.",
+      "descriptionPt": "Kriegshäuser, B., Tripp, A. C. e Tabarovsky, L. A., 1996, Design experimental para aplicações hidrocarbonetos de superfície a poço: 13º Workshop sobre Indução Eletromagnética na Terra, Resumos, paper 4.15p.",
       "id": "b44d3c65-b3b9-460c-82f6-8a6706035d77"
     },
     {
       "description": "Kriegshäuser, B., Tripp, A. C., and Tabarovsky, L. A., 1996, Experimental Design for Surface-to-Borehole Hydrocarbon Applications: Poster presented at the SEG Forum for Development and Production.",
+      "descriptionPt": "Kriegshäuser, B., Tripp, A. C. e Tabarovsky, L. A., 1996, Design experimental para aplicações hidrocarbonetos de superfície a poço: Poster apresentado no Fórum de Desenvolvimento e Produção da SEG.",
       "id": "488767cd-77c9-420f-865d-c60576884b31"
     },
     {
       "description": "Kriegshäuser, B., Hördt, A., Stoyer, C. H., and Strack, K.-M., 1992, 3-D Interpretation von LOTEM-Daten: Fallstudie der KGRA Milford, Utah, 25. Jahrestagung der DGG, Leipzig, Abstracts, p. 220.",
+      "descriptionPt": "Kriegshäuser, B., Hördt, A., Stoyer, C. H. e Strack, K.-M., 1992, Interpretação 3-D de dados LOTEM: Estudo de caso do KGRA Milford, Utah, 25ª Reunião Anual da DGG, Leipzig, Resumos, p. 220.",
       "id": "2d520b09-737d-4af3-97fd-1fab45d43da5"
     },
     {
       "description": "Hördt, A., Kriegshäuser, B., and Strack, K.-M., 1992, Case histories of interpreting LOTEM sign reversals: 54th Mtg. Eur. Assoc. Expl. Geophys., Extended Abstracts, 700-701.",
+      "descriptionPt": "Hördt, A., Kriegshäuser, B. e Strack, K.-M., 1992, Estudos de casos de inversão de sinais LOTEM: 54ª Reunião da Associação Europeia de Exploração Geofísica, Resumos Expandidos, 700-701.",
       "id": "35e5afba-b08a-4275-8c06-f506e2f50e10"
     },
     {
       "description": "Kriegshäuser, B., Hördt, A., Stoyer, C. H., and Strack, K.-M., 1992, 3-D LOTEM data interpretation in the Milford valley, Utah, USA: 11th Workshop on Electromagnetic Induction in the Earth, Abstracts, paper 3.3.",
+      "descriptionPt": "Kriegshäuser, B., Hördt, A., Stoyer, C. H. e Strack, K.-M., 1992, Interpretação de dados LOTEM 3-D no vale de Milford, Utah, EUA: 11º Workshop sobre Indução Eletromagnética na Terra, Resumos, paper 3.3.",
       "id": "f2c9ae0f-14c5-4d95-9d1e-20233373423d"
     },
     {
       "description": "Vozoff, K., Hördt, A., Kriegshäuser, B., Strack, K.-M., and Wolfgram, P. A., 1990, 1D interpretation of 3D LOTEM data: 10th Workshop on Electromagnetic Induction in the Earth, IUGG and IAGA, Abstracts, paper 8.2.",
+      "descriptionPt": "Vozoff, K., Hördt, A., Kriegshäuser, B., Strack, K.-M. e Wolfgram, P. A., 1990, Interpretação 1D de dados LOTEM 3D: 10º Workshop sobre Indução Eletromagnética na Terra, IUGG e IAGA, Resumos, paper 8.2.",
       "id": "b7752ce9-bacf-498b-a9df-9a22dad3e4cb"
     }
   ],
   "patents": [
     {
       "description": "Yu, L. and Kriegshäuser, B., 2010, Method and apparatus for use of the real component of a magnetic field of multicomponent resistivity measurements: United States Patent 7,737,697.",
+      "descriptionPt": "Yu, L. e Kriegshäuser, B., 2010, Método e aparelho para uso do componente real de um campo magnético de medições de resistividade multicomponente: Patente dos Estados Unidos 7,737,697.",
       "id": "20f7125d-2b57-4d21-8e0e-59b97b4e85a5"
     },
     {
       "description": "Fanini, O., Forgang, S., Kriegshäuser, B., and Yu, L., 2010, Method and apparatus for a multi-component induction instrument measuring system for geosteering and formation resistivity data interpretation in horizontal, vertical and deviated wells: United States Patent 7,719,282.",
+      "descriptionPt": "Fanini, O., Forgang, S., Kriegshäuser, B. e Yu, L., 2010, Método e aparelho para um sistema de medição com instrumento de indução multicomponente para geonavegação e interpretação de dados de resistividade de formações em poços horizontais, verticais e desviados: Patente dos Estados Unidos 7,719,282.",
       "id": "24452e01-8340-479e-91ec-f82ba4c2d90b"
     },
     {
       "description": "Merchant, G., Fanini, O., Kriegshäuser, B., and Yu, L., 2009, Method and apparatus for the use of multicomponent induction tool for geosteering and formation resistivity data interpretation in horizontal wells: United States Patent 7,612,566.",
+      "descriptionPt": "Merchant, G., Fanini, O., Kriegshäuser, B. e Yu, L., 2009, Método e aparelho para o uso de ferramenta de indução multicomponente para geonavegação e interpretação de dados de resistividade de formações em poços horizontais: Patente dos Estados Unidos 7,612,566.",
       "id": "8f0f3350-4ef2-4035-b3aa-f60cb5b1c687"
     },
     {
       "description": "Merchant, G., Fanini, O., Kriegshäuser, B., and Yu, L., 2008, Method and apparatus for the use of multicomponent induction tool for geosteering and formation resistivity data interpretation in horizontal wells: United States Patent 7,463,035.",
+      "descriptionPt": "Merchant, G., Fanini, O., Kriegshäuser, B. e Yu, L., 2008, Método e aparelho para o uso de ferramenta de indução multicomponente para geonavegação e interpretação de dados de resistividade de formações em poços horizontais: Patente dos Estados Unidos 7,463,035.",
       "id": "7cee1f47-efd3-4900-aea7-c57f97fd47df"
     },
     {
       "description": "Yu, L. and Kriegshäuser, B., 2006, Method and apparatus for use of the real component of a magnetic field of multicomponent resistivity measurements: United States Patent 7,336,080.",
+      "descriptionPt": "Yu, L. e Kriegshäuser, B., 2006, Método e aparelho para uso do componente real de um campo magnético de medições de resistividade multicomponente: Patente dos Estados Unidos 7,336,080.",
       "id": "789cac2b-977f-4107-85bb-8596ec860d41"
     },
     {
       "description": "Fanini, O., Forgang, S., Kriegshäuser, B., and Yu, L., 2007, Method and apparatus for a multi-component induction instrument measuring system for geosteering and formation resistivity data interpretation in horizontal, vertical and deviated wells: United States Patent 7,268,556.",
+      "descriptionPt": "Fanini, O., Forgang, S., Kriegshäuser, B. e Yu, L., 2007, Método e aparelho para um sistema de medição com instrumento de indução multicomponente para geonavegação e interpretação de dados de resistividade de formações em poços horizontais, verticais e desviados: Patente dos Estados Unidos 7,268,556.",
       "id": "6a0c2587-a729-4d7e-9fd5-dacbee0ec83b"
     },
     {
       "description": "Yu, L., Kriegshäuser, B., and Fanini, O., 2006, Real time processing of multicomponent induction tool data in highly deviated and horizontal wells: United States Patent 7,043,370.",
+      "descriptionPt": "Yu, L., Kriegshäuser, B., e Fanini, O., 2006, Processamento em tempo real de dados de ferramenta de indução multicomponente em poços altamente desviados e horizontais: Patente dos Estados Unidos 7,043,370.",
       "id": "f0201c50-d03c-4d10-87ff-ee04f834aec5"
     },
     {
       "description": "Kriegshäuser, B., Fanini, O., Mollison, R., Yu, L., Wang, T., and Tang, X., 2005, Method of using electrical and acoustic measurements for fracture identification: United States Patent 6,925,031.",
+      "descriptionPt": "Kriegshäuser, B., Fanini, O., Mollison, R., Yu, L., Wang, T., e Tang, X., 2005, Método de uso de medições elétricas e acústicas para identificação de fraturas: Patente dos Estados Unidos 6,925,031.",
       "id": "29fa6e13-7287-4b01-919b-e796898cea32"
     },
     {
       "description": "Fanini, O., Forgang, S., Kriegshäuser, B., and Yu, L., 2005, Method and apparatus for the use of multi-component induction tool and cross-component measurements for geosteering and formation resistivity data interpretation in horizontal wells: United States Patent 6,900,640.",
+      "descriptionPt": "Fanini, O., Forgang, S., Kriegshäuser, B., e Yu, L., 2005, Método e aparelho para o uso de ferramenta de indução multicomponente e medições de componentes cruzados para geonavegação e interpretação de dados de resistividade de formações em poços horizontais: Patente dos Estados Unidos 6,900,640.",
       "id": "38e52b8b-ee60-480f-8f67-068bba6f665d"
     },
     {
       "description": "Xiao, J., Kriegshäuser, B., Fanini, O., Yu, L., and Merchant, G., 2005, Method for joint interpretation of multi-array induction and multi-component induction measurements with joint dip angle estimation: United States Patent 6,885,947.",
+      "descriptionPt": "Xiao, J., Kriegshäuser, B., Fanini, O., Yu, L., e Merchant, G., 2005, Método para interpretação conjunta de medições de indução de múltiplos arrays e indução multicomponente com estimativa conjunta de ângulo de mergulho: Patente dos Estados Unidos 6,885,947.",
       "id": "e2e782a7-1c6b-4587-bf99-527eb8f79893"
     },
     {
       "description": "Mollison, R., Schön, J., Fanini, O., Kriegshäuser, B., and Pavlovic, M., 2004, Water saturation and sand fraction determination from borehole resistivity imaging tool, transverse induction logging and a tensorial water saturation model: United States Patent 6,711,502.",
+      "descriptionPt": "Mollison, R., Schön, J., Fanini, O., Kriegshäuser, B., e Pavlovic, M., 2004, Determinação de saturação de água e fração de areia a partir de ferramenta de imagem de resistividade de poço, registro de indução transversal e modelo de saturação de água tensorial: Patente dos Estados Unidos 6,711,502.",
       "id": "456210f8-938b-4270-a19c-16a04b74b56c"
     },
     {
       "description": "Zhang, Z., Yu, L., Tabarovsky, L., and Kriegshäuser, B., 2003, Simultaneous determination of formation angles and anisotropic resistivity using multi-component induction logging data: United States Patent 6,643,589.",
+      "descriptionPt": "Zhang, Z., Yu, L., Tabarovsky, L., e Kriegshäuser, B., 2003, Determinação simultânea de ângulos de formação e resistividade anisotrópica usando dados de registro de indução multicomponente: Patente dos Estados Unidos 6,643,589.",
       "id": "b39962d4-b057-4c9c-8225-3864bb7267f9"
     },
     {
       "description": "Kriegshäuser, B., McWilliams, S., Fanini, O., and Yu, L., 2003, Efficient and accurate pseudo-2D inversion scheme for multicomponent induction log data: United States Patent 6,618,676.",
+      "descriptionPt": "Kriegshäuser, B., McWilliams, S., Fanini, O., e Yu, L., 2003, Esquema de inversão pseudo-2D eficiente e preciso para dados de log de indução multicomponente: Patente dos Estados Unidos 6,618,676.",
       "id": "4b42a50a-f8ba-424e-bdbb-ce5a65ac7226"
     },
     {
       "description": "Yu, L., Kriegshäuser, B., Fanini, O., 2003, Vertical 1-D inversion with thin layers of equal thickness: United States Patent 6,591,194.",
+      "descriptionPt": "Yu, L., Kriegshäuser, B., Fanini, O., 2003, Inversão vertical 1-D com camadas finas de igual espessura: Patente dos Estados Unidos 6,591,194.",
       "id": "b0ee2dcc-414a-41fb-ac7c-a4c476d5bd81"
     },
     {
       "description": "Kriegshäuser, B., Fanini, O., Gupta, P., and Yu, L., 2002, Method for determination of apparent resistivities of anisotropic reservoirs: United States Patent 6,553,314.",
+      "descriptionPt": "Kriegshäuser, B., Fanini, O., Gupta, P., e Yu, L., 2002, Método para determinação de resistividades aparentes de reservatórios anisotrópicos: Patente dos Estados Unidos 6,553,314.",
       "id": "ffcfbfad-efa4-40a5-ad2d-a6f6e51bcd13"
     },
     {
       "description": "Mollison, R., Schön, J., Fanini, O., Kriegshäuser, B., and Pavlovic, M., 2002, Water saturation and sand fraction determination from borehole resistivity imaging tool, transverse induction logging and a tensorial water saturation model: United States Patent 6,493,632.",
+      "descriptionPt": "Mollison, R., Schön, J., Fanini, O., Kriegshäuser, B., e Pavlovic, M., 2002, Determinação de saturação de água e fração de areia a partir de ferramenta de imagem de resistividade de poço, registro de indução transversal e modelo de saturação de água tensorial: Patente dos Estados Unidos 6,493,632.",
       "id": "f17d3aae-6855-43ed-9806-724882e26f60"
     },
     {
       "description": "Mollison, R., Fanini, O., Kriegshäuser, B., and Pavlovic, M., 2002, Water saturation and sand fraction determination from borehole resistivity imaging tool, transverse induction logging and a tensorial dual water saturation model: United States Patent 6,470,274.",
+      "descriptionPt": "Mollison, R., Fanini, O., Kriegshäuser, B., e Pavlovic, M., 2002, Determinação de saturação de água e fração de areia a partir de ferramenta de imagem de resistividade de poço, registro de indução transversal e modelo de saturação de água dual tensorial: Patente dos Estados Unidos 6,470,274.",
       "id": "05fd6544-e094-4945-b401-71057d9551bc"
     },
     {
       "description": "Kriegshäuser, B., Fanini, O., Gupta, P., and Yu, L., 2002, Method for determination of apparent resistivities of anisotropic reservoirs: United States Patent 6,466,872.",
+      "descriptionPt": "Kriegshäuser, B., Fanini, O., Gupta, P., e Yu, L., 2002, Método para determinação de resistividades aparentes de reservatórios anisotrópicos: Patente dos Estados Unidos 6,466,872.",
       "id": "5acdef70-199e-41c5-99d6-a85cf5bea12a"
     },
     {
       "description": "Chakravarthy, S., Gupta, P., Chunduru, R., Kriegshäuser, B., and Fanini, O., 2000, Conductivity anisotropy estimation method for inversion processing of measurements made by a transverse electromagnetic induction logging instrument: United States Patent 6,044,325.",
+      "descriptionPt": "Chakravarthy, S., Gupta, P., Chunduru, R., Kriegshäuser, B., e Fanini, O., 2000, Método de estimativa de anisotropia de condutividade para processamento de inversão de medições feitas por um instrumento de registro de indução eletromagnética transversal: Patente dos Estados Unidos 6,044,325.",
       "id": "ea4fcbfc-cd71-4036-b774-08c93343b670"
     },
     {
       "description": "Kriegshäuser, B., Gupta, P., Jericevic, Z., and Fanini, O., 1999, Method for determining the axial position of formation boundaries using measurements made by a transverse electromagnetic induction logging instrument: United States Patent 5,999,884.",
+      "descriptionPt": "Kriegshäuser, B., Gupta, P., Jericevic, Z., e Fanini, O., 1999, Método para determinar a posição axial de limites de formação usando medições feitas por um instrumento de registro de indução eletromagnética transversal: Patente dos Estados Unidos 5,999,884.",
       "id": "c9aa5828-f32d-44c7-8ac6-213124e4e690"
     },
     {
       "description": "Gupta, P., Kriegshäuser, B., and Fanini, O., 1999, Conductivity anisotropy estimation method for inversion processing of measurements made by a transverse electromagnetic induction logging instrument: United States Patent 5,999,883.",
+      "descriptionPt": "Gupta, P., Kriegshäuser, B. e Fanini, O., 1999, Método de estimativa de anisotropia de condutividade para processamento de inversão de medições feitas por um instrumento de registro de indução eletromagnética transversal: Patente dos Estados Unidos 5,999,883.",
       "id": "f1aca925-8156-473e-886f-6662333337ec"
     },
     {
       "description": "Gupta, P., Kriegshäuser, B., Jericevic, Z., and Fanini, O., 1998, Method for inversion                                                         processing of transverse electromagnetic induction well logging measurements: United States Patent 5,854,991.",
+      "descriptionPt": "Gupta, P., Kriegshäuser, B., Jericevic, Z. e Fanini, O., 1998, Método para processamento de inversão de medições de registro de poço de indução eletromagnética transversal: Patente dos Estados Unidos 5,854,991.",
       "id": "aa05cd01-80c8-4038-b15b-8a2d45b02a41"
     }
   ]

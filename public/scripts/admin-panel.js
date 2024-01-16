@@ -5,19 +5,26 @@ const teamContainer = document.querySelector(".our-team__members");
 const editServiceForm = document.querySelector("#edit-service-form");
 const newTitle = document.querySelector("#new-title");
 const newDescription = document.querySelector("#new-description");
+const newTitlePt = document.querySelector("#new-title-pt");
+const newDescriptionPt = document.querySelector("#new-description-pt");
 const buttonEditArticle = document.querySelector("#button--edit-article");
 const addServiceForm = document.querySelector("#add-service-form");
 const buttonAddArticle = document.querySelector("#button--add-article");
 const titleInput = document.querySelector("#title");
 const descriptionInput = document.querySelector("#description");
+const titleInputPt = document.querySelector("#title-pt");
+const descriptionInputPt = document.querySelector("#description-pt");
 const linkInput = document.querySelector("#link");
 const addPublicationForm = document.querySelector("#add-publication-form");
 const buttonAddPublication = document.querySelector("#button--add-publication");
 const publicationInput = document.querySelector("#publication");
+const publicationInputPt = document.querySelector("#publication-pt");
 const editMemberForm = document.querySelector("#edit-member-form");
 const newName = document.querySelector("#new-name");
 const newPosition = document.querySelector("#new-position");
 const newBio = document.querySelector("#new-bio");
+const newPositionPt = document.querySelector("#new-position-pt");
+const newBioPt = document.querySelector("#new-bio-pt");
 const newPhotoLink = document.querySelector("#new-photo-link");
 const buttonEditMember = document.querySelector("#button--edit-member");
 const addMemberForm = document.querySelector("#add-member-form");
@@ -25,9 +32,12 @@ const buttonAddMember = document.querySelector("#button--add-member");
 const nameInput = document.querySelector("#name");
 const positionInput = document.querySelector("#position");
 const bioInput = document.querySelector("#bio");
+const positionInputPt = document.querySelector("#position-pt");
+const bioInputPt = document.querySelector("#bio-pt");
 const photoLinkInput = document.querySelector("#photo-link");
 const newImg = document.querySelector("#new-image");
 const newPublication = document.querySelector("#new-publication");
+const newPublicationPt = document.querySelector("#new-publication-pt");
 const editPublicationForm = document.querySelector("#edit-publication-form");
 const buttonEditPublication = document.querySelector(
   "#button--edit-publication"
@@ -102,6 +112,8 @@ function processServices(services) {
     const textWrapper = document.createElement("div");
     const title = document.createElement("h3");
     const description = document.createElement("p");
+    const titlePt = document.createElement("h3");
+    const descriptionPt = document.createElement("p");
     const deleteButton = createButton("delete", "button--delete-article");
     const editButton = createButton("edit", "button--edit-article");
 
@@ -112,8 +124,10 @@ function processServices(services) {
     img.src = item.img;
     title.innerHTML = item.title;
     description.innerHTML = item.description;
+    titlePt.innerHTML = item.titlePt;
+    descriptionPt.innerHTML = item.descriptionPt;
 
-    textWrapper.append(title, description, editButton, deleteButton);
+    textWrapper.append(title, description,titlePt,descriptionPt, editButton, deleteButton);
     article.append(img, textWrapper);
     servicesContainer.append(article);
   });
@@ -123,16 +137,23 @@ function processPublications(publications) {
   publications.forEach((item) => {
     let publication = document.createElement("li");
     let text = document.createElement("p");
+    let textPt = document.createElement("p");
+    let buttonsWrapper = document.createElement("div")
 
     const deleteButton = createButton("delete", "button--delete-publication");
     const editButton = createButton("edit", "button--edit-publication");
 
     text.innerHTML = item.description;
+    textPt.innerHTML = item.descriptionPt;
+
     publication.className = "publications__item";
     publication.id = item.id;
     publication.draggable = "true";
+    buttonsWrapper.className = "publications__buttons"
 
-    publication.append(text, editButton, deleteButton);
+    buttonsWrapper.append(editButton,deleteButton)
+
+    publication.append(text,textPt, buttonsWrapper);
     publicationsContainer.append(publication);
   });
 }
@@ -141,6 +162,8 @@ function processPatents(patents) {
   patents.forEach((item) => {
     let publication = document.createElement("li");
     let text = document.createElement("p");
+    let textPt = document.createElement("p");
+    let buttonsWrapper = document.createElement("div")
 
     const deleteButton = createButton("delete", "button--delete-publication");
     const editButton = createButton("edit", "button--edit-publication");
@@ -149,8 +172,12 @@ function processPatents(patents) {
     publication.className = "publications__item";
     publication.id = item.id;
     publication.draggable = "true";
+    textPt.innerHTML = item.descriptionPt;
+    buttonsWrapper.className = "publications__buttons"
+    
+    buttonsWrapper.append(editButton,deleteButton)
 
-    publication.append(text, editButton, deleteButton);
+    publication.append(text,textPt, buttonsWrapper);
     patentsContainer.append(publication);
   });
 }
@@ -162,17 +189,23 @@ function processTeamMembers(members) {
     const name = document.createElement("h3");
     const position = document.createElement("p");
     const description = document.createElement("p");
+    const positionPt = document.createElement("p");
+    const descriptionPt = document.createElement("p");
     const deleteButton = createButton("delete", "button--delete-member");
     const editButton = createButton("edit", "button--edit-member");
 
     memberArticle.className = "our-team__member";
     position.className = "our-team__member-position";
     description.className = "our-team__member-bio";
+    positionPt.className = "our-team__member-position";
+    descriptionPt.className = "our-team__member-bio";
 
     image.src = member.photo;
     name.innerHTML = member.name;
     position.innerHTML = member.position;
     description.innerHTML = member.description;
+    positionPt.innerHTML = member.positionPt;
+    descriptionPt.innerHTML = member.descriptionPt;
     memberArticle.id = member.id;
 
     memberArticle.append(
@@ -180,6 +213,8 @@ function processTeamMembers(members) {
       name,
       position,
       description,
+      positionPt,
+      descriptionPt,
       editButton,
       deleteButton
     );
@@ -207,6 +242,8 @@ document.addEventListener("click", (e) => {
     let articleElement = e.target.closest(".service");
     newTitle.value = articleElement.querySelector("h3").innerHTML;
     newDescription.value = articleElement.querySelector("p").innerHTML;
+    newTitlePt.value = articleElement.querySelectorAll("h3")[1].innerHTML;
+    newDescriptionPt.value = articleElement.querySelectorAll("p")[1].innerHTML;
     newImg.value = articleElement.querySelector("img").src;
 
     let id = e.target.closest(".service").id;
@@ -216,6 +253,8 @@ document.addEventListener("click", (e) => {
         id: id,
         title: newTitle.value,
         description: newDescription.value,
+        titlePt: newTitlePt.value,
+        descriptionPt: newDescriptionPt.value,
         img: newImg.value,
         type: "services",
       };
@@ -230,6 +269,8 @@ document.addEventListener("click", (e) => {
       let params = {
         title: titleInput.value,
         description: descriptionInput.value,
+        titlePt: titleInputPt.value,
+        descriptionPt: descriptionInputPt.value,
         img: linkInput.value,
         type: "services",
       };
@@ -251,6 +292,7 @@ document.addEventListener("click", (e) => {
     addPublicationForm.classList.remove("hidden");
     buttonAddPublication.addEventListener("click", () => {
       let params = {
+        descriptionPt: publicationInputPt.value,
         description: publicationInput.value,
         type: "publications",
       };
@@ -263,11 +305,13 @@ document.addEventListener("click", (e) => {
     let publication = e.target.closest(".publications__item");
     let id = publication.id;
     newPublication.value = publication.querySelector("p").innerHTML;
+    newPublicationPt.value = publication.querySelectorAll("p")[1].innerHTML;
 
     buttonEditPublication.addEventListener("click", () => {
       let params = {
         id: id,
         description: newPublication.value,
+        descriptionPt: newPublicationPt.value
       };
       fetchEdit(params);
       console.log(params);
@@ -281,6 +325,7 @@ document.addEventListener("click", (e) => {
     buttonAddPublication.addEventListener("click", () => {
       let params = {
         description: publicationInput.value,
+        descriptionPt: publicationInputPt.value,
         type: "patents",
       };
       fetchAdd(params);
@@ -303,6 +348,9 @@ document.addEventListener("click", (e) => {
     newBio.value = memberElement.querySelector(
       ".our-team__member-bio"
     ).innerHTML;
+
+    newPositionPt.value = memberElement.querySelectorAll(".our-team__member-position")[1].innerHTML
+    newBioPt.value = memberElement.querySelectorAll(".our-team__member-bio")[1].innerHTML
     newPhotoLink.value = memberElement.querySelector("img").src;
     let id = memberElement.id;
 
@@ -312,6 +360,8 @@ document.addEventListener("click", (e) => {
         name: newName.value,
         position: newPosition.value,
         description: newBio.value,
+        positionPt: newPositionPt.value,
+        descriptionPt: newBioPt.value,
         photo: newPhotoLink.value,
         type: "members",
       };
@@ -327,6 +377,8 @@ document.addEventListener("click", (e) => {
         name: nameInput.value,
         position: positionInput.value,
         description: bioInput.value,
+        positionPt:positionInputPt.value,
+        descriptionPt: bioInputPt.value,
         photoLink: photoLinkInput.value,
         type: "members",
       };

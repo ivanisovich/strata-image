@@ -141,7 +141,7 @@ for (let smoothLink of smoothLinks) {
 }
 
 // Загрузка элементов страницы
-function processArticles(articles) {
+function processArticles(articles,lang) {
   articles.forEach((item) => {
     const article = document.createElement("article");
     const img = document.createElement("img");
@@ -156,8 +156,15 @@ function processArticles(articles) {
 
     article.id = item.id;
     img.src = item.img;
-    title.innerHTML = item.title;
-    description.innerHTML = item.description;
+    
+    if(lang === "pt"){
+      title.innerHTML = item.titlePt;
+      description.innerHTML = item.descriptionPt;
+    } else {
+      title.innerHTML = item.title;
+      description.innerHTML = item.description;
+    }
+
 
     textWrapper.append(title, description);
     imgWrapper.append(img);
@@ -166,7 +173,7 @@ function processArticles(articles) {
   });
 }
 
-function processTeamMembers(members) {
+function processTeamMembers(members,lang) {
   members.forEach((member) => {
     const memberArticle = document.createElement("article");
     const image = document.createElement("img");
@@ -184,8 +191,15 @@ function processTeamMembers(members) {
 
     image.src = member.photo;
     name.innerHTML = member.name;
-    position.innerHTML = member.position;
-    description.innerHTML = member.description;
+
+    if(lang === "pt"){
+      position.innerHTML = member.positionPt;
+      description.innerHTML = member.descriptionPt;
+    } else {
+      position.innerHTML = member.position;
+      description.innerHTML = member.description;
+    }
+
     if (member.srcset) {
       let source = document.createElement("source");
       source.media = "(max-width: 768px)";
@@ -202,21 +216,31 @@ function processTeamMembers(members) {
   });
 }
 
-function processPublications(publications) {
+function processPublications(publications,lang) {
   publications.forEach((item) => {
     let publication = document.createElement("li");
     publication.className = "publications__item";
-    publication.innerHTML = item.description;
+
+    if(lang === "pt"){
+      publication.innerHTML = item.descriptionPt;
+    } else {
+      publication.innerHTML = item.description;
+    }
     publication.id = item.id;
     publicationsContainer.append(publication);
   });
 }
 
-function processPatents(patents) {
+function processPatents(patents,lang) {
   patents.forEach((item) => {
     let publication = document.createElement("li");
     publication.className = "publications__item";
-    publication.innerHTML = item.description;
+
+    if(lang === "pt"){
+      publication.innerHTML = item.descriptionPt;
+    } else {
+      publication.innerHTML = item.description;
+    }
     publication.id = item.id;
     patentsContainer.append(publication);
   });
@@ -256,7 +280,7 @@ document.addEventListener("click", (e) => {
   }
 
   if (e.target.className == "portuguese-lang") {
-    fetch("/page-elements-pt.json")
+    fetch("/page-elements.json")
       .then((response) => response.json())
       .then((data) => {
         servicesContainer.innerHTML = ""
@@ -264,13 +288,20 @@ document.addEventListener("click", (e) => {
         patentsContainer.innerHTML = ""
         teamContainer.innerHTML = ""
         
-        processTeamMembers(data.members);
-        processArticles(data.services);
-        processPublications(data.publications);
-        processPatents(data.patents);
-        processStatic(data.static)
+        processTeamMembers(data.members,"pt");
+        processArticles(data.services,"pt");
+        processPublications(data.publications,"pt");
+        processPatents(data.patents,"pt");
+      
         animateItems();
         document.querySelector("html").lang = "pt"
+      })
+      .catch((error) => console.error(error));
+
+    fetch("/static-portuguese.json")
+      .then((response) => response.json())
+      .then((data) => {
+        processStatic(data.static)
       })
       .catch((error) => console.error(error));
   }
