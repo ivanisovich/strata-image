@@ -1,4 +1,5 @@
-mapboxgl.accessToken =
+function loadMap(){
+  mapboxgl.accessToken =
   "pk.eyJ1IjoiaXZhbmlzb3ZpY2giLCJhIjoiY2xvZDQydDAwMDUwazJrbzIxNmRrZTk4eCJ9.SQwaOs9R3Dvn2QFoZ63F6w";
 let searchInput = document.querySelector(".edit-mark__search");
 const marksList = document.querySelector(".marks-list");
@@ -373,4 +374,4 @@ map.on('zoom', () => {
     scrollMessage.classList.add("hidden");
   }
 });
-
+}

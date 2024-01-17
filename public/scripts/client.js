@@ -3,34 +3,6 @@ const servicesContainer = document.querySelector(".services__inner");
 const publicationsContainer = document.querySelector("#publications__list");
 const patentsContainer = document.querySelector("#patents__list");
 
-// Function to revert to the original language
-function revertToOriginalLanguage() {
-  var iframe = document.querySelector(".goog-te-banner-frame");
-  if (iframe) {
-    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-    var restoreButton = innerDoc.querySelector(
-      '.goog-te-banner-frame button[id^="restore"]'
-    );
-    restoreButton && restoreButton.click();
-  }
-}
-
-fetch("/page-elements.json")
-  .then((response) => response.json())
-  .then((data) => {
-    processTeamMembers(data.members);
-    processArticles(data.services);
-    processPublications(data.publications);
-    processPatents(data.patents);
-
-    animateItems();
-  })
-  .catch((error) => console.error(error));
-
-document.querySelector(".edit-mark__search").addEventListener("focus", () => {
-  document.querySelector(".marks-list").classList.remove("hidden");
-});
-
 // Анимации
 // Функция, которая добавляет класс 'visible' к элементу при его появлении в поле зрения
 function revealOnScroll(entries, observer) {
@@ -123,6 +95,18 @@ window.addEventListener("scroll", function () {
   }
 
   lastScrollTop = scrollTop;
+
+  var mapSection = document.getElementById('map');
+  var mapSectionPosition = mapSection.getBoundingClientRect();
+
+  // Проверяем, находится ли карта в области видимости
+  if (mapSectionPosition.top <= window.innerHeight && mapSectionPosition.bottom >= 0) {
+      // Убираем обработчик события после загрузки карты, чтобы не загружать её повторно
+      window.removeEventListener('scroll', arguments.callee);
+
+      // Загружаем карту
+      loadMap();
+  }
 });
 
 // Плавный скролл
@@ -140,6 +124,22 @@ for (let smoothLink of smoothLinks) {
   });
 }
 
+fetch("/page-elements.json")
+  .then((response) => response.json())
+  .then((data) => {
+    processTeamMembers(data.members);
+    processArticles(data.services);
+    processPublications(data.publications);
+    processPatents(data.patents);
+
+    animateItems();
+  })
+  .catch((error) => console.error(error));
+
+document.querySelector(".edit-mark__search").addEventListener("focus", () => {
+  document.querySelector(".marks-list").classList.remove("hidden");
+});
+
 // Загрузка элементов страницы
 function processArticles(articles,lang) {
   articles.forEach((item) => {
@@ -156,6 +156,7 @@ function processArticles(articles,lang) {
 
     article.id = item.id;
     img.src = item.img;
+    img.alt = item.title
     
     if(lang === "pt"){
       title.innerHTML = item.titlePt;
@@ -191,6 +192,7 @@ function processTeamMembers(members,lang) {
 
     image.src = member.photo;
     name.innerHTML = member.name;
+    image.alt = member.name
 
     if(lang === "pt"){
       position.innerHTML = member.positionPt;

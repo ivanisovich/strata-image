@@ -15,6 +15,8 @@ let kmzTitle = document.querySelector("#kmz-title");
 let kmzDescription = document.querySelector("#kmz-description");
 let kmzLink = document.querySelector("#kmz-link");
 
+loadMap()
+
 function createGeojson([...coords], title, description, titlePt, descriptionPt, link) {
   let geojson = {
     type: "Feature",
