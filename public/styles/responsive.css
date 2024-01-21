@@ -137,6 +137,28 @@
       top: 90px !important;
    }
 
+   .scroll-message{
+      display: none;
+   }
+
+   .scroll-down{
+      visibility: visible;
+      opacity: 1;
+      position: absolute;
+      z-index: 1;
+      transition: 0.5s ease-in-out;
+      position: absolute;
+      top: 85%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.35);
+      padding: 32px;
+      color: rgb(0, 0, 0);
+      font-size: 20px;
+   }
+
    .our-team__member {
       flex-direction: column;
       max-width: 500px;
@@ -229,11 +251,22 @@
    .marks-list {
       width: calc(100% - 20px);
       max-width: 292px;
+      margin-left: 0px !important;
+   }
+
+   #map .container{
+      position: relative;
+      z-index: 3;
+   }
+
+   .edit-mark__search-wrapper{
+      margin-left: 0px;
    }
 
    .list-item {
-      min-width: unset;
+      min-width: 0px;
       box-sizing: border-box;
+      min-width: 0px !important;
    }
 
    .edit-mark__search {
@@ -255,6 +288,7 @@
       margin-right: auto;
       width: 100%;
       max-width: unset;
+      
    }
 
    .footer__inner {
@@ -271,6 +305,10 @@
 
    .footer__contacts p {
       max-width: unset;
+   }
+
+   .footer__contacts span{
+      white-space: wrap;
    }
 
 

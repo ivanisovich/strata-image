@@ -96,16 +96,19 @@ window.addEventListener("scroll", function () {
 
   lastScrollTop = scrollTop;
 
-  var mapSection = document.getElementById('map');
+  var mapSection = document.getElementById("map");
   var mapSectionPosition = mapSection.getBoundingClientRect();
 
   // Проверяем, находится ли карта в области видимости
-  if (mapSectionPosition.top <= window.innerHeight && mapSectionPosition.bottom >= 0) {
-      // Убираем обработчик события после загрузки карты, чтобы не загружать её повторно
-      window.removeEventListener('scroll', arguments.callee);
+  if (
+    mapSectionPosition.top <= window.innerHeight &&
+    mapSectionPosition.bottom >= 0
+  ) {
+    // Убираем обработчик события после загрузки карты, чтобы не загружать её повторно
+    window.removeEventListener("scroll", arguments.callee);
 
-      // Загружаем карту
-      loadMap();
+    // Загружаем карту
+    loadMap();
   }
 });
 
@@ -141,7 +144,7 @@ document.querySelector(".edit-mark__search").addEventListener("focus", () => {
 });
 
 // Загрузка элементов страницы
-function processArticles(articles,lang) {
+function processArticles(articles, lang) {
   articles.forEach((item) => {
     const article = document.createElement("article");
     const img = document.createElement("img");
@@ -156,16 +159,15 @@ function processArticles(articles,lang) {
 
     article.id = item.id;
     img.src = item.img;
-    img.alt = item.title
-    
-    if(lang === "pt"){
+    img.alt = item.title;
+
+    if (lang === "pt") {
       title.innerHTML = item.titlePt;
       description.innerHTML = item.descriptionPt;
     } else {
       title.innerHTML = item.title;
       description.innerHTML = item.description;
     }
-
 
     textWrapper.append(title, description);
     imgWrapper.append(img);
@@ -174,11 +176,10 @@ function processArticles(articles,lang) {
   });
 }
 
-function processTeamMembers(members,lang) {
+function processTeamMembers(members, lang) {
   members.forEach((member) => {
     const memberArticle = document.createElement("article");
     const image = document.createElement("img");
-    const imageWrapper = document.createElement("picture");
     const name = document.createElement("h3");
     const position = document.createElement("p");
     const description = document.createElement("p");
@@ -192,9 +193,9 @@ function processTeamMembers(members,lang) {
 
     image.src = member.photo;
     name.innerHTML = member.name;
-    image.alt = member.name
+    image.alt = member.name;
 
-    if(lang === "pt"){
+    if (lang === "pt") {
       position.innerHTML = member.positionPt;
       description.innerHTML = member.descriptionPt;
     } else {
@@ -202,28 +203,18 @@ function processTeamMembers(members,lang) {
       description.innerHTML = member.description;
     }
 
-    if (member.srcset) {
-      let source = document.createElement("source");
-      source.media = "(max-width: 768px)";
-      source.srcset = member.srcset;
-
-      imageWrapper.append(source);
-    }
-
-    imageWrapper.append(image);
     articleWrapper.append(name, position, description);
-
-    memberArticle.append(imageWrapper, articleWrapper);
+    memberArticle.append(image, articleWrapper);
     teamContainer.appendChild(memberArticle);
   });
 }
 
-function processPublications(publications,lang) {
+function processPublications(publications, lang) {
   publications.forEach((item) => {
     let publication = document.createElement("li");
     publication.className = "publications__item";
 
-    if(lang === "pt"){
+    if (lang === "pt") {
       publication.innerHTML = item.descriptionPt;
     } else {
       publication.innerHTML = item.description;
@@ -233,12 +224,12 @@ function processPublications(publications,lang) {
   });
 }
 
-function processPatents(patents,lang) {
+function processPatents(patents, lang) {
   patents.forEach((item) => {
     let publication = document.createElement("li");
     publication.className = "publications__item";
 
-    if(lang === "pt"){
+    if (lang === "pt") {
       publication.innerHTML = item.descriptionPt;
     } else {
       publication.innerHTML = item.description;
@@ -248,32 +239,37 @@ function processPatents(patents,lang) {
   });
 }
 
-function processStatic(data){
-  document.querySelectorAll(".nav-item").forEach((item,index)=>{
-    item.innerText = data.navItems[index]
-  })
-  document.querySelector(".hero__title").innerText = data.heroText
-  document.querySelector(".services__title").innerText = data.servicesTitle
-  document.querySelectorAll(".services__subtitle").forEach((item,index)=>{
-    item.innerText = data.servicesSubtitle[index]
-  })
+function processStatic(data) {
+  document.querySelectorAll(".nav-item").forEach((item, index) => {
+    item.innerText = data.navItems[index];
+  });
+  document.querySelector(".hero__title").innerText = data.heroText;
+  document.querySelector(".services__title").innerText = data.servicesTitle;
+  document.querySelectorAll(".services__subtitle").forEach((item, index) => {
+    item.innerText = data.servicesSubtitle[index];
+  });
 
-  const mapLink = document.createElement("a")
-  mapLink.classList = "services__map-link"
-  mapLink.innerText = data.servicesMapLink
-  mapLink.href = "#client-data"
-  document.querySelectorAll(".services__subtitle")[1].append(mapLink)
+  const mapLink = document.createElement("a");
+  mapLink.classList = "services__map-link";
+  mapLink.innerText = data.servicesMapLink;
+  mapLink.href = "#client-data";
+  document.querySelectorAll(".services__subtitle")[1].append(mapLink);
 
-  
-  document.querySelector(".publications__title").innerText = data.publicationsTitle
-  document.querySelector("#publications__list-header").innerText = data.publicaionsSubtitle
-  document.querySelector("#patents__list-header").innerText = data.patentsSubtitle
-  document.querySelector(".map__title").innerText = data.mapTitle
-  document.querySelector(".edit-mark__search").placeholder = data.mapPlaceholder
-  document.querySelector(".scroll-message").innerText = data.scrollMessage
-  document.querySelector(".our-team__title").innerText = data.membersTitle
-  document.querySelector(".our-team__subtitle").innerText = data.membersSubtitle
-  document.querySelector(".contacts-section__title").innerText = data.footerTitle
+  document.querySelector(".publications__title").innerText =
+    data.publicationsTitle;
+  document.querySelector("#publications__list-header").innerText =
+    data.publicaionsSubtitle;
+  document.querySelector("#patents__list-header").innerText =
+    data.patentsSubtitle;
+  document.querySelector(".map__title").innerText = data.mapTitle;
+  document.querySelector(".edit-mark__search").placeholder =
+    data.mapPlaceholder;
+  document.querySelector(".scroll-message").innerText = data.scrollMessage;
+  document.querySelector(".our-team__title").innerText = data.membersTitle;
+  document.querySelector(".our-team__subtitle").innerText =
+    data.membersSubtitle;
+  document.querySelector(".contacts-section__title").innerText =
+    data.footerTitle;
 }
 
 document.addEventListener("click", (e) => {
@@ -293,30 +289,30 @@ document.addEventListener("click", (e) => {
     fetch("/page-elements.json")
       .then((response) => response.json())
       .then((data) => {
-        servicesContainer.innerHTML = ""
-        publicationsContainer.innerHTML = ""
-        patentsContainer.innerHTML = ""
-        teamContainer.innerHTML = ""
-        
-        processTeamMembers(data.members,"pt");
-        processArticles(data.services,"pt");
-        processPublications(data.publications,"pt");
-        processPatents(data.patents,"pt");
-      
+        servicesContainer.innerHTML = "";
+        publicationsContainer.innerHTML = "";
+        patentsContainer.innerHTML = "";
+        teamContainer.innerHTML = "";
+
+        processTeamMembers(data.members, "pt");
+        processArticles(data.services, "pt");
+        processPublications(data.publications, "pt");
+        processPatents(data.patents, "pt");
+
         animateItems();
-        document.querySelector("html").lang = "pt"
+        document.querySelector("html").lang = "pt";
       })
       .catch((error) => console.error(error));
 
     fetch("/static-portuguese.json")
       .then((response) => response.json())
       .then((data) => {
-        processStatic(data.static)
+        processStatic(data.static);
       })
       .catch((error) => console.error(error));
   }
 
   if (e.target.className == "english-lang") {
-    location.reload()
+    location.reload();
   }
 });

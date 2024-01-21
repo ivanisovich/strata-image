@@ -30,8 +30,8 @@ img {
 }
 
 .hidden {
- opacity: 0;
- visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 
 li,
@@ -116,7 +116,7 @@ h2 {
   align-items: center;
   margin: 0;
   position: relative;
- 
+
 }
 
 .lang-icon img {
@@ -204,7 +204,7 @@ h2 {
   text-align: center;
 }
 
-.services__map-link{
+.services__map-link {
   color: var(--text-color);
   font-weight: 700;
 }
@@ -311,7 +311,7 @@ h2 {
   height: 0px;
 }
 
-.hide-items .publications__inner{
+.hide-items .publications__inner {
   overflow-y: hidden;
   max-height: fit-content;
 }
@@ -483,14 +483,16 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+
   gap: 100px;
-  margin-bottom:100px
+  margin-bottom: 100px
 }
 
 .our-team__member {
   display: flex;
+  flex-direction: column;
   align-items: center;
+
   gap: 10px;
   box-sizing: border-box;
   box-shadow: 0px 16px 32px -4px rgba(145, 158, 171, 0.24),
@@ -498,19 +500,21 @@ h2 {
   border: 1px solid transparent;
   border-radius: 16px;
   padding: 16px;
-  width: fit-content;
-  max-width: 600px;
+
+  max-width:500px;
   text-align: center;
   gap: 30px;
 }
 
+
+
 .our-team__member img {
-  display: block;
-  max-width: 300px;
+  width: 280px;
+  height: 320px;
+  object-fit: cover;
+  object-position: top;
   border-radius: 6px;
-
-
-  max-height: 500px;
+  
 }
 
 .our-team__members a {
@@ -530,17 +534,15 @@ h2 {
   color: #637381;
   font-size: 14px;
   text-decoration: none;
-
 }
 
 .our-team__member-bio {
   font-size: 12px;
-  text-align: left;
   text-align: center;
 }
 
 .our-team__member:nth-child(2n) {
-  flex-direction: row-reverse;
+
 }
 
 .footer {
