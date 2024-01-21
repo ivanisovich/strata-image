@@ -21,7 +21,7 @@
       "img": "/public/images/services/service3.jpg",
       "title": "Onshore Near-Surface Electromagnetics (EM)",
       "titlePt": "Eletromagnético Terrestre Raso (EM)",
-      "descriptionPt": "Os métodos eletromagnéticos terrestres (ET) normalmente operam no domínio de tempo ou frequência. Uma mudança na corrente do transmissor induz correntes secundárias no subsolo que fornecem informações sobre a distribuição de resistividade em profundidade. O método é aplicado na agricultura para detectar variações na composição do solo, conteúdo de água e presença de nutrientes.",
+      "descriptionPt": "Os métodos eletromagnéticos terrestres (EM) normalmente operam no domínio de tempo ou frequência. Uma mudança na corrente do transmissor induz correntes secundárias no subsolo que fornecem informações sobre a distribuição de resistividade em profundidade. O método é aplicado na agricultura para detectar variações na composição do solo, conteúdo de água e presença de nutrientes.",
       "description": "Onshore Near-Surface Electromagnetic (EM) methods typically operate in time- or frequency-domain. A changing transmitter current induces secondary currents in the subsurface that yield information about the resistivity distribution at depth. It has agricultural applications detecting variations in soil composition, water content, and the presence of nutrients."
     },
     {
@@ -102,9 +102,9 @@
       "photo": "/public/images/members/THEODOR.jpg",
       "name": "Theodor L. Kriegshäuser",
       "position": "Bioenergy Consultant",
-      "description": "Theodor L. Kriegshäuser holds M.Sc. in Biomass Technology from the Technical University of Munich – TUM, Germany (2023) and a B.Sc. from the University of Hohenheim, Germany, in Biobased Products and Bioenergy (2020).",
+      "description": "Theodor L. Kriegshäuser holds M.Sc. in Biomass Technology from the Technical University of Munich – TUM, Germany (2023) and a B.Sc. from the University of Hohenheim, Germany, in Biobased Products and Bioenergy (2020).Theodor has worked in the UAV-Magnetics project in the US.",
       "positionPt": "Consultor de Bioenergia",
-      "descriptionPt": "Theodor L. Kriegshäuser possui um M.Sc. em Tecnologia de Biomassa pela Universidade Técnica de Munique – TUM, Alemanha (2023) e B.Sc. pela Universidade de Hohenheim, Alemanha, em Produtos de Base Biológica e Bioenergia (2020)."
+      "descriptionPt": "Theodor L. Kriegshäuser possui um M.Sc. em Tecnologia de Biomassa pela Universidade Técnica de Munique – TUM, Alemanha (2023) e B.Sc. pela Universidade de Hohenheim, Alemanha, em Produtos de Base Biológica e Bioenergia (2020). Theodor atuou no projeto UAV-Mag nos EUA."
     },
     {
       "id": "2382bd36-701c-779d-8192-55ef3ff8346c",
@@ -147,7 +147,7 @@
       "photo": "/public/images/members/LUCIANO.jpg",
       "name": "Luciano Arêas Carvalho, MSc",
       "position": "Geophysicist",
-      "description": "Luciano Areas is a mathematician graduated from UERJ, the State University of Rio de Janeiro, Brazil (1999) and with a master’s in Geophysics from the National Observatory/MCT, Rio de Janeiro (2003). Luciano worked for Strataimage and Schlumberger from 2005 2015 in the implementation of seismic inversion at Petrobras. Luciano is currently working on his PhD in Geophysics at the University of Campinas/São Paulo, Brazil. Luciano has participated in all AMT/MT/TDEM projects in Brazil and the USA.",
+      "description": "Luciano Areas is a mathematician graduated from UERJ, the State University of Rio de Janeiro, Brazil (1999) and with a master’s in Geophysics from the National Observatory/MCT, Rio de Janeiro (2003). Luciano worked for Strataimage and Schlumberger from 2005 to 2015 in the implementation of seismic inversion at Petrobras. Luciano is currently working on his PhD in Geophysics at the University of Campinas/São Paulo, Brazil. Luciano has participated in all AMT/MT/TDEM projects in Brazil and the USA.",
       "positionPt": "Geofísico",
       "descriptionPt": "Luciano Areas é matemático formado pela UERJ, Universidade do Estado do Rio de Janeiro, Brasil (1999) e mestre em Geofísica pelo Observatório Nacional/MCT, Rio de Janeiro (2003). Luciano trabalhou para Strataimage e Schlumberger de 2005 a 2015 na implantação de inversão sísmica na Petrobras. Luciano está atualmente fazendo doutorado em Geofísica na Universidade de Campinas/São Paulo, Brasil. Luciano participou de todos os projetos AMT/MT/TDEM no Brasil e nos EUA."
     },

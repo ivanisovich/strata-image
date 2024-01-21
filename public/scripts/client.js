@@ -290,14 +290,10 @@ document.addEventListener("click", (e) => {
       .then((response) => response.json())
       .then((data) => {
         servicesContainer.innerHTML = "";
-        publicationsContainer.innerHTML = "";
-        patentsContainer.innerHTML = "";
         teamContainer.innerHTML = "";
 
         processTeamMembers(data.members, "pt");
         processArticles(data.services, "pt");
-        processPublications(data.publications, "pt");
-        processPatents(data.patents, "pt");
 
         animateItems();
         document.querySelector("html").lang = "pt";

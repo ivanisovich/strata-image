@@ -216,6 +216,14 @@ h2 {
   max-width: 380px;
 }
 
+
+.services .service:nth-child(6) img{
+  object-fit: contain;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
 .service img {
   display: block;
   margin: 0 auto;
