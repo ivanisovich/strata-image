@@ -2,25 +2,26 @@
   "static": {
     "navItems": [
       "Serviços",
-      "Dados De Vários Clientes",
+      "Dados Muilti-Client",
       "Publicações",
-      "Nosso Time",
+      "Nossa Equipe",
       "Contato"
     ],
-    "heroText": "A Strataimage Consultoria Ltda foi fundada em 2003 no Rio de Janeiro, Brasil, e é administrada por Patricia de Lugão e Berthold Kriegshäuser. Em 2021, estabelecemos uma empresa irmã em Charlotte, Carolina do Norte, EUA, a Strataimage Energy Services, Inc, para fornecer os mesmos dados e serviços de alta qualidade que temos fornecido no Brasil nos últimos dezenove anos.",
+    "heroText": "A Strataimage Consultoria Ltda foi fundada em 2003 no Rio de Janeiro, Brasil, e é administrada por Patricia de Lugão e Berthold Kriegshäuser. Em 2021, estabelecemos uma empresa irmã em Charlotte, Carolina do Norte, EUA, a Strataimage Energy Services, Inc, para fornecer os mesmos dados e serviços de alta qualidade que temos fornecido no Brasil.",
     "servicesTitle": "Nossos serviços",
     "servicesSubtitle": [
-      "A Strataimage é uma empresa de aquisição geofísica especializada em métodos onshore eletromagnéticos, magnetotelúricos (AMT/MT) e eletromagnéticos no domínio do tempo (TDEM). Também oferecemos serviços utilizando métodos potenciais como gravimetria, magnetometria (terrestre e baseada em VANT) e espectrometria gama, além de integração com o método sísmico e interpretação geológica.",
-      "A Strataimage realizou diversos projetos relacionados à exploração de petróleo e gás, mineração, geotérmica e engenharia. Para obter mais informações, consulte o Mapa Multicliente."
+      "A Strataimage é uma empresa de aquisição geofísica especializada em métodos terrestres eletromagnéticos, magnetotelúricos (AMT/MT) e eletromagnéticos no domínio do tempo (TDEM). Também oferecemos serviços utilizando métodos potenciais como gravimetria, magnetometria (terrestre e por Drones) e espectrometria gama, além de integração com o método sísmico e interpretação geológica.",
+      "A Strataimage realizou diversos projetos relacionados à exploração de petróleo e gás, mineração, geotérmica e engenharia. Para obter mais informações, consulte o "
     ],
+    "servicesMapLink":"Mapa Multicliente.",
     "publicationsTitle": "Nossas publicações e patentes",
     "publicaionsSubtitle": "Publicações",
     "patentsSubtitle": "Patentes",
-    "mapTitle": "Dados de vários clientes",
+    "mapTitle": "Dados Multicliente",
     "mapPlaceholder": "Procurar",
     "scrollMessage": "Use Ctrl+ rolar para aumentar/diminuir o zoom.",
-    "membersTitle": "Nosso time",
-    "membersSubtitle": "Nossa equipe é formada por pessoal altamente qualificado e experiente, treinado na Strataimage. Também orientamos diversas teses de mestrado e doutorado de alunos do Brasil e de nossa equipe.",
-    "footerTitle": "Contate-nos"
+    "membersTitle": "Nossa equipe",
+    "membersSubtitle": "Nossa equipe é formada por pessoas altamente qualificadas e experientes, treinadas na Strataimage. Também orientamos diversas teses de mestrado e doutorado de alunos do Brasil e de nossa equipe.",
+    "footerTitle": "Entre em Contato"
   }
 }

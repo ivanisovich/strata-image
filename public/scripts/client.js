@@ -257,6 +257,14 @@ function processStatic(data){
   document.querySelectorAll(".services__subtitle").forEach((item,index)=>{
     item.innerText = data.servicesSubtitle[index]
   })
+
+  const mapLink = document.createElement("a")
+  mapLink.classList = "services__map-link"
+  mapLink.innerText = data.servicesMapLink
+  mapLink.href = "#client-data"
+  document.querySelectorAll(".services__subtitle")[1].append(mapLink)
+
+  
   document.querySelector(".publications__title").innerText = data.publicationsTitle
   document.querySelector("#publications__list-header").innerText = data.publicaionsSubtitle
   document.querySelector("#patents__list-header").innerText = data.patentsSubtitle

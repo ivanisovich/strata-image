@@ -204,6 +204,11 @@ h2 {
   text-align: center;
 }
 
+.services__map-link{
+  color: var(--text-color);
+  font-weight: 700;
+}
+
 .service {
   box-shadow: var(--shadow-default);
   border-radius: 16px;
