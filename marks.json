@@ -4,10 +4,115 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "61e2f8a7-3bdf-4ef3-9022-77249daef949",
-        "name": "REC - ALAGOINHAS",
+        "id": "85c9093a-0d72-4726-b712-72fbb99c058f",
+        "name": "DELAWARE BASIN",
         "title": "title eng",
         "description": "desc eng",
+        "titlePt": "title pt",
+        "descriptionPt": "desc pt"
+      },
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            -104.5561257688032,
+            31.07031233990273,
+            1208
+          ],
+          [
+            -103.8726303808239,
+            31.26512088695128,
+            933.9999999999999
+          ],
+          [
+            -103.6044496745784,
+            31.42355610638648,
+            818.9999999999999
+          ],
+          [
+            -103.5421997516911,
+            31.50672281951909,
+            801
+          ],
+          [
+            -103.3918108227519,
+            31.47555625995282,
+            782.9999999999999
+          ],
+          [
+            -104.2028660809997,
+            31.13294457491746,
+            1191
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -115.7597347399999,
+              33.11323020600003,
+              0
+            ],
+            [
+              -115.565664939,
+              32.83972435200008,
+              0
+            ],
+            [
+              -115.291161044,
+              32.88129912700003,
+              0
+            ],
+            [
+              -115.34610424,
+              33.12682969100007,
+              0
+            ],
+            [
+              -115.60529261,
+              33.22918527300004,
+              0
+            ],
+            [
+              -115.7597347399999,
+              33.11323020600003,
+              0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "SALTON SEA AND EAST BRAWLEY",
+        "styleUrl": "#PolyStyle00",
+        "styleHash": "15f7ea12",
+        "styleMapHash": {
+          "normal": "#PolyStyle000",
+          "highlight": "#PolyStyle001"
+        },
+        "description": "desc eng",
+        "stroke": "#000000",
+        "stroke-opacity": 1,
+        "stroke-width": 0.4,
+        "fill": "#ff0000",
+        "fill-opacity": 1,
+        "title": "title eng",
+        "descriptionPt": "desc pt",
+        "titlePt": "title pt"
+      },
+      "id": "ID_00000"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "c85f8861-5e8d-49bd-bb51-94308c0f6031",
+        "name": "REC - ALAGOINHAS",
+        "title": "title eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -500,10 +605,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "7081b901-1d87-4780-88db-166bf3754fce",
+        "id": "662ef936-4e47-4b70-b1e3-5dfeb999da31",
         "name": "REC - ALAGOINHAS II",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -561,10 +666,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "1c17c06a-088a-4dbc-9e0b-32ffef74a363",
+        "id": "f29cb7a9-9389-429e-a33d-b62968570625",
         "name": "REC - ARAÇAS",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -657,10 +762,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "12283bd3-6236-4b1b-a5d5-2de2ca93945b",
+        "id": "2e6a8fbb-4295-4949-8b63-53258caea72d",
         "name": "TUCS - BOAPAZ",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -1448,10 +1553,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "3a1ecf59-3ee0-4d02-a290-8651b398d788",
+        "id": "9b19309b-4693-41fd-ab9f-a3113c43962d",
         "name": "ALAGOAS - CAMARAGIBE",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -2269,10 +2374,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "20524a72-2295-45d6-b221-49af5f033c2f",
+        "id": "f90ca11c-09df-4736-9228-8e0917b08f51",
         "name": "SERGIPE - CARMOPOLIS",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -2735,10 +2840,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "7eee32c2-c1ef-47b4-8ff2-5f413dc82381",
+        "id": "ccb97a42-08d5-407f-a92d-677d27e34998",
         "name": "TUCS - CIPO I II III",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -5481,10 +5586,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "1c57cb89-9374-4a0a-b9b5-cd8f35656861",
+        "id": "18fc985c-070f-4b3e-a76b-e38197a5a05a",
         "name": "REC - ESPLANADA",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -5912,10 +6017,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "147bf06e-9175-4db4-b2ef-3624545e83ee",
+        "id": "2487e3f9-9939-4fbb-be16-9a09f4a242fc",
         "name": "ES - IPIRANGA",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -6088,10 +6193,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "bfab0f0a-3d38-46d7-bada-188752bae856",
+        "id": "0b854824-15ef-4253-bd8e-459778b7fe3e",
         "name": "REC - ITANAGRA",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -6569,10 +6674,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "f5043d9e-776a-401c-a740-8c72c07009e5",
+        "id": "15646a7b-033d-45be-8a88-20528449609e",
         "name": "REC - LADEIRA",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -7075,10 +7180,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "dcc25cba-5ee2-4b50-9e56-21e0af6d777b",
+        "id": "1d06f2b1-27b7-40e4-a44f-0bfae0a9c277",
         "name": "ALAGOAS - MARECHAL",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -7241,10 +7346,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "c8c57791-489b-4dd1-93a3-46e3a1715858",
+        "id": "69bec558-93d9-4f3c-8ec8-d475a33caaf5",
         "name": "REC - NSPAZ",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -7612,10 +7717,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "e88de1f9-1645-4432-a1d3-6712e123874b",
+        "id": "c6e2a5c9-3b5f-49c4-9e1c-01266f8b9555",
         "name": "PARNAIBA - OPEO",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -8903,10 +9008,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "1f8d9825-94b8-4b2d-95e6-c1c8109ea642",
+        "id": "978e420b-d09d-4ed8-81fa-8bbf3d19b615",
         "name": "SERGIPE - PACATUBA",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -9319,10 +9424,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "798f92d5-b607-44ac-beb8-40448c5cdbf3",
+        "id": "fedea187-84cf-4068-80ac-74e69a5b65ca",
         "name": "REC - PEDRAS",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -9540,10 +9645,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "9868e859-fed6-4f4a-af3e-8f5599127fde",
+        "id": "0df8a279-59bd-4c4a-9f17-d45791764a83",
         "name": "ALAGOAS - PENEDO",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -9846,10 +9951,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "2af5ebc8-bee7-4a68-a892-bf87f33c232f",
+        "id": "8f8c4458-c462-4eb4-a8ff-fdfc0c8e364e",
         "name": "ALAGOAS - PENEDO II",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -10562,10 +10667,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "258f43ad-255a-4fb9-8af9-4c825c58321a",
+        "id": "aacad4a6-c7eb-4386-952e-937991c491e4",
         "name": "SERGIPE - PIRAMBU",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -10743,10 +10848,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "ddf0061c-4e4d-435f-ada9-cf4e97446036",
+        "id": "92ce2e03-2be1-458c-a7b6-3f30d693a60d",
         "name": "REC - QUIAMBINA",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -11259,10 +11364,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "a592deff-6a3b-4d11-b201-27fb11390ffd",
+        "id": "28c91b03-5929-4ee1-ab56-475efe6158d1",
         "name": "SERGIPE - RIO BETUME",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -11795,10 +11900,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "4f40e835-b974-4b7c-a5aa-ad03271da825",
+        "id": "06a85b37-a5cf-4adb-b70d-c1cfd773f846",
         "name": "PARANA - SANTA RITA",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -14121,10 +14226,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "3874417f-8692-4aaa-a430-79ec2a802bb7",
+        "id": "4eaf85d6-60b8-4548-85cd-812dc91cdfb5",
         "name": "REC - SAOSEBASTIAO",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -14732,10 +14837,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "ce29ce21-01ad-42eb-8a38-50349055d11b",
+        "id": "9cd689c6-3632-4762-ad96-62efb786616f",
         "name": "ALAGOAS - SAOMIGUEL",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -14913,10 +15018,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "831d4c10-31a1-40ab-b68d-e66cc89b01e3",
+        "id": "0debb526-b2b4-4eba-b7e3-facdcc055c59",
         "name": "REC - TEODORO",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -15499,10 +15604,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "2f54ab6f-d87c-45ff-a171-be59c0fdd8fb",
+        "id": "8112b0d5-d522-4251-813c-94657de7d083",
         "name": "REC - TEODORO II",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -16495,10 +16600,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "499c8d8e-91b1-47ec-9587-dc74ed71ba46",
+        "id": "a575b1a6-d9fe-4a18-acdf-07a5871ee991",
         "name": "ES - TEREZA",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -16571,10 +16676,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "797e6fe2-d5fd-47e0-8a53-22c2a2e68a52",
+        "id": "0cc792c8-a500-4d07-b762-1e1b84790594",
         "name": "BOM JARDIM",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -16697,10 +16802,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "fd165a54-534c-48b6-bd01-b7fda3283a90",
+        "id": "06fb83f5-d288-4559-89b5-927beb306217",
         "name": "BREJINHO",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -16768,10 +16873,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "baf49575-0a9c-4884-b894-28a36023c39b",
+        "id": "10ca7308-c77b-44bb-be98-c25692d307bb",
         "name": "CRIXAS",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -16834,10 +16939,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "4ccef5cf-cb6f-4a75-aba6-c9fe976b78ff",
+        "id": "be138015-d39d-4d95-99db-999075689269",
         "name": "ESTREITO",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -16910,10 +17015,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "9a422d90-9221-4943-b83e-4461fab931b4",
+        "id": "edabe297-d6a4-480b-a00e-48b34fe5b148",
         "name": "GAMELEIRA",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -16996,10 +17101,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "488ff6cb-127f-422b-abde-c528c2751b45",
+        "id": "d5bc701b-14cd-4866-924c-e2c21d3267e7",
         "name": "IE MADEIRA",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -17072,10 +17177,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "6d995167-5559-427e-9775-338b33c525e5",
+        "id": "a616cfb6-4bd6-4b20-83bc-f545b64227d0",
         "name": "ITAGUAI",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -17243,10 +17348,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "9576e357-ebf0-44e8-a288-d17598ef1722",
+        "id": "12a38750-34ea-407b-a29b-e7d1b2ec1b52",
         "name": "KIMBERLITE JUINA",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -17589,10 +17694,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "4e49a799-0d5e-4c15-9468-70e17f3336f4",
+        "id": "c795da3b-9590-4b70-9255-705521c9e94a",
         "name": "POZOLANE LAFARGE",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -18245,10 +18350,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "ef3249c2-5d2c-45cf-8e9e-93206c464670",
+        "id": "43fe78b3-470f-4bfb-acc2-831a4eec8412",
         "name": "undefined",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -18266,10 +18371,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "4db9e306-c3c0-4d5a-b54d-cb1a17f192eb",
+        "id": "b4ab94af-ede7-4c9f-a1c6-b1ba376e4725",
         "name": "MINAS 2016",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -18392,10 +18497,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "c9279039-9748-4cc0-b3a4-25868671a473",
+        "id": "5ef1baeb-7d47-4620-b42e-f6e71300dd80",
         "name": "MORRO DO CHAPEU",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -18658,10 +18763,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "ee4c5dd3-08e3-4fe3-9913-83b2f78b127b",
+        "id": "51845cb9-4a3e-4a10-9e3e-7d273fc2bcde",
         "name": "ANP - PARECIS BASIN",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -20094,10 +20199,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "e2370f15-3957-4548-b4b4-7d44980b037a",
+        "id": "4ad89b72-1c2f-4b00-bec0-9bad3b0699c7",
         "name": "PARANA SUL",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -21175,10 +21280,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "ea84c2de-7173-4bb1-acc5-7e89a33723a2",
+        "id": "1fc0279a-5aa9-47f0-bd75-e0cc816826f2",
         "name": "PELOTAS",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -21601,10 +21706,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "779093f4-d230-4b3d-8586-f0c598c725d8",
+        "id": "d137ee1b-1350-4049-b11f-f51c1fdab5d1",
         "name": "PELOTAS 2",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -21862,10 +21967,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "b849cf80-8a59-4cf5-b28a-6476574d57f6",
+        "id": "7533f32e-8a6d-4712-b32e-da20ac8195ad",
         "name": "PARNAIBA - PRESIDENTE DUTRA",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -22288,10 +22393,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "00ce73d4-7c39-492b-94bf-8d27f95513a2",
+        "id": "e1f9eff4-5796-48f1-a884-7e05537d590c",
         "name": "SAOFRANCISCO II",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -22554,10 +22659,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "b33fce39-c8fb-472f-98a4-6d99a48b0ed3",
+        "id": "cdae69ec-d6e8-41d0-b9b3-dd48b11ceb75",
         "name": "SERRA DA BABILONIA",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -22590,10 +22695,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "09043a2d-dd2c-42c5-a8e9-e613961e456d",
+        "id": "7f3a7c85-3da7-402a-a61d-cc33b5a759fd",
         "name": "PROJETO RIFT BAHIA",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -23116,10 +23221,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "0f2c156d-e0f1-4a11-9436-15eec5f27249",
+        "id": "4e06f341-e733-40d7-ba05-98e4ac38694d",
         "name": "UNB - MT",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -23307,10 +23412,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "410c9b1c-cc6a-44d4-9d9e-1f17f4a08b25",
+        "id": "2554f200-df64-4feb-a058-8a53a968e418",
         "name": "XINGU",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -23393,10 +23498,10 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "177b629e-e594-4683-8b08-25ad0e1dd39f",
+        "id": "f55e4878-f478-4fb1-b31a-cf0fecea4a76",
         "name": "XINGU II",
         "title": "title eng",
-        "description": "desc eng",
+        "description": "desc pt",
         "titlePt": "title pt",
         "descriptionPt": "desc pt"
       },
@@ -23440,108 +23545,6 @@
           ]
         ]
       }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "2f72e285-2548-47d6-9d09-7bce3aef6605",
-        "name": "DELAWARE BASIN",
-        "title": "title eng",
-        "description": "desc eng",
-        "titlePt": "title pt",
-        "descriptionPt": "desc pt"
-      },
-      "geometry": {
-        "type": "MultiPoint",
-        "coordinates": [
-          [
-            -104.5561257688032,
-            31.07031233990273,
-            1208
-          ],
-          [
-            -103.8726303808239,
-            31.26512088695128,
-            933.9999999999999
-          ],
-          [
-            -103.6044496745784,
-            31.42355610638648,
-            818.9999999999999
-          ],
-          [
-            -103.5421997516911,
-            31.50672281951909,
-            801
-          ],
-          [
-            -103.3918108227519,
-            31.47555625995282,
-            782.9999999999999
-          ],
-          [
-            -104.2028660809997,
-            31.13294457491746,
-            1191
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -115.7597347399999,
-              33.11323020600003,
-              0
-            ],
-            [
-              -115.565664939,
-              32.83972435200008,
-              0
-            ],
-            [
-              -115.291161044,
-              32.88129912700003,
-              0
-            ],
-            [
-              -115.34610424,
-              33.12682969100007,
-              0
-            ],
-            [
-              -115.60529261,
-              33.22918527300004,
-              0
-            ],
-            [
-              -115.7597347399999,
-              33.11323020600003,
-              0
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "name": "SALTON SEA AND EAST BRAWLEY",
-        "styleUrl": "#PolyStyle00",
-        "styleHash": "15f7ea12",
-        "styleMapHash": {
-          "normal": "#PolyStyle000",
-          "highlight": "#PolyStyle001"
-        },
-        "description": "<html xmlns:fo=\"http://www.w3.org/1999/XSL/Format\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\">\n\n<head>\n\n<META http-equiv=\"Content-Type\" content=\"text/html\">\n\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n\n</head>\n\n<body style=\"margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;\">\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px\">\n\n<tr style=\"text-align:center;font-weight:bold;background:#9CBCE2\">\n\n<td></td>\n\n</tr>\n\n<tr>\n\n<td>\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px\">\n\n<tr>\n\n<td>FID</td>\n\n<td>0</td>\n\n</tr>\n\n<tr bgcolor=\"#D4E4F3\">\n\n<td>PROJECT</td>\n\n<td>SALTON SEA AND BRAWLEY MT AND UAV-MAG</td>\n\n</tr>\n\n<tr>\n\n<td>TYPE</td>\n\n<td>PROPRIETARY</td>\n\n</tr>\n\n</table>\n\n</td>\n\n</tr>\n\n</table>\n\n</body>\n\n</html>",
-        "stroke": "#000000",
-        "stroke-opacity": 1,
-        "stroke-width": 0.4,
-        "fill": "#ff0000",
-        "fill-opacity": 1
-      },
-      "id": "ID_00000"
     }
   ]
 }

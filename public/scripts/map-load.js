@@ -1,6 +1,6 @@
 var map;
 
-var isClientView
+var isClientView;
 
 function loadMap() {
   mapboxgl.accessToken =
@@ -12,7 +12,6 @@ function loadMap() {
     zoom: 4,
     scrollZoom: true,
   });
-
 
   map.addControl(new mapboxgl.NavigationControl());
   addMapListeners();
@@ -40,6 +39,12 @@ function addMapListeners() {
   map.on("click", "territories-fill", onTerritoryClick);
 
   var scrollMessage = document.querySelector(".scroll-message");
+
+  isClientView = true;
+
+  if (window.location.href.includes("/map-editor")) {
+    isClientView = false;
+  }
 
   if (isClientView) {
     map.on("wheel", function (event) {
@@ -71,7 +76,7 @@ function fetchGeojsonData() {
         addMarkers(geojsonData);
       } else {
         map.on("load", () => addMarkers(geojsonData));
-        document.querySelector(".lds-ellipsis").classList.add("hidden")
+        document.querySelector(".lds-ellipsis").classList.add("hidden");
       }
       updateMarksList(geojsonData);
     });
@@ -99,6 +104,11 @@ function addMarkers(geojsonData) {
         feature.properties,
         feature.geometry.coordinates
       );
+    }
+    else if (feature.geometry.type === "Polygon") {
+      // For Polygons, create a marker at the centroid and add it to the map
+      const centroid = calculateCentroid(feature.geometry.coordinates[0]);
+      addMarkerAtPoint(centroid, feature.properties, feature.geometry.coordinates[0]);
     }
   });
 
@@ -181,7 +191,6 @@ function calculateCentroid(coordinates) {
   return [lngSum / coordinates.length, latSum / coordinates.length];
 }
 
-
 function createMarkPopupHtml(properties) {
   return `
     <article class="mark">
@@ -200,28 +209,27 @@ function updateMarksList(geojsonData) {
   geojsonData.features.forEach((feature) => {
     const listItem = createListItem(feature.properties);
     marksList.appendChild(listItem);
-    
-    listItem.addEventListener('click', () => {
+
+    listItem.addEventListener("click", () => {
       const coordinates = feature.geometry.coordinates;
       const centroid = calculateCentroid(coordinates);
       focusCamera(centroid, polygonArea(coordinates));
-    })
+    });
   });
 }
 
 function createListItem(properties, isClientView) {
-  
- isClientView = true;
+  isClientView = true;
 
- if (window.location.href.includes("/map-editor")) {
-   isClientView = false;
- }
+  if (window.location.href.includes("/map-editor")) {
+    isClientView = false;
+  }
   const listItem = document.createElement("li");
   listItem.className = "list-item";
   listItem.dataset.groupId = properties.id;
 
   let buttonsHTML = "";
-  let ptText = ""
+  let ptText = "";
   if (!isClientView) {
     // Добавляем кнопки только если isClientView равно false
     buttonsHTML = `
@@ -230,7 +238,7 @@ function createListItem(properties, isClientView) {
     ptText = `
     <strong>${properties.name ? properties.name : properties.titlePt}</strong>
     <p>${properties.descriptionPt}</p>
-    `
+    `;
   }
 
   listItem.innerHTML = `

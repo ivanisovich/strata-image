@@ -223,6 +223,16 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
           // Преобразование LineString в Polygon
           feature.geometry.type = "Polygon";
           feature.geometry.coordinates = [feature.geometry.coordinates];
+          feature.properties.description = req.body["kmz-description"];
+          feature.properties.title = req.body["kmz-title"];
+          feature.properties.descriptionPt = req.body["kmz-description-pt"];
+          feature.properties.titlePt = req.body["kmz-title-pt"];
+        }
+        if (feature.geometry.type === "Polygon") {
+          feature.properties.description = req.body["kmz-description"];
+          feature.properties.title = req.body["kmz-title"];
+          feature.properties.descriptionPt = req.body["kmz-description-pt"];
+          feature.properties.titlePt = req.body["kmz-title-pt"];
         }
         return feature;
       });
