@@ -95,7 +95,7 @@ map.on("draw.delete", function (e) {
 // Редактирование меток
 document.addEventListener("click", (e) => {
   if (e.target.className == "delete-button") {
-    let id = e.target.parentNode.id;
+    let id = e.target.parentNode.dataset.groupId;
     fetch("/deleteMark", {
       method: "POST",
       headers: {
@@ -128,7 +128,7 @@ document.addEventListener("click", (e) => {
     newLink.value = e.target.parentNode.children[4].href;
 
     editMarkBtn.addEventListener("click", () => {
-      let id = e.target.parentNode.id;
+      let id = e.target.parentNode.dataset.groupId;
       let title = newTitle.value;
       let description = newDescription.value;
       let titlePt = newTitlePt.value;

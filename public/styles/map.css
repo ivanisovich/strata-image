@@ -111,7 +111,6 @@ input::placeholder {
   max-width: 380px;
   overflow-y: scroll;
   list-style: none;
-  max-height: calc(100% - 100px);
   overflow-y: scroll;
 }
 
@@ -149,6 +148,11 @@ input::placeholder {
   line-height: 34px;
 }
 
+
+.list-item a {
+    color: #1890FF;
+    text-decoration: underline;
+}
 .lds-ellipsis {
   display: inline-block;
   position: relative;

@@ -120,7 +120,6 @@ input::placeholder {
 
 .publications__item {
   position: relative;
-  box-shadow: 0px -1px 0px 0px rgba(145, 158, 171, 0.24) inset;
   border: 1px solid rgba(145, 158, 171, 0.32);
   border-radius: 8px;
   padding: 16px;
@@ -128,7 +127,7 @@ input::placeholder {
 }
 
 .publications__item p:nth-child(1) {
-  border-bottom: 1px solid rgba(145, 158, 171, 0.32);
+
   padding-bottom: 20px;
 }
 

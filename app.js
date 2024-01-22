@@ -12,10 +12,9 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 const { DOMParser } = require("xmldom");
 const JSZip = require("jszip");
-require('dotenv').config();
-const session = require('express-session');
-const cookieParser = require('cookie-parser');
-
+require("dotenv").config();
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
 
 // Настройка EJS шаблонизатора
 app.set("view engine", "ejs");
@@ -26,26 +25,27 @@ app.use(express.static(__dirname));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(cookieParser());
-app.use(session({
-    secret: 'your_secret_key', // Замените на ваш секретный ключ
+app.use(
+  session({
+    secret: "your_secret_key", // Замените на ваш секретный ключ
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false } // Для HTTPS установите secure: true
-}));
+    cookie: { secure: false }, // Для HTTPS установите secure: true
+  })
+);
 
 // Использование учетных данных из файла .env
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
-
 // Маршрут для админ-панели
-app.post('/admin/login', (req, res) => {
+app.post("/admin/login", (req, res) => {
   const { username, password } = req.body;
   if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-      req.session.authenticated = true;
-      res.redirect('/admin-panel');
+    req.session.authenticated = true;
+    res.redirect("/admin-panel");
   } else {
-      res.send('Доступ запрещен');
+    res.send("Доступ запрещен");
   }
 });
 
@@ -56,20 +56,20 @@ function isAuthenticated(req, res, next) {
   // } else {
   //     res.send('Необходима авторизация');
   // }
-  next()
+  next();
 }
 
-app.get('/login',  (req, res) => {
-  res.render('login');
+app.get("/login", (req, res) => {
+  res.render("login");
 });
 // Защищенный маршрут
-app.get('/admin-panel', isAuthenticated, (req, res) => {
-  res.render('admin-panel');
+app.get("/admin-panel", isAuthenticated, (req, res) => {
+  res.render("admin-panel");
 });
 
 // Еще один защищенный маршрут
-app.get('/map-editor', isAuthenticated, (req, res) => {
-  res.render('map-editor');
+app.get("/map-editor", isAuthenticated, (req, res) => {
+  res.render("map-editor");
 });
 
 // Добавление меток
@@ -216,17 +216,19 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
     const groupedPoints = groupPointsByName(geoJSON.features);
 
     // Обработка LineString и Polygon
-    const otherFeatures = geoJSON.features.filter(feature => feature.geometry.type !== "Point").map(feature => {
-      if (feature.geometry.type === "LineString") {
-        // Преобразование LineString в Polygon
-        feature.geometry.type = "Polygon";
-        feature.geometry.coordinates = [feature.geometry.coordinates];
-      }
-      return feature;
-    });
+    const otherFeatures = geoJSON.features
+      .filter((feature) => feature.geometry.type !== "Point")
+      .map((feature) => {
+        if (feature.geometry.type === "LineString") {
+          // Преобразование LineString в Polygon
+          feature.geometry.type = "Polygon";
+          feature.geometry.coordinates = [feature.geometry.coordinates];
+        }
+        return feature;
+      });
 
     // Создание новых features из сгруппированных точек
-    const newPointFeatures = Object.keys(groupedPoints).map(name => {
+    const newPointFeatures = Object.keys(groupedPoints).map((name) => {
       return {
         type: "Feature",
         properties: {
@@ -234,12 +236,14 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
           name: name,
           title: req.body["kmz-title"],
           description: req.body["kmz-description"],
+          titlePt: req.body["kmz-title-pt"],
+          descriptionPt: req.body["kmz-description-pt"],
           // ...другие свойства...
         },
         geometry: {
           type: "MultiPoint",
-          coordinates: groupedPoints[name]
-        }
+          coordinates: groupedPoints[name],
+        },
       };
     });
 
@@ -260,7 +264,7 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
 
 function groupPointsByName(features) {
   const pointsByName = {};
-  features.forEach(feature => {
+  features.forEach((feature) => {
     if (feature.geometry.type === "Point") {
       const name = feature.properties.name;
       if (!pointsByName[name]) {
@@ -281,7 +285,6 @@ async function readGeoJsonFileOrCreateNew(filePath) {
   }
 }
 
-
 app.get("/landing/get", async (req, res) => {
   try {
     const jsonData = await fs.readFile("page-elements.json", "utf8");
@@ -294,7 +297,6 @@ app.get("/landing/get", async (req, res) => {
 });
 
 app.delete("/delete/:id", async (req, res) => {
-
   try {
     const jsonData = await fs.readFile("page-elements.json", "utf8");
     let data = JSON.parse(jsonData);
@@ -303,11 +305,10 @@ app.delete("/delete/:id", async (req, res) => {
 
     for (key in data) {
       const index = data[key].findIndex((obj) => obj.id === id);
-      console.log(index)
+      console.log(index);
       if (index > -1) {
         data[key].splice(index, 1);
         found = true;
-        
       }
     }
 
@@ -359,7 +360,7 @@ app.post("/landing/add", async (req, res) => {
     // Чтение данных из файла
     const jsonData = await fs.readFile("page-elements.json", "utf8");
     const data = JSON.parse(jsonData);
-   
+
     // Создание нового элемента
     const newObj = req.body;
     newObj.id = uuidv4();
@@ -367,16 +368,12 @@ app.post("/landing/add", async (req, res) => {
     // Обработка случаев "patents" и "publications"
     if (newObj.type === "patents" || newObj.type === "publications") {
       const listItems = newObj.description.split("\n");
-      const listItemsPt = newObj.descriptionPt.split("\n");
 
-      if (listItems.length == listItemsPt.length){
-        const newItemList = listItems.map((item,index) => ({
-          description: item,
-          descriptionPt: listItemsPt[index],
-          id: uuidv4(),
-        }));
-        data[newObj.type].push(...newItemList);
-      }
+      const newItemList = listItems.map((item, index) => ({
+        description: item,
+        id: uuidv4(),
+      }));
+      data[newObj.type].push(...newItemList);
     } else {
       data[newObj.type].push(newObj);
     }
@@ -394,17 +391,16 @@ app.post("/landing/add", async (req, res) => {
   }
 });
 
-
 app.post("/landing/drag", async (req, res) => {
   try {
     const jsonData = await fs.readFile("page-elements.json", "utf8");
     let data = JSON.parse(jsonData);
-    let startIndex = req.body.start
-    let indexToMoveTo  = req.body.end // Индекс, на который нужно переместить элемент
-    console.log(req.body)
+    let startIndex = req.body.start;
+    let indexToMoveTo = req.body.end; // Индекс, на который нужно переместить элемент
+    console.log(req.body);
     const publications = data.publications;
     const elementToMove = data.publications[startIndex]; // Элемент, который вы хотите переместить
-   
+
     data.publications.splice(data.publications.indexOf(elementToMove), 1); // Удаляем элемент из текущей позиции
     data.publications.splice(indexToMoveTo, 0, elementToMove);
 
@@ -413,7 +409,7 @@ app.post("/landing/drag", async (req, res) => {
       JSON.stringify(data, null, 2),
       "utf8"
     );
-   
+
     res.status(200).send(`Элемент с ID ${req.body.id} изменен`);
   } catch (err) {
     console.error(err);

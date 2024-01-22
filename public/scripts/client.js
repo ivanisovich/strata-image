@@ -209,31 +209,23 @@ function processTeamMembers(members, lang) {
   });
 }
 
-function processPublications(publications, lang) {
+function processPublications(publications) {
   publications.forEach((item) => {
     let publication = document.createElement("li");
     publication.className = "publications__item";
 
-    if (lang === "pt") {
-      publication.innerHTML = item.descriptionPt;
-    } else {
-      publication.innerHTML = item.description;
-    }
+    publication.innerHTML = item.description;
     publication.id = item.id;
     publicationsContainer.append(publication);
   });
 }
 
-function processPatents(patents, lang) {
+function processPatents(patents) {
   patents.forEach((item) => {
     let publication = document.createElement("li");
     publication.className = "publications__item";
 
-    if (lang === "pt") {
-      publication.innerHTML = item.descriptionPt;
-    } else {
-      publication.innerHTML = item.description;
-    }
+    publication.innerHTML = item.description;
     publication.id = item.id;
     patentsContainer.append(publication);
   });

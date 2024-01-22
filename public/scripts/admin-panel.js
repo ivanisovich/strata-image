@@ -137,14 +137,12 @@ function processPublications(publications) {
   publications.forEach((item) => {
     let publication = document.createElement("li");
     let text = document.createElement("p");
-    let textPt = document.createElement("p");
     let buttonsWrapper = document.createElement("div")
 
     const deleteButton = createButton("delete", "button--delete-publication");
     const editButton = createButton("edit", "button--edit-publication");
 
     text.innerHTML = item.description;
-    textPt.innerHTML = item.descriptionPt;
 
     publication.className = "publications__item";
     publication.id = item.id;
@@ -153,7 +151,7 @@ function processPublications(publications) {
 
     buttonsWrapper.append(editButton,deleteButton)
 
-    publication.append(text,textPt, buttonsWrapper);
+    publication.append(text, buttonsWrapper);
     publicationsContainer.append(publication);
   });
 }
@@ -162,7 +160,6 @@ function processPatents(patents) {
   patents.forEach((item) => {
     let publication = document.createElement("li");
     let text = document.createElement("p");
-    let textPt = document.createElement("p");
     let buttonsWrapper = document.createElement("div")
 
     const deleteButton = createButton("delete", "button--delete-publication");
@@ -172,12 +169,11 @@ function processPatents(patents) {
     publication.className = "publications__item";
     publication.id = item.id;
     publication.draggable = "true";
-    textPt.innerHTML = item.descriptionPt;
     buttonsWrapper.className = "publications__buttons"
     
     buttonsWrapper.append(editButton,deleteButton)
 
-    publication.append(text,textPt, buttonsWrapper);
+    publication.append(text, buttonsWrapper);
     patentsContainer.append(publication);
   });
 }
@@ -292,7 +288,6 @@ document.addEventListener("click", (e) => {
     addPublicationForm.classList.remove("hidden");
     buttonAddPublication.addEventListener("click", () => {
       let params = {
-        descriptionPt: publicationInputPt.value,
         description: publicationInput.value,
         type: "publications",
       };
@@ -305,13 +300,11 @@ document.addEventListener("click", (e) => {
     let publication = e.target.closest(".publications__item");
     let id = publication.id;
     newPublication.value = publication.querySelector("p").innerHTML;
-    newPublicationPt.value = publication.querySelectorAll("p")[1].innerHTML;
 
     buttonEditPublication.addEventListener("click", () => {
       let params = {
         id: id,
         description: newPublication.value,
-        descriptionPt: newPublicationPt.value
       };
       fetchEdit(params);
       console.log(params);
@@ -325,7 +318,6 @@ document.addEventListener("click", (e) => {
     buttonAddPublication.addEventListener("click", () => {
       let params = {
         description: publicationInput.value,
-        descriptionPt: publicationInputPt.value,
         type: "patents",
       };
       fetchAdd(params);
