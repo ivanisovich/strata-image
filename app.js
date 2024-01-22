@@ -201,68 +201,86 @@ app.get("/getMarks", (req, res) => {
 
 // Загрузка KML файла
 app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
-  const zip = new JSZip();
-  const zipContents = await zip.loadAsync(req.file.buffer);
-  const kmlFile = zipContents.file(/\.kml$/i)[0];
-  const kmlText = await kmlFile.async("string");
-
-  // Создание DOM из KML текста
-  const dom = new DOMParser().parseFromString(kmlText);
-  const kml = dom.documentElement;
-
-  // Преобразование KML в GeoJSON
-  const geoJSON = toGeoJSON.kml(kml);
-  const commonUUID = uuidv4();
-
-  // Добавление уникального ID к каждому feature
-  geoJSON.features.forEach((feature) => {
-    feature.properties.id = uuidv4();
-    feature.properties.title = req.body["kmz-title"];
-    feature.properties.description = req.body["kmz-description"];
-    feature.properties.titlePt = req.body["kmz-title-pt"];
-    feature.properties.descriptionPt = req.body["kmz-description-pt"];
-    feature.properties.link = req.body["kmz-link"];
-
-    if (feature.geometry && feature.geometry.type === "LineString") {
-      // Преобразование LineString в Polygon
-      feature.geometry.type = "Polygon";
-      // Оборачиваем координаты LineString в дополнительный массив для Polygon
-      feature.geometry.coordinates = [feature.geometry.coordinates];
-      feature.properties.id = commonUUID;
-    }
-  });
-
   try {
-    // Попытка чтения файла mark.geojson
-    let existingData;
-    try {
-      const existingGeoJSON = await fs.readFile("marks.json", "utf8");
-      existingData = JSON.parse(existingGeoJSON);
-    } catch (error) {
-      // Если файл не существует или пустой, создаем новый объект GeoJSON
-      existingData = { type: "FeatureCollection", features: [] };
-    }
+    const zip = new JSZip();
+    const zipContents = await zip.loadAsync(req.file.buffer);
+    const kmlFile = zipContents.file(/\.kml$/i)[0];
+    const kmlText = await kmlFile.async("string");
 
-    // Добавление новых меток, избегая дубликатов
-    const newFeatures = geoJSON.features.filter(
-      (newFeature) =>
-        !existingData.features.some(
-          (existingFeature) =>
-            JSON.stringify(existingFeature.geometry.coordinates) ===
-            JSON.stringify(newFeature.geometry.coordinates)
-        )
-    );
+    const dom = new DOMParser().parseFromString(kmlText);
+    const kml = dom.documentElement;
 
-    existingData.features = existingData.features.concat(newFeatures);
+    const geoJSON = toGeoJSON.kml(kml);
 
-    // Сохранение обновленного GeoJSON обратно в mark.geojson
+    // Группировка только точек по имени
+    const groupedPoints = groupPointsByName(geoJSON.features);
+
+    // Обработка LineString и Polygon
+    const otherFeatures = geoJSON.features.filter(feature => feature.geometry.type !== "Point").map(feature => {
+      if (feature.geometry.type === "LineString") {
+        // Преобразование LineString в Polygon
+        feature.geometry.type = "Polygon";
+        feature.geometry.coordinates = [feature.geometry.coordinates];
+      }
+      return feature;
+    });
+
+    // Создание новых features из сгруппированных точек
+    const newPointFeatures = Object.keys(groupedPoints).map(name => {
+      return {
+        type: "Feature",
+        properties: {
+          id: uuidv4(),
+          name: name,
+          title: req.body["kmz-title"],
+          description: req.body["kmz-description"],
+          // ...другие свойства...
+        },
+        geometry: {
+          type: "MultiPoint",
+          coordinates: groupedPoints[name]
+        }
+      };
+    });
+
+    // Объединение всех видов features
+    const combinedFeatures = [...newPointFeatures, ...otherFeatures];
+
+    // Обновление существующего GeoJSON
+    let existingData = await readGeoJsonFileOrCreateNew("marks.json");
+    existingData.features = [...existingData.features, ...combinedFeatures];
+
+    // Сохранение GeoJSON
     await fs.writeFile("marks.json", JSON.stringify(existingData, null, 2));
-
     res.send("Метки из KML файла успешно добавлены");
   } catch (error) {
     res.status(500).send("Ошибка при обработке файла: " + error.message);
   }
 });
+
+function groupPointsByName(features) {
+  const pointsByName = {};
+  features.forEach(feature => {
+    if (feature.geometry.type === "Point") {
+      const name = feature.properties.name;
+      if (!pointsByName[name]) {
+        pointsByName[name] = [];
+      }
+      pointsByName[name].push(feature.geometry.coordinates);
+    }
+  });
+  return pointsByName;
+}
+
+async function readGeoJsonFileOrCreateNew(filePath) {
+  try {
+    const fileContent = await fs.readFile(filePath, "utf8");
+    return JSON.parse(fileContent);
+  } catch (error) {
+    return { type: "FeatureCollection", features: [] };
+  }
+}
+
 
 app.get("/landing/get", async (req, res) => {
   try {
