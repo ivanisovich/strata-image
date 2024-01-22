@@ -14,6 +14,7 @@ let editMarkBtn = document.querySelector("#edit-mark__btn");
 let kmzTitle = document.querySelector("#kmz-title");
 let kmzDescription = document.querySelector("#kmz-description");
 let kmzLink = document.querySelector("#kmz-link");
+let marksList = document.querySelector(".marks-list")
 
 loadMap()
 

@@ -111,6 +111,8 @@ input::placeholder {
   max-width: 380px;
   overflow-y: scroll;
   list-style: none;
+  max-height: calc(100% - 100px);
+  overflow-y: scroll;
 }
 
 .marks-list::-webkit-scrollbar {

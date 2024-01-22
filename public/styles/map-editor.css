@@ -137,7 +137,7 @@ button {
 }
 
 .marks-list.hidden .list-item{
-  display: none;
+  display: none !important; 
 }
 
 .marks-list.hidden{

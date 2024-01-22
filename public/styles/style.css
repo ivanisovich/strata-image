@@ -402,6 +402,8 @@ h2 {
   transition: 0.3s ease-in;
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 16px;
+  max-height: 600px;
+  overflow-y: scroll;
 }
 
 .list-item {
