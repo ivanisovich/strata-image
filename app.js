@@ -15,6 +15,8 @@ const JSZip = require("jszip");
 require("dotenv").config();
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 
 // Настройка EJS шаблонизатора
 app.set("view engine", "ejs");
@@ -219,6 +221,10 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
     const otherFeatures = geoJSON.features
       .filter((feature) => feature.geometry.type !== "Point")
       .map((feature) => {
+        const jsonDOm = new JSDOM(feature.properties.description);
+        const document = jsonDOm.window.document;
+        const extractedData = extractDataFromString(document);
+
         if (feature.geometry.type === "LineString") {
           // Преобразование LineString в Polygon
           feature.geometry.type = "Polygon";
@@ -227,12 +233,14 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
           feature.properties.title = req.body["kmz-title"];
           feature.properties.descriptionPt = req.body["kmz-description-pt"];
           feature.properties.titlePt = req.body["kmz-title-pt"];
+          feature.properties.type = extractedData.TYPE;
         }
         if (feature.geometry.type === "Polygon") {
           feature.properties.description = req.body["kmz-description"];
           feature.properties.title = req.body["kmz-title"];
           feature.properties.descriptionPt = req.body["kmz-description-pt"];
           feature.properties.titlePt = req.body["kmz-title-pt"];
+          feature.properties.type = extractedData.TYPE;
         }
         return feature;
       });
@@ -248,11 +256,11 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
           description: req.body["kmz-description"],
           titlePt: req.body["kmz-title-pt"],
           descriptionPt: req.body["kmz-description-pt"],
-          // ...другие свойства...
+          type: groupedPoints[name].type,
         },
         geometry: {
           type: "MultiPoint",
-          coordinates: groupedPoints[name],
+          coordinates: groupedPoints[name].coordinates,
         },
       };
     });
@@ -271,18 +279,23 @@ app.post("/uploadKMZ", upload.single("kmlFile"), async (req, res) => {
     res.status(500).send("Ошибка при обработке файла: " + error.message);
   }
 });
-
 function groupPointsByName(features) {
   const pointsByName = {};
-  features.forEach((feature) => {
+  for (const feature of features) {
     if (feature.geometry.type === "Point") {
       const name = feature.properties.name;
+      const extractedData = extractDataFromString(feature.properties.description);
+
       if (!pointsByName[name]) {
-        pointsByName[name] = [];
+        pointsByName[name] = {
+          coordinates: [],
+          type: extractedData.TYPE,
+        };
       }
-      pointsByName[name].push(feature.geometry.coordinates);
+      pointsByName[name]["coordinates"].push(feature.geometry.coordinates);
+ 
     }
-  });
+  }
   return pointsByName;
 }
 
@@ -294,6 +307,23 @@ async function readGeoJsonFileOrCreateNew(filePath) {
     return { type: "FeatureCollection", features: [] };
   }
 }
+
+function extractDataFromString(htmlString) {
+  let result = {};
+  // Обновленное регулярное выражение для извлечения данных из пар тегов <td>
+  const regex = /<td>(.*?)<\/td>\s*<td>(.*?)<\/td>/g;
+  let match;
+
+  while ((match = regex.exec(htmlString)) !== null) {
+    const key = match[1].trim();
+    const value = match[2].trim();
+    result[key] = value;
+  }
+
+  return result;
+}
+
+
 
 app.get("/landing/get", async (req, res) => {
   try {

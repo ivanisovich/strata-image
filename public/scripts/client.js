@@ -303,4 +303,8 @@ document.addEventListener("click", (e) => {
   if (e.target.className == "english-lang") {
     location.reload();
   }
+
+  if (e.target.classList.contains("filter-button")){
+    e.target.classList.toggle("active")
+  }
 });

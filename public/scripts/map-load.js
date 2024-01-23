@@ -67,6 +67,14 @@ function addMapListeners() {
   });
 }
 
+let markersColors = {
+  "MULTICLIENT": "rgba(0, 171, 85, 1)",
+  "PROPRIETARY": "#1890FF",
+  "ENGINEERING GEOPHYSICS": "#FFC107",
+  "GOVERNMENT SUPPORT": "#54D62C",
+  "UNIVERSITY RESEARCH": "#FF4842"
+}
+
 function fetchGeojsonData() {
   fetch("/marks.json")
     .then((response) => response.json())
@@ -92,6 +100,10 @@ function addMarkers(geojsonData) {
   // Добавление всех точек (Point и MultiPoint) в один массив координат
   const points = [];
   geojsonData.features.forEach((feature) => {
+    
+    const type = feature.properties.type;
+    feature.properties.color = markersColors[type] || "#3FB1CE";
+   
     if (feature.geometry.type === "Point") {
       points.push(feature.geometry.coordinates);
     } else if (feature.geometry.type === "MultiPoint") {
@@ -99,16 +111,11 @@ function addMarkers(geojsonData) {
       const centroid = calculateCentroidForMultiPoint(
         feature.geometry.coordinates
       );
-      addMarkerAtPoint(
-        centroid,
-        feature.properties,
-        feature.geometry.coordinates
-      );
+      addMarkerAtPoint(feature, feature.geometry.coordinates, centroid)
     }
     else if (feature.geometry.type === "Polygon") {
-      // For Polygons, create a marker at the centroid and add it to the map
       const centroid = calculateCentroid(feature.geometry.coordinates[0]);
-      addMarkerAtPoint(centroid, feature.properties, feature.geometry.coordinates[0]);
+      addMarkerAtPoint(feature, feature.geometry.coordinates[0], centroid);
     }
   });
 
@@ -117,15 +124,38 @@ function addMarkers(geojsonData) {
     type: "geojson",
     data: {
       type: "FeatureCollection",
-      features: points.map((point) => ({
-        type: "Feature",
-        geometry: {
-          type: "Point",
-          coordinates: point,
-        },
-      })),
+      features: geojsonData.features.flatMap(feature => {
+        // Для Point просто возвращаем feature
+        if (feature.geometry.type === "Point") {
+          return feature;
+        }
+        // Для MultiPoint возвращаем массив точек
+        else if (feature.geometry.type === "MultiPoint") {
+          return feature.geometry.coordinates.map(point => ({
+            type: "Feature",
+            properties: feature.properties, // сохраняем все свойства, включая color
+            geometry: {
+              type: "Point",
+              coordinates: point
+            }
+          }));
+        }
+        // Для Polygon возвращаем центроид
+        else if (feature.geometry.type === "Polygon") {
+          const centroid = calculateCentroid(feature.geometry.coordinates[0]);
+          return {
+            type: "Feature",
+            properties: feature.properties, // сохраняем все свойства, включая color
+            geometry: {
+              type: "Point",
+              coordinates: centroid
+            }
+          };
+        }
+      }),
     },
   });
+  
 
   // Добавление слоя с круглыми точками
   map.addLayer({
@@ -133,9 +163,9 @@ function addMarkers(geojsonData) {
     type: "circle",
     source: "points-data",
     paint: {
-      "circle-radius": 5, // Размер точки
-      "circle-color": "rgba(0, 171, 85, 1)", // Цвет точки
-    },
+      "circle-radius": 5,
+      "circle-color": ["get", "color"] // Получаем цвет напрямую из свойств feature
+    }
   });
 }
 
@@ -151,32 +181,22 @@ function calculateCentroidForMultiPoint(coordinates) {
   return [lngSum / count, latSum / count]; // Возвращаем центроид
 }
 
-function addMarkerAtPoint(coordinates, properties, points) {
-  const marker = new mapboxgl.Marker({ color: "rgba(0, 171, 85)" }).setLngLat(
-    coordinates
+function addMarkerAtPoint(feature, coordinates, centroid) {
+  const marker = new mapboxgl.Marker({ color: markersColors[feature.properties.type] }).setLngLat(
+    centroid
   );
-  marker.points = points;
-  marker.center = coordinates;
+  marker.points = coordinates;
+  marker.center = centroid;
   marker.addTo(map);
 
-  const popupHtml = createMarkPopupHtml(properties);
+  const popupHtml = createMarkPopupHtml(feature.properties);
   const popup = new mapboxgl.Popup().setHTML(popupHtml);
   marker.setPopup(popup);
 
   marker.getElement().addEventListener("click", () => {
     focusCamera(marker.center, polygonArea(marker.points));
+
   });
-}
-
-function addPoint(feature) {
-  const coordinates = feature.geometry.coordinates;
-  const marker = new mapboxgl.Marker({ color: "rgba(0, 171, 85)" })
-    .setLngLat(coordinates)
-    .addTo(map);
-
-  const popupHtml = createMarkPopupHtml(feature.properties);
-  const popup = new mapboxgl.Popup().setHTML(popupHtml);
-  marker.setPopup(popup);
 }
 
 function calculateCentroid(coordinates) {
@@ -211,8 +231,13 @@ function updateMarksList(geojsonData) {
     marksList.appendChild(listItem);
 
     listItem.addEventListener("click", () => {
-      const coordinates = feature.geometry.coordinates;
+
+      let coordinates = feature.geometry.coordinates;
+      if (feature.geometry.type === "Polygon"){
+        coordinates = feature.geometry.coordinates[0]
+      }
       const centroid = calculateCentroid(coordinates);
+  
       focusCamera(centroid, polygonArea(coordinates));
     });
   });

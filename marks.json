@@ -4,117 +4,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "85c9093a-0d72-4726-b712-72fbb99c058f",
-        "name": "DELAWARE BASIN",
-        "title": "title eng",
-        "description": "desc eng",
-        "titlePt": "title pt",
-        "descriptionPt": "desc pt"
-      },
-      "geometry": {
-        "type": "MultiPoint",
-        "coordinates": [
-          [
-            -104.5561257688032,
-            31.07031233990273,
-            1208
-          ],
-          [
-            -103.8726303808239,
-            31.26512088695128,
-            933.9999999999999
-          ],
-          [
-            -103.6044496745784,
-            31.42355610638648,
-            818.9999999999999
-          ],
-          [
-            -103.5421997516911,
-            31.50672281951909,
-            801
-          ],
-          [
-            -103.3918108227519,
-            31.47555625995282,
-            782.9999999999999
-          ],
-          [
-            -104.2028660809997,
-            31.13294457491746,
-            1191
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -115.7597347399999,
-              33.11323020600003,
-              0
-            ],
-            [
-              -115.565664939,
-              32.83972435200008,
-              0
-            ],
-            [
-              -115.291161044,
-              32.88129912700003,
-              0
-            ],
-            [
-              -115.34610424,
-              33.12682969100007,
-              0
-            ],
-            [
-              -115.60529261,
-              33.22918527300004,
-              0
-            ],
-            [
-              -115.7597347399999,
-              33.11323020600003,
-              0
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "name": "SALTON SEA AND EAST BRAWLEY",
-        "styleUrl": "#PolyStyle00",
-        "styleHash": "15f7ea12",
-        "styleMapHash": {
-          "normal": "#PolyStyle000",
-          "highlight": "#PolyStyle001"
-        },
-        "description": "desc eng",
-        "stroke": "#000000",
-        "stroke-opacity": 1,
-        "stroke-width": 0.4,
-        "fill": "#ff0000",
-        "fill-opacity": 1,
-        "title": "title eng",
-        "descriptionPt": "desc pt",
-        "titlePt": "title pt"
-      },
-      "id": "ID_00000"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "c85f8861-5e8d-49bd-bb51-94308c0f6031",
+        "id": "3db4065b-2ebf-4126-830a-6e34894040ea",
         "name": "REC - ALAGOINHAS",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -605,12 +501,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "662ef936-4e47-4b70-b1e3-5dfeb999da31",
+        "id": "88123f71-b2c6-41c2-a92a-72fdd216abcb",
         "name": "REC - ALAGOINHAS II",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -666,12 +563,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "f29cb7a9-9389-429e-a33d-b62968570625",
+        "id": "dfe5bc4d-15a6-4a4a-94f4-aa2a85387ee5",
         "name": "REC - ARAÇAS",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -762,12 +660,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "2e6a8fbb-4295-4949-8b63-53258caea72d",
+        "id": "8b016042-2b0f-42b5-b96b-72f2db0a4c42",
         "name": "TUCS - BOAPAZ",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -1553,12 +1452,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "9b19309b-4693-41fd-ab9f-a3113c43962d",
+        "id": "361e6fd4-6420-4251-a2d2-7bb35179f0ce",
         "name": "ALAGOAS - CAMARAGIBE",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -2374,12 +2274,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "f90ca11c-09df-4736-9228-8e0917b08f51",
+        "id": "fcc1ea00-4795-4fde-82e2-0244ef54a0b3",
         "name": "SERGIPE - CARMOPOLIS",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -2840,12 +2741,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "ccb97a42-08d5-407f-a92d-677d27e34998",
+        "id": "b5555467-416e-48c5-a1c0-210a63074b1e",
         "name": "TUCS - CIPO I II III",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -5586,12 +5488,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "18fc985c-070f-4b3e-a76b-e38197a5a05a",
+        "id": "b3ed1c78-4f62-40ea-bcd6-59fae20afe3c",
         "name": "REC - ESPLANADA",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -6017,12 +5920,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "2487e3f9-9939-4fbb-be16-9a09f4a242fc",
+        "id": "913138e1-b752-4fba-ac6e-2b230c4d6ccb",
         "name": "ES - IPIRANGA",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -6193,12 +6097,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "0b854824-15ef-4253-bd8e-459778b7fe3e",
+        "id": "f72b6ceb-2a33-4bfc-946c-eb09c60f100c",
         "name": "REC - ITANAGRA",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -6674,12 +6579,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "15646a7b-033d-45be-8a88-20528449609e",
+        "id": "9a585404-d508-449e-92fa-23a06d4c335b",
         "name": "REC - LADEIRA",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -7180,12 +7086,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "1d06f2b1-27b7-40e4-a44f-0bfae0a9c277",
+        "id": "9a20e727-92fd-42d2-aa95-e50d61485fc6",
         "name": "ALAGOAS - MARECHAL",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -7346,12 +7253,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "69bec558-93d9-4f3c-8ec8-d475a33caaf5",
+        "id": "9c818a3d-3d6a-4f91-b2c9-5d0631b966df",
         "name": "REC - NSPAZ",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -7717,12 +7625,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "c6e2a5c9-3b5f-49c4-9e1c-01266f8b9555",
+        "id": "901ddd94-d5dc-4d0d-87de-45979c37fdee",
         "name": "PARNAIBA - OPEO",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "PROPRIETARY"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -9008,12 +8917,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "978e420b-d09d-4ed8-81fa-8bbf3d19b615",
+        "id": "28e8bdb2-1644-407b-9388-d87feafd368b",
         "name": "SERGIPE - PACATUBA",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -9424,12 +9334,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "fedea187-84cf-4068-80ac-74e69a5b65ca",
+        "id": "3fe56fe0-7ecf-49a2-8ac3-bcb6264f8313",
         "name": "REC - PEDRAS",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -9645,12 +9556,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "0df8a279-59bd-4c4a-9f17-d45791764a83",
+        "id": "6ffc93f3-f285-4e73-9012-640876cfdddb",
         "name": "ALAGOAS - PENEDO",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -9951,12 +9863,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "8f8c4458-c462-4eb4-a8ff-fdfc0c8e364e",
+        "id": "ac02a680-9d8c-4005-a486-6fd8c56ec650",
         "name": "ALAGOAS - PENEDO II",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -10667,12 +10580,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "aacad4a6-c7eb-4386-952e-937991c491e4",
+        "id": "4989cd5f-1b7f-45b7-8e8a-90e62b488f60",
         "name": "SERGIPE - PIRAMBU",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -10848,12 +10762,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "92ce2e03-2be1-458c-a7b6-3f30d693a60d",
+        "id": "cf43418e-effe-4eef-91f5-14807154dfbe",
         "name": "REC - QUIAMBINA",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -11364,12 +11279,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "28c91b03-5929-4ee1-ab56-475efe6158d1",
+        "id": "eeb02af4-fb40-45b2-9619-d1a70016c639",
         "name": "SERGIPE - RIO BETUME",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -11900,12 +11816,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "06a85b37-a5cf-4adb-b70d-c1cfd773f846",
+        "id": "252913f9-0f23-4fea-93ec-7a8048a3499b",
         "name": "PARANA - SANTA RITA",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -14226,12 +14143,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "4eaf85d6-60b8-4548-85cd-812dc91cdfb5",
+        "id": "c3acd2d0-d50d-450f-9cf7-38c91e135c94",
         "name": "REC - SAOSEBASTIAO",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -14837,12 +14755,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "9cd689c6-3632-4762-ad96-62efb786616f",
+        "id": "5f7450f0-3be5-4a28-aaa6-8f7496e1a3f2",
         "name": "ALAGOAS - SAOMIGUEL",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -15018,12 +14937,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "0debb526-b2b4-4eba-b7e3-facdcc055c59",
+        "id": "2c15b8eb-5e2a-4527-ab7c-e88457910185",
         "name": "REC - TEODORO",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -15604,12 +15524,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "8112b0d5-d522-4251-813c-94657de7d083",
+        "id": "63f82942-03a5-4bbc-8720-fecac66cea3c",
         "name": "REC - TEODORO II",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -16600,12 +16521,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "a575b1a6-d9fe-4a18-acdf-07a5871ee991",
+        "id": "d79b0634-061e-4e64-a807-8605fd8341ad",
         "name": "ES - TEREZA",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -16676,12 +16598,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "0cc792c8-a500-4d07-b762-1e1b84790594",
+        "id": "05f17b14-5526-45bc-8914-a1fd1163441a",
         "name": "BOM JARDIM",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "ENGINEERING GEOPHYSICS"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -16802,12 +16725,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "06fb83f5-d288-4559-89b5-927beb306217",
+        "id": "e5f5a853-1163-4823-8de4-056d1eb7baf7",
         "name": "BREJINHO",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "ENGINEERING GEOPHYSICS"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -16873,12 +16797,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "10ca7308-c77b-44bb-be98-c25692d307bb",
+        "id": "7ce75999-e282-4a36-89d8-f9bda5dee830",
         "name": "CRIXAS",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "PROPRIETARY"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -16939,12 +16864,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "be138015-d39d-4d95-99db-999075689269",
+        "id": "4ce6e986-d096-4d1e-8dc5-c841363b49e6",
         "name": "ESTREITO",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "ENGINEERING GEOPHYSICS"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -17015,12 +16941,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "edabe297-d6a4-480b-a00e-48b34fe5b148",
+        "id": "ecdc524e-38bd-4710-8dbe-68b541a4b6b3",
         "name": "GAMELEIRA",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "ENGINEERING GEOPHYSICS"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -17101,12 +17028,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "d5bc701b-14cd-4866-924c-e2c21d3267e7",
+        "id": "69644334-3364-4feb-a71c-4f05c0e0e41a",
         "name": "IE MADEIRA",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "ENGINEERING GEOPHYSICS"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -17177,12 +17105,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "a616cfb6-4bd6-4b20-83bc-f545b64227d0",
+        "id": "66a3ba6e-594b-49d2-87f7-81dd51eefb35",
         "name": "ITAGUAI",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "ENGINEERING GEOPHYSICS"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -17348,12 +17277,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "12a38750-34ea-407b-a29b-e7d1b2ec1b52",
+        "id": "f5981195-ab59-469d-bf99-7eec32b03b58",
         "name": "KIMBERLITE JUINA",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "PROPRIETARY"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -17694,12 +17624,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "c795da3b-9590-4b70-9255-705521c9e94a",
+        "id": "f6933347-6523-44f7-be50-efd189930f3a",
         "name": "POZOLANE LAFARGE",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "PROPRIETARY"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -18350,12 +18281,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "43fe78b3-470f-4bfb-acc2-831a4eec8412",
+        "id": "245aa2d2-9e93-4a3e-b02b-9c17449b4e05",
         "name": "undefined",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": ""
       },
       "geometry": {
         "type": "MultiPoint",
@@ -18371,12 +18303,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "b4ab94af-ede7-4c9f-a1c6-b1ba376e4725",
+        "id": "93bf407f-2aea-41c8-8d7c-25789f3e1fca",
         "name": "MINAS 2016",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "ENGINEERING GEOPHYSICS"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -18497,12 +18430,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "5ef1baeb-7d47-4620-b42e-f6e71300dd80",
+        "id": "859f388b-9b45-463a-a9df-3dc0a349591d",
         "name": "MORRO DO CHAPEU",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "ENGINEERING GEOPHYSICS"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -18763,12 +18697,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "51845cb9-4a3e-4a10-9e3e-7d273fc2bcde",
+        "id": "fb953b5b-301e-497e-9cf0-73d7a957be4e",
         "name": "ANP - PARECIS BASIN",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "GOVERNMENT SUPPORT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -20199,12 +20134,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "4ad89b72-1c2f-4b00-bec0-9bad3b0699c7",
+        "id": "b32a53f4-f48e-4779-af32-6a9b8874c269",
         "name": "PARANA SUL",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "UNIVERSITY RESEARCH"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -21280,12 +21216,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "1fc0279a-5aa9-47f0-bd75-e0cc816826f2",
+        "id": "2415ae4c-f49b-4469-a55d-00f7f3e35f6b",
         "name": "PELOTAS",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "UNIVERSITY RESEARCH"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -21706,12 +21643,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "d137ee1b-1350-4049-b11f-f51c1fdab5d1",
+        "id": "2754f167-62d0-4c62-9023-3e66503b261f",
         "name": "PELOTAS 2",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "UNIVERSITY RESEARCH"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -21967,12 +21905,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "7533f32e-8a6d-4712-b32e-da20ac8195ad",
+        "id": "8fa52165-ccb8-4964-b82f-bc27b76a390b",
         "name": "PARNAIBA - PRESIDENTE DUTRA",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "PROPRIETARY"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -22393,12 +22332,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "e1f9eff4-5796-48f1-a884-7e05537d590c",
+        "id": "39a86f27-92a3-4b17-b09f-1fa81f3bdc68",
         "name": "SAOFRANCISCO II",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "MULTICLIENT"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -22659,12 +22599,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "cdae69ec-d6e8-41d0-b9b3-dd48b11ceb75",
+        "id": "0b12953f-7bf3-4790-a6a2-5376b1f9eb24",
         "name": "SERRA DA BABILONIA",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "ENGINEERING GEOPHYSICS"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -22695,12 +22636,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "7f3a7c85-3da7-402a-a61d-cc33b5a759fd",
+        "id": "9a461109-2263-4679-a0ee-50388d6362ae",
         "name": "PROJETO RIFT BAHIA",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "UNIVERSITY RESEARCH"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -23221,12 +23163,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "4e06f341-e733-40d7-ba05-98e4ac38694d",
+        "id": "7001ac5d-996f-4060-a448-7e26b1916f20",
         "name": "UNB - MT",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "UNIVERSITY RESEARCH"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -23412,12 +23355,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "2554f200-df64-4feb-a058-8a53a968e418",
+        "id": "8a9db0cc-f5d0-49de-9fc2-78b03c41c8fb",
         "name": "XINGU",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "ENGINEERING GEOPHYSICS"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -23498,12 +23442,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "f55e4878-f478-4fb1-b31a-cf0fecea4a76",
+        "id": "7686129a-13cf-4d3d-81b9-7b17803258ee",
         "name": "XINGU II",
         "title": "title eng",
-        "description": "desc pt",
+        "description": "desc eng",
         "titlePt": "title pt",
-        "descriptionPt": "desc pt"
+        "descriptionPt": "desc pt",
+        "type": "ENGINEERING GEOPHYSICS"
       },
       "geometry": {
         "type": "MultiPoint",
@@ -23545,6 +23490,112 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3e1d6026-0569-4419-a6ff-a361684d9dcc",
+        "name": "DELAWARE BASIN",
+        "title": "title eng",
+        "description": "desc eng",
+        "titlePt": "title pt",
+        "descriptionPt": "desc eng",
+        "type": "MULTICLIENT"
+      },
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            -104.5561257688032,
+            31.07031233990273,
+            1208
+          ],
+          [
+            -103.8726303808239,
+            31.26512088695128,
+            933.9999999999999
+          ],
+          [
+            -103.6044496745784,
+            31.42355610638648,
+            818.9999999999999
+          ],
+          [
+            -103.5421997516911,
+            31.50672281951909,
+            801
+          ],
+          [
+            -103.3918108227519,
+            31.47555625995282,
+            782.9999999999999
+          ],
+          [
+            -104.2028660809997,
+            31.13294457491746,
+            1191
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -115.7597347399999,
+              33.11323020600003,
+              0
+            ],
+            [
+              -115.565664939,
+              32.83972435200008,
+              0
+            ],
+            [
+              -115.291161044,
+              32.88129912700003,
+              0
+            ],
+            [
+              -115.34610424,
+              33.12682969100007,
+              0
+            ],
+            [
+              -115.60529261,
+              33.22918527300004,
+              0
+            ],
+            [
+              -115.7597347399999,
+              33.11323020600003,
+              0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "SALTON SEA AND EAST BRAWLEY",
+        "styleUrl": "#PolyStyle00",
+        "styleHash": "15f7ea12",
+        "styleMapHash": {
+          "normal": "#PolyStyle000",
+          "highlight": "#PolyStyle001"
+        },
+        "description": "desc eng",
+        "stroke": "#000000",
+        "stroke-opacity": 1,
+        "stroke-width": 0.4,
+        "fill": "#ff0000",
+        "fill-opacity": 1,
+        "title": "title eng",
+        "descriptionPt": "desc eng",
+        "titlePt": "title pt"
+      },
+      "id": "ID_00000"
     }
   ]
 }
