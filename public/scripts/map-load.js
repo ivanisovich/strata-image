@@ -68,11 +68,11 @@ function addMapListeners() {
 }
 
 let markersColors = {
-  "MULTICLIENT": "rgba(0, 171, 85, 1)",
-  "PROPRIETARY": "#1890FF",
-  "ENGINEERING GEOPHYSICS": "#FFC107",
-  "GOVERNMENT SUPPORT": "#54D62C",
-  "UNIVERSITY RESEARCH": "#FF4842",
+  "MULTICLIENT": "rgba(0, 171, 85, 0.8)",
+  "PROPRIETARY": "rgba(24, 144, 255, 0.8)",
+  "ENGINEERING GEOPHYSICS": "rgba(255, 193, 7, 0.8)",
+  "GOVERNMENT SUPPORT": "rgba(84, 214, 44, 0.8)",
+  "UNIVERSITY RESEARCH": "rgba(255, 72, 66, 0.8)",
 };
 
 let jsonData = {};
