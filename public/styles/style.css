@@ -446,17 +446,17 @@ h2 {
   color: white;
 }
 .filter-button[data-name="PROPRIETARY"]{
-  border: 2px solid #1890FF;
+  border: 2px solid rgba(8, 61, 119, 0.8);
 }
 .filter-button[data-name="PROPRIETARY"].active{
-  background: #1890FF;
+  background: rgba(8, 61, 119, 0.8);
   color: white;
 }
 .filter-button[data-name="ENGINEERING GEOPHYSICS"]{
-  border: 2px solid #FFC107;
+  border: 2px solid rgba(134, 147, 171, 0.8);
 }
 .filter-button[data-name="ENGINEERING GEOPHYSICS"].active{
-  background: #FFC107;
+  background: rgba(134, 147, 171, 0.8);
   color: white;
 }
 .filter-button[data-name="GOVERNMENT SUPPORT"]{
@@ -467,10 +467,10 @@ h2 {
   color: white;
 }
 .filter-button[data-name="UNIVERSITY RESEARCH"]{
-  border: 2px solid #FF4842;
+  border: 2px solid rgba(101, 175, 255, 0.8);
 }
 .filter-button[data-name="UNIVERSITY RESEARCH"].active{
-  background: #FF4842;
+  background: rgba(101, 175, 255, 0.8);
   color: white;
 }
 

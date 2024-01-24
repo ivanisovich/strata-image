@@ -69,10 +69,10 @@ function addMapListeners() {
 
 let markersColors = {
   "MULTICLIENT": "rgba(0, 171, 85, 0.8)",
-  "PROPRIETARY": "rgba(24, 144, 255, 0.8)",
-  "ENGINEERING GEOPHYSICS": "rgba(255, 193, 7, 0.8)",
+  "PROPRIETARY": "rgba(8, 61, 119, 0.8)",
+  "ENGINEERING GEOPHYSICS": "rgba(134, 147, 171, 0.8)",
   "GOVERNMENT SUPPORT": "rgba(84, 214, 44, 0.8)",
-  "UNIVERSITY RESEARCH": "rgba(255, 72, 66, 0.8)",
+  "UNIVERSITY RESEARCH": "rgba(101, 175, 255, 0.8)",
 };
 
 let jsonData = {};
