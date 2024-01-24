@@ -72,18 +72,28 @@ let markersColors = {
   "PROPRIETARY": "#1890FF",
   "ENGINEERING GEOPHYSICS": "#FFC107",
   "GOVERNMENT SUPPORT": "#54D62C",
-  "UNIVERSITY RESEARCH": "#FF4842"
-}
+  "UNIVERSITY RESEARCH": "#FF4842",
+};
+
+let jsonData = {};
+
+let currentFilter = ["ALL"];
+
+const ALL_FILTER = "ALL";
+
 
 function fetchGeojsonData() {
   fetch("/marks.json")
     .then((response) => response.json())
     .then((geojsonData) => {
+      jsonData = geojsonData
       // Дожидаемся полной загрузки карты перед добавлением маркеров
       if (map.isStyleLoaded()) {
         addMarkers(geojsonData);
       } else {
-        map.on("load", () => addMarkers(geojsonData));
+        map.on("load", () => {
+          addMarkers(geojsonData);
+        });
         document.querySelector(".lds-ellipsis").classList.add("hidden");
       }
       updateMarksList(geojsonData);
@@ -100,10 +110,9 @@ function addMarkers(geojsonData) {
   // Добавление всех точек (Point и MultiPoint) в один массив координат
   const points = [];
   geojsonData.features.forEach((feature) => {
-    
     const type = feature.properties.type;
     feature.properties.color = markersColors[type] || "#3FB1CE";
-   
+
     if (feature.geometry.type === "Point") {
       points.push(feature.geometry.coordinates);
     } else if (feature.geometry.type === "MultiPoint") {
@@ -111,9 +120,8 @@ function addMarkers(geojsonData) {
       const centroid = calculateCentroidForMultiPoint(
         feature.geometry.coordinates
       );
-      addMarkerAtPoint(feature, feature.geometry.coordinates, centroid)
-    }
-    else if (feature.geometry.type === "Polygon") {
+      addMarkerAtPoint(feature, feature.geometry.coordinates, centroid);
+    } else if (feature.geometry.type === "Polygon") {
       const centroid = calculateCentroid(feature.geometry.coordinates[0]);
       addMarkerAtPoint(feature, feature.geometry.coordinates[0], centroid);
     }
@@ -124,20 +132,20 @@ function addMarkers(geojsonData) {
     type: "geojson",
     data: {
       type: "FeatureCollection",
-      features: geojsonData.features.flatMap(feature => {
+      features: geojsonData.features.flatMap((feature) => {
         // Для Point просто возвращаем feature
         if (feature.geometry.type === "Point") {
           return feature;
         }
         // Для MultiPoint возвращаем массив точек
         else if (feature.geometry.type === "MultiPoint") {
-          return feature.geometry.coordinates.map(point => ({
+          return feature.geometry.coordinates.map((point) => ({
             type: "Feature",
             properties: feature.properties, // сохраняем все свойства, включая color
             geometry: {
               type: "Point",
-              coordinates: point
-            }
+              coordinates: point,
+            },
           }));
         }
         // Для Polygon возвращаем центроид
@@ -148,14 +156,13 @@ function addMarkers(geojsonData) {
             properties: feature.properties, // сохраняем все свойства, включая color
             geometry: {
               type: "Point",
-              coordinates: centroid
-            }
+              coordinates: centroid,
+            },
           };
         }
       }),
     },
   });
-  
 
   // Добавление слоя с круглыми точками
   map.addLayer({
@@ -164,8 +171,8 @@ function addMarkers(geojsonData) {
     source: "points-data",
     paint: {
       "circle-radius": 5,
-      "circle-color": ["get", "color"] // Получаем цвет напрямую из свойств feature
-    }
+      "circle-color": ["get", "color"], // Получаем цвет напрямую из свойств feature
+    },
   });
 }
 
@@ -181,10 +188,12 @@ function calculateCentroidForMultiPoint(coordinates) {
   return [lngSum / count, latSum / count]; // Возвращаем центроид
 }
 
+let allMarkers = []; 
+
 function addMarkerAtPoint(feature, coordinates, centroid) {
-  const marker = new mapboxgl.Marker({ color: markersColors[feature.properties.type] }).setLngLat(
-    centroid
-  );
+  const marker = new mapboxgl.Marker({
+      color: markersColors[feature.properties.type],
+  }).setLngLat(centroid);
   marker.points = coordinates;
   marker.center = centroid;
   marker.addTo(map);
@@ -194,9 +203,10 @@ function addMarkerAtPoint(feature, coordinates, centroid) {
   marker.setPopup(popup);
 
   marker.getElement().addEventListener("click", () => {
-    focusCamera(marker.center, polygonArea(marker.points));
-
+      focusCamera(marker.center, polygonArea(marker.points));
   });
+
+  allMarkers.push(marker); 
 }
 
 function calculateCentroid(coordinates) {
@@ -231,13 +241,12 @@ function updateMarksList(geojsonData) {
     marksList.appendChild(listItem);
 
     listItem.addEventListener("click", () => {
-
       let coordinates = feature.geometry.coordinates;
-      if (feature.geometry.type === "Polygon"){
-        coordinates = feature.geometry.coordinates[0]
+      if (feature.geometry.type === "Polygon") {
+        coordinates = feature.geometry.coordinates[0];
       }
       const centroid = calculateCentroid(coordinates);
-  
+
       focusCamera(centroid, polygonArea(coordinates));
     });
   });
@@ -322,3 +331,59 @@ document.getElementById("search").addEventListener("input", function () {
       : "none";
   });
 });
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("filter-button")) {
+    const type = e.target.dataset.name;
+    updateCurrentFilter(type);
+    updateFilterButtons();
+    removeAllMarkers();
+    const filteredMarkers = filterMarkers(jsonData,type)
+    addMarkers(filteredMarkers);
+    updateMarksList(filteredMarkers)
+    
+  }
+});
+
+
+
+function updateCurrentFilter(type) {
+  if (!currentFilter.includes(type)) {
+    currentFilter.push(type);
+  } else {
+    currentFilter = currentFilter.filter(item => item !== type)
+  }
+
+  if (type === ALL_FILTER || currentFilter.length == 0) {
+    currentFilter = [ALL_FILTER];
+  } else if (currentFilter.includes(ALL_FILTER)) {
+    currentFilter = currentFilter.filter(item => item !== ALL_FILTER);
+  }
+
+}
+
+function updateFilterButtons() {
+  document.querySelectorAll(".filter-button").forEach(button => {
+    button.classList.toggle("active", currentFilter.includes(button.dataset.name));
+  });
+}
+
+
+function filterMarkers(jsonData){
+  let filteredData = {...jsonData}
+  console.log(filteredData)
+  filteredData.features = filteredData.features.filter(item => {
+    return currentFilter.includes(item.properties.type)
+  })
+
+  if(!currentFilter.includes(ALL_FILTER)){
+    return filteredData
+  } else {
+    return jsonData
+  }
+}
+
+function removeAllMarkers() {
+  allMarkers.forEach(marker => marker.remove());
+  allMarkers = []; 
+}

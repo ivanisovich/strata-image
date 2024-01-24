@@ -430,10 +430,47 @@ h2 {
   padding-right: 10px;
   border-radius: 10px;
   cursor: pointer;
+  border: 3px solid transparent;
 }
 
-.filter-button.active{
+
+.filter-button[data-name="ALL"].active{
   background: #00AB55;
+  color: white;
+}
+.filter-button[data-name="MULTICLIENT"]{
+  border: 3px solid #00AB55;
+}
+.filter-button[data-name="MULTICLIENT"].active{
+  background: #00AB55;
+  color: white;
+}
+.filter-button[data-name="PROPRIETARY"]{
+  border: 3px solid #1890FF;
+}
+.filter-button[data-name="PROPRIETARY"].active{
+  background: #1890FF;
+  color: white;
+}
+.filter-button[data-name="ENGINEERING GEOPHYSICS"]{
+  border: 3px solid #FFC107;
+}
+.filter-button[data-name="ENGINEERING GEOPHYSICS"].active{
+  background: #FFC107;
+  color: white;
+}
+.filter-button[data-name="GOVERNMENT SUPPORT"]{
+  border: 3px solid #54D62C;
+}
+.filter-button[data-name="GOVERNMENT SUPPORT"].active{
+  background: #54D62C;
+  color: white;
+}
+.filter-button[data-name="UNIVERSITY RESEARCH"]{
+  border: 3px solid #FF4842;
+}
+.filter-button[data-name="UNIVERSITY RESEARCH"].active{
+  background: #FF4842;
   color: white;
 }
 
@@ -464,12 +501,12 @@ h2 {
 
 .edit-mark__burger {
   position: absolute;
-  top: 11px;
+  top: 9px;
   right: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
   margin-top: auto;
   margin-bottom: auto;
@@ -496,7 +533,7 @@ h2 {
   border-radius: 4px;
   background: #212b36;
   width: 35px;
-  height: 3px;
+  height: 4px;
 }
 
 
@@ -579,10 +616,6 @@ h2 {
 .our-team__member-bio {
   font-size: 12px;
   text-align: center;
-}
-
-.our-team__member:nth-child(2n) {
-
 }
 
 .footer {
