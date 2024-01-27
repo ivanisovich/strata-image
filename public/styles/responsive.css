@@ -45,6 +45,38 @@
    .mapboxgl-popup {
       right: 20px;
    }
+
+   .footer__contacts {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      width: fit-content;
+      display: block;
+      margin-right: auto;
+   }
+
+   .footer__inner{
+      align-items: center;
+   }
+
+
+   .contacts-section__phone {
+      display: block;
+      margin-bottom: 30px !important;
+   }
+
+   .footer__logo {
+      max-width: 220px;
+   }
+
+   .socials-wrapper{
+      align-self: center;
+   }
+
+   .contacts-section:nth-child(3){
+      align-self:flex-start;
+      margin-top: 0px;
+    }
 }
 
 @media(max-width: 1050px) {
@@ -86,25 +118,6 @@
       box-sizing: border-box;
 
    }
-
-   .footer__contacts {
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      margin-left: auto;
-      width: fit-content;
-      display: block;
-      margin-right: auto;
-   }
-
-   
-   .contacts-section__phone{
-      display: block;
-      margin-bottom: 30px !important;
-   }
-
-   .footer__logo{
-      max-width: 220px;
-   }
 }
 
 @media (max-width: 768px) {
@@ -137,11 +150,11 @@
       top: 90px !important;
    }
 
-   .scroll-message{
+   .scroll-message {
       display: none;
    }
 
-   .scroll-down{
+   .scroll-down {
       visibility: visible;
       opacity: 1;
       position: absolute;
@@ -185,10 +198,33 @@
       text-align: center;
    }
 
+   .footer__contacts{
+      margin-right: 0px;
+   }
+
+   .footer__inner {
+      gap: 50px;
+      justify-content: center;
+   }
+
    .footer__inner {
       flex-direction: column;
-      gap: 50px;
-    
+   }
+
+   .socials-inner {
+      margin: 0 auto
+   }
+
+   .socials-wrapper p {
+      margin: 0 auto;
+   }
+
+   .footer__contacts p {
+      max-width: unset;
+   }
+
+   .footer__contacts span {
+      white-space: wrap;
    }
 
 }
@@ -215,7 +251,7 @@
       margin-top: 147px;
    }
 
-   .hero p{
+   .hero p {
       font-size: 12px;
       padding: 15px;
    }
@@ -254,12 +290,12 @@
       margin-left: 0px !important;
    }
 
-   #map .container{
+   #map .container {
       position: relative;
       z-index: 3;
    }
 
-   .edit-mark__search-wrapper{
+   .edit-mark__search-wrapper {
       margin-left: 0px;
    }
 
@@ -288,28 +324,7 @@
       margin-right: auto;
       width: 100%;
       max-width: unset;
-      
-   }
 
-   .footer__inner {
-      flex-direction: column;
    }
-
-   .socials-inner {
-      margin: 0 auto
-   }
-
-   .socials-wrapper p {
-      margin: 0 auto;
-   }
-
-   .footer__contacts p {
-      max-width: unset;
-   }
-
-   .footer__contacts span{
-      white-space: wrap;
-   }
-
 
 }

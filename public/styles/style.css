@@ -665,6 +665,7 @@ h2 {
 
 .socials-wrapper {
   display: flex;
+  align-self: flex-end;
 }
 
 .footer .socials {
@@ -680,6 +681,11 @@ h2 {
 
 .footer p {
   max-width: 320px;
+}
+
+.contacts-section:nth-child(3){
+  align-self:flex-start;
+  margin-top: 64px;
 }
 
 .our-team__member,
