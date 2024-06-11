@@ -275,13 +275,6 @@ function createListItem(properties, isClientView) {
 
   listItem.innerHTML = `
     <strong>${properties.name ? properties.name : properties.title}</strong>
-    <p>${properties.description}</p>
-    ${ptText}
-    <a target='_blank' href=${
-      properties.link
-    } class="list-item__link">download</a>
-    ${buttonsHTML}`; // Добавляем кнопки в HTML, если условие выполнено
-
   return listItem;
 }
 
