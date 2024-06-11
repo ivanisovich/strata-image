@@ -274,7 +274,7 @@ function createListItem(properties, isClientView) {
   }
 
   listItem.innerHTML = `
-    <strong>${properties.name ? properties.name : properties.title}</strong>
+    <strong>${properties.name ? properties.name : properties.title}</strong> `
   return listItem;
 }
 
