@@ -221,3 +221,48 @@ input::placeholder {
     transform: translate(24px, 0);
   }
 }
+
+.MULTICLIENT{
+  border: 2px solid #00AB55;
+  background: #919EAB29;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+.PROPRIETARY{
+  border: 2px solid rgba(8, 61, 119, 1);;
+  background: #919EAB29;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+.ENGINEERING{
+  border: 2px solid rgba(134, 147, 171, 0.8);
+  background: #919EAB29;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+
+.GOVERNMENT{
+  border: 2px solid #54D62C;
+  background: #919EAB29;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+
+.UNIVERSITY{
+  border: 2px solid rgba(101, 175, 255, 0.8);
+  background: #919EAB29;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}

@@ -81,7 +81,6 @@ let currentFilter = ["ALL"];
 
 const ALL_FILTER = "ALL";
 
-
 function fetchGeojsonData() {
   fetch("/marks.json")
     .then((response) => response.json())
@@ -216,7 +215,7 @@ function calculateCentroid(coordinates) {
       sums.latSum += coord[1];
       return sums;
     },
-    { lngSum: 0, latSum: 0 } // Исправлено здесь: latSum вместо latzSum
+    { lngSum: 0, latSum: 0 }
   );
   return [lngSum / coordinates.length, latSum / coordinates.length];
 }
@@ -235,146 +234,138 @@ function updateMarksList(geojsonData) {
   const marksList = document.querySelector(".marks-list");
   marksList.innerHTML = "";
   geojsonData.features.forEach((feature) => {
-    const listItem = createListItem(feature.properties);
+    const listItem = createListItem(feature.properties, feature.geometry.coordinates, feature.geometry.type);
     marksList.appendChild(listItem);
-
-    listItem.addEventListener("click", () => {
-      let coordinates = feature.geometry.coordinates;
-      if (feature.geometry.type === "Polygon") {
-        coordinates = feature.geometry.coordinates[0];
-      }
-      const centroid = calculateCentroid(coordinates);
-
-      focusCamera(centroid, polygonArea(coordinates));
-    });
   });
 }
 
-function createListItem(properties, isClientView) {
-  isClientView = true;
-
-  if (window.location.href.includes("/map-editor")) {
-    isClientView = false;
-  }
+function createListItem(properties, coordinates, geometryType) {
   const listItem = document.createElement("li");
   listItem.className = "list-item";
-  listItem.dataset.groupId = properties.id;
+  listItem.dataset.id = properties.id;
 
-  let buttonsHTML = "";
-  let ptText = "";
-  if (!isClientView) {
-    // Добавляем кнопки только если isClientView равно false
-    buttonsHTML = `
-      <button class="delete-button">delete</button>
-      <button class="edit-button">edit</button>`;
-    ptText = `
-    <strong>${properties.name ? properties.name : properties.titlePt}</strong>
-    <p>${properties.descriptionPt}</p>
-    `;
-  }
+  let coordinatesData = JSON.stringify(coordinates);
+  let geometryTypeData = geometryType;
 
   listItem.innerHTML = `
-    <strong>${properties.name ? properties.name : properties.title}</strong> `
-  return listItem;
-}
+    <strong>${properties.name ? properties.name : properties.title}</strong>
+    <div class="coordinates" data-coordinates='${coordinatesData}' data-geometry-type='${geometryTypeData}'></div>`;
 
-function onTerritoryClick(e) {
-  const feature = e.features[0];
-  const coordinates = feature.geometry.coordinates[0];
-  const centroid = calculateCentroid(coordinates);
-  focusCamera(centroid, polygonArea(coordinates));
-}
-
-function focusCamera(center, area) {
-  const zoomLevel = calculateLinearZoom(area);
-  map.flyTo({
-    center: center,
-    zoom: zoomLevel,
-    speed: 0.5,
-    curve: 1,
-    easing: (t) => t,
-    essential: true,
-    duration: 1000,
+    listItem.addEventListener("click", () => {
+      let coordinates = JSON.parse(listItem.querySelector(".coordinates").dataset.coordinates);
+      let geometryType = listItem.querySelector(".coordinates").dataset.geometryType;
+  
+      let centroid;
+      if (geometryType === "Polygon") {
+        centroid = calculateCentroid(coordinates[0]);
+      } else if (geometryType === "MultiPoint") {
+        centroid = calculateCentroidForMultiPoint(coordinates);
+      } else if (geometryType === "Point") {
+        centroid = coordinates;
+      }
+  
+      const matchingMarker = allMarkers.find(marker => marker.center[0] === centroid[0] && marker.center[1] === centroid[1]);
+      if (matchingMarker) {
+        matchingMarker.getPopup().addTo(map);
+        focusCamera(centroid, polygonArea(coordinates));
+      }
+    });
+  
+    return listItem;
+  }
+  
+  function onTerritoryClick(e) {
+    const feature = e.features[0];
+    const coordinates = feature.geometry.coordinates[0];
+    const centroid = calculateCentroid(coordinates);
+    focusCamera(centroid, polygonArea(coordinates));
+  }
+  
+  function focusCamera(center, area) {
+    const zoomLevel = calculateLinearZoom(area);
+    map.flyTo({
+      center: center,
+      zoom: zoomLevel,
+      speed: 0.5,
+      curve: 1,
+      easing: (t) => t,
+      essential: true,
+      duration: 1000,
+    });
+  }
+  
+  function calculateLinearZoom(area) {
+    const m = (7 - 5) / (2.4 - 54);
+    const b = 5 - m * 54;
+    return m * area + b;
+  }
+  
+  function polygonArea(coords) {
+    let area = 0;
+    for (let i = 0, n = coords.length; i < n; i++) {
+      const j = (i + 1) % n;
+      area += coords[i][0] * coords[j][1];
+      area -= coords[j][0] * coords[i][1];
+    }
+    return Math.abs(area / 2);
+  }
+  
+  document.getElementById("search").addEventListener("input", function () {
+    const filter = this.value.toLowerCase();
+    document.querySelectorAll(".marks-list .list-item").forEach((item) => {
+      item.style.display = item.innerText.toLowerCase().includes(filter)
+        ? "block"
+        : "none";
+    });
   });
-}
-
-function calculateLinearZoom(area) {
-  const m = (7 - 5) / (2.4 - 54);
-  const b = 5 - m * 54;
-  return m * area + b;
-}
-
-function polygonArea(coords) {
-  let area = 0;
-  for (let i = 0, n = coords.length; i < n; i++) {
-    const j = (i + 1) % n;
-    area += coords[i][0] * coords[j][1];
-    area -= coords[j][0] * coords[i][1];
-  }
-  return Math.abs(area / 2);
-}
-
-document.getElementById("search").addEventListener("input", function () {
-  const filter = this.value.toLowerCase();
-  document.querySelectorAll(".marks-list .list-item").forEach((item) => {
-    item.style.display = item.innerText.toLowerCase().includes(filter)
-      ? "block"
-      : "none";
+  
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("filter-button")) {
+      const type = e.target.dataset.name;
+      updateCurrentFilter(type);
+      updateFilterButtons();
+      removeAllMarkers();
+      const filteredMarkers = filterMarkers(jsonData, type);
+      addMarkers(filteredMarkers);
+      updateMarksList(filteredMarkers);
+    }
   });
-});
-
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("filter-button")) {
-    const type = e.target.dataset.name;
-    updateCurrentFilter(type);
-    updateFilterButtons();
-    removeAllMarkers();
-    const filteredMarkers = filterMarkers(jsonData,type)
-    addMarkers(filteredMarkers);
-    updateMarksList(filteredMarkers)
-    
+  
+  function updateCurrentFilter(type) {
+    if (!currentFilter.includes(type)) {
+      currentFilter.push(type);
+    } else {
+      currentFilter = currentFilter.filter(item => item !== type);
+    }
+  
+    if (type === ALL_FILTER || currentFilter.length == 0) {
+      currentFilter = [ALL_FILTER];
+    } else if (currentFilter.includes(ALL_FILTER)) {
+      currentFilter = currentFilter.filter(item => item !== ALL_FILTER);
+    }
   }
-});
-
-
-
-function updateCurrentFilter(type) {
-  if (!currentFilter.includes(type)) {
-    currentFilter.push(type);
-  } else {
-    currentFilter = currentFilter.filter(item => item !== type)
+  
+  function updateFilterButtons() {
+    document.querySelectorAll(".filter-button").forEach(button => {
+      button.classList.toggle("active", currentFilter.includes(button.dataset.name));
+    });
   }
-
-  if (type === ALL_FILTER || currentFilter.length == 0) {
-    currentFilter = [ALL_FILTER];
-  } else if (currentFilter.includes(ALL_FILTER)) {
-    currentFilter = currentFilter.filter(item => item !== ALL_FILTER);
+  
+  function filterMarkers(jsonData, type) {
+    let filteredData = { ...jsonData };
+    filteredData.features = filteredData.features.filter(item => {
+      return currentFilter.includes(item.properties.type);
+    });
+  
+    if (!currentFilter.includes(ALL_FILTER)) {
+      return filteredData;
+    } else {
+      return jsonData;
+    }
   }
-
-}
-
-function updateFilterButtons() {
-  document.querySelectorAll(".filter-button").forEach(button => {
-    button.classList.toggle("active", currentFilter.includes(button.dataset.name));
-  });
-}
-
-
-function filterMarkers(jsonData){
-  let filteredData = {...jsonData}
-  console.log(filteredData)
-  filteredData.features = filteredData.features.filter(item => {
-    return currentFilter.includes(item.properties.type)
-  })
-
-  if(!currentFilter.includes(ALL_FILTER)){
-    return filteredData
-  } else {
-    return jsonData
+  
+  function removeAllMarkers() {
+    allMarkers.forEach(marker => marker.remove());
+    allMarkers = [];
   }
-}
-
-function removeAllMarkers() {
-  allMarkers.forEach(marker => marker.remove());
-  allMarkers = []; 
-}
+  
