@@ -53,11 +53,11 @@ app.post("/admin/login", (req, res) => {
 
 // Middleware для проверки аутентификации
 function isAuthenticated(req, res, next) {
-  // if (req.session.authenticated) {
-  //     next();
-  // } else {
-  //     res.send('Необходима авторизация');
-  // }
+  if (req.session.authenticated) {
+      next();
+  } else {
+      res.send('Необходима авторизация');
+  }
   next();
 }
 
