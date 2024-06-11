@@ -226,6 +226,8 @@ function createMarkPopupHtml(properties) {
       <img src="/public/images/mark.jpg" alt=""/>
       <div class="mark__text">
         <h3>${properties.name ? properties.name : properties.title}</h3>
+        ${properties.type ? `<span class="${properties.type}">${properties.type}</span>` : ''}
+
       </div>
     </article>`;
 }
