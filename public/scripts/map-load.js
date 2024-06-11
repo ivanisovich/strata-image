@@ -307,7 +307,7 @@ function loadMap() {
                   editButton
                 );
               } else if (isClientView) {
-                listItem.append(title, description);
+                listItem.append(title);
               }
               marksList.append(listItem);
             }
