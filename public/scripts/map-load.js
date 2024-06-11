@@ -101,12 +101,7 @@ function loadMap() {
       let markUp =
         '<article class="mark"> <img src="/public/images/mark.jpg" alt=""/> <div class="mark__text"> <h3>' +
         title +
-        "</h3> <p>" +
-        description +
-        "</p> <a target='_blank' href=" +
-        link +
-        "> download" +
-        "</a>";
+        "</h3> 
       ("</div> </article>");
       return markUp;
     }
