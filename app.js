@@ -22,16 +22,18 @@ const { JSDOM } = jsdom;
 app.set("view engine", "ejs");
 app.set("views", "views");
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname));
-app.use(bodyParser.json());
-
 const corsOptions = {
   origin: 'https://strataimage.netlify.app', // Specify your frontend URL here
   optionsSuccessStatus: 200 // Some legacy browsers choke on 204
 };
 
 app.use(cors(corsOptions));
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(__dirname));
+app.use(bodyParser.json());
+
+
 app.use(cookieParser());
 app.use(
   session({
