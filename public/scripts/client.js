@@ -127,7 +127,7 @@ for (let smoothLink of smoothLinks) {
   });
 }
 
-fetch("/page-elements.json")
+fetch("https://admin-panel-bvdb.onrender.com/page-elements.json")
   .then((response) => response.json())
   .then((data) => {
     processTeamMembers(data.members);
@@ -278,7 +278,7 @@ document.addEventListener("click", (e) => {
   }
 
   if (e.target.className == "portuguese-lang") {
-    fetch("/page-elements.json")
+    fetch("https://admin-panel-bvdb.onrender.com/page-elements.json")
       .then((response) => response.json())
       .then((data) => {
         servicesContainer.innerHTML = "";
@@ -292,7 +292,7 @@ document.addEventListener("click", (e) => {
       })
       .catch((error) => console.error(error));
 
-    fetch("/static-portuguese.json")
+    fetch("https://admin-panel-bvdb.onrender.com/static-portuguese.json")
       .then((response) => response.json())
       .then((data) => {
         processStatic(data.static);

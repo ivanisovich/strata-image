@@ -82,7 +82,7 @@ let currentFilter = ["ALL"];
 const ALL_FILTER = "ALL";
 
 function fetchGeojsonData() {
-  fetch("/marks.json")
+  fetch("https://admin-panel-bvdb.onrender.com/marks.json")
     .then((response) => response.json())
     .then((geojsonData) => {
       jsonData = geojsonData
