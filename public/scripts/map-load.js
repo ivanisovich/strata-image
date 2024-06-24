@@ -22,7 +22,7 @@ function addMapListeners() {
   map.on("load", function () {
     map.addSource("territories", {
       type: "geojson",
-      data: "/marks.json",
+      data: "https://admin-panel-bvdb.onrender.com/marks.json",
     });
 
     map.addLayer({
