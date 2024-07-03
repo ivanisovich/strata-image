@@ -56,7 +56,7 @@ function fetchApi(url, method, params) {
 }
 
 function fetchDelete(objectId) {
-  fetchApi("https://admin-panel-bvdb.onrender.com/delete/" + objectId, "DELETE", { id: objectId })
+  fetchApi("https://strataimage.netlify.app/delete/" + objectId, "DELETE", { id: objectId })
     .then((response) => {
       if (!response.ok) {
         throw new Error("Ошибка удаления");
@@ -66,7 +66,7 @@ function fetchDelete(objectId) {
 }
 
 function fetchEdit(params) {
-  fetchApi("https://admin-panel-bvdb.onrender.com/landing/edit", "POST", params)
+  fetchApi("https://strataimage.netlify.app/landing/edit", "POST", params)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Ошибка редактирования");
@@ -76,7 +76,7 @@ function fetchEdit(params) {
 }
 
 function fetchAdd(params) {
-  fetchApi("https://admin-panel-bvdb.onrender.com/landing/add", "POST", params)
+  fetchApi("https://strataimage.netlify.app/landing/add", "POST", params)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Ошибка добавления");
@@ -86,7 +86,7 @@ function fetchAdd(params) {
 }
 
 function fetchDrag(params) {
-  fetchApi("https://admin-panel-bvdb.onrender.com/landing/drag", "POST", params)
+  fetchApi("https://strataimage.netlify.app/landing/drag", "POST", params)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Ошибка добавления");
@@ -95,7 +95,7 @@ function fetchDrag(params) {
     .catch((error) => console.error("Ошибка:", error));
 }
 
-fetch("https://admin-panel-bvdb.onrender.com/landing/get")
+fetch("https://strataimage.netlify.app/landing/get")
   .then((response) => response.json())
   .then((data) => {
     processServices(data.services);

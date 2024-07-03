@@ -127,7 +127,7 @@ for (let smoothLink of smoothLinks) {
   });
 }
 
-fetch("https://admin-panel-bvdb.onrender.com/page-elements.json")
+fetch("https://strataimage.netlify.app/page-elements.json")
   .then((response) => response.json())
   .then((data) => {
     processTeamMembers(data.members);
@@ -278,7 +278,7 @@ document.addEventListener("click", (e) => {
   }
 
   if (e.target.className == "portuguese-lang") {
-    fetch("https://admin-panel-bvdb.onrender.com/page-elements.json")
+    fetch("https://strataimage.netlify.app/page-elements.json")
       .then((response) => response.json())
       .then((data) => {
         servicesContainer.innerHTML = "";
@@ -292,7 +292,7 @@ document.addEventListener("click", (e) => {
       })
       .catch((error) => console.error(error));
 
-    fetch("https://admin-panel-bvdb.onrender.com/static-portuguese.json")
+    fetch("https://strataimage.netlify.app/static-portuguese.json")
       .then((response) => response.json())
       .then((data) => {
         processStatic(data.static);

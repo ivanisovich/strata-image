@@ -62,7 +62,7 @@ map.on("draw.create", function (event) {
     ) {
       var coords = event.features[0].geometry.coordinates;
 
-      fetch("https://admin-panel-bvdb.onrender.com/map-editor", {
+      fetch("https://strataimage.netlify.app/map-editor", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -96,7 +96,7 @@ map.on("draw.delete", function (e) {
 document.addEventListener("click", (e) => {
   if (e.target.className == "delete-button") {
     let id = e.target.parentNode.dataset.groupId;
-    fetch("https://admin-panel-bvdb.onrender.com/deleteMark", {
+    fetch("https://strataimage.netlify.app/deleteMark", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -134,7 +134,7 @@ document.addEventListener("click", (e) => {
       let titlePt = newTitlePt.value;
       let descriptionPt = newDescriptionPt.value;
       let link = newLink.value;
-      fetch("https://admin-panel-bvdb.onrender.com/editMark", {
+      fetch("https://strataimage.netlify.app/editMark", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -183,7 +183,7 @@ document.querySelector(".kml-form").addEventListener("submit", function (e) {
 
   var formData = new FormData(this);
 
-  fetch("https://admin-panel-bvdb.onrender.com/uploadKMZ", {
+  fetch("https://strataimage.netlify.app/uploadKMZ", {
     method: "POST",
     body: formData,
   })

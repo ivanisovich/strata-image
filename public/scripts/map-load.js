@@ -22,7 +22,7 @@ function addMapListeners() {
   map.on("load", function () {
     map.addSource("territories", {
       type: "geojson",
-      data: "https://admin-panel-bvdb.onrender.com/marks.json",
+      data: "https://strataimage.netlify.app/marks.json",
     });
 
     map.addLayer({
@@ -82,7 +82,7 @@ let currentFilter = ["ALL"];
 const ALL_FILTER = "ALL";
 
 function fetchGeojsonData() {
-  fetch("https://admin-panel-bvdb.onrender.com/marks.json")
+  fetch("https://strataimage.netlify.app/marks.json")
     .then((response) => response.json())
     .then((geojsonData) => {
       jsonData = geojsonData
