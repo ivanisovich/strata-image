@@ -266,7 +266,7 @@ h2 {
 }
 
 .publications__item {
-  transition: 0.3s ease-out;
+  transition: 0.1s ease-out;
   box-shadow: 0px -1px 0px 0px rgba(145, 158, 171, 0.24) inset;
   padding: 16px;
 }
@@ -397,7 +397,7 @@ h2 {
 
 .marks-list {
   z-index: 2;
-  transition: 0.3s ease-in;
+  transition: 0.2s ease-in;
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 16px;
   max-height: 600px;
@@ -693,7 +693,7 @@ h2 {
 .service {
   opacity: 0;
   filter: blur(4px) brightness(0.7);
-  transition: filter 0.2s ease-out, opacity 0.2s ease-out;
+  transition: filter 0.1s ease-out, opacity 0.1s ease-out;
 }
 
 .our-team__member.visible,
@@ -703,10 +703,15 @@ h2 {
   filter: blur(0) brightness(1);
 }
 
+.hero__title.visible{
+  transition: 1.3s;
+  animation-delay:2s;
+}
+
 .ellipses,
 .publications__item {
   opacity: 0;
-  transition: opacity 0.2s ease-out;
+  transition: opacity 0.1s ease-out;
 }
 
 .ellipses.visible,
